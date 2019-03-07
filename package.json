@@ -20,6 +20,8 @@
     "react-helmet": "5.2.0"
   },
   "devDependencies": {
+    "cypress": "^3.1.5",
+    "cypress-testing-library": "^2.3.6",
     "prettier": "1.16.4",
     "semantic-release": "^15.13.3"
   },
@@ -34,7 +36,8 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "test:open": "yarn run cypress open",
+    "test:run": "yarn run cypress run"
   },
   "repository": {
     "type": "git",
