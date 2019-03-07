@@ -1,9 +1,34 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Brian Andrews Portfolio",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Brian Andrews <sbardian@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "serve": "gatsby serve --port 8000",
+    "test": "yarn test:e2e:ci",
+    "test:e2e": "start-server-and-test develop 8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop 8000 cy:run"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "release": {
+    "branch": "master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sbardian/portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/sbardian/portfolio/issues"
+  },
   "dependencies": {
     "gatsby": "2.1.23",
     "gatsby-image": "2.0.31",
@@ -23,27 +48,6 @@
     "cypress": "^3.1.5",
     "cypress-testing-library": "^2.3.6",
     "prettier": "1.16.4",
-    "semantic-release": "^15.13.3"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "cm": "git-cz",
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test:open": "yarn run cypress open",
-    "test:run": "yarn run cypress run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "start-server-and-test": "^1.7.11"
   }
 }
