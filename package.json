@@ -20,13 +20,15 @@
     "react-helmet": "5.2.0"
   },
   "devDependencies": {
-    "prettier": "1.16.4"
+    "prettier": "1.16.4",
+    "semantic-release": "^15.13.3"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "MIT",
   "scripts": {
+    "cm": "git-cz",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
