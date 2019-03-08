@@ -59,20 +59,20 @@ export default ({ children }) => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            grid-template-rows: minmax(200px, 400px);
+            /* grid-template-rows: minmax(200px, 400px); */
             height: 250px;
           `}
         >
-          <input
+          <textarea
             css={css`
-              height: 100%;
               border: 2px solid #e1e1e1;
               transition: all 0.2s ease-in-out;
+              padding: 1em;
+              height: auto;
               &:focus {
                 border: 2px solid #92e5f3;
               }
             `}
-            type="text"
             name="message"
             placeholder="Message"
           />
@@ -89,14 +89,9 @@ export default ({ children }) => {
               cursor: pointer;
               display: inline-block;
               font-weight: 400;
-              height: 3.15em;
-              height: calc(2.75em + 6px);
               line-height: 2.75em;
               min-width: 10em;
               padding: 0 1.5em;
-              text-align: center;
-              text-decoration: none;
-              white-space: nowrap;
               margin-bottom: 3em;
               &:hover {
                 background: #e1e1e1;

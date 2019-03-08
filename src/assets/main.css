@@ -18,9 +18,9 @@ article img {
   width: 350px;
 }
 
-input {
+input,
+textarea {
   appearance: none;
-  background: #f7f7f7;
   border-radius: 0.35em;
   border: 2px solid transparent;
   color: #666;
