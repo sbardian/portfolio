@@ -30,8 +30,30 @@ export default ({ children }) => {
             `)};
           `}
         >
-          <input css={css``} type="text" name="email" placeholder="Email" />
-          <input css={css``} type="text" name="name" placeholder="Name" />
+          <input
+            css={css`
+              border: 2px solid #e1e1e1;
+              transition: all 0.2s ease-in-out;
+              &:focus {
+                border: 2px solid #92e5f3;
+              }
+            `}
+            type="text"
+            name="email"
+            placeholder="Email"
+          />
+          <input
+            css={css`
+              border: 2px solid #e1e1e1;
+              transition: all 0.2s ease-in-out;
+              &:focus {
+                border: 2px solid #92e5f3;
+              }
+            `}
+            type="text"
+            name="name"
+            placeholder="Name"
+          />
         </div>
         <div
           css={css`
@@ -44,6 +66,11 @@ export default ({ children }) => {
           <input
             css={css`
               height: 100%;
+              border: 2px solid #e1e1e1;
+              transition: all 0.2s ease-in-out;
+              &:focus {
+                border: 2px solid #92e5f3;
+              }
             `}
             type="text"
             name="message"
@@ -57,8 +84,8 @@ export default ({ children }) => {
               transition: all 0.2s ease-in-out;
               background-color: transparent;
               border-radius: 0.35em;
-              border: 3px solid #f7f7f7;
-              color: #f7f7f7;
+              border: 3px solid #e1e1e1;
+              color: #e1e1e1;
               cursor: pointer;
               display: inline-block;
               font-weight: 400;
@@ -72,9 +99,9 @@ export default ({ children }) => {
               white-space: nowrap;
               margin-bottom: 3em;
               &:hover {
-                background: #f7f7f7;
+                background: #e1e1e1;
                 color: #666;
-                border-color: #666;
+                border-color: #92e5f3;
               }
             `}
           >
