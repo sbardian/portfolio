@@ -20,7 +20,7 @@ export default ({ children }) => {
         css={css`
           display: flex;
           flex-wrap: wrap;
-          justify-content: center;
+          justify-content: space-around;
         `}
       >
         <article>
