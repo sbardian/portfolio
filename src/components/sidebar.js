@@ -2,10 +2,10 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import { Link } from "gatsby"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import mq from "./mediaQueries"
 import sidebarBg from "../images/sidebar-bg.jpg"
 import avatar from "../images/avatar.jpg"
 
@@ -19,14 +19,23 @@ export default () => {
         justify-content: center;
         align-content: center;
         height: 100%;
-        width: 35%;
+        width: 30%;
         position: fixed;
         top: 0;
         left: 0;
         background-image: url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 20px 0 20px 0;
+        padding: 20px;
+        ${mq.xl(css`
+          padding: 20px;
+          width: auto;
+          position: relative;
+        `)};
+        ${mq.sm(css`
+          grid-template-columns: 1fr;
+          justify-items: center;
+        `)}
       `}
     >
       <div
@@ -49,6 +58,10 @@ export default () => {
           grid-gap: 20px;
           grid-template-rows: 60px 150px 50px;
           color: #474444;
+          ${mq.sm(css`
+            grid-template-rows: 80px auto 50px;
+            justify-items: center;
+          `)}
         `}
       >
         <div>
