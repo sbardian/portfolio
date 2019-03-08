@@ -7,12 +7,17 @@ export default ({ children }) => {
   return (
     <div
       css={css`
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr;
+        justify-items: center;
         height: 100%;
         width: 65%;
         position: fixed;
         top: 0;
         right: 0;
         overflow-y: auto;
+        margin: 20px 0 20px 0;
       `}
     >
       {children}
