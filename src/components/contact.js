@@ -37,12 +37,19 @@ export default ({ children }) => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            grid-template-row: minmax(200px, 400px);
+            grid-template-rows: minmax(200px, 400px);
             height: 250px;
             margin-bottom: 3em;
           `}
         >
-          <input css={css`height: 100%;`} type="text" name="message" placeholder="Message" />
+          <input
+            css={css`
+              height: 100%;
+            `}
+            type="text"
+            name="message"
+            placeholder="Message"
+          />
         </div>
       </div>
     </section>

@@ -13,7 +13,10 @@ const IndexPage = () => (
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sequi,
         voluptatem fuga soluta necessitatibus rerum quibusdam? Nisi ducimus
         nostrum cupiditate autem ipsa facere ea asperiores et perspiciatis.
-        Totam, at eius.
+        Totam, at eius. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Alias sequi, voluptatem fuga soluta necessitatibus rerum quibusdam? Nisi
+        ducimus nostrum cupiditate autem ipsa facere ea asperiores et
+        perspiciatis. Totam, at eius.
       </span>
     </section>
     <RecentWork />
