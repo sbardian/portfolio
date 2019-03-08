@@ -10,7 +10,7 @@ export default ({ children }) => {
       css={css`
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
         justify-items: start;
         height: 100%;
         position: absolute;
@@ -19,7 +19,7 @@ export default ({ children }) => {
         margin: 20px 20px 20px 20px;
         transition: all 0.3s linear;
         ${mq.xl(css`
-          grid-template-columns: 1fr;
+          grid-template-rows: auto 1fr;
           position: absolute;
           left: 0;
           height: auto;

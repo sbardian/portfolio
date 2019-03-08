@@ -8,11 +8,19 @@ export default ({ children }) => {
   return (
     <section
       css={css`
-        grid-template-columns: 1fr;
         width: 90%;
+        ${mq.sm(css`
+          grid-template-columns: 1fr;
+          width: 90%;
+        `)};
       `}
     >
-      <h2>Contact</h2>
+      <h1>Contact me</h1>
+      <p>
+        Feel free to contact me for job opertunities, or any old reason you
+        want. If you would rather reach out via email, github or twitter see
+        icons for each. I will get back with you as soon as possible.
+      </p>
       <div
         css={css`
           display: grid;
@@ -94,8 +102,8 @@ export default ({ children }) => {
               padding: 0 1.5em;
               margin-bottom: 3em;
               &:hover {
-                background: #e1e1e1;
-                color: #666;
+                background: #2f2d2d;
+                color: #92e5f3;
                 border-color: #92e5f3;
               }
             `}

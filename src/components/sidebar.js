@@ -78,10 +78,9 @@ export default () => {
           `}
         >
           <span>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Necessitatibus rerum quas alias ad vero architecto odio ducimus!
-            Nisi expedita amet in aspernatur qui veritatis doloremque non, ipsa
-            iusto, nemo quia.
+            Web developer and problem solver! I enjoy using code to solve
+            complex problems so other people don't have to. Hopefully you will
+            find something here to make your life easier.
           </span>
         </div>
         <div

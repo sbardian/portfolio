@@ -1,26 +1,21 @@
 import React from "react"
 import Layout from "../components/layout"
-import RecentWork from "../components/recent-work"
-import Contact from "../components/contact"
 import main from "../assets/main.css"
 import "normalize.css"
 
 const IndexPage = () => (
   <Layout>
-    <section class="section-1">
+    <section>
       <h1>Welcome to this fine portfolio site!</h1>
-      <span>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sequi,
-        voluptatem fuga soluta necessitatibus rerum quibusdam? Nisi ducimus
-        nostrum cupiditate autem ipsa facere ea asperiores et perspiciatis.
-        Totam, at eius. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Alias sequi, voluptatem fuga soluta necessitatibus rerum quibusdam? Nisi
-        ducimus nostrum cupiditate autem ipsa facere ea asperiores et
-        perspiciatis. Totam, at eius.
-      </span>
+      <p>
+        Hello, welcome to my portfolio site! I hope to update this site as I
+        move on down the developer trail. So there should be fresh projects
+        showing up, old projects being updated and made even more awesome than
+        they where when you last checked on them! So be sure to check back often
+        so you don't miss anything. I might even add a blog at some point, but
+        as you have probably already gathered, I'm not much of a writer, sooo...
+      </p>
     </section>
-    <RecentWork />
-    <Contact />
   </Layout>
 )
 
