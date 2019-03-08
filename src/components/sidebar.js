@@ -19,22 +19,25 @@ export default () => {
         justify-content: center;
         align-content: center;
         height: 100%;
-        width: 30%;
+        width: 600px;
         position: fixed;
         top: 0;
         left: 0;
         background-image: url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 20px;
+        transition: all 0.3s linear;
         ${mq.xl(css`
-          padding: 20px;
-          width: auto;
-          position: relative;
+          width: 100%;
+          height: 300px;
+          position: absolute;
+          padding: 20px 0 20px 0px;
         `)};
         ${mq.sm(css`
           grid-template-columns: 1fr;
           justify-items: center;
+          height: 400px;
+          padding: 20px 0 20px 0px;
         `)}
       `}
     >
@@ -47,6 +50,7 @@ export default () => {
           css={css`
             height: 150px;
             width: 150px;
+            padding-top: 20px;
           `}
           src={avatar}
           alt="Avatar"
@@ -58,6 +62,7 @@ export default () => {
           grid-gap: 20px;
           grid-template-rows: 60px 150px 50px;
           color: #474444;
+          transition: all 8s;
           ${mq.sm(css`
             grid-template-rows: 80px auto 50px;
             justify-items: center;
@@ -67,7 +72,11 @@ export default () => {
         <div>
           <h1>Brian Andrews</h1>
         </div>
-        <div>
+        <div
+          css={css`
+            padding: 0px 20px 0px 20px;
+          `}
+        >
           <span>
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Necessitatibus rerum quas alias ad vero architecto odio ducimus!
@@ -80,6 +89,7 @@ export default () => {
             display: grid;
             grid-gap: 20px;
             grid-template-columns: 20px 20px 20px 20px;
+            padding-bottom: 20px;
           `}
         >
           <a

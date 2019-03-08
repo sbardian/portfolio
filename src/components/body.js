@@ -11,19 +11,23 @@ export default ({ children }) => {
         display: grid;
         grid-gap: 20px;
         grid-template-columns: 1fr;
-        justify-items: center;
+        justify-items: start;
         height: 100%;
-        width: 60%;
-        position: fixed;
+        position: absolute;
         top: 0;
-        right: 0;
-        overflow-y: auto;
-        margin: 20px 0 20px 0;
+        left: 620px;
+        margin: 20px 0px 20px 20px;
+        transition: all 0.3s linear;
         ${mq.xl(css`
           grid-template-columns: 1fr;
-          padding: 20px;
-          position: relative;
+          position: absolute;
+          left: 0;
+          height: auto;
+          top: 340px;
         `)};
+        ${mq.sm(css`
+          top: 420px;
+        `)}
       `}
     >
       {children}
