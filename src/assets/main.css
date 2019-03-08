@@ -6,8 +6,8 @@ body {
 
 section {
   border-bottom: 1px solid #efefef;
-  padding: 2em 1em 1em 1em;
-  margin: 3.5em 1em 1em 1em;
+  padding: 1em 1em 1em 1em;
+  margin: 1em 1em 1em 1em;
 }
 
 article {
@@ -17,4 +17,19 @@ article {
 
 article img {
   width: 350px;
+}
+
+input {
+  appearance: none;
+  background: #f7f7f7;
+  border-radius: 0.35em;
+  border: 2px solid transparent;
+  color: #666;
+  display: block;
+  outline: 0;
+  padding: 0 0 0 1em;
+  text-decoration: none;
+  height: 2.75em;
+  margin: 0 1em 0 1em;
+  background-color: #e1e1e1;
 }
