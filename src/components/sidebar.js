@@ -36,7 +36,7 @@ export default () => {
         ${mq.sm(css`
           grid-template-columns: 1fr;
           justify-items: center;
-          height: 400px;
+          height: 500px;
           padding: 20px 0 20px 0px;
         `)}
       `}

@@ -15,7 +15,7 @@ export default ({ children }) => {
         height: 100%;
         position: absolute;
         top: 0;
-        left: 620px;
+        left: 640px;
         margin: 20px 0px 20px 20px;
         transition: all 0.3s linear;
         ${mq.xl(css`
@@ -26,7 +26,7 @@ export default ({ children }) => {
           top: 340px;
         `)};
         ${mq.sm(css`
-          top: 420px;
+          top: 520px;
         `)}
       `}
     >
