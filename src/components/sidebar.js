@@ -88,8 +88,10 @@ export default () => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            grid-template-columns: 20px 20px 20px 20px;
+            grid-template-columns: 35px 35px 35px;
             padding-bottom: 20px;
+            align-items: center;
+            justify-items: center;
           `}
         >
           <a

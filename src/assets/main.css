@@ -3,3 +3,18 @@ body {
   font-family: Source Sans Pro, Helvetica, sans-serif;
   color: #e1e1e1;
 }
+
+section {
+  border-bottom: 1px solid #efefef;
+  padding: 2em 1em 1em 1em;
+  margin: 3.5em 1em 1em 1em;
+}
+
+article {
+  margin: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+article img {
+  width: 350px;
+}

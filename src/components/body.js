@@ -16,7 +16,7 @@ export default ({ children }) => {
         position: absolute;
         top: 0;
         left: 640px;
-        margin: 20px 0px 20px 20px;
+        margin: 20px 20px 20px 20px;
         transition: all 0.3s linear;
         ${mq.xl(css`
           grid-template-columns: 1fr;
