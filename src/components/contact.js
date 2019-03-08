@@ -39,9 +39,10 @@ export default ({ children }) => {
             grid-gap: 20px;
             grid-template-row: minmax(200px, 400px);
             height: 250px;
+            margin-bottom: 3em;
           `}
         >
-          <input css={css`height: 100%`} type="text" name="message" placeholder="Message" />
+          <input css={css`height: 100%;`} type="text" name="message" placeholder="Message" />
         </div>
       </div>
     </section>
