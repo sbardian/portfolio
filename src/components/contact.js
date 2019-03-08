@@ -17,7 +17,7 @@ export default ({ children }) => {
         css={css`
           display: grid;
           grid-gap: 20px;
-          grid-template-rows: auto 1fr;
+          grid-template-rows: auto 1fr auto;
         `}
       >
         <div
@@ -39,7 +39,6 @@ export default ({ children }) => {
             grid-gap: 20px;
             grid-template-rows: minmax(200px, 400px);
             height: 250px;
-            margin-bottom: 3em;
           `}
         >
           <input
@@ -50,6 +49,37 @@ export default ({ children }) => {
             name="message"
             placeholder="Message"
           />
+        </div>
+        <div>
+          <button
+            css={css`
+              appearance: none;
+              transition: all 0.2s ease-in-out;
+              background-color: transparent;
+              border-radius: 0.35em;
+              border: 3px solid #f7f7f7;
+              color: #f7f7f7;
+              cursor: pointer;
+              display: inline-block;
+              font-weight: 400;
+              height: 3.15em;
+              height: calc(2.75em + 6px);
+              line-height: 2.75em;
+              min-width: 10em;
+              padding: 0 1.5em;
+              text-align: center;
+              text-decoration: none;
+              white-space: nowrap;
+              margin-bottom: 3em;
+              &:hover {
+                background: #f7f7f7;
+                color: #666;
+                border-color: #666;
+              }
+            `}
+          >
+            Submit
+          </button>
         </div>
       </div>
     </section>
