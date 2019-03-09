@@ -34,12 +34,11 @@ export default ({ children, projects }) => {
       >
         {
           edges.map((proj, index) => {
-            console.log('>>> ', index)
           return (
             <div
             css={css`
             flex-basis: 350px;
-            min-width: 250px;
+            min-width: 50px;
           `}
             >
             <Fade right={parseInt(index) % 2 === 0 ? false : true} left={parseInt(index) % 2 === 0 ? true : false} >
@@ -77,75 +76,6 @@ export default ({ children, projects }) => {
           )
         })}
 
-        <Fade right>
-          <article>
-            <img src="https://source.unsplash.com/random" alt="project1" />
-            <div>
-              <h3
-                css={css`
-                  display: inline;
-                  padding-right: 10px;
-                `}
-              >
-                Lethe
-              </h3>
-              <a
-                css={css`
-                  color: #e1e1e1;
-                `}
-                href="https://github.com/sbardian/lethe"
-              >
-                <FontAwesomeIcon size="lg" icon={faGithub} />
-              </a>
-            </div>
-          </article>
-        </Fade>
-        <Fade left>
-          <article>
-            <img src="https://source.unsplash.com/random" alt="project1" />
-            <div>
-              <h3
-                css={css`
-                  display: inline;
-                  padding-right: 10px;
-                `}
-              >
-                Gatsby Breadcrumbs
-              </h3>
-              <a
-                css={css`
-                  color: #e1e1e1;
-                `}
-                href="https://github.com/sbardian/gatsby-plugin-breadcrumb"
-              >
-                <FontAwesomeIcon size="lg" icon={faGithub} />
-              </a>
-            </div>
-          </article>
-        </Fade>
-        <Fade right>
-          <article>
-            <img src="https://source.unsplash.com/random" alt="project1" />
-            <div>
-              <h3
-                css={css`
-                  display: inline;
-                  padding-right: 10px;
-                `}
-              >
-                Books
-              </h3>
-              <a
-                css={css`
-                  color: #e1e1e1;
-                `}
-                href="https://github.com/sbardian/books"
-              >
-                <FontAwesomeIcon size="lg" icon={faGithub} />
-              </a>
-            </div>
-          </article>
-        </Fade>
       </div>
     </section>
   )
