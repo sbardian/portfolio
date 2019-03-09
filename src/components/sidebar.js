@@ -8,6 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import mq from "./mediaQueries"
 import sidebarBg from "../images/sidebar-bg.jpg"
 import avatar from "../images/avatar.jpg"
+import gatsby from "../images/gatsby-icon.png"
 
 export default () => {
   return (
@@ -87,7 +88,7 @@ export default () => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            grid-template-columns: 35px 35px 35px;
+            grid-template-columns: 35px 35px 35px 35px;
             padding-bottom: 20px;
             align-items: center;
             justify-items: center;
@@ -116,6 +117,16 @@ export default () => {
             href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
           >
             <FontAwesomeIcon size="2x" icon={faEnvelope} />
+          </a>
+          <a href="https://gatsby.com">
+            <img
+              css={css`
+                height: 2em;
+              `}
+              src={gatsby}
+              alt="Gatsby"
+              title="Built with Gatsby"
+            />
           </a>
         </div>
       </div>
