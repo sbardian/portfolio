@@ -38,7 +38,7 @@ export default ({ children, projects }) => {
             <div
             css={css`
             flex-basis: 350px;
-            min-width: 50px;
+            min-width: 200px;
           `}
             >
             <Fade right={parseInt(index) % 2 === 0 ? false : true} left={parseInt(index) % 2 === 0 ? true : false} >
