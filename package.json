@@ -30,34 +30,34 @@
     "url": "https://github.com/sbardian/portfolio/issues"
   },
   "dependencies": {
-    "@emotion/core": "^10.0.7",
-    "@emotion/styled": "^10.0.7",
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-brands-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
+    "@emotion/core": "10.0.7",
+    "@emotion/styled": "10.0.7",
+    "@fortawesome/fontawesome-svg-core": "1.2.15",
+    "@fortawesome/free-brands-svg-icons": "5.7.2",
+    "@fortawesome/free-solid-svg-icons": "5.7.2",
+    "@fortawesome/react-fontawesome": "0.1.4",
     "gatsby": "2.1.23",
     "gatsby-image": "2.0.31",
-    "gatsby-plugin-emotion": "^4.0.4",
+    "gatsby-plugin-emotion": "4.0.4",
     "gatsby-plugin-manifest": "2.0.22",
     "gatsby-plugin-offline": "2.0.24",
     "gatsby-plugin-react-helmet": "3.0.8",
     "gatsby-plugin-sharp": "2.0.25",
-    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.0.23",
-    "gatsby-source-sanity": "^1.1.2",
+    "gatsby-source-sanity": "1.1.2",
     "gatsby-transformer-sharp": "2.1.15",
-    "normalize.css": "^8.0.1",
+    "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.4",
     "react-dom": "16.8.4",
     "react-helmet": "5.2.0",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "1.2.2"
   },
   "devDependencies": {
-    "cypress": "^3.1.5",
-    "cypress-testing-library": "^2.3.6",
+    "cypress": "3.1.5",
+    "cypress-testing-library": "2.3.6",
     "prettier": "1.16.4",
-    "start-server-and-test": "^1.7.11"
+    "start-server-and-test": "1.7.11"
   }
 }
