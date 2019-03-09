@@ -1,7 +1,7 @@
 describe("placeholder test", () => {
   it("should pass", () => {
     cy.visit("http://localhost:8000/")
-      .getByText("lorem")
+      .getByText("Brian Andrews")
       .should("exist")
   })
 })
