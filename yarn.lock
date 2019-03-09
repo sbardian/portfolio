@@ -694,9 +694,10 @@
     "@emotion/utils" "0.11.1"
     "@emotion/weak-memoize" "0.2.2"
 
-"@emotion/core@^10.0.7":
+"@emotion/core@10.0.7":
   version "10.0.7"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.0.7.tgz#a894324b944cb06dcd36813afe35f07b0ed8d20d"
+  integrity sha512-f5ZeA8R5mTiD2VDFCy6kRTXrQXN/1s79WPvEZZSwROJIyy9mHBB0/Lxg9BSIXfFdXryVw76kHNehTcBkgDYS7A==
   dependencies:
     "@emotion/cache" "^10.0.7"
     "@emotion/css" "^10.0.7"
@@ -749,9 +750,10 @@
     "@emotion/utils" "0.11.1"
     object-assign "^4.1.1"
 
-"@emotion/styled@^10.0.7":
+"@emotion/styled@10.0.7":
   version "10.0.7"
   resolved "https://registry.yarnpkg.com/@emotion/styled/-/styled-10.0.7.tgz#e36c84bf14435127481a1ea0b038d64a15c13995"
+  integrity sha512-H/7wi2bFYl6GdxBPYef0FNYay1ay5iKFGYxmkuH8WJZnDc/bf1Bx+lH9IQ+QujAMgmAtUHwJsgO2vwj0LEIYcg==
   dependencies:
     "@emotion/styled-base" "^10.0.7"
     babel-plugin-emotion "^10.0.7"
@@ -777,28 +779,28 @@
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.15.tgz#16af950653083d1e3064061de9f8e5e3b579f688"
   integrity sha512-ATBRyKJw1d2ko+0DWN9+BXau0EK3I/Q6pPzPv3LhJD7r052YFAkAdfb1Bd7ZqhBsJrdse/S7jKxWUOZ61qBD4g==
 
-"@fortawesome/fontawesome-svg-core@^1.2.15":
+"@fortawesome/fontawesome-svg-core@1.2.15":
   version "1.2.15"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.15.tgz#368f9fc7e8e8d8636495dc7483f97510f920ba97"
   integrity sha512-M/sHyl4g2VBtKYkay1Z+XImMyTVcaBPmehYtPw4HKD9zg2E7eovB7Yx98aUfZjPbroGqa+IL4/+KhWBMOGlHIQ==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.15"
 
-"@fortawesome/free-brands-svg-icons@^5.7.2":
+"@fortawesome/free-brands-svg-icons@5.7.2":
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-5.7.2.tgz#80ea37f12d22a281a5eadcd0cd3c870683e5dec1"
   integrity sha512-91rIjo00vy7PNrXg5auDsPOSTjmgzc+UUqMyUZHmIrXG5OXMHgjAYMTgEIgs91Lm5XcJtggFZCQz1u5fGFnj2A==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.15"
 
-"@fortawesome/free-solid-svg-icons@^5.7.2":
+"@fortawesome/free-solid-svg-icons@5.7.2":
   version "5.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.7.2.tgz#9ec2ed353d630092a8e19cc8aae2f716572963e5"
   integrity sha512-iujcXMyAvIbWM8W3jkOLpvJbR+rPpdN1QyqhZeJaLRdHPH4JmuovIAYP4vx5Sa1csZVXfRD1eDWqVZ/jGM620A==
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.15"
 
-"@fortawesome/react-fontawesome@^0.1.4":
+"@fortawesome/react-fontawesome@0.1.4":
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.1.4.tgz#18d61d9b583ca289a61aa7dccc05bd164d6bc9ad"
   integrity sha512-GwmxQ+TK7PEdfSwvxtGnMCqrfEm0/HbRHArbUudsYiy9KzVCwndxa2KMcfyTQ8El0vROrq8gOOff09RF1oQe8g==
@@ -2914,15 +2916,17 @@ cyclist@~0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
 
-cypress-testing-library@^2.3.6:
+cypress-testing-library@2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/cypress-testing-library/-/cypress-testing-library-2.3.6.tgz#79a52ff27ced8b2c43f5b90dc927f98d0b67866a"
+  integrity sha512-AxCVCT5y/Z0Gl66Yd/+tTEZ8mprNE9i3FRN6HgCH5NcLuHIUa/xhTzFp4E433lg2pr5ivpWL0P93KJcgyWL86Q==
   dependencies:
     dom-testing-library "^3.12.4"
 
-cypress@^3.1.5:
+cypress@3.1.5:
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/cypress/-/cypress-3.1.5.tgz#5227b2ce9306c47236d29e703bad9055d7218042"
+  integrity sha512-jzYGKJqU1CHoNocPndinf/vbG28SeU+hg+4qhousT/HDBMJxYgjecXOmSgBX/ga9/TakhqSrIrSP2r6gW/OLtg==
   dependencies:
     "@cypress/listr-verbose-renderer" "0.4.1"
     "@cypress/xvfb" "1.2.3"
@@ -4477,9 +4481,10 @@ gatsby-link@^2.0.14:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-plugin-emotion@^4.0.4:
+gatsby-plugin-emotion@4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.0.4.tgz#de005fc40cf02d8f30dfa7dd2c6b6ec394c10fbc"
+  integrity sha512-dK/0rk6f5j9SwiSRExXp32o+PY3itw5H/08thKMirN7CFTbhHw4XTUTP4CKwFCI4d2ARquUB9zzedMDyri0U2g==
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.5"
@@ -4543,7 +4548,7 @@ gatsby-plugin-sharp@2.0.25:
     sharp "^0.21.3"
     svgo "^0.7.2"
 
-gatsby-plugin-web-font-loader@^1.0.4:
+gatsby-plugin-web-font-loader@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-web-font-loader/-/gatsby-plugin-web-font-loader-1.0.4.tgz#c50bdb0c1980110b3fd213a5be70feb2459514c3"
   integrity sha512-3c39bX9CcsYJQFhhmTyjuMJSqpld2rX+HsTOxP9k1PKFR4Rvo3lpzBW4d1tVpmUesR8BNL6u9eHT7/XksS1iog==
@@ -4579,7 +4584,7 @@ gatsby-source-filesystem@2.0.23:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-sanity@^1.1.2:
+gatsby-source-sanity@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-1.1.2.tgz#2eeca0b3bd1a8b4e8f5eeca5658fe3786c1598ad"
   integrity sha512-uT/IGN9webdlplTOYtleo3mdKSxfh2nncriKGOYL42OzZS2ahtY48FiBoBnrZ79HgbQ1OqN3uiNCcIIlFzyHMw==
@@ -6985,7 +6990,7 @@ normalize-url@^3.0.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
 
-normalize.css@^8.0.1:
+normalize.css@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
   integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
@@ -8271,7 +8276,7 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-reveal@^1.2.2:
+react-reveal@1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.2.tgz#f47fbc44debc4c185ae2163a215a9e822c7adfef"
   integrity sha512-JCv3fAoU6Z+Lcd8U48bwzm4pMZ79qsedSXYwpwt6lJNtj/v5nKJYZZbw3yhaQPPgYePo3Y0NOCoYOq/jcsisuw==
@@ -9251,9 +9256,10 @@ stackframe@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.4.tgz#357b24a992f9427cba6b545d96a14ed2cbca187b"
 
-start-server-and-test@^1.7.11:
+start-server-and-test@1.7.11:
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/start-server-and-test/-/start-server-and-test-1.7.11.tgz#1eb258e2b3bb85fefbd885db96e0d5c52b0b5203"
+  integrity sha512-651SCOfhPT65Xjhecvx/ZMJs8UOd5VItjjmpYH95aM6Hr4P8N8UIcxEgDhY/aaVmthACH7qFTqs4EA/KHykjtw==
   dependencies:
     bluebird "3.5.3"
     check-more-types "2.24.0"
