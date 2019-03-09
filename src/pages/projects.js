@@ -20,13 +20,14 @@ export const projectImages = graphql`
     allSanityProjects {
       edges {
         node {
+          id
           name
           description
           demoUrl
           repoUrl
           image {
             asset {
-              fluid(maxWidth: 500) {
+              fluid(maxWidth: 350) {
                 ...GatsbySanityImageFluid
               }
             }

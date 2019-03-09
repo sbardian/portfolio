@@ -10,6 +10,7 @@ import mq from "./mediaQueries"
 
 export default ({ children, projects }) => {
   const { edges } = projects
+
   return (
     <section
       css={css`
@@ -21,6 +22,9 @@ export default ({ children, projects }) => {
       `}
     >
       <h2>Recent Projects</h2>
+      <p>
+        This is a list of some of my recent side projects! I have not included any projects I have done for work here. 
+      </p>
       <div
         css={css`
           display: flex;
@@ -28,9 +32,17 @@ export default ({ children, projects }) => {
           justify-content: space-around;
         `}
       >
-        {edges.map(proj => {
+        {
+          edges.map((proj, index) => {
+            console.log('>>> ', index)
           return (
-            <Fade left>
+            <div
+            css={css`
+            flex-basis: 350px;
+            min-width: 250px;
+          `}
+            >
+            <Fade right={parseInt(index) % 2 === 0 ? false : true} left={parseInt(index) % 2 === 0 ? true : false} >
               <article>
                 <a href={proj.node.demoUrl} title="Demo" target="_blank">
                   <Img
@@ -38,7 +50,9 @@ export default ({ children, projects }) => {
                     alt={proj.node.name}
                   />
                 </a>
-                <div>
+                <div
+                  css={css`margin-top: 10px;`}
+                >
                   <h3
                     css={css`
                       display: inline;
@@ -59,6 +73,7 @@ export default ({ children, projects }) => {
                 </div>
               </article>
             </Fade>
+            </div>
           )
         })}
 
