@@ -14,10 +14,10 @@ export default ({ children, projects }) => {
   return (
     <section
       css={css`
-        width: 90%;
+        /* width: 100%; */
         ${mq.sm(css`
           grid-template-columns: 1fr;
-          width: 90%;
+          /* width: 100%; */
         `)};
       `}
     >
@@ -29,7 +29,7 @@ export default ({ children, projects }) => {
         css={css`
           display: flex;
           flex-wrap: wrap;
-          justify-content: start;
+          justify-content: center;
         `}
       >
         {
@@ -38,7 +38,7 @@ export default ({ children, projects }) => {
             <div
             css={css`
             flex-basis: 350px;
-            min-width: 200px;
+            /* min-width: 200px; */
           `}
             >
             <Fade right={parseInt(index) % 2 === 0 ? false : true} left={parseInt(index) % 2 === 0 ? true : false} >
