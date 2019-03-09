@@ -2,12 +2,14 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./mediaQueries"
 
-export default ({ children }) => {
+export default ({ children, projects }) => {
+  const { edges } = projects
   return (
     <section
       css={css`
@@ -26,29 +28,40 @@ export default ({ children }) => {
           justify-content: space-around;
         `}
       >
-        <Fade left>
-          <article>
-            <img src="https://source.unsplash.com/random" alt="project1" />
-            <div>
-              <h3
-                css={css`
-                  display: inline;
-                  padding-right: 10px;
-                `}
-              >
-                Debt Tracker
-              </h3>
-              <a
-                css={css`
-                  color: #e1e1e1;
-                `}
-                href="https://github.com/sbardian/debttrackerapi"
-              >
-                <FontAwesomeIcon size="lg" icon={faGithub} />
-              </a>
-            </div>
-          </article>
-        </Fade>
+        {edges.map(proj => {
+          return (
+            <Fade left>
+              <article>
+                <a href={proj.node.demoUrl} title="Demo" target="_blank">
+                  <Img
+                    fluid={proj.node.image.asset.fluid}
+                    alt={proj.node.name}
+                  />
+                </a>
+                <div>
+                  <h3
+                    css={css`
+                      display: inline;
+                      padding-right: 10px;
+                    `}
+                  >
+                    {proj.node.name}
+                  </h3>
+                  <p>{proj.node.description}</p>
+                  <a
+                    css={css`
+                      color: #e1e1e1;
+                    `}
+                    href={proj.node.repoUrl}
+                  >
+                    <FontAwesomeIcon size="lg" icon={faGithub} />
+                  </a>
+                </div>
+              </article>
+            </Fade>
+          )
+        })}
+
         <Fade right>
           <article>
             <img src="https://source.unsplash.com/random" alt="project1" />

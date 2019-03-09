@@ -14,7 +14,14 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -33,6 +40,13 @@ module.exports = {
         google: {
           families: ["Source Sans Pro"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-sanity`,
+      options: {
+        projectId: "yujruzjf",
+        dataset: "portfolio",
       },
     },
     `gatsby-plugin-emotion`,
