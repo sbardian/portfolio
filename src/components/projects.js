@@ -29,7 +29,7 @@ export default ({ children, projects }) => {
         css={css`
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-around;
+          justify-content: start;
         `}
       >
         {
