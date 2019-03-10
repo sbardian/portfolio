@@ -6,7 +6,6 @@ import { jsx, css } from "@emotion/core"
 import { Button } from "./styled/button"
 import mq from "./mediaQueries"
 
-// TODO: create component for nav buttons
 export default ({ children }) => {
   return (
     <div
@@ -28,8 +27,6 @@ export default ({ children }) => {
           ${mq.sm(css`
             width: 100%;
             max-width: -moz-available;
-            width: -webkit-fill-available;
-            max-width: -webkit-fill-available;
           `)}
         `}
       >
@@ -57,8 +54,6 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
-              width: -webkit-fill-available;
-              max-width: -webkit-fill-available;
             `)}
           `}
           to="/"
@@ -71,7 +66,6 @@ export default ({ children }) => {
           ${mq.sm(css`
             width: 100%;
             max-width: -moz-available;
-            max-width: -webkit-fill-available;
           `)}
         `}
       >
@@ -99,7 +93,6 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
-              max-width: -webkit-fill-available;
             `)}
           `}
           to="/projects"
@@ -112,7 +105,6 @@ export default ({ children }) => {
           ${mq.sm(css`
             width: 100%;
             max-width: -moz-available;
-            max-width: -webkit-fill-available;
           `)}
         `}
       >
@@ -140,7 +132,6 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
-              max-width: -webkit-fill-available;
             `)}
           `}
           to="/contact"
