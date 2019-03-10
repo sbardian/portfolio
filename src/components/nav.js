@@ -6,6 +6,7 @@ import { jsx, css } from "@emotion/core"
 import { Button } from "./styled/button"
 import mq from "./mediaQueries"
 
+// TODO: create component for nav buttons
 export default ({ children }) => {
   return (
     <div
@@ -16,16 +17,22 @@ export default ({ children }) => {
         justify-items: center;
         width: 100%;
         padding: 40px 0 0 0;
-        ${mq.xl(css`
-          /* grid-template-columns: 1fr; */
-        `)};
         ${mq.sm(css`
           grid-template-columns: 1fr;
-          justify-items: center;
+          justify-items: start;
         `)}
       `}
     >
-      <div>
+      <div
+        css={css`
+          ${mq.sm(css`
+            width: 100%;
+            max-width: -moz-available;
+            width: -webkit-fill-available;
+            max-width: -webkit-fill-available;
+          `)}
+        `}
+      >
         <Link
           css={css`
             appearance: none;
@@ -47,13 +54,27 @@ export default ({ children }) => {
               color: #92e5f3;
               border-color: #92e5f3;
             }
+            ${mq.sm(css`
+              width: 100%;
+              max-width: -moz-available;
+              width: -webkit-fill-available;
+              max-width: -webkit-fill-available;
+            `)}
           `}
           to="/"
         >
           Home
         </Link>
       </div>
-      <div>
+      <div
+        css={css`
+          ${mq.sm(css`
+            width: 100%;
+            max-width: -moz-available;
+            max-width: -webkit-fill-available;
+          `)}
+        `}
+      >
         <Link
           css={css`
             appearance: none;
@@ -75,13 +96,26 @@ export default ({ children }) => {
               color: #92e5f3;
               border-color: #92e5f3;
             }
+            ${mq.sm(css`
+              width: 100%;
+              max-width: -moz-available;
+              max-width: -webkit-fill-available;
+            `)}
           `}
           to="/projects"
         >
           Projects
         </Link>
       </div>
-      <div>
+      <div
+        css={css`
+          ${mq.sm(css`
+            width: 100%;
+            max-width: -moz-available;
+            max-width: -webkit-fill-available;
+          `)}
+        `}
+      >
         <Link
           css={css`
             appearance: none;
@@ -103,6 +137,11 @@ export default ({ children }) => {
               color: #92e5f3;
               border-color: #92e5f3;
             }
+            ${mq.sm(css`
+              width: 100%;
+              max-width: -moz-available;
+              max-width: -webkit-fill-available;
+            `)}
           `}
           to="/contact"
         >
