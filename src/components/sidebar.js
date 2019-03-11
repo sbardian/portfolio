@@ -8,7 +8,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import mq from "./mediaQueries"
 import sidebarBg from "../images/sidebar-bg.jpg"
 import avatar from "../images/avatar.jpg"
-import gatsby from "../images/gatsby-icon.png"
+import gatsby from "../images/gatsby.png"
 
 export default () => {
   return (
