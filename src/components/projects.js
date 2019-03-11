@@ -21,9 +21,10 @@ export default ({ children, projects }) => {
         `)};
       `}
     >
-      <h2>Recent Projects</h2>
+      <h1>Recent Projects</h1>
       <p>
-        This is a list of some of my recent side projects! I have not included any projects I have done for work here. 
+        This is a list of some of my recent side projects! I have not included
+        any projects I have done for work here.
       </p>
       <div
         css={css`
@@ -32,50 +33,53 @@ export default ({ children, projects }) => {
           justify-content: center;
         `}
       >
-        {
-          edges.map((proj, index) => {
+        {edges.map((proj, index) => {
           return (
             <div
-            css={css`
-            flex-basis: 350px;
-            /* min-width: 200px; */
-          `}
+              css={css`
+                flex-basis: 350px;
+                /* min-width: 200px; */
+              `}
             >
-            <Fade right={parseInt(index) % 2 === 0 ? false : true} left={parseInt(index) % 2 === 0 ? true : false} >
-              <article>
-                <a href={proj.node.demoUrl} title="Demo" target="_blank">
-                  <Img
-                    fluid={proj.node.image.asset.fluid}
-                    alt={proj.node.name}
-                  />
-                </a>
-                <div
-                  css={css`margin-top: 10px;`}
-                >
-                  <h3
-                    css={css`
-                      display: inline;
-                      padding-right: 10px;
-                    `}
-                  >
-                    {proj.node.name}
-                  </h3>
-                  <p>{proj.node.description}</p>
-                  <a
-                    css={css`
-                      color: #e1e1e1;
-                    `}
-                    href={proj.node.repoUrl}
-                  >
-                    <FontAwesomeIcon size="lg" icon={faGithub} />
+              <Fade
+                right={parseInt(index) % 2 === 0 ? false : true}
+                left={parseInt(index) % 2 === 0 ? true : false}
+              >
+                <article>
+                  <a href={proj.node.demoUrl} title="Demo" target="_blank">
+                    <Img
+                      fluid={proj.node.image.asset.fluid}
+                      alt={proj.node.name}
+                    />
                   </a>
-                </div>
-              </article>
-            </Fade>
+                  <div
+                    css={css`
+                      margin-top: 10px;
+                    `}
+                  >
+                    <h3
+                      css={css`
+                        display: inline;
+                        padding-right: 10px;
+                      `}
+                    >
+                      {proj.node.name}
+                    </h3>
+                    <p>{proj.node.description}</p>
+                    <a
+                      css={css`
+                        color: #e1e1e1;
+                      `}
+                      href={proj.node.repoUrl}
+                    >
+                      <FontAwesomeIcon size="lg" icon={faGithub} />
+                    </a>
+                  </div>
+                </article>
+              </Fade>
             </div>
           )
         })}
-
       </div>
     </section>
   )
