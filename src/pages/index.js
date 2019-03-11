@@ -27,8 +27,12 @@ import typescript from "../images/typescript.svg"
 import visualstudio from "../images/visualstudio.svg"
 import php from "../images/php.svg"
 import powershell from "../images/powershell.svg"
+import babel from "../images/babel.svg"
+import webpack from "../images/webpack.svg"
+import yarn from "../images/yarn.png"
+import sequelize from "../images/sequelize.png"
 
-// TODO: find icons for babel, winpak, bash, python,  and others. . .
+// TODO: find icons for bash, python,  and others. . .
 
 // TODO: fade a color overlay over the top image. or make new images with different colors and animate the change.
 const IndexPage = () => (
@@ -43,10 +47,7 @@ const IndexPage = () => (
         so you don't miss anything. I might even add a blog at some point, but
         as you have probably already gathered, I'm not much of a writer, sooo...
       </p>
-      <h2>
-        Here are a few of the technologies, frameworks, and languages I'm
-        proficient.
-      </h2>
+      <h2>Here are a few of the technologies I'm proficient in.</h2>
       <div
         css={css`
           display: grid;
@@ -121,6 +122,18 @@ const IndexPage = () => (
         </div>
         <div>
           <img width="48" src={cSharp} alt="C#" />
+        </div>
+        <div>
+          <img width="48" src={babel} alt="C#" />
+        </div>
+        <div>
+          <img width="48" src={webpack} alt="C#" />
+        </div>
+        <div>
+          <img width="48" src={yarn} alt="C#" />
+        </div>
+        <div>
+          <img width="48" src={sequelize} alt="C#" />
         </div>
       </div>
     </section>
