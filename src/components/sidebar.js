@@ -7,6 +7,7 @@ import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import mq from "./mediaQueries"
 import sidebarBg from "../images/sidebar-bg.jpg"
+import overlay from "../images/overlay.png"
 import avatar from "../images/avatar.jpg"
 import gatsby from "../images/gatsby.png"
 
@@ -24,9 +25,10 @@ export default () => {
         position: fixed;
         top: 0;
         left: 0;
-        background-image: url(${sidebarBg});
+        background-image: url(${overlay}), url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat;
+        z-index: 20;
         transition: all 0.3s linear;
         ${mq.xl(css`
           width: 100%;
@@ -88,7 +90,7 @@ export default () => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            grid-template-columns: 35px 35px 35px 35px;
+            grid-template-columns: 35px 35px 35px;
             padding-bottom: 20px;
             align-items: center;
             justify-items: center;
@@ -118,17 +120,25 @@ export default () => {
           >
             <FontAwesomeIcon size="2x" icon={faEnvelope} />
           </a>
-          <a href="https://gatsby.com">
-            <img
-              css={css`
-                height: 2em;
-              `}
-              src={gatsby}
-              alt="Gatsby"
-              title="Built with Gatsby"
-            />
-          </a>
         </div>
+      </div>
+      <div
+        css={css`
+          position: absolute;
+          bottom: 0;
+          right: 5px;
+        `}
+      >
+        <a href="https://gatsby.com">
+          <img
+            css={css`
+              height: 1em;
+            `}
+            src={gatsby}
+            alt="Gatsby"
+            title="Built with Gatsby"
+          />
+        </a>
       </div>
     </div>
   )
