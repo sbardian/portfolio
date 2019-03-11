@@ -47,7 +47,7 @@ const IndexPage = () => (
         so you don't miss anything. I might even add a blog at some point, but
         as you have probably already gathered, I'm not much of a writer, sooo...
       </p>
-      <h2>Here are a few of the technologies I'm proficient in.</h2>
+      <h2>Here are a few of the technologies I am proficient in.</h2>
       <div
         css={css`
           display: grid;
@@ -61,76 +61,76 @@ const IndexPage = () => (
           <img width="48" src={css3} alt="C#" />
         </div>
         <div>
-          <img width="42" src={gatsby} alt="C#" />
+          <img width="42" src={gatsby} alt="gatsby" />
         </div>
         <div>
-          <img width="48" src={git} alt="C#" />
+          <img width="48" src={git} alt="git" />
         </div>
         <div>
-          <img width="48" src={github} alt="C#" />
+          <img width="48" src={github} alt="github" />
         </div>
         <div>
-          <img width="48" src={html5} alt="C#" />
+          <img width="48" src={html5} alt="html5" />
         </div>
         <div>
-          <img width="48" src={javascript} alt="C#" />
+          <img width="48" src={javascript} alt="javascript" />
         </div>
         <div>
-          <img width="48" src={joomla} alt="C#" />
+          <img width="48" src={joomla} alt="joomla" />
         </div>
         <div>
-          <img width="48" src={sharepoint} alt="C#" />
+          <img width="48" src={sharepoint} alt="sharepoint" />
         </div>
         <div>
-          <img width="48" src={mongodb} alt="C#" />
+          <img width="48" src={mongodb} alt="mongodb" />
         </div>
         <div>
-          <img width="48" src={nodejs} alt="C#" />
+          <img width="48" src={nodejs} alt="nodejs" />
         </div>
         <div>
-          <img width="48" src={npm} alt="C#" />
+          <img width="48" src={npm} alt="npm" />
         </div>
         <div>
-          <img width="48" src={wordpress} alt="C#" />
+          <img width="48" src={wordpress} alt="wordpress" />
         </div>
         <div>
-          <img width="48" src={android} alt="C#" />
+          <img width="48" src={android} alt="android" />
         </div>
         <div>
-          <img width="48" src={gitlab} alt="C#" />
+          <img width="48" src={gitlab} alt="gitlab" />
         </div>
         <div>
-          <img width="48" src={java} alt="C#" />
+          <img width="48" src={java} alt="java" />
         </div>
         <div>
-          <img width="48" src={jquery} alt="C#" />
+          <img width="48" src={jquery} alt="jquery" />
         </div>
         <div>
-          <img width="48" src={nginx} alt="C#" />
+          <img width="48" src={nginx} alt="nginx" />
         </div>
         <div>
-          <img width="48" src={typescript} alt="C#" />
+          <img width="48" src={typescript} alt="typescript" />
         </div>
         <div>
-          <img width="48" src={visualstudio} alt="C#" />
+          <img width="48" src={visualstudio} alt="visualstudio" />
         </div>
         <div>
-          <img width="48" src={php} alt="C#" />
+          <img width="48" src={php} alt="php" />
         </div>
         <div>
-          <img width="48" src={powershell} alt="C#" />
+          <img width="48" src={powershell} alt="powershell" />
         </div>
         <div>
           <img width="48" src={cSharp} alt="C#" />
         </div>
         <div>
-          <img width="48" src={babel} alt="C#" />
+          <img width="48" src={babel} alt="babel" />
         </div>
         <div>
-          <img width="48" src={webpack} alt="C#" />
+          <img width="48" src={webpack} alt="webpack" />
         </div>
         <div>
-          <img width="48" src={yarn} alt="C#" />
+          <img width="48" src={yarn} alt="yarn" />
         </div>
         <div>
           <img width="48" src={sequelize} alt="C#" />
