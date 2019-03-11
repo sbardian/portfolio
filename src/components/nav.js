@@ -54,6 +54,7 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
+              max-width: -webkit-fill-available;
             `)}
           `}
           to="/"
@@ -93,6 +94,7 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
+              max-width: -webkit-fill-available;
             `)}
           `}
           to="/projects"
@@ -132,6 +134,7 @@ export default ({ children }) => {
             ${mq.sm(css`
               width: 100%;
               max-width: -moz-available;
+              max-width: -webkit-fill-available;
             `)}
           `}
           to="/contact"
