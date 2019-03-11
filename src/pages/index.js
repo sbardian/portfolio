@@ -29,6 +29,8 @@ import php from "../images/php.svg"
 import powershell from "../images/powershell.svg"
 
 // TODO: find icons for babel, winpak, bash, python,  and others. . .
+
+// TODO: fade a color overlay over the top image. or make new images with different colors and animate the change.
 const IndexPage = () => (
   <Layout>
     <section>
