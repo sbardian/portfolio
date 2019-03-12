@@ -125,7 +125,7 @@ export default () => {
       <div
         css={css`
           position: absolute;
-          bottom: 0;
+          bottom: 3px;
           right: 5px;
         `}
       >
