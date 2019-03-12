@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `portfolio`,
+    description: `Brian Andrews Portfolio`,
+    author: `Brian Andrews`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,13 +25,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby.png`, // This path is relative to the root of the site.
+        name: "Brian Andrews Portfolio",
+        short_name: "brian-andrews-portfolio",
+        start_url: "/",
+        background_color: "#666",
+        theme_color: "#6e93a2",
+        display: "minimal-ui",
+        display: "standalone",
+        icon: "src/images/dev-icon.png",
       },
     },
     {
@@ -50,8 +51,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    `gatsby-plugin-offline`,
   ],
 }
