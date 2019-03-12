@@ -5,15 +5,15 @@ import { jsx, css } from "@emotion/core"
 import NavButton from "./nav-button"
 import mq from "./mediaQueries"
 
-export default ({ children }) => {
+export default () => {
   return (
     <div
       css={css`
         display: grid;
         grid-gap: 20px;
         grid-template-columns: 1fr 1fr 1fr;
+        margin: 0 20px 20px 20px;
         justify-items: center;
-        width: 100%;
         padding: 40px 0 0 0;
         ${mq.sm(css`
           grid-template-columns: 1fr;
