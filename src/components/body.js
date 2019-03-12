@@ -11,18 +11,18 @@ export default ({ children }) => {
         display: grid;
         grid-gap: 20px;
         grid-template-rows: auto 1fr;
-        justify-items: start;
-        height: 100%;
+        justify-items: center;
+        min-height: 100%;
         position: absolute;
-        top: 0;
-        left: 640px;
-        margin: 0px 20px 0px 20px;
+        right: 0;
+        width: 65%;
         transition: all 0.3s linear;
         ${mq.xl(css`
           grid-template-rows: auto 1fr;
           position: absolute;
-          left: 0;
+          width: 100%;
           height: auto;
+          right: auto;
           top: 340px;
         `)};
         ${mq.sm(css`

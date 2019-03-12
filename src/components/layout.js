@@ -1,5 +1,8 @@
+/** @jsx jsx */
+// eslint-disable-next-line
 import React from "react"
-import PropTypes from "prop-types"
+import { jsx, css } from "@emotion/core"
+// import PropTypes from "prop-types"
 import SEO from "../components/seo"
 import Sidebar from "../components/sidebar"
 import Body from "../components/body"

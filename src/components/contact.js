@@ -8,10 +8,9 @@ export default ({ children }) => {
   return (
     <section
       css={css`
-        width: 100%;
+        margin: 0 20px 20px 20px;
         ${mq.sm(css`
           grid-template-columns: 1fr;
-          width: 100%;
         `)};
       `}
     >

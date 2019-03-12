@@ -11,6 +11,7 @@ export default ({ title, to }) => {
       css={css`
         ${mq.sm(css`
           width: 100%;
+          margin: 0 20px 0 20px;
           max-width: -moz-available;
         `)}
       `}

@@ -20,26 +20,26 @@ export default () => {
         grid-template-columns: 150px 250px;
         justify-content: center;
         align-content: center;
-        height: 100%;
-        width: 600px;
+        min-height: 100%;
+        min-width: 35%;
         position: fixed;
-        top: 0;
-        left: 0;
+        /* top: 0;
+        left: 0; */
         background-image: url(${overlay}), url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat;
-        z-index: 20;
+        /* z-index: 20; */
         transition: all 0.3s linear;
         ${mq.xl(css`
-          width: 100%;
-          height: 300px;
+          min-width: 100%;
+          min-height: 300px;
           position: absolute;
           padding: 20px 0 20px 0px;
         `)};
         ${mq.sm(css`
           grid-template-columns: 1fr;
           justify-items: center;
-          height: 500px;
+          min-height: 500px;
           padding: 20px 0 20px 0px;
         `)}
       `}
