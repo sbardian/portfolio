@@ -17,14 +17,14 @@ export default ({ children }) => {
     >
       <h1>Contact me</h1>
       <p>
-        Feel free to contact me for job opertunities, or any old reason you
+        Feel free to contact me for job opportunities, or any old reason you
         want. If you would rather reach out via email, github or twitter see
         icons for each. I will get back with you as soon as possible.
       </p>
 
       <form
         name="contact"
-        method="POST"
+        method="post"
         data-netlify="true"
         netlify-honeypot="youSuckBot"
         action="/success"
@@ -34,6 +34,7 @@ export default ({ children }) => {
           grid-template-rows: auto 1fr auto;
         `}
       >
+        <input type="hidden" name="form-name" value="contact" />
         <div
           css={css`
             display: grid;
@@ -44,19 +45,18 @@ export default ({ children }) => {
             `)};
           `}
         >
+          <div hidden>
+            <label>
+              Don’t fill this out if you're human:
+              <input name="youSuckBot" type="text" aria-label="YouSuckBot" />
+            </label>
+          </div>
           <input
-            css={css`
-              border: 2px solid #e1e1e1;
-              transition: all 0.2s ease-in-out;
-              &:focus {
-                border: 2px solid #92e5f3;
-              }
-            `}
-            type="text"
+            required
+            type="email"
             name="email"
             placeholder="Email"
-          />
-          <input
+            aria-label="Email"
             css={css`
               border: 2px solid #e1e1e1;
               transition: all 0.2s ease-in-out;
@@ -64,9 +64,20 @@ export default ({ children }) => {
                 border: 2px solid #92e5f3;
               }
             `}
+          />
+          <input
+            required
             type="text"
             name="name"
             placeholder="Name"
+            aria-label="Name"
+            css={css`
+              border: 2px solid #e1e1e1;
+              transition: all 0.2s ease-in-out;
+              &:focus {
+                border: 2px solid #92e5f3;
+              }
+            `}
           />
         </div>
         <div
@@ -78,6 +89,10 @@ export default ({ children }) => {
           `}
         >
           <textarea
+            required
+            name="message"
+            placeholder="Message"
+            aria-label="Message"
             css={css`
               border: 2px solid #e1e1e1;
               transition: all 0.2s ease-in-out;
@@ -87,8 +102,6 @@ export default ({ children }) => {
                 border: 2px solid #92e5f3;
               }
             `}
-            name="message"
-            placeholder="Message"
           />
         </div>
         <div>
