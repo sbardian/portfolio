@@ -21,7 +21,14 @@ export default ({ children }) => {
         want. If you would rather reach out via email, github or twitter see
         icons for each. I will get back with you as soon as possible.
       </p>
-      <div
+
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-recaptcha="true"
+        netlify-honeypot="bot-field"
+        action="/success"
         css={css`
           display: grid;
           grid-gap: 20px;
@@ -87,6 +94,7 @@ export default ({ children }) => {
         </div>
         <div>
           <button
+            type="submit"
             css={css`
               appearance: none;
               transition: all 0.2s ease-in-out;
@@ -111,7 +119,7 @@ export default ({ children }) => {
             Submit
           </button>
         </div>
-      </div>
+      </form>
     </section>
   )
 }
