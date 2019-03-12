@@ -7,13 +7,7 @@ import mq from "./mediaQueries"
 
 export default ({ title, to }) => {
   return (
-    <div
-      css={css`
-        ${mq.sm(css`
-          max-width: -moz-available;
-        `)}
-      `}
-    >
+    <div>
       <Link
         to={to}
         activeClassName="active-nav"
@@ -38,9 +32,7 @@ export default ({ title, to }) => {
             border-color: #92e5f3;
           }
           ${mq.sm(css`
-            width: 100%;
-            max-width: -moz-available;
-            max-width: -webkit-fill-available;
+            min-width: 12em;
           `)}
         `}
       >

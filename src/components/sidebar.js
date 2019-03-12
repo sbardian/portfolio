@@ -23,12 +23,9 @@ export default () => {
         min-height: 100%;
         min-width: 35%;
         position: fixed;
-        /* top: 0;
-        left: 0; */
         background-image: url(${overlay}), url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat;
-        /* z-index: 20; */
         transition: all 0.3s linear;
         ${mq.xl(css`
           min-width: 100%;

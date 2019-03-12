@@ -8,7 +8,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./mediaQueries"
 
-export default ({ children, projects }) => {
+export default ({ projects }) => {
   const { edges } = projects
 
   return (
@@ -37,7 +37,6 @@ export default ({ children, projects }) => {
             <div
               css={css`
                 flex-basis: 350px;
-                /* min-width: 200px; */
               `}
             >
               <Fade
