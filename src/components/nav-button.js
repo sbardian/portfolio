@@ -17,6 +17,8 @@ export default ({ title, to }) => {
       `}
     >
       <Link
+        to={to}
+        activeClassName="active-nav"
         css={css`
           appearance: none;
           text-decoration: none;
@@ -43,7 +45,6 @@ export default ({ title, to }) => {
             max-width: -webkit-fill-available;
           `)}
         `}
-        to={to}
       >
         {title}
       </Link>
