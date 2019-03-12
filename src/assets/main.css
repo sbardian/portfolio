@@ -2,11 +2,7 @@ body {
   background-color: #666;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   color: #e1e1e1;
-}
-
-section {
-  /* padding: 1em 1em 1em 1em;
-  margin: 1em 1em 1em 1em; */
+  overflow-x: hidden;
 }
 
 article {
