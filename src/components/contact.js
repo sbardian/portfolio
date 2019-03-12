@@ -91,6 +91,7 @@ export default ({ children }) => {
             name="message"
             placeholder="Message"
           />
+          <div data-netlify-recaptcha="true" />
         </div>
         <div>
           <button
