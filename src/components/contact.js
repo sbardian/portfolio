@@ -26,8 +26,7 @@ export default ({ children }) => {
         name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
-        netlify-honeypot="bot-field"
+        netlify-honeypot="youSuckBot"
         action="/success"
         css={css`
           display: grid;
@@ -91,7 +90,6 @@ export default ({ children }) => {
             name="message"
             placeholder="Message"
           />
-          <div data-netlify-recaptcha="true" />
         </div>
         <div>
           <button
