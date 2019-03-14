@@ -22,8 +22,8 @@ export default ({ projects }) => {
     >
       <h1>Recent Projects</h1>
       <p>
-        This is a list of some of my recent side projects! I have not included
-        any projects I have done for work here.
+        This is a list of my recent side projects. I have not included any
+        projects done for work.
       </p>
       <div
         css={css`

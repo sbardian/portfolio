@@ -16,9 +16,9 @@ export default () => {
     >
       <h1>Contact me</h1>
       <p>
-        Feel free to contact me for job opportunities, or any old reason you
-        want. If you would rather reach out via email, github or twitter see
-        icons for each. I will get back with you as soon as possible.
+        Feel free to contact me for job opportunities, or any reason you want.
+        If you would rather reach out via email, github or twitter see icons for
+        each. I will get back with you as soon as possible.
       </p>
 
       <form
