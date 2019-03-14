@@ -713,21 +713,21 @@
     rxjs "^6.1.0"
     scroll "^2.0.0"
 
-"@sanity/core@0.140.9":
-  version "0.140.9"
-  resolved "https://registry.yarnpkg.com/@sanity/core/-/core-0.140.9.tgz#42d14716ecfd1e473f3161a4b251150c61938760"
-  integrity sha512-iQID+1AJhBZ4GBa9M5M5dtMDFVuBnawdRt3jGjXoNs/nTCSl/weDAsICNIPv+Zj5WukH+M1XF/M/gJpg7mKe7g==
+"@sanity/core@0.140.10":
+  version "0.140.10"
+  resolved "https://registry.yarnpkg.com/@sanity/core/-/core-0.140.10.tgz#48fd351e8a8657f5e1d29bd00885bcb1a3f7bb7f"
+  integrity sha512-XhFMkQqRmnzYO4A7GAxvelQ8j51pTEt0l3EdjJBkPHQoujtaOsWF7uqZeizZKy1gUJwwogwHOFSECUctYkMo+Q==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.0.0"
     "@babel/preset-env" "^7.1.0"
     "@babel/preset-react" "^7.0.0"
     "@babel/register" "^7.0.0"
     "@sanity/check" "0.140.3"
-    "@sanity/export" "0.140.8"
+    "@sanity/export" "0.140.10"
     "@sanity/generate-help-url" "0.140.0"
-    "@sanity/import" "0.140.8"
+    "@sanity/import" "0.140.10"
     "@sanity/mutator" "0.140.0"
-    "@sanity/plugin-loader" "0.140.3"
+    "@sanity/plugin-loader" "0.140.10"
     "@sanity/resolver" "0.140.3"
     "@sanity/schema" "0.140.9"
     "@sanity/server" "0.140.3"
@@ -861,9 +861,10 @@
     eventsource "^1.0.6"
     eventsource-polyfill "^0.9.6"
 
-"@sanity/export@0.140.8":
-  version "0.140.8"
-  resolved "https://registry.npmjs.org/@sanity/export/-/export-0.140.8.tgz#07abef1551b5f845e3f06a7453150f4dbb28414e"
+"@sanity/export@0.140.10":
+  version "0.140.10"
+  resolved "https://registry.yarnpkg.com/@sanity/export/-/export-0.140.10.tgz#82f9bbfb1551fcbff30462324386e07c4c132f69"
+  integrity sha512-VAR9UBB2xhkZQo3avMrKTXdEMnOYVMGb1xBXoR5jiM0ObuxroZEwDhB5Sxj1SpyJvYUkbm0nRD2W5pCtx5JMGQ==
   dependencies:
     archiver "^2.1.1"
     debug "^3.1.0"
@@ -932,9 +933,10 @@
     dom-event "1.0.0"
     lodash "^4.17.4"
 
-"@sanity/import@0.140.8":
-  version "0.140.8"
-  resolved "https://registry.npmjs.org/@sanity/import/-/import-0.140.8.tgz#883cdfd4e8c3bdc55af1ab0da549d8e7ce601a76"
+"@sanity/import@0.140.10":
+  version "0.140.10"
+  resolved "https://registry.yarnpkg.com/@sanity/import/-/import-0.140.10.tgz#12be4cc9d91038a44ae1ca15b1ca57533d703bb9"
+  integrity sha512-XMOCBk2SlYhzZsA4+GGCzAmLA3i1nk/pVZyqET0Q4ZJ9AM3Eg7cb+YXeqxL3gCBUa+nJaQfHfJrEgIhbitA50g==
   dependencies:
     "@sanity/mutator" "0.140.0"
     "@sanity/uuid" "0.140.0"
@@ -968,9 +970,10 @@
     object-assign "^4.1.1"
     rxjs "^6.1.0"
 
-"@sanity/plugin-loader@0.140.3":
-  version "0.140.3"
-  resolved "https://registry.npmjs.org/@sanity/plugin-loader/-/plugin-loader-0.140.3.tgz#63f4d7998e9f016b72025eedb64c32ec0dc7fe4a"
+"@sanity/plugin-loader@0.140.10":
+  version "0.140.10"
+  resolved "https://registry.yarnpkg.com/@sanity/plugin-loader/-/plugin-loader-0.140.10.tgz#7d06f1415af7bf4b3483c86739ede8b5e48be721"
+  integrity sha512-8k61Pa7GpuwYIykXQeAqNHAdHFxeB3SZBohJKSHDrT+N9EHtwzZjNld1j3wvWmKlIcxl3qZyQ/WSyTK4M+C89A==
   dependencies:
     "@sanity/resolver" "0.140.3"
     "@sanity/util" "0.140.3"
