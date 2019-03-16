@@ -29,7 +29,11 @@ import babel from "../images/babel.svg"
 import webpack from "../images/webpack.svg"
 import yarn from "../images/yarn.png"
 import sequelize from "../images/sequelize.png"
+import redux from "../images/redux.svg"
+import react from "../images/react.svg"
 import main from "../assets/main.css"
+
+// TODO: find react and react native icons.
 
 export default () => {
   return (
@@ -55,7 +59,10 @@ export default () => {
         `}
       >
         <div>
-          <img width="48" src={css3} alt="C#" />
+          <img width="48" src={react} alt="react" />
+        </div>
+        <div>
+          <img width="48" src={redux} alt="redux" />
         </div>
         <div>
           <img width="42" src={gatsby} alt="gatsby" />
@@ -77,6 +84,9 @@ export default () => {
         </div>
         <div>
           <img width="48" src={sharepoint} alt="sharepoint" />
+        </div>
+        <div>
+          <img width="48" src={css3} alt="C#" />
         </div>
         <div>
           <img width="48" src={mongodb} alt="mongodb" />
