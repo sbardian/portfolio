@@ -2,13 +2,14 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./mediaQueries"
 
-export default ({ projects }) => {
+const Projects = ({ projects }) => {
   const { edges } = projects
 
   return (
@@ -35,6 +36,7 @@ export default ({ projects }) => {
         {edges.map((proj, index) => {
           return (
             <div
+              key={proj.node.id}
               css={css`
                 flex-basis: 350px;
               `}
@@ -44,7 +46,12 @@ export default ({ projects }) => {
                 left={parseInt(index) % 2 === 0 ? true : false}
               >
                 <article>
-                  <a href={proj.node.demoUrl} title="Demo" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={proj.node.demoUrl}
+                    title="Demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Img
                       fluid={proj.node.image.asset.fluid}
                       alt={proj.node.name}
@@ -82,3 +89,34 @@ export default ({ projects }) => {
     </section>
   )
 }
+
+Projects.propTypes = {
+  projects: PropTypes.shape({
+    edges: PropTypes.arrayOf(
+      PropTypes.shape({
+        node: PropTypes.shape({
+          id: PropTypes.string,
+          name: PropTypes.string,
+          description: PropTypes.string,
+          demoUrl: PropTypes.string,
+          repoUrl: PropTypes.string,
+          image: PropTypes.shape({
+            asset: PropTypes.shape({
+              fluid: PropTypes.shape({
+                base64: PropTypes.string,
+                aspectRatio: PropTypes.number,
+                src: PropTypes.string,
+                srcSet: PropTypes.string,
+                srcWebp: PropTypes.string,
+                srcSetWebp: PropTypes.string,
+                sizes: PropTypes.string,
+              }),
+            }),
+          }),
+        }),
+      })
+    ),
+  }).isRequired,
+}
+
+export default Projects
