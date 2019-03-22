@@ -2,7 +2,6 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import NavButton from "./nav-button"
 import mq from "./mediaQueries"
 
 export default ({ children }) => {

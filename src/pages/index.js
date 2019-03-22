@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/layout"
 import Home from "../components/home"
 import "normalize.css"
+// eslint-disable-next-line
 import main from "../assets/main.css"
 
 // TODO: find icons for bash, python,  and others. . .

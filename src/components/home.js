@@ -31,6 +31,7 @@ import yarn from "../images/yarn.png"
 import sequelize from "../images/sequelize.png"
 import redux from "../images/redux.svg"
 import react from "../images/react.svg"
+// eslint-disable-next-line
 import main from "../assets/main.css"
 
 // TODO: find react and react native icons.

@@ -44,7 +44,7 @@ export default ({ projects }) => {
                 left={parseInt(index) % 2 === 0 ? true : false}
               >
                 <article>
-                  <a href={proj.node.demoUrl} title="Demo" target="_blank">
+                  <a href={proj.node.demoUrl} title="Demo" target="_blank" rel="noopener noreferrer">
                     <Img
                       fluid={proj.node.image.asset.fluid}
                       alt={proj.node.name}

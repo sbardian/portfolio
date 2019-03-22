@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import Projects from "../components/projects"
 import { graphql } from "gatsby"
 import "normalize.css"
+// eslint-disable-next-line
 import main from "../assets/main.css"
 
 const ProjectsPage = ({ data: { allSanityProjects } }) => {
