@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
@@ -45,9 +46,14 @@ export default () => {
           `}
         >
           <div hidden>
-            <label>
-              Don’t fill this out if you're human:
-              <input name="youSuckBot" type="text" aria-label="YouSuckBot" />
+            <label htmlFor="bot-catcher">
+              {`Don’t fill this out if you're human:`}
+              <input
+                id="bot-catcher"
+                name="youSuckBot"
+                type="text"
+                aria-label="YouSuckBot"
+              />
             </label>
           </div>
           <input

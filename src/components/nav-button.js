@@ -1,11 +1,12 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/core"
 import mq from "./mediaQueries"
 
-export default ({ title, to }) => {
+const NavButton = ({ title, to }) => {
   return (
     <div>
       <Link
@@ -41,3 +42,10 @@ export default ({ title, to }) => {
     </div>
   )
 }
+
+NavButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+}
+
+export default NavButton

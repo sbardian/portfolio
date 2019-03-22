@@ -1,10 +1,11 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
 import mq from "./mediaQueries"
 
-export default ({ children }) => {
+const Body = ({ children }) => {
   return (
     <div
       css={css`
@@ -34,3 +35,12 @@ export default ({ children }) => {
     </div>
   )
 }
+
+Body.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+}
+
+export default Body

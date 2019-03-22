@@ -1,12 +1,11 @@
 import React from "react"
-import SEO from "../components/seo"
-import Sidebar from "../components/sidebar"
-import Body from "../components/body"
-import Nav from "../components/nav"
+import PropTypes from "prop-types"
+import Sidebar from "./sidebar"
+import Body from "./body"
+import Nav from "./nav"
 
-export default ({ children }) => (
+const Layout = ({ children }) => (
   <div>
-    <SEO title="Home" />
     <Sidebar />
     <Body>
       <Nav />
@@ -14,3 +13,12 @@ export default ({ children }) => (
     </Body>
   </div>
 )
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]).isRequired,
+}
+
+export default Layout

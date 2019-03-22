@@ -4,7 +4,7 @@ import React from "react"
 import { jsx, css } from "@emotion/core"
 import mq from "./mediaQueries"
 
-export default ({ children }) => {
+export default () => {
   return (
     <div
       css={css`

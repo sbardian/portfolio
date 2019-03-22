@@ -45,9 +45,9 @@ export default () => {
     >
       <h1>Welcome to this fine portfolio site!</h1>
       <p>
-        Hello and welcome to my portfolio site! I hope to update this site
+        {`Hello and welcome to my portfolio site! I hope to update this site
         frequently with new projects, and updates to old projects. So check in
-        often to make sure you don't miss anything!
+        often to make sure you don't miss anything!`}
       </p>
       <h2>Here are a few of the technologies I am proficient in.</h2>
       <div
