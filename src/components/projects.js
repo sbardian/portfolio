@@ -42,8 +42,8 @@ const Projects = ({ projects }) => {
               `}
             >
               <Fade
-                right={parseInt(index) % 2 === 0 ? false : true}
-                left={parseInt(index) % 2 === 0 ? true : false}
+                right={parseInt(index, 10) % 2 !== 0}
+                left={parseInt(index, 10) % 2 === 0}
               >
                 <article>
                   <a
