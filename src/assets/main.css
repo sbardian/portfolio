@@ -10,6 +10,13 @@ article {
   margin: 20px;
 }
 
+p {
+  text-indent: 2em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  line-height: 1.5em;
+}
+
 article img {
   width: 350px;
 }
@@ -32,4 +39,9 @@ textarea {
   background: #2f2d2d !important;
   color: #92e5f3 !important;
   border-color: #92e5f3 !important;
+}
+
+a {
+  color: red;
+  text-decoration: none;
 }

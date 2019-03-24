@@ -41,11 +41,12 @@ export default () => {
     <section
       css={css`
         margin: 0 20px 20px 20px;
+        font-size: 1.3em;
       `}
     >
       <h1>Welcome to this fine portfolio site!</h1>
       <p>
-        {`Hello and welcome to my portfolio site! I hope to update this site
+        {`Welcome to my portfolio site! I hope to update this site
         frequently with new projects, and updates to old projects. So check in
         often to make sure you don't miss anything!`}
       </p>
@@ -143,6 +144,34 @@ export default () => {
         <div>
           <img width="48" src={sequelize} alt="C#" />
         </div>
+      </div>
+        <h2>Interests</h2>
+        <div>
+          <p
+            >
+            {`As you might have assumed I enjoy development, but that is not 
+            what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
+            developing.`}
+          </p>
+          <p>Most of my free time is spent hanging out with my three year old
+            son and wife. Trucks, trains, building forts and dirt are a pretty big
+            deal around here.</p>
+            <p>
+              {`Yard work and home improvement is another thing 
+            I enjoy. You know, "Well, um, actually a pretty nice little Saturday, 
+            we're going to go to Home Depot. Yeah, buy some wallpaper, maybe 
+            get some flooring, stuff like that. Maybe Bed, Bath, & Beyond, I 
+            don't know, I don't know if we'll have enough time".`}
+            </p>
+            <p>
+              I also spend a lot of time reading, so I decided to make a site 
+              to start posting some of the books I have finished recently.  Simply
+              called <a href="https://sbardian-books.netlify.com" alt="Books" target="_blank" rel="noopener noreferrer">Books</a>.
+              The list is not exhaustive of course, just books since I published the site, and maybe a couple more from that year. 
+            </p>
+            <p>
+              That is all I can think of at the moment. Though, this is an ever changing site, so more to come on this, or maybe I will implement that blog someday...
+            </p>
       </div>
     </section>
   )
