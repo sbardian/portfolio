@@ -2,7 +2,7 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import mq from "./mediaQueries"
+import mq from "./media-queries"
 
 export default () => {
   return (

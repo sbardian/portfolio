@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
-import mq from "./mediaQueries"
+import mq from "./media-queries"
 
 const Projects = ({ projects }) => {
   const { edges } = projects

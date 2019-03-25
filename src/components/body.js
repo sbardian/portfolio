@@ -3,7 +3,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
-import mq from "./mediaQueries"
+import mq from "./media-queries"
 
 const Body = ({ children }) => {
   return (

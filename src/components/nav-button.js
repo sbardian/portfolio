@@ -4,7 +4,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/core"
-import mq from "./mediaQueries"
+import mq from "./media-queries"
 
 const NavButton = ({ title, to }) => {
   return (
