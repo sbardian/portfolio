@@ -30,7 +30,6 @@ module.exports = {
         start_url: "/",
         background_color: "#666",
         theme_color: "#6e93a2",
-        display: "minimal-ui",
         display: "standalone",
         icon: "src/images/dev-icon.png",
       },
