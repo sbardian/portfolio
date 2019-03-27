@@ -6,9 +6,14 @@ import "normalize.css"
 // eslint-disable-next-line
 import main from "../assets/main.css"
 
-// TODO: find icons for bash, python,  and others. . .
+/**
+ * TODO: fade a color overlay over the top image. or make new images
+ * with different colors and animate the change.
+ *
+ * TODO: find icons for bash, python,  and others. . .
+ *
+ */
 
-// TODO: fade a color overlay over the top image. or make new images with different colors and animate the change.
 const IndexPage = () => (
   <Layout>
     <Home />
