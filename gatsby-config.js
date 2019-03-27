@@ -35,7 +35,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
           families: ["Source Sans Pro"],
