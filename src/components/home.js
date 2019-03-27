@@ -46,9 +46,9 @@ export default () => {
         font-size: 1.3em;
       `}
     >
-      <h1>Welcome to this fine portfolio site!</h1>
+      <h1>Welcome to my portfolio site!</h1>
       <p>
-        {`Welcome to my portfolio site! I hope to update this site
+        {`I hope to update this site
         frequently with new projects, and updates to old projects. So check in
         often to make sure you don't miss anything!`}
       </p>
