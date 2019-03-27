@@ -10,8 +10,6 @@ import main from "../assets/main.css"
  * TODO: fade a color overlay over the top image. or make new images
  * with different colors and animate the change.
  *
- * TODO: find icons for bash, python,  and others. . .
- *
  */
 
 const IndexPage = () => (

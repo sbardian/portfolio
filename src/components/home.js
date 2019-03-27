@@ -34,7 +34,9 @@ import react from "../images/react.svg"
 // eslint-disable-next-line
 import main from "../assets/main.css"
 
-// TODO: find react and react native icons.
+/**
+ * TODO: find icons for bash, python, and others.
+ */
 
 export default () => {
   return (
