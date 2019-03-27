@@ -47,7 +47,7 @@ export default () => {
         >
           <div hidden>
             <label htmlFor="bot-catcher">
-              {`Don’t fill this out if you're human:`}
+              {`Don’t fill this out if you're human`}
               <input
                 id="bot-catcher"
                 name="youSuckBot"
@@ -89,7 +89,6 @@ export default () => {
           css={css`
             display: grid;
             grid-gap: 20px;
-            /* grid-template-rows: minmax(200px, 400px); */
             height: 250px;
           `}
         >
