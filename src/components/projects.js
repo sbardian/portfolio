@@ -10,8 +10,6 @@ import Fade from "react-reveal/Fade"
 import mq from "./media-queries"
 
 const Projects = ({ projects }) => {
-  const { edges } = projects
-
   return (
     <section
       css={css`
@@ -33,10 +31,10 @@ const Projects = ({ projects }) => {
           justify-content: center;
         `}
       >
-        {edges.map((proj, index) => {
+        {projects.edges.map((project, index) => {
           return (
             <div
-              key={proj.node.id}
+              key={project.node.id}
               css={css`
                 flex-basis: 350px;
               `}
@@ -47,14 +45,14 @@ const Projects = ({ projects }) => {
               >
                 <article>
                   <a
-                    href={proj.node.demoUrl}
+                    href={project.node.demoUrl}
                     title="Demo"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Img
-                      fluid={proj.node.image.asset.fluid}
-                      alt={proj.node.name}
+                      fluid={project.node.image.asset.fluid}
+                      alt={project.node.name}
                     />
                   </a>
                   <div
@@ -68,14 +66,14 @@ const Projects = ({ projects }) => {
                         padding-right: 10px;
                       `}
                     >
-                      {proj.node.name}
+                      {project.node.name}
                     </h3>
-                    <p>{proj.node.description}</p>
+                    <p>{project.node.description}</p>
                     <a
                       css={css`
                         color: #e1e1e1;
                       `}
-                      href={proj.node.repoUrl}
+                      href={project.node.repoUrl}
                     >
                       <FontAwesomeIcon size="lg" icon={faGithub} />
                     </a>
