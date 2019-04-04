@@ -156,7 +156,7 @@ export default () => {
         </p>
         <p>
           Most of my free time is spent hanging out with my three year old son
-          and wife. Trucks, trains, building forts and dirt are a pretty big
+          and my wife. Trucks, trains, building forts and dirt are a pretty big
           deal around here.
         </p>
         <p>
@@ -167,9 +167,8 @@ export default () => {
             don't know, I don't know if we'll have enough time".`}
         </p>
         <p>
-          I also spend a lot of time reading, so I decided to make a site to
-          start posting some of the books I have finished recently. Simply
-          called{" "}
+          I also spend a lot of time reading so I decided to make a site to
+          track and share some of the books I have read recently. Simply called{" "}
           <a
             href="https://sbardian-books.netlify.com"
             alt="Books"
@@ -183,8 +182,8 @@ export default () => {
         </p>
         <p>
           That is all I can think of at the moment. Though, this is an ever
-          changing site, so more to come on this, or maybe I will implement that
-          blog someday...
+          changing site, so more to come on. Maybe I will implement that blog
+          someday...
         </p>
       </div>
     </section>
