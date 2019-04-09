@@ -43,7 +43,7 @@
     "gatsby-plugin-manifest": "2.0.28",
     "gatsby-plugin-offline": "2.0.25",
     "gatsby-plugin-react-helmet": "3.0.12",
-    "gatsby-plugin-sharp": "2.0.32",
+    "gatsby-plugin-sharp": "2.0.33",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.0.29",
     "gatsby-source-sanity": "2.0.3",
