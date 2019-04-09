@@ -12,6 +12,7 @@ const NavButton = ({ title, to }) => {
       <Link
         to={to}
         activeClassName="active-nav"
+        data-testid={`test-${title}-button`}
         css={css`
           appearance: none;
           text-decoration: none;

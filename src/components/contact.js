@@ -23,6 +23,7 @@ export default () => {
       </p>
 
       <form
+        data-testid="test-contact-form"
         name="contact"
         method="post"
         data-netlify="true"
