@@ -20,7 +20,11 @@ export default () => {
         `)}
       `}
     >
-      <div>
+      <div
+        css={css`
+          margin: 0 20px 0 20px;
+        `}
+      >
         Thanks, your message has been sent successfully! I will get back to you
         as soon as possible.
       </div>
