@@ -27,17 +27,16 @@ export default () => {
         background-size: cover;
         background-repeat: no-repeat;
         transition: all 0.3s linear;
+        padding: 20px 0 20px 0px;
         ${mq.xl(css`
           min-width: 100%;
           min-height: 300px;
           position: absolute;
-          padding: 20px 0 20px 0px;
         `)};
         ${mq.sm(css`
           grid-template-columns: 1fr;
           justify-items: center;
           min-height: 500px;
-          padding: 20px 0 20px 0px;
         `)}
       `}
     >
