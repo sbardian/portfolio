@@ -20,7 +20,6 @@ const Body = ({ children }) => {
         transition: all 0.3s linear;
         ${mq.xl(css`
           grid-template-rows: auto 1fr;
-          position: absolute;
           width: 100%;
           height: auto;
           right: auto;
