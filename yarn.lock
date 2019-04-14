@@ -10040,6 +10040,11 @@ text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+three.phenomenon@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/three.phenomenon/-/three.phenomenon-1.1.0.tgz#85f903bc79c16f4a0c831968ce0605e44dc857db"
+  integrity sha512-JxHkjNscp4sg9Xp3o1eR9x4f+TDBojv52xc26cnapH9nAS1MJgCFpCCknuKbfjw/ftsfAwH9YXfx5rAbEPDujw==
+
 three@^0.103.0:
   version "0.103.0"
   resolved "https://registry.yarnpkg.com/three/-/three-0.103.0.tgz#63b3dbccc861caad93269618061a73dadebae71b"
@@ -10319,6 +10324,11 @@ unset-value@^1.0.0:
 unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
+
+uon@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/uon/-/uon-1.0.0.tgz#78eb39d1ebfe1d2c37c9efd507684eb299699db0"
+  integrity sha512-qYoynwkHIL3+KbMK0gY/wdX3YwuVe+N8bD0H4UeSuDo3Kr9ZMy/sPDlEAmH3kSnuvJhRObH/Ic0PDzmI1XwvBw==
 
 upath@^1.1.0:
   version "1.1.0"
