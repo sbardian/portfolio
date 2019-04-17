@@ -82,8 +82,8 @@ export default () => {
       animateDot(i, vector)
       dotsGeom.vertices.push(vector)
       vector.toArray(positions, i * 3)
-      color.setHex(Math.random() * 0xffffff)
-      color.setHSL(0.01 + 0.1 * (i / l), 1.0, 5.0)
+      // color.setHex(Math.random() * 0xffff0f)
+      color.setHex(0x92e5f3)
       color.toArray(colors, i * 3)
     }
 
@@ -92,9 +92,10 @@ export default () => {
     const attributePositions = new THREE.BufferAttribute(positions, 3)
     const attributeColors = new THREE.BufferAttribute(colors, 3)
     bufferDotsGeom.addAttribute("position", attributePositions)
-    bufferDotsGeom.addAttribute("customColor", attributeColors)
+    bufferDotsGeom.addAttribute("color", attributeColors)
 
     const shaderMaterial = new THREE.PointsMaterial({
+      vertexColors: THREE.VertexColors,
       size: 20,
       sizeAttenuation: false,
       map: sprite,
@@ -102,6 +103,7 @@ export default () => {
       transparent: true,
     })
     // shaderMaterial.color.setHSL(1.0, 0.3, 0.7)
+    console.log("bufferDotsGeom: ", bufferDotsGeom)
     const dots = new THREE.Points(bufferDotsGeom, shaderMaterial)
 
     scene.add(dots)
@@ -109,6 +111,7 @@ export default () => {
     function render() {
       dots.geometry.verticesNeedUpdate = true
       dots.geometry.attributes.position.needsUpdate = true
+      dots.geometry.attributes.color.needsUpdate = true
       renderer.render(scene, camera)
     }
 
@@ -118,7 +121,7 @@ export default () => {
       if (window.innerWidth <= 1200) {
         renderer.setSize(
           sidebarContainer.offsetWidth,
-          sidebarContainer.offsetHeight
+          sidebarContainer.offsetHeight - 20
         )
         camera.fov = 15
         camera.aspect =
@@ -149,6 +152,7 @@ export default () => {
         min-height: 100%;
         min-width: 35%;
         position: fixed;
+        background: lightgray;
         /* background-image: url(${overlay}), url(${sidebarBg});
         background-size: cover;
         background-repeat: no-repeat; */
@@ -213,7 +217,7 @@ export default () => {
           <span>
             {`Web developer and problem solver! I enjoy using code to solve
             complex problems so other people don't have to. Hopefully you will
-            find something here to make your life easier.`}
+            find something here to make your life easier. Sorry about the dots, learning animation...`}
           </span>
         </div>
         <div
