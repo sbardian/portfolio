@@ -111,7 +111,6 @@ export default () => {
     function render() {
       dots.geometry.verticesNeedUpdate = true
       dots.geometry.attributes.position.needsUpdate = true
-      dots.geometry.attributes.color.needsUpdate = true
       renderer.render(scene, camera)
     }
 
@@ -140,7 +139,6 @@ export default () => {
     sizeAnimation()
 
     TweenMax.ticker.addEventListener("tick", render)
-
     window.addEventListener("resize", sizeAnimation)
   })
 
