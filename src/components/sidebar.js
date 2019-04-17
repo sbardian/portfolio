@@ -115,9 +115,7 @@ export default () => {
       renderer.render(scene, camera)
     }
 
-    TweenMax.ticker.addEventListener("tick", render)
-
-    window.addEventListener("resize", () => {
+    const sizeAnimation = () => {
       if (window.innerWidth <= 1200) {
         renderer.setSize(
           sidebarContainer.offsetWidth,
@@ -137,7 +135,13 @@ export default () => {
       }
       camera.updateProjectionMatrix()
       render()
-    })
+    }
+
+    sizeAnimation()
+
+    TweenMax.ticker.addEventListener("tick", render)
+
+    window.addEventListener("resize", sizeAnimation)
   })
 
   return (
