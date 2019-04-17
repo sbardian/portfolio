@@ -103,7 +103,6 @@ export default () => {
       transparent: true,
     })
     // shaderMaterial.color.setHSL(1.0, 0.3, 0.7)
-    console.log("bufferDotsGeom: ", bufferDotsGeom)
     const dots = new THREE.Points(bufferDotsGeom, shaderMaterial)
 
     scene.add(dots)
