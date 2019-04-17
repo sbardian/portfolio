@@ -48,16 +48,16 @@
     "gatsby-source-filesystem": "2.0.29",
     "gatsby-source-sanity": "2.0.3",
     "gatsby-transformer-sharp": "2.1.18",
-    "gsap": "^2.1.2",
+    "gsap": "2.1.2",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.0",
     "react-reveal": "1.2.2",
-    "three": "^0.103.0",
-    "three.phenomenon": "^1.1.0",
-    "uon": "^1.0.0"
+    "three": "0.103.0",
+    "three.phenomenon": "1.1.0",
+    "uon": "1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
