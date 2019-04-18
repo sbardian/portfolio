@@ -4,7 +4,7 @@
 // eslint-disable-next-line
 import React from "react"
 import * as THREE from "three"
-import { TweenMax, Back } from "gsap/TweenMax"
+// import { TweenMax, Back } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
@@ -14,132 +14,232 @@ import sidebarBg from "../images/sidebar-bg.jpg"
 import overlay from "../images/overlay.png"
 import avatar from "../images/avatar.jpg"
 import gatsby from "../images/gatsby.png"
-import disc from "../images/disc.png"
+// import disc from "../images/disc.png"
 
 export default () => {
-  React.useEffect(() => {
-    const canvas = document.querySelector("#scene")
-    const sidebarContainer = document.querySelector("#sidebar-container")
-    const width = sidebarContainer.offsetWidth
-    const height = sidebarContainer.offsetHeight
-    const innerRadius = 20
-    const outterRadius = 100
+  // React.useEffect(() => {
+  //   // setup
+  //   const canvas = document.querySelector("#scene")
+  //   const sidebarContainer = document.querySelector("#sidebar-container")
+  //   const WIDTH = sidebarContainer.offsetWidth
+  //   const HEIGHT = sidebarContainer.offsetHeight
+  //   let windowHalfX
+  //   let windowHalfY
+  //   let scene
+  //   let camera
+  //   let renderer
 
-    const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 2000)
-    camera.position.set(0, 0, 100)
-    camera.lookAt(0, 0, 0)
-    const renderer = new THREE.WebGLRenderer({
-      canvas,
-      antialias: true,
-      alpha: true,
-    })
-    renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1)
-    renderer.setSize(width, height)
-    renderer.setClearColor(0x000000, 0)
+  //   // init
+  //   const init = () => {
+  //     scene = new THREE.Scene()
 
-    const scene = new THREE.Scene()
+  //     camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
+  //     camera.position.z = 1000
+  //     camera.position.y = 300
+  //     camera.lookAt(new THREE.Vector3(0, 0, 0))
 
-    // const sphereGeom = new THREE.IcosahedronGeometry(radius, 5)
-    // const sphereGeom = new THREE.TorusBufferGeometry(radius, 4, 15, 160, 7)
-    const sphereGeom = new THREE.RingGeometry(
-      innerRadius,
-      outterRadius,
-      30,
-      30,
-      0,
-      6
-    )
+  //     renderer = new THREE.WebGLRenderer({
+  //       canvas,
+  //       antialias: true,
+  //       alpha: true,
+  //     })
+  //     renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1)
+  //     renderer.setSize(WIDTH, HEIGHT)
+  //     renderer.setClearColor(0x000000, 0)
 
-    const dotsGeom = new THREE.Geometry()
-    const bufferDotsGeom = new THREE.BufferGeometry()
-    const positions = new Float32Array(sphereGeom.vertices.length * 3)
-    const colors = new Float32Array(sphereGeom.vertices.length * 3)
+  //     // window.addEventListener("resize", onWindowResize, false)
+  //     // document.addEventListener("mousemove", handleMouseMove, false)
+  //     // document.addEventListener("touchstart", handleTouchStart, false)
+  //     // document.addEventListener("touchend", handleTouchEnd, false)
+  //     // document.addEventListener("touchmove", handleTouchMove, false)
+  //   }
 
-    function updateDot(index, vector) {
-      positions[index * 3] = vector.x
-      positions[index * 3 + 2] = vector.z
-    }
+  //   const createLights = () => {
+  //     const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.5)
 
-    function animateDot(index, vector) {
-      TweenMax.to(vector, 4, {
-        x: 0,
-        z: 100,
-        ease: Back.easeOut,
-        delay: Math.abs(vector.y / innerRadius) * 2,
-        repeat: -1,
-        yoyo: true,
-        yoyoEase: Back.easeOut,
-        onUpdate: () => {
-          updateDot(index, vector)
-        },
-      })
-    }
+  //     const shadowLight = new THREE.DirectionalLight(0xffffff, 0.8)
+  //     shadowLight.position.set(200, 200, 200)
+  //     shadowLight.castShadow = true
+  //     shadowLight.shadowDarkness = 0.2
 
-    const color = new THREE.Color()
+  //     const backLight = new THREE.DirectionalLight(0xffffff, 0.4)
+  //     backLight.position.set(-100, 200, 50)
+  //     backLight.shadowDarkness = 0.1
+  //     backLight.castShadow = true
 
-    for (let i = 0, l = sphereGeom.vertices.length; i < l; i++) {
-      const vector = sphereGeom.vertices[i]
-      animateDot(i, vector)
-      dotsGeom.vertices.push(vector)
-      vector.toArray(positions, i * 3)
-      // color.setHex(Math.random() * 0xffff0f)
-      color.setHex(0x92e5f3)
-      color.toArray(colors, i * 3)
-    }
+  //     scene.add(backLight)
+  //     scene.add(light)
+  //     scene.add(shadowLight)
+  //   }
 
-    const sprite = new THREE.TextureLoader().load(disc)
+  //   // animal
+  //   const createOb = () => {
+  //     // OB body
+  //     const rSegments = 4
+  //     const hSegments = 3
+  //     const obBodyGroup = new THREE.Group()
+  //     const obBodyGeometry = new THREE.CylinderGeometry(
+  //       40,
+  //       70,
+  //       200,
+  //       rSegments,
+  //       hSegments
+  //     )
+  //     const obBodyColor = new THREE.Color(0xeba644)
+  //     const obBodyMaterial = new THREE.MeshLambertMaterial({
+  //       color: 0xeba644,
+  //       shading: THREE.FlatShading,
+  //     })
+  //     const obBody = new THREE.Mesh(obBodyGeometry, obBodyMaterial)
+  //     obBody.rotation.y = Math.PI / 4
+  //     obBodyGroup.add(obBody)
 
-    const attributePositions = new THREE.BufferAttribute(positions, 3)
-    const attributeColors = new THREE.BufferAttribute(colors, 3)
-    bufferDotsGeom.addAttribute("position", attributePositions)
-    bufferDotsGeom.addAttribute("color", attributeColors)
+  //     // OB Body Stripes
+  //     // const obStripe
 
-    const shaderMaterial = new THREE.PointsMaterial({
-      vertexColors: THREE.VertexColors,
-      size: 20,
-      sizeAttenuation: false,
-      map: sprite,
-      alphaTest: 0.5,
-      transparent: true,
-    })
-    // shaderMaterial.color.setHSL(1.0, 0.3, 0.7)
-    const dots = new THREE.Points(bufferDotsGeom, shaderMaterial)
+  //     scene.add(obBodyGroup)
+  //   }
 
-    scene.add(dots)
+  //   // render
+  //   const render = () => {
+  //     renderer.render(scene, camera)
+  //   }
 
-    function render() {
-      dots.geometry.verticesNeedUpdate = true
-      dots.geometry.attributes.position.needsUpdate = true
-      renderer.render(scene, camera)
-    }
+  //   // animate
+  //   const animate = () => {
+  //     requestAnimationFrame(animate)
+  //     render()
+  //   }
 
-    const sizeAnimation = () => {
-      if (window.innerWidth <= 1200) {
-        renderer.setSize(
-          sidebarContainer.offsetWidth,
-          sidebarContainer.offsetHeight - 20
-        )
-        camera.fov = 15
-        camera.aspect =
-          sidebarContainer.offsetWidth / sidebarContainer.offsetHeight
-      } else {
-        renderer.setSize(
-          sidebarContainer.offsetWidth,
-          sidebarContainer.offsetHeight
-        )
-        camera.fov = 50
-        camera.aspect =
-          sidebarContainer.offsetWidth / sidebarContainer.offsetHeight
-      }
-      camera.updateProjectionMatrix()
-      render()
-    }
+  //   init()
+  //   createLights()
+  //   createOb()
+  //   animate()
+  // })
 
-    sizeAnimation()
+  // React.useEffect(() => {
+  //   const canvas = document.querySelector("#scene")
+  //   const sidebarContainer = document.querySelector("#sidebar-container")
+  //   const width = sidebarContainer.offsetWidth
+  //   const height = sidebarContainer.offsetHeight
+  //   const innerRadius = 20
+  //   const outterRadius = 100
 
-    TweenMax.ticker.addEventListener("tick", render)
-    window.addEventListener("resize", sizeAnimation)
-  })
+  //   const camera = new THREE.PerspectiveCamera(50, width / height, 0.1, 2000)
+  //   camera.position.set(0, 0, 100)
+  //   camera.lookAt(0, 0, 0)
+  //   const renderer = new THREE.WebGLRenderer({
+  //     canvas,
+  //     antialias: true,
+  //     alpha: true,
+  //   })
+  //   renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1)
+  //   renderer.setSize(width, height)
+  //   renderer.setClearColor(0x000000, 0)
+
+  //   const scene = new THREE.Scene()
+
+  //   // const sphereGeom = new THREE.IcosahedronGeometry(radius, 5)
+  //   // const sphereGeom = new THREE.TorusBufferGeometry(radius, 4, 15, 160, 7)
+  //   const sphereGeom = new THREE.RingGeometry(
+  //     innerRadius,
+  //     outterRadius,
+  //     30,
+  //     30,
+  //     0,
+  //     6
+  //   )
+
+  //   const dotsGeom = new THREE.Geometry()
+  //   const bufferDotsGeom = new THREE.BufferGeometry()
+  //   const positions = new Float32Array(sphereGeom.vertices.length * 3)
+  //   const colors = new Float32Array(sphereGeom.vertices.length * 3)
+
+  //   function updateDot(index, vector) {
+  //     positions[index * 3] = vector.x
+  //     positions[index * 3 + 2] = vector.z
+  //   }
+
+  //   function animateDot(index, vector) {
+  //     TweenMax.to(vector, 4, {
+  //       x: 0,
+  //       z: 100,
+  //       ease: Back.easeOut,
+  //       delay: Math.abs(vector.y / innerRadius) * 2,
+  //       repeat: -1,
+  //       yoyo: true,
+  //       yoyoEase: Back.easeOut,
+  //       onUpdate: () => {
+  //         updateDot(index, vector)
+  //       },
+  //     })
+  //   }
+
+  //   const color = new THREE.Color()
+
+  //   for (let i = 0, l = sphereGeom.vertices.length; i < l; i++) {
+  //     const vector = sphereGeom.vertices[i]
+  //     animateDot(i, vector)
+  //     dotsGeom.vertices.push(vector)
+  //     vector.toArray(positions, i * 3)
+  //     // color.setHex(Math.random() * 0xffff0f)
+  //     color.setHex(0x92e5f3)
+  //     color.toArray(colors, i * 3)
+  //   }
+
+  //   const sprite = new THREE.TextureLoader().load(disc)
+
+  //   const attributePositions = new THREE.BufferAttribute(positions, 3)
+  //   const attributeColors = new THREE.BufferAttribute(colors, 3)
+  //   bufferDotsGeom.addAttribute("position", attributePositions)
+  //   bufferDotsGeom.addAttribute("color", attributeColors)
+
+  //   const shaderMaterial = new THREE.PointsMaterial({
+  //     vertexColors: THREE.VertexColors,
+  //     size: 20,
+  //     sizeAttenuation: false,
+  //     map: sprite,
+  //     alphaTest: 0.5,
+  //     transparent: true,
+  //   })
+  //   // shaderMaterial.color.setHSL(1.0, 0.3, 0.7)
+  //   const dots = new THREE.Points(bufferDotsGeom, shaderMaterial)
+
+  //   scene.add(dots)
+
+  //   function render() {
+  //     dots.geometry.verticesNeedUpdate = true
+  //     dots.geometry.attributes.position.needsUpdate = true
+  //     renderer.render(scene, camera)
+  //   }
+
+  //   const sizeAnimation = () => {
+  //     if (window.innerWidth <= 1200) {
+  //       renderer.setSize(
+  //         sidebarContainer.offsetWidth,
+  //         sidebarContainer.offsetHeight - 20
+  //       )
+  //       camera.fov = 15
+  //       camera.aspect =
+  //         sidebarContainer.offsetWidth / sidebarContainer.offsetHeight
+  //     } else {
+  //       renderer.setSize(
+  //         sidebarContainer.offsetWidth,
+  //         sidebarContainer.offsetHeight
+  //       )
+  //       camera.fov = 50
+  //       camera.aspect =
+  //         sidebarContainer.offsetWidth / sidebarContainer.offsetHeight
+  //     }
+  //     camera.updateProjectionMatrix()
+  //     render()
+  //   }
+
+  //   sizeAnimation()
+
+  //   TweenMax.ticker.addEventListener("tick", render)
+  //   window.addEventListener("resize", sizeAnimation)
+  // })
 
   return (
     <div
@@ -171,13 +271,13 @@ export default () => {
         `)}
       `}
     >
-      <canvas
+      {/* <canvas
         css={css`
           background: transparent;
           position: fixed;
         `}
         id="scene"
-      />
+      /> */}
       <div
         css={css`
           align-self: center;
@@ -201,6 +301,7 @@ export default () => {
           grid-template-rows: 60px 150px 50px;
           color: #474444;
           transition: all 8s;
+          z-index: 20;
           ${mq.sm(css`
             grid-template-rows: 80px auto 50px;
             justify-items: center;

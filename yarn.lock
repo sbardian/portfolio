@@ -10076,6 +10076,11 @@ text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
+three-orbitcontrols@^2.102.1:
+  version "2.102.1"
+  resolved "https://registry.yarnpkg.com/three-orbitcontrols/-/three-orbitcontrols-2.102.1.tgz#f4071e79f1c12e2b7668992cb06cfa29a816629d"
+  integrity sha512-mp5qc5mooCtjgSloMFzIEI2VQVkvBDWDMYtbxY3TFB/BCCYpR6NV7/dD5+EUyzR90/a9H356s9QR+2PhH48f6w==
+
 three.phenomenon@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/three.phenomenon/-/three.phenomenon-1.1.0.tgz#85f903bc79c16f4a0c831968ce0605e44dc857db"

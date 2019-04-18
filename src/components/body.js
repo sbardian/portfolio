@@ -8,6 +8,7 @@ import mq from "./media-queries"
 const Body = ({ children }) => {
   return (
     <div
+      id="main-body"
       css={css`
         display: grid;
         grid-gap: 20px;

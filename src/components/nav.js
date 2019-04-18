@@ -24,6 +24,7 @@ export default () => {
       <NavButton title="Home" to="/" />
       <NavButton title="Projects" to="/projects" />
       <NavButton title="Contact" to="/contact" />
+      <NavButton title="Animations" to="/animations" />
     </div>
   )
 }
