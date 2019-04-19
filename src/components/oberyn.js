@@ -57,7 +57,7 @@ export default () => {
         antialias: true,
         alpha: true,
       })
-      renderer.setPixelRatio(window.devicePixelRatio > 1 ? 2 : 1)
+      renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(WIDTH, HEIGHT)
       renderer.setClearColor(0x000000, 0)
       renderer.shadowMapEnabled = true
@@ -66,7 +66,7 @@ export default () => {
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
 
-      const controls = new OrbitControls(camera, renderer.domElement)
+      //   const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       bodyContainer.addEventListener("mousemove", handleMouseMove, false)
@@ -77,40 +77,43 @@ export default () => {
 
     const createFloor = () => {
       floor = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(4000, 4000),
+        new THREE.PlaneBufferGeometry(2000, 2000),
         new THREE.MeshStandardMaterial({ color: 0xc2efb3 })
       )
       floor.rotation.x = -Math.PI / 2
       floor.position.y = -115
       floor.receiveShadow = true
+      floor.castShadow = false
       scene.add(floor)
     }
 
     const createLights = () => {
-      const ambLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.5)
+      const ambLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7)
 
-      const backLight = new THREE.DirectionalLight(0xffffff, 0.4)
-      backLight.position.set(100, 150, 300)
-      backLight.shadowDarkness = 0.9
-      backLight.castShadow = true
-      //   backLight.shadowCameraVisible = true
-
-      const shadowLight = new THREE.SpotLight(0xffffff, 0.5)
-      shadowLight.position.set(550, 1000, 2000)
+      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.6)
+      shadowLight.position.set(200, 150, 200)
       shadowLight.castShadow = true
-      shadowLight.shadowDarkness = 0.8
+      shadowLight.shadowDarkness = 0.4
       //   shadowLight.shadowCameraVisible = true
 
+      shadowLight.shadowCameraNear = 2
+      shadowLight.shadowCameraFar = -2000
+      shadowLight.shadowCameraLeft = -1000
+      shadowLight.shadowCameraRight = 1000
+      shadowLight.shadowCameraTop = 1000
+      shadowLight.shadowCameraBottom = -1000
+
       // Set up shadow properties for the light
-      shadowLight.shadow.mapSize.width = 2048 // default
-      shadowLight.shadow.mapSize.height = 2048 // default
-      shadowLight.shadow.camera.near = 2000 // default
-      shadowLight.shadow.camera.far = -1 // default
+      shadowLight.shadow.mapSize.width = 4096 // default
+      shadowLight.shadow.mapSize.height = 4096 // default
+      shadowLight.shadow.camera.near = 2 // default
+      shadowLight.shadow.camera.far = 2000 // default
 
       //   const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
+      //   const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
+      //   scene.add(lightHelper)
       //   scene.add(helper)
 
-      scene.add(backLight)
       scene.add(ambLight)
       scene.add(shadowLight)
     }
@@ -179,7 +182,7 @@ export default () => {
       const obHeadGeometry = new THREE.BoxBufferGeometry(100, 80, 75)
       const obHead = new THREE.Mesh(obHeadGeometry, obFurMaterial)
       obHead.castShadow = true
-      obHead.receiveShadow = true
+      obHead.receiveShadow = false
       obHead.position.y = 165
       this.obHeadGroup.add(obHead)
 
@@ -188,7 +191,7 @@ export default () => {
       const obRightEarGeometry = new THREE.ConeBufferGeometry(25, 40, 3)
       const obRightEar = new THREE.Mesh(obRightEarGeometry, obFurMaterial)
       obRightEar.castShadow = true
-      obRightEar.receiveShadow = false
+      obRightEar.receiveShadow = true
       obRightEar.position.y = 225
       obRightEar.position.x = 30
       obRightEar.rotation.y = 0.95
@@ -198,7 +201,7 @@ export default () => {
       const obLeftEarGeometry = new THREE.ConeBufferGeometry(25, 40, 3)
       const obLeftEar = new THREE.Mesh(obLeftEarGeometry, obFurMaterial)
       obLeftEar.castShadow = true
-      obLeftEar.receiveShadow = false
+      obLeftEar.receiveShadow = true
       obLeftEar.position.y = 225
       obLeftEar.position.x = -30
       obLeftEar.rotation.y = -0.95
@@ -211,8 +214,8 @@ export default () => {
         obInnerRightEarGeometry,
         obNoseMaterial
       )
-      obInnerRightEar.castShadow = true
-      obInnerRightEar.receiveShadow = false
+      obInnerRightEar.castShadow = false
+      obInnerRightEar.receiveShadow = true
       obInnerRightEar.position.y = 220
       obInnerRightEar.position.x = 30
       obInnerRightEar.position.z = 7
@@ -225,8 +228,8 @@ export default () => {
         obInnerLeftEarGeometry,
         obNoseMaterial
       )
-      obInnerLeftEar.castShadow = true
-      obInnerLeftEar.receiveShadow = false
+      obInnerLeftEar.castShadow = false
+      obInnerLeftEar.receiveShadow = true
       obInnerLeftEar.position.y = 220
       obInnerLeftEar.position.x = -30
       obInnerLeftEar.position.z = 7
@@ -239,7 +242,7 @@ export default () => {
       const obRightEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
       this.obRightEye = new THREE.Mesh(obRightEyeGeometry, obEyeMaterial)
       this.obRightEye.castShadow = true
-      this.obRightEye.receiveShadow = false
+      this.obRightEye.receiveShadow = true
       this.obRightEye.position.y = 185
       this.obRightEye.position.x = -25
       this.obRightEye.position.z = 30
@@ -251,7 +254,7 @@ export default () => {
       const obLeftEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
       this.obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obEyeMaterial)
       this.obLeftEye.castShadow = true
-      this.obLeftEye.receiveShadow = false
+      this.obLeftEye.receiveShadow = true
       this.obLeftEye.position.y = 185
       this.obLeftEye.position.x = 25
       this.obLeftEye.position.z = 30
@@ -310,18 +313,18 @@ export default () => {
       const obMouthGeometry = new THREE.BoxBufferGeometry(50, 30, 30)
       const obMouth = new THREE.Mesh(obMouthGeometry, obFurMaterial)
       obMouth.castShadow = true
-      obMouth.receiveShadow = false
+      obMouth.receiveShadow = true
       obMouth.position.y = 160
-      obMouth.position.z = 60
+      obMouth.position.z = 50
       this.obHeadGroup.add(obMouth)
 
       // OB Nose
       const obNoseGeometry = new THREE.BoxBufferGeometry(10, 10, 10)
       const obNose = new THREE.Mesh(obNoseGeometry, obNoseMaterial)
       obNose.castShadow = true
-      obNose.receiveShadow = false
-      obNose.position.y = 175
-      obNose.position.z = 80
+      obNose.receiveShadow = true
+      obNose.position.y = 172
+      obNose.position.z = 67
       this.obHeadGroup.add(obNose)
 
       // OB Tail
@@ -334,7 +337,7 @@ export default () => {
       )
       this.obTail = new THREE.Mesh(obTailGeometry, obFurMaterial)
       this.obTail.castShadow = true
-      this.obTail.receiveShadow = false
+      this.obTail.receiveShadow = true
       this.obTail.position.z = -75
       this.obTail.position.y = -20
       this.obTail.rotation.x = -0.2
@@ -356,7 +359,7 @@ export default () => {
         obFurMaterial
       )
       obRightFrontLeg.castShadow = true
-      obRightFrontLeg.receiveShadow = false
+      obRightFrontLeg.receiveShadow = true
       obRightFrontLeg.position.x = -25
       obRightFrontLeg.position.y = -40
       obRightFrontLeg.position.z = 20
@@ -372,7 +375,7 @@ export default () => {
         obFurMaterial
       )
       obLeftFrontLeg.castShadow = true
-      obLeftFrontLeg.receiveShadow = false
+      obLeftFrontLeg.receiveShadow = true
       obLeftFrontLeg.position.x = 25
       obLeftFrontLeg.position.y = -40
       obLeftFrontLeg.position.z = 20
@@ -385,7 +388,7 @@ export default () => {
       const obLeftBackLegGeometry = new THREE.BoxBufferGeometry(20, 120, 120)
       const obLeftBackLeg = new THREE.Mesh(obLeftBackLegGeometry, obFurMaterial)
       obLeftBackLeg.castShadow = true
-      obLeftBackLeg.receiveShadow = false
+      obLeftBackLeg.receiveShadow = true
       obLeftBackLeg.position.x = 60
       obLeftBackLeg.position.y = -65
       obLeftBackLeg.position.z = 10
@@ -401,7 +404,7 @@ export default () => {
         obFurMaterial
       )
       obRightBackLeg.castShadow = true
-      obRightBackLeg.receiveShadow = false
+      obRightBackLeg.receiveShadow = true
       obRightBackLeg.position.x = -60
       obRightBackLeg.position.y = -65
       obRightBackLeg.position.z = 10
@@ -418,7 +421,7 @@ export default () => {
         obFurMaterial
       )
       obRightBackPaw.castShadow = true
-      obRightBackPaw.receiveShadow = false
+      obRightBackPaw.receiveShadow = true
       obRightBackPaw.position.x = -90
       obRightBackPaw.position.y = -110
       obRightBackPaw.position.z = 70
@@ -431,7 +434,7 @@ export default () => {
       const obLeftBackPawGeometry = new THREE.BoxBufferGeometry(30, 30, 30)
       const obLeftBackPaw = new THREE.Mesh(obLeftBackPawGeometry, obFurMaterial)
       obLeftBackPaw.castShadow = true
-      obLeftBackPaw.receiveShadow = false
+      obLeftBackPaw.receiveShadow = true
       obLeftBackPaw.position.x = 90
       obLeftBackPaw.position.y = -110
       obLeftBackPaw.position.z = 70
@@ -447,7 +450,7 @@ export default () => {
         obFurMaterial
       )
       obRightFrontPaw.castShadow = true
-      obRightFrontPaw.receiveShadow = false
+      obRightFrontPaw.receiveShadow = true
       obRightFrontPaw.position.x = -35
       obRightFrontPaw.position.y = -110
       obRightFrontPaw.position.z = 60
@@ -461,7 +464,7 @@ export default () => {
         obFurMaterial
       )
       obLeftFrontPaw.castShadow = true
-      obLeftFrontPaw.receiveShadow = false
+      obLeftFrontPaw.receiveShadow = true
       obLeftFrontPaw.position.x = 35
       obLeftFrontPaw.position.y = -110
       obLeftFrontPaw.position.z = 60
