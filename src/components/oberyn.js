@@ -31,19 +31,18 @@ export default () => {
     }
 
     function onWindowResize() {
-      HEIGHT = bodyContainer.offsetHeight
+      //   HEIGHT = bodyContainer.offsetHeight
       WIDTH = bodyContainer.offsetWidth
+      console.log("height ", HEIGHT, ", width ", WIDTH)
       if (window.innerWidth <= 1200) {
-        camera.fov = 50
         windowHalfX = WIDTH / 2
         windowHalfY = HEIGHT / 2
-        renderer.setSize(bodyContainer.offsetWidth, bodyContainer.offsetHeight)
+        renderer.setSize(WIDTH, HEIGHT)
         camera.aspect = WIDTH / HEIGHT
       } else {
-        camera.fov = 50
         windowHalfX = WIDTH / 2
         windowHalfY = HEIGHT / 2
-        renderer.setSize(bodyContainer.offsetWidth, bodyContainer.offsetHeight)
+        renderer.setSize(WIDTH, HEIGHT)
         camera.aspect = WIDTH / HEIGHT
       }
       camera.updateProjectionMatrix()
