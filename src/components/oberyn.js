@@ -34,10 +34,16 @@ export default () => {
       HEIGHT = bodyContainer.offsetHeight
       WIDTH = bodyContainer.offsetWidth
       if (window.innerWidth <= 1200) {
-        renderer.setSize(WIDTH, HEIGHT)
+        camera.fov = 50
+        windowHalfX = WIDTH / 2
+        windowHalfY = HEIGHT / 2
+        renderer.setSize(bodyContainer.offsetWidth, bodyContainer.offsetHeight)
         camera.aspect = WIDTH / HEIGHT
       } else {
-        renderer.setSize(WIDTH, HEIGHT)
+        camera.fov = 50
+        windowHalfX = WIDTH / 2
+        windowHalfY = HEIGHT / 2
+        renderer.setSize(bodyContainer.offsetWidth, bodyContainer.offsetHeight)
         camera.aspect = WIDTH / HEIGHT
       }
       camera.updateProjectionMatrix()
@@ -77,7 +83,7 @@ export default () => {
 
     const createFloor = () => {
       floor = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(2000, 2000),
+        new THREE.PlaneBufferGeometry(2000, 4000),
         new THREE.MeshStandardMaterial({ color: 0xc2efb3 })
       )
       floor.rotation.x = -Math.PI / 2
