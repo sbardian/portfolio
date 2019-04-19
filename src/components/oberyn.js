@@ -26,8 +26,6 @@ export default () => {
     let ob
 
     function handleMouseMove(event) {
-      //   console.log((">>> ", event.clientX - sideBarContainer.offsetWidth) * 0.3)
-      //   console.log("actual >>> ", event.clientX)
       mousePos = { x: event.clientX, y: event.clientY }
     }
 
@@ -93,10 +91,6 @@ export default () => {
     function Oberyn() {
       let rSegments
       let hSegments
-      //   let obRightEye
-      //   let obLeftEye
-      //   let obRightEyeIris
-      //   let obLeftEyeIris
       this.obBodyGroup = new THREE.Group()
       this.obHeadGroup = new THREE.Group()
       this.obEyesGroup = new THREE.Group()
@@ -382,34 +376,6 @@ export default () => {
       this.obRightEyeIris.position.y = 185 - vAngle * 9
       this.obRightEyeIris.position.x = 25 + hAngle * 12
       //   this.obRightEyeIris.position.z = 40 - hAngle * 10
-      //   this.obLeftEye.position.y = this.obRightEye.position.y = 120 - vAngle * 10
-      //   this.beak.position.y = 70 - this.vAngle * 20
-      //   this.beak.rotation.x = Math.PI / 2 + this.vAngle / 3
-      //   this.feather1.rotation.x = Math.PI / 4 + this.vAngle / 2
-      //   this.feather1.position.y = 185 - this.vAngle * 10
-      //   this.feather1.position.z = 55 + this.vAngle * 10
-      //   this.feather2.rotation.x = Math.PI / 4 + this.vAngle / 2
-      //   this.feather2.position.y = 180 - this.vAngle * 10
-      //   this.feather2.position.z = 50 + this.vAngle * 10
-      //   this.feather3.rotation.x = Math.PI / 4 + this.vAngle / 2
-      //   this.feather3.position.y = 180 - this.vAngle * 10
-      //   this.feather3.position.z = 50 + this.vAngle * 10
-      //   for (var i = 0; i < this.bodyVerticesLength; i++) {
-      //     var line = Math.floor(i / (this.rSegments + 1))
-      //     var tv = this.bodyBird.geometry.vertices[i]
-      //     var tvInitPos = this.bodyBirdInitPositions[i]
-      //     var a, dy
-      //     if (line >= this.hSegments - 1) {
-      //       a = 0
-      //     } else {
-      //       a = this.hAngle / (line + 1)
-      //     }
-      //     var tx = tvInitPos.x * Math.cos(a) + tvInitPos.z * Math.sin(a)
-      //     var tz = -tvInitPos.x * Math.sin(a) + tvInitPos.z * Math.cos(a)
-      //     tv.x = tx
-      //     tv.z = tz
-      //   }
-      //   this.face.rotation.y = this.hAngle
       this.obLeftEyeIris.geometry.verticesNeedUpdate = true
       this.obRightEyeIris.geometry.verticesNeedUpdate = true
     }
