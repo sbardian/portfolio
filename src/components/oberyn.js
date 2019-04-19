@@ -5,7 +5,7 @@
 import React from "react"
 import * as THREE from "three"
 import OrbitControls from "three-orbitcontrols"
-// import { TweenMax, Back } from "gsap/TweenMax"
+import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import mq from "./media-queries"
 
@@ -62,7 +62,7 @@ export default () => {
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
 
-      const controls = new OrbitControls(camera, renderer.domElement)
+      //   const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       document.addEventListener("mousemove", handleMouseMove, false)
@@ -74,37 +74,27 @@ export default () => {
     const createFloor = () => {
       floor = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(1000, 1000),
-        new THREE.MeshBasicMaterial({ color: 0xe1e1e1 })
+        new THREE.MeshBasicMaterial({ color: 0xc2efb3 })
       )
       floor.rotation.x = -Math.PI / 2
-      floor.position.y = -120
+      floor.position.y = -115
       floor.receiveShadow = true
       scene.add(floor)
     }
 
     const createLights = () => {
-      const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.5)
+      const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7)
 
-      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.8)
-      shadowLight.position.set(200, 200, 200)
-      shadowLight.castShadow = true
-      shadowLight.shadowDarkness = 0.1
+      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.2)
+      shadowLight.position.set(40, 100, 40)
+      shadowLight.castShadow = false
+      shadowLight.shadowDarkness = 0.2
 
-      const backLight = new THREE.DirectionalLight(0xffffff, 0.4)
-      backLight.position.set(100, 200, 50)
-      backLight.shadowDarkness = 0.2
+      const backLight = new THREE.DirectionalLight(0xffffff, 0.5)
+      backLight.position.set(100, 200, -100)
+      backLight.shadowDarkness = 0.1
       backLight.castShadow = true
 
-      const spotLight = new THREE.SpotLight(0xffffff)
-      spotLight.position.set(100, 300, -150)
-      spotLight.castShadow = true
-      spotLight.shadow.mapSize.width = 1024
-      spotLight.shadow.mapSize.height = 1024
-      spotLight.shadow.camera.near = 700
-      spotLight.shadow.camera.far = 1000
-      spotLight.shadow.camera.fov = 200
-
-      scene.add(spotLight)
       scene.add(backLight)
       scene.add(light)
       scene.add(shadowLight)
@@ -218,19 +208,23 @@ export default () => {
 
       // EYES
       // OB Right Eye
-      const obRightEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      //   const obRightEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      const obRightEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
       this.obRightEye = new THREE.Mesh(obRightEyeGeometry, obEyeMaterial)
       this.obRightEye.position.y = 185
       this.obRightEye.position.x = -25
-      this.obRightEye.position.z = 45
+      this.obRightEye.position.z = 30
+      this.obRightEye.rotation.y = 1.05
       this.obEyesGroup.add(this.obRightEye)
 
       // OB Left Eye
-      const obLeftEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      //   const obLeftEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      const obLeftEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
       this.obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obEyeMaterial)
       this.obLeftEye.position.y = 185
       this.obLeftEye.position.x = 25
-      this.obLeftEye.position.z = 45
+      this.obLeftEye.position.z = 30
+      this.obLeftEye.rotation.y = 1.05
       this.obEyesGroup.add(this.obLeftEye)
 
       // OB Right Iris
@@ -241,7 +235,7 @@ export default () => {
       )
       this.obRightEyeIris.position.y = 185
       this.obRightEyeIris.position.x = 20
-      this.obRightEyeIris.position.z = 55
+      this.obRightEyeIris.position.z = 45
       this.obEyesGroup.add(this.obRightEyeIris)
 
       // OB Left Iris
@@ -252,31 +246,31 @@ export default () => {
       )
       this.obLeftEyeIris.position.y = 185
       this.obLeftEyeIris.position.x = -20
-      this.obLeftEyeIris.position.z = 55
+      this.obLeftEyeIris.position.z = 45
       this.obEyesGroup.add(this.obLeftEyeIris)
 
       // OB Right Eyebrow
-      const obRightEyebrowGeometry = new THREE.BoxBufferGeometry(30, 3, 5)
+      const obRightEyebrowGeometry = new THREE.BoxBufferGeometry(40, 3, 5)
       this.obRightEyebrow = new THREE.Mesh(
         obRightEyebrowGeometry,
         obEyebrowMaterial
       )
       this.obRightEyebrow.position.y = 205
-      this.obRightEyebrow.position.x = -20
-      this.obRightEyebrow.position.z = 55
+      this.obRightEyebrow.position.x = -25
+      this.obRightEyebrow.position.z = 45
       this.obRightEyebrow.rotation.x = 0.2
       this.obRightEyebrow.rotation.y = -0.2
       this.obEyesGroup.add(this.obRightEyebrow)
 
       // OB Left Eyebrow
-      const obLeftEyebrowGeometry = new THREE.BoxBufferGeometry(30, 3, 5)
+      const obLeftEyebrowGeometry = new THREE.BoxBufferGeometry(40, 3, 5)
       this.obLeftEyebrow = new THREE.Mesh(
         obLeftEyebrowGeometry,
         obEyebrowMaterial
       )
       this.obLeftEyebrow.position.y = 205
-      this.obLeftEyebrow.position.x = 20
-      this.obLeftEyebrow.position.z = 55
+      this.obLeftEyebrow.position.x = 25
+      this.obLeftEyebrow.position.z = 45
       this.obLeftEyebrow.rotation.x = 0.2
       this.obLeftEyebrow.rotation.y = 0.2
       this.obEyesGroup.add(this.obLeftEyebrow)
@@ -297,16 +291,25 @@ export default () => {
 
       // OB Tail
       const obTailGeometry = new THREE.CylinderGeometry(
-        20,
+        10,
         5,
-        250,
+        200,
         this.rSegments,
         this.hSegments
       )
-      const obTail = new THREE.Mesh(obTailGeometry, obFurMaterial)
-      obTail.position.z = -75
-      obTail.rotation.x = -0.2
-      this.obBodyGroup.add(obTail)
+      this.obTail = new THREE.Mesh(obTailGeometry, obFurMaterial)
+      this.obTail.position.z = -75
+      this.obTail.position.y = -20
+      this.obTail.rotation.x = -0.2
+      this.obTail.rotation.y = -0.2
+      this.obTail.rotation.z = 0.2
+      const tailTween = new TimelineMax({ repeat: -1 })
+        .to(this.obTail.rotation, 2, { z: -0.5, ease: Elastic.ease })
+        .to(this.obTail.rotation, 2, { z: 0.5, ease: Elastic.ease, delay: 0.4 })
+        .to(this.obTail.rotation, 0.5, { z: -0.5, ease: Elastic.ease })
+        .to(this.obTail.rotation, 2, { z: 0.8, ease: Elastic.ease })
+
+      this.obBodyGroup.add(this.obTail)
 
       // OB Legs
       // OB Right Front Leg
@@ -429,7 +432,7 @@ export default () => {
       this.obLeftEyeIris.geometry.verticesNeedUpdate = true
       this.obRightEyeIris.geometry.verticesNeedUpdate = true
 
-      // brows
+      // Brows
       this.obLeftEyebrow.position.y = 205 + vAngle * 5
       this.obRightEyebrow.position.y = 205 - vAngle * 5
       this.obLeftEyebrow.rotation.x = 0.2 - vAngle * 0.5
@@ -447,8 +450,7 @@ export default () => {
       let tempVA
       let tempX
       if (window.innerWidth >= 1200) {
-        console.log("side = ", sideBarContainer.offsetWidth)
-        tempX = mousePos.x - sideBarContainer.offsetWidth * 1.95
+        tempX = mousePos.x - sideBarContainer.offsetWidth // * 1.95
         tempHA = tempX - windowHalfX / 200
         tempVA = (mousePos.y - windowHalfY) / 200
       } else {
@@ -464,13 +466,21 @@ export default () => {
     }
 
     init()
-    createLights()
     createFloor()
+    createLights()
     ob = new Oberyn()
     ob.obAllGroup.add(ob.obEyesGroup)
     ob.obAllGroup.add(ob.obHeadGroup)
     ob.obAllGroup.add(ob.obBodyGroup)
-    ob.obAllGroup.rotation.y = 6
+    // ob.obAllGroup.rotation.y = 260
+    ob.obAllGroup.rotation.y = 0.1
+
+    // ob.obAllGroup.traverse(object => {
+    //   if (object instanceof THREE.Mesh) {
+    //     object.castShadow = true
+    //     object.receiveShadow = true
+    //   }
+    // })
     scene.add(ob.obAllGroup)
 
     console.log("ob >>>>  ", ob)
