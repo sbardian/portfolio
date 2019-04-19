@@ -450,7 +450,7 @@ export default () => {
       let tempVA
       let tempX
       if (window.innerWidth >= 1200) {
-        tempX = mousePos.x - sideBarContainer.offsetWidth // * 1.95
+        tempX = mousePos.x - sideBarContainer.offsetWidth * 1.95
         tempHA = tempX - windowHalfX / 200
         tempVA = (mousePos.y - windowHalfY) / 200
       } else {
