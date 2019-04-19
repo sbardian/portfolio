@@ -559,6 +559,15 @@ export default () => {
         justify-content: center;
       `}
     >
+        <div css={css`
+            position: absolute;
+            align-self: center;
+            justify-content: start;
+            height: 80%;
+            font-size: 24pt;
+        `}>
+            <span>Oberyn</span>
+        </div>
       <canvas
         css={css`
           background: transparent;
