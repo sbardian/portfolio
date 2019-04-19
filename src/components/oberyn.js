@@ -95,7 +95,7 @@ export default () => {
     const createLights = () => {
       const ambLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.7)
 
-      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.6)
+      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.7)
       shadowLight.position.set(200, 150, 200)
       shadowLight.castShadow = true
       shadowLight.shadowDarkness = 0.4
