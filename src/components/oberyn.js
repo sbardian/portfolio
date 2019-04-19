@@ -14,13 +14,32 @@ export default () => {
     // setup
     const canvas = document.querySelector("#ob-scene")
     const bodyContainer = document.querySelector("#main-body")
-    const WIDTH = bodyContainer.offsetWidth
-    const HEIGHT = bodyContainer.offsetHeight
+    const sideBarContainer = document.querySelector("#sidebar-container")
+    let WIDTH = bodyContainer.offsetWidth
+    let HEIGHT = bodyContainer.offsetHeight
     let windowHalfX
     let windowHalfY
     let scene
     let camera
     let renderer
+    let mousePos = { x: 0, y: 0 }
+    let ob
+
+    function handleMouseMove(event) {
+      //   console.log((">>> ", event.clientX - sideBarContainer.offsetWidth) * 0.3)
+      //   console.log("actual >>> ", event.clientX)
+      mousePos = { x: event.clientX, y: event.clientY }
+    }
+
+    function onWindowResize() {
+      HEIGHT = bodyContainer.innerHeight
+      WIDTH = bodyContainer.innerWidth
+      windowHalfX = WIDTH
+      windowHalfY = HEIGHT
+      renderer.setSize(WIDTH, HEIGHT)
+      camera.aspect = WIDTH / HEIGHT
+      camera.updateProjectionMatrix()
+    }
 
     // init
     const init = () => {
@@ -40,10 +59,13 @@ export default () => {
       renderer.setSize(WIDTH, HEIGHT)
       renderer.setClearColor(0x000000, 0)
 
+      windowHalfX = WIDTH / 2
+      windowHalfY = HEIGHT / 2
+
       const controls = new OrbitControls(camera, renderer.domElement)
 
-      // window.addEventListener("resize", onWindowResize, false)
-      // document.addEventListener("mousemove", handleMouseMove, false)
+      window.addEventListener("resize", onWindowResize, false)
+      document.addEventListener("mousemove", handleMouseMove, false)
       // document.addEventListener("touchstart", handleTouchStart, false)
       // document.addEventListener("touchend", handleTouchEnd, false)
       // document.addEventListener("touchmove", handleTouchMove, false)
@@ -53,9 +75,9 @@ export default () => {
       const light = new THREE.HemisphereLight(0xffffff, 0xffffff, 0.5)
 
       const shadowLight = new THREE.DirectionalLight(0xffffff, 0.8)
-      shadowLight.position.set(200, 200, 200)
+      shadowLight.position.set(200, 250, 200)
       shadowLight.castShadow = true
-      shadowLight.shadowDarkness = 0.2
+      shadowLight.shadowDarkness = 0.5
 
       const backLight = new THREE.DirectionalLight(0xffffff, 0.4)
       backLight.position.set(-100, 200, 50)
@@ -68,11 +90,28 @@ export default () => {
     }
 
     // Oberyn
-    const Oberyn = () => {
+    function Oberyn() {
+      let rSegments
+      let hSegments
+      //   let obRightEye
+      //   let obLeftEye
+      //   let obRightEyeIris
+      //   let obLeftEyeIris
+      this.obBodyGroup = new THREE.Group()
+      this.obHeadGroup = new THREE.Group()
+      this.obEyesGroup = new THREE.Group()
+      this.obAllGroup = new THREE.Group()
+
       // OB Materials
       // Fur
       const obFurMaterial = new THREE.MeshLambertMaterial({
-        color: 0xeba644,
+        color: 0x103d87,
+        shading: THREE.FlatShading,
+      })
+
+      // Stripes
+      const obStripeMaterial = new THREE.MeshLambertMaterial({
+        color: 0xa05224,
         shading: THREE.FlatShading,
       })
 
@@ -94,132 +133,137 @@ export default () => {
       })
 
       // OB body
-      const rSegments = 4
-      const hSegments = 3
-      const obBodyGroup = new THREE.Group()
+      this.rSegments = 4
+      this.hSegments = 3
+      //   this.obBodyGroup = new THREE.Group()
       const obBodyGeometry = new THREE.CylinderGeometry(
         10,
-        70,
+        55,
         250,
         rSegments,
         hSegments
       )
       const obBody = new THREE.Mesh(obBodyGeometry, obFurMaterial)
-      obBodyGroup.add(obBody)
+      this.obBodyGroup.add(obBody)
 
-      // OB head
-      const obHeadGroup = new THREE.Group()
-      const obHeadGeometry = new THREE.BoxBufferGeometry(100, 100, 75)
+      // OB Head
+      //   this.obHeadGroup = new THREE.Group()
+      const obHeadGeometry = new THREE.BoxBufferGeometry(100, 80, 75)
       const obHead = new THREE.Mesh(obHeadGeometry, obFurMaterial)
-      obHead.position.y = 175
-      obHeadGroup.add(obHead)
+      obHead.position.y = 165
+      this.obHeadGroup.add(obHead)
 
       // EARS
       // OB Right Ear
-      const obRightEarGeometry = new THREE.BoxBufferGeometry(40, 40, 5)
+      const obRightEarGeometry = new THREE.ConeBufferGeometry(25, 40, 3)
       const obRightEar = new THREE.Mesh(obRightEarGeometry, obFurMaterial)
-      obRightEar.position.y = 250
-      obRightEar.position.x = 35
-      obHeadGroup.add(obRightEar)
+      obRightEar.position.y = 225
+      obRightEar.position.x = 30
+      obRightEar.rotation.y = 0.95
+      this.obHeadGroup.add(obRightEar)
 
       // OB Left Ear
-      const obLeftEarGeometry = new THREE.BoxBufferGeometry(40, 40, 5)
+      const obLeftEarGeometry = new THREE.ConeBufferGeometry(25, 40, 3)
       const obLeftEar = new THREE.Mesh(obLeftEarGeometry, obFurMaterial)
-      obLeftEar.position.y = 250
-      obLeftEar.position.x = -35
-      obHeadGroup.add(obLeftEar)
+      obLeftEar.position.y = 225
+      obLeftEar.position.x = -30
+      obLeftEar.rotation.y = -0.95
+      this.obHeadGroup.add(obLeftEar)
 
       // INSIDE EARS
       // OB Inner Right Ear
-      const obInnerRightEarGeometry = new THREE.BoxBufferGeometry(20, 20, 5)
+      const obInnerRightEarGeometry = new THREE.ConeBufferGeometry(15, 30, 3)
       const obInnerRightEar = new THREE.Mesh(
         obInnerRightEarGeometry,
         obNoseMaterial
       )
-      obInnerRightEar.position.y = 240
-      obInnerRightEar.position.x = 35
-      obInnerRightEar.position.z = 5
-      obHeadGroup.add(obInnerRightEar)
+      obInnerRightEar.position.y = 220
+      obInnerRightEar.position.x = 30
+      obInnerRightEar.position.z = 7
+      obInnerRightEar.rotation.y = 0.95
+      this.obHeadGroup.add(obInnerRightEar)
 
       // OB Inner Left Ear
-      const obInnerLeftEarGeometry = new THREE.BoxBufferGeometry(20, 20, 5)
+      const obInnerLeftEarGeometry = new THREE.ConeBufferGeometry(15, 30, 3)
       const obInnerLeftEar = new THREE.Mesh(
         obInnerLeftEarGeometry,
         obNoseMaterial
       )
-      obInnerLeftEar.position.y = 240
-      obInnerLeftEar.position.x = -35
-      obInnerLeftEar.position.z = 5
-      obHeadGroup.add(obInnerLeftEar)
+      obInnerLeftEar.position.y = 220
+      obInnerLeftEar.position.x = -30
+      obInnerLeftEar.position.z = 7
+      obInnerLeftEar.rotation.y = -0.95
+      this.obHeadGroup.add(obInnerLeftEar)
 
       // EYES
-      const obEyesGroup = new THREE.Group()
+      //   const obEyesGroup = new THREE.Group()
 
       // OB Right Eye
-      const obRightEyeGeometry = new THREE.BoxBufferGeometry(45, 25, 5)
-      const obRightEye = new THREE.Mesh(obRightEyeGeometry, obEyeMaterial)
-      obRightEye.position.y = 200
-      obRightEye.position.x = -25
-      obRightEye.position.z = 45
-      obEyesGroup.add(obRightEye)
+      const obRightEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      this.obRightEye = new THREE.Mesh(obRightEyeGeometry, obEyeMaterial)
+      this.obRightEye.position.y = 185
+      this.obRightEye.position.x = -25
+      this.obRightEye.position.z = 45
+      this.obEyesGroup.add(this.obRightEye)
 
       // OB Left Eye
-      const obLeftEyeGeometry = new THREE.BoxBufferGeometry(45, 25, 5)
-      const obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obEyeMaterial)
-      obLeftEye.position.y = 200
-      obLeftEye.position.x = 25
-      obLeftEye.position.z = 45
-      obEyesGroup.add(obLeftEye)
+      const obLeftEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
+      this.obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obEyeMaterial)
+      this.obLeftEye.position.y = 185
+      this.obLeftEye.position.x = 25
+      this.obLeftEye.position.z = 45
+      this.obEyesGroup.add(this.obLeftEye)
 
       // OB Right Iris
       const obRightEyeIrisGeometry = new THREE.BoxBufferGeometry(5, 5, 5)
-      const obRightEyeIris = new THREE.Mesh(
+      this.obRightEyeIris = new THREE.Mesh(
         obRightEyeIrisGeometry,
         obEyeIrisMaterial
       )
-      obRightEyeIris.position.y = 200
-      obRightEyeIris.position.x = 20
-      obRightEyeIris.position.z = 55
-      obEyesGroup.add(obRightEyeIris)
+      this.obRightEyeIris.position.y = 185
+      this.obRightEyeIris.position.x = 20
+      this.obRightEyeIris.position.z = 55
+      this.obEyesGroup.add(this.obRightEyeIris)
 
       // OB Left Iris
       const obLeftEyeIrisGeometry = new THREE.BoxBufferGeometry(5, 5, 5)
-      const obLeftEyeIris = new THREE.Mesh(
+      this.obLeftEyeIris = new THREE.Mesh(
         obLeftEyeIrisGeometry,
         obEyeIrisMaterial
       )
-      obLeftEyeIris.position.y = 200
-      obLeftEyeIris.position.x = -20
-      obLeftEyeIris.position.z = 55
-      obEyesGroup.add(obLeftEyeIris)
+      this.obLeftEyeIris.position.y = 185
+      this.obLeftEyeIris.position.x = -20
+      this.obLeftEyeIris.position.z = 55
+      this.obEyesGroup.add(this.obLeftEyeIris)
 
-      obHeadGroup.add(obEyesGroup)
+      //   this.obHeadGroup.add(this.obEyesGroup)
 
-      // OB mouth
-      const obMouthGeometry = new THREE.BoxBufferGeometry(50, 50, 30)
+      // OB Mouth
+      const obMouthGeometry = new THREE.BoxBufferGeometry(50, 30, 30)
       const obMouth = new THREE.Mesh(obMouthGeometry, obFurMaterial)
       obMouth.position.y = 160
       obMouth.position.z = 60
-      obHeadGroup.add(obMouth)
+      this.obHeadGroup.add(obMouth)
 
       // OB Nose
       const obNoseGeometry = new THREE.BoxBufferGeometry(10, 10, 10)
       const obNose = new THREE.Mesh(obNoseGeometry, obNoseMaterial)
-      obNose.position.y = 180
+      obNose.position.y = 175
       obNose.position.z = 80
-      obHeadGroup.add(obNose)
+      this.obHeadGroup.add(obNose)
 
       // OB Tail
       const obTailGeometry = new THREE.CylinderGeometry(
         20,
         5,
         250,
-        rSegments,
-        hSegments
+        this.rSegments,
+        this.hSegments
       )
       const obTail = new THREE.Mesh(obTailGeometry, obFurMaterial)
       obTail.position.z = -75
-      obBodyGroup.add(obTail)
+      obTail.rotation.x = -0.2
+      this.obBodyGroup.add(obTail)
 
       // OB Legs
       // OB Right Front Leg
@@ -234,7 +278,7 @@ export default () => {
       obRightFrontLeg.rotation.z = 3
       obRightFrontLeg.rotation.x = -0.3
 
-      obBodyGroup.add(obRightFrontLeg)
+      this.obBodyGroup.add(obRightFrontLeg)
 
       // OB Left Front Leg
       const obLeftFrontLegGeometry = new THREE.BoxBufferGeometry(20, 180, 30)
@@ -248,7 +292,7 @@ export default () => {
       obLeftFrontLeg.rotation.z = -3
       obLeftFrontLeg.rotation.x = -0.3
 
-      obBodyGroup.add(obLeftFrontLeg)
+      this.obBodyGroup.add(obLeftFrontLeg)
 
       // OB Left Back Leg
       const obLeftBackLegGeometry = new THREE.BoxBufferGeometry(20, 120, 120)
@@ -259,7 +303,7 @@ export default () => {
       obLeftBackLeg.rotation.z = 3
       obLeftBackLeg.rotation.y = 0.5
 
-      obBodyGroup.add(obLeftBackLeg)
+      this.obBodyGroup.add(obLeftBackLeg)
 
       // OB Right Back Leg
       const obRightBackLegGeometry = new THREE.BoxBufferGeometry(20, 120, 120)
@@ -273,7 +317,7 @@ export default () => {
       obRightBackLeg.rotation.z = -3
       obRightBackLeg.rotation.y = -0.5
 
-      obBodyGroup.add(obRightBackLeg)
+      this.obBodyGroup.add(obRightBackLeg)
 
       // Paws
       // OB Right Back Paw
@@ -288,7 +332,7 @@ export default () => {
       obRightBackPaw.rotation.z = -3
       obRightBackPaw.rotation.y = -0.5
 
-      obBodyGroup.add(obRightBackPaw)
+      this.obBodyGroup.add(obRightBackPaw)
 
       // OB Left Back Paw
       const obLeftBackPawGeometry = new THREE.BoxBufferGeometry(30, 30, 30)
@@ -299,7 +343,7 @@ export default () => {
       obLeftBackPaw.rotation.z = 3
       obLeftBackPaw.rotation.y = 0.5
 
-      obBodyGroup.add(obLeftBackPaw)
+      this.obBodyGroup.add(obLeftBackPaw)
 
       // OB Right Front Paw
       const obRightFrontPawGeometry = new THREE.BoxBufferGeometry(30, 30, 30)
@@ -310,10 +354,8 @@ export default () => {
       obRightFrontPaw.position.x = -35
       obRightFrontPaw.position.y = -110
       obRightFrontPaw.position.z = 70
-      //   obRightFrontPaw.rotation.z = -3
-      //   obRightFrontPaw.rotation.y = -0.5
 
-      obBodyGroup.add(obRightFrontPaw)
+      this.obBodyGroup.add(obRightFrontPaw)
 
       // OB Left Front Paw
       const obLeftFrontPawGeometry = new THREE.BoxBufferGeometry(30, 30, 30)
@@ -324,13 +366,52 @@ export default () => {
       obLeftFrontPaw.position.x = 35
       obLeftFrontPaw.position.y = -110
       obLeftFrontPaw.position.z = 70
-      //   obLeftFrontPaw.rotation.z = 3
-      //   obLeftFrontPaw.rotation.y = 0.5
 
-      obBodyGroup.add(obLeftFrontPaw)
+      this.obBodyGroup.add(obLeftFrontPaw)
 
-      scene.add(obBodyGroup)
-      scene.add(obHeadGroup)
+      // OB Stripes
+
+      //   scene.add(this.obBodyGroup)
+      //   scene.add(this.obHeadGroup)
+    }
+
+    Oberyn.prototype.lookAt = function lookAt(hAngle, vAngle) {
+      this.obLeftEyeIris.position.y = 185 - vAngle * 9
+      this.obLeftEyeIris.position.x = -25 + hAngle * 12
+      //   this.obLeftEyeIris.position.z = 40 + hAngle * 10
+      this.obRightEyeIris.position.y = 185 - vAngle * 9
+      this.obRightEyeIris.position.x = 25 + hAngle * 12
+      //   this.obRightEyeIris.position.z = 40 - hAngle * 10
+      //   this.obLeftEye.position.y = this.obRightEye.position.y = 120 - vAngle * 10
+      //   this.beak.position.y = 70 - this.vAngle * 20
+      //   this.beak.rotation.x = Math.PI / 2 + this.vAngle / 3
+      //   this.feather1.rotation.x = Math.PI / 4 + this.vAngle / 2
+      //   this.feather1.position.y = 185 - this.vAngle * 10
+      //   this.feather1.position.z = 55 + this.vAngle * 10
+      //   this.feather2.rotation.x = Math.PI / 4 + this.vAngle / 2
+      //   this.feather2.position.y = 180 - this.vAngle * 10
+      //   this.feather2.position.z = 50 + this.vAngle * 10
+      //   this.feather3.rotation.x = Math.PI / 4 + this.vAngle / 2
+      //   this.feather3.position.y = 180 - this.vAngle * 10
+      //   this.feather3.position.z = 50 + this.vAngle * 10
+      //   for (var i = 0; i < this.bodyVerticesLength; i++) {
+      //     var line = Math.floor(i / (this.rSegments + 1))
+      //     var tv = this.bodyBird.geometry.vertices[i]
+      //     var tvInitPos = this.bodyBirdInitPositions[i]
+      //     var a, dy
+      //     if (line >= this.hSegments - 1) {
+      //       a = 0
+      //     } else {
+      //       a = this.hAngle / (line + 1)
+      //     }
+      //     var tx = tvInitPos.x * Math.cos(a) + tvInitPos.z * Math.sin(a)
+      //     var tz = -tvInitPos.x * Math.sin(a) + tvInitPos.z * Math.cos(a)
+      //     tv.x = tx
+      //     tv.z = tz
+      //   }
+      //   this.face.rotation.y = this.hAngle
+      this.obLeftEyeIris.geometry.verticesNeedUpdate = true
+      this.obRightEyeIris.geometry.verticesNeedUpdate = true
     }
 
     // render
@@ -340,13 +421,36 @@ export default () => {
 
     // animate
     const animate = () => {
+      let tempHA
+      let tempVA
+      let tempX
+      if (window.innerWidth >= 1200) {
+        console.log("side = ", sideBarContainer.offsetWidth)
+        tempX = mousePos.x - sideBarContainer.offsetWidth * 1.95
+        tempHA = tempX - windowHalfX / 200
+        tempVA = (mousePos.y - windowHalfY) / 200
+      } else {
+        tempHA = (mousePos.x - windowHalfX) / 200
+        tempVA = (mousePos.y - windowHalfY) / 200
+      }
+      const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
+      const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
+      ob.lookAt(userHAngle, userVAngle)
+
       requestAnimationFrame(animate)
       render()
     }
 
     init()
     createLights()
-    Oberyn()
+    ob = new Oberyn()
+    ob.obAllGroup.add(ob.obEyesGroup)
+    ob.obAllGroup.add(ob.obHeadGroup)
+    ob.obAllGroup.add(ob.obBodyGroup)
+    ob.obAllGroup.rotation.y = 145
+    scene.add(ob.obAllGroup)
+
+    console.log("ob >>>>  ", ob)
     animate()
   })
 
@@ -361,7 +465,7 @@ export default () => {
       <canvas
         css={css`
           background: transparent;
-          position: fixed;
+          /* position: fixed; */
         `}
         id="ob-scene"
       />
