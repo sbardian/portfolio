@@ -512,13 +512,15 @@ export default () => {
       let tempHA
       let tempVA
       let tempX
+      let tempY
       if (window.innerWidth >= 1200) {
         tempX = mousePos.x - sideBarContainer.offsetWidth
         tempHA = (tempX - windowHalfX) / 200
         tempVA = (mousePos.y - windowHalfY) / 200
       } else {
+        tempY = mousePos.y - sideBarContainer.offsetHeight
         tempHA = (mousePos.x - windowHalfX) / 200
-        tempVA = (mousePos.y - windowHalfY) / 200
+        tempVA = (tempY - windowHalfY) / 200
       }
       const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
       const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
