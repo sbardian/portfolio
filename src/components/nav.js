@@ -11,7 +11,7 @@ export default () => {
       css={css`
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
         margin: 0 20px 20px 20px;
         justify-items: center;
         padding: 40px 0 0 0;
