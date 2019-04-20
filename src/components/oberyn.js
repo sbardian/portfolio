@@ -71,7 +71,7 @@ export default () => {
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
 
-      //   const controls = new OrbitControls(camera, renderer.domElement)
+      const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       bodyContainer.addEventListener("mousemove", handleMouseMove, false)
@@ -146,7 +146,7 @@ export default () => {
       })
 
       // Eyes
-      const obEyeMaterial = new THREE.MeshLambertMaterial({
+      const obWhiteMaterial = new THREE.MeshLambertMaterial({
         color: 0xffffff,
         shading: THREE.FlatShading,
       })
@@ -245,7 +245,7 @@ export default () => {
       // OB Right Eye
       //   const obRightEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
       const obRightEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
-      this.obRightEye = new THREE.Mesh(obRightEyeGeometry, obEyeMaterial)
+      this.obRightEye = new THREE.Mesh(obRightEyeGeometry, obWhiteMaterial)
       this.obRightEye.castShadow = true
       this.obRightEye.receiveShadow = true
       this.obRightEye.position.y = 185
@@ -257,7 +257,7 @@ export default () => {
       // OB Left Eye
       //   const obLeftEyeGeometry = new THREE.BoxBufferGeometry(30, 25, 5)
       const obLeftEyeGeometry = new THREE.CylinderBufferGeometry(25, 15, 25, 3)
-      this.obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obEyeMaterial)
+      this.obLeftEye = new THREE.Mesh(obLeftEyeGeometry, obWhiteMaterial)
       this.obLeftEye.castShadow = true
       this.obLeftEye.receiveShadow = true
       this.obLeftEye.position.y = 185
@@ -475,6 +475,100 @@ export default () => {
       obLeftFrontPaw.position.z = 60
 
       this.obBodyGroup.add(obLeftFrontPaw)
+
+      // OB Left Whiskers
+      // 1
+      const obLeftWhisker1Geometry = new THREE.BoxBufferGeometry(50, 1, 1)
+      this.obLeftWhisker1 = new THREE.Mesh(
+        obLeftWhisker1Geometry,
+        obWhiteMaterial
+      )
+      this.obLeftWhisker1.castShadow = true
+      this.obLeftWhisker1.receiveShadow = false
+      this.obLeftWhisker1.position.x = 40
+      this.obLeftWhisker1.position.y = 153
+      this.obLeftWhisker1.position.z = 53
+      this.obLeftWhisker1.rotation.z = -0.2
+
+      this.obHeadGroup.add(this.obLeftWhisker1)
+
+      // 2
+      const obLeftWhisker2Geometry = new THREE.BoxBufferGeometry(75, 1, 1)
+      this.obLeftWhisker2 = new THREE.Mesh(
+        obLeftWhisker2Geometry,
+        obWhiteMaterial
+      )
+      this.obLeftWhisker2.castShadow = true
+      this.obLeftWhisker2.receiveShadow = false
+      this.obLeftWhisker2.position.x = 40
+      this.obLeftWhisker2.position.y = 151.5
+      this.obLeftWhisker2.position.z = 56
+      this.obLeftWhisker2.rotation.z = -0.25
+
+      this.obHeadGroup.add(this.obLeftWhisker2)
+
+      // 3
+      const obLeftWhisker3Geometry = new THREE.BoxBufferGeometry(100, 1, 1)
+      this.obLeftWhisker3 = new THREE.Mesh(
+        obLeftWhisker3Geometry,
+        obWhiteMaterial
+      )
+
+      this.obLeftWhisker3.castShadow = true
+      this.obLeftWhisker3.receiveShadow = false
+      this.obLeftWhisker3.position.x = 40
+      this.obLeftWhisker3.position.y = 148.5
+      this.obLeftWhisker3.position.z = 50
+      this.obLeftWhisker3.rotation.z = -0.3
+
+      this.obHeadGroup.add(this.obLeftWhisker3)
+
+      // OB Right Whiskers
+      // 1
+      const obRightWhisker1Geometry = new THREE.BoxBufferGeometry(50, 1, 1)
+      this.obRightWhisker1 = new THREE.Mesh(
+        obRightWhisker1Geometry,
+        obWhiteMaterial
+      )
+      this.obRightWhisker1.castShadow = true
+      this.obRightWhisker1.receiveShadow = false
+      this.obRightWhisker1.position.x = -40
+      this.obRightWhisker1.position.y = 153
+      this.obRightWhisker1.position.z = 53
+      this.obRightWhisker1.rotation.z = 0.2
+
+      this.obHeadGroup.add(this.obRightWhisker1)
+
+      // 2
+      const obRightWhisker2Geometry = new THREE.BoxBufferGeometry(75, 1, 1)
+      this.obRightWhisker2 = new THREE.Mesh(
+        obRightWhisker2Geometry,
+        obWhiteMaterial
+      )
+      this.obRightWhisker2.castShadow = true
+      this.obRightWhisker2.receiveShadow = false
+      this.obRightWhisker2.position.x = -40
+      this.obRightWhisker2.position.y = 151.5
+      this.obRightWhisker2.position.z = 56
+      this.obRightWhisker2.rotation.z = 0.25
+
+      this.obHeadGroup.add(this.obRightWhisker2)
+
+      // 3
+      const obRightWhisker3Geometry = new THREE.BoxBufferGeometry(100, 1, 1)
+      this.obRightWhisker3 = new THREE.Mesh(
+        obRightWhisker3Geometry,
+        obWhiteMaterial
+      )
+
+      this.obRightWhisker3.castShadow = true
+      this.obRightWhisker3.receiveShadow = false
+      this.obRightWhisker3.position.x = -40
+      this.obRightWhisker3.position.y = 148.5
+      this.obRightWhisker3.position.z = 50
+      this.obRightWhisker3.rotation.z = 0.3
+
+      this.obHeadGroup.add(this.obRightWhisker3)
 
       // OB Stripes
 
