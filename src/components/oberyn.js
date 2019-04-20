@@ -71,7 +71,7 @@ export default () => {
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
 
-      const controls = new OrbitControls(camera, renderer.domElement)
+      // const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       bodyContainer.addEventListener("mousemove", handleMouseMove, false)
