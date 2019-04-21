@@ -66,8 +66,8 @@ export default ({ animations }) => {
       renderer.setPixelRatio(window.devicePixelRatio)
       renderer.setSize(WIDTH, HEIGHT)
       renderer.setClearColor(0x000000, 0)
-      renderer.shadowMapEnabled = true
-      renderer.shadowMapType = THREE.PCFSoftShadowMap
+      renderer.shadowMap.enabled = true
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
@@ -99,8 +99,6 @@ export default ({ animations }) => {
       const shadowLight = new THREE.DirectionalLight(0xffffff, 0.7)
       shadowLight.position.set(200, 150, 200)
       shadowLight.castShadow = true
-      shadowLight.shadowDarkness = 0.4
-      //   shadowLight.shadowCameraVisible = true
 
       shadowLight.shadowCameraNear = 2
       shadowLight.shadowCameraFar = -2000
@@ -845,11 +843,12 @@ export default ({ animations }) => {
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: #698161;
       `}
     >
       <AnimationNav
         animations={animations}
-        current={{ to: "/oberyn", title: "Oberyn" }}
+        current={{ to: "/oberynPage", title: "Oberyn" }}
       />
       <canvas
         css={css`
