@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Layout from "../components/layout"
 import Oberyn from "../components/oberyn"
 import "normalize.css"
@@ -7,9 +6,14 @@ import "normalize.css"
 import main from "../assets/main.css"
 
 const Animations = () => {
+  const animations = [
+    { to: "/oberyn", title: "Oberyn" },
+    { to: "/", title: "Home" },
+  ]
+
   return (
     <Layout>
-      <Oberyn />
+      <Oberyn animations={animations} />
     </Layout>
   )
 }

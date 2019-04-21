@@ -7,9 +7,10 @@ import * as THREE from "three"
 import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
+import AnimationNav from "./animation-nav"
 import mq from "./media-queries"
 
-export default () => {
+export default ({ animations }) => {
   React.useEffect(() => {
     // setup
     const canvas = document.querySelector("#ob-scene")
@@ -846,19 +847,10 @@ export default () => {
         justify-content: center;
       `}
     >
-      <div
-        css={css`
-          position: absolute;
-          align-self: center;
-          justify-content: start;
-          height: 80%;
-          font-size: 48pt;
-          font-style: italic;
-          margin-top: 40px;
-        `}
-      >
-        <span>Oberyn</span>
-      </div>
+      <AnimationNav
+        animations={animations}
+        current={{ to: "/oberyn", title: "Oberyn" }}
+      />
       <canvas
         css={css`
           background: transparent;
