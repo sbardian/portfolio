@@ -139,43 +139,6 @@ export default ({ animations }) => {
       scene.add(shadowLight)
     }
 
-    // render
-    const render = () => {
-      renderer.render(scene, camera)
-    }
-
-    // animate
-    const animate = () => {
-      let tempHA
-      let tempVA
-      let tempX
-      let tempY
-      if (window.innerWidth >= 1200) {
-        tempX = mousePos.x - sideBarContainer.offsetWidth
-        tempY = mousePos.y
-        tempHA = (tempX - windowHalfX) / 200
-        tempVA = (mousePos.y - windowHalfY) / 200
-      } else {
-        tempX = mousePos.x
-        tempY = mousePos.y - sideBarContainer.offsetHeight + 250
-        tempHA = (mousePos.x - windowHalfX) / 200
-        tempVA = (tempY - windowHalfY) / 200
-      }
-      const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
-      const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
-      const xTarget = tempX - windowHalfX
-      const yTarget = tempY - windowHalfY
-
-      /**
-       *
-       * Place animation initializers here
-       *
-       */
-
-      requestAnimationFrame(animate)
-      render()
-    }
-
     function Duck() {
       this.allDuckGroup = new THREE.Group()
       const rgbGreen = new THREE.Color("rgb(23, 167, 104)")
@@ -230,6 +193,55 @@ export default ({ animations }) => {
       this.head.position.y = 10
       this.allDuckGroup.add(this.head)
 
+      this.duckHairGroup = new THREE.Group()
+
+      const headCenterHairGeo = new THREE.BoxGeometry(1, 2, 0.5)
+      headCenterHairGeo.vertices[2].x -= 0.2
+      headCenterHairGeo.vertices[3].x -= 0.2
+      headCenterHairGeo.vertices[3].z += 0.2
+      headCenterHairGeo.vertices[6].x += 0.2
+      headCenterHairGeo.vertices[7].x += 0.2
+      headCenterHairGeo.vertices[6].z += 0.2
+      this.headCenterHair = new THREE.Mesh(headCenterHairGeo, flatGreen)
+      this.headCenterHair.position.y = 15
+      this.headCenterHair.position.z = -5
+      this.headCenterHair.rotation.x = 0.5
+      this.duckHairGroup.add(this.headCenterHair)
+
+      const headLeftHairGeo = new THREE.BoxGeometry(0.7, 1.7, 0.5)
+      headLeftHairGeo.vertices[2].x -= 0.2
+      headLeftHairGeo.vertices[3].x -= 0.2
+      headLeftHairGeo.vertices[3].z += 0.2
+      headLeftHairGeo.vertices[6].x += 0.2
+      headLeftHairGeo.vertices[7].x += 0.2
+      headLeftHairGeo.vertices[6].z += 0.2
+      this.headLeftHair = new THREE.Mesh(headLeftHairGeo, flatGreen)
+      this.headLeftHair.position.x = 1
+      this.headLeftHair.position.y = 14.5
+      this.headLeftHair.position.z = -5
+      this.headLeftHair.rotation.z = -0.5
+      this.headLeftHair.rotation.x = 0.5
+      this.duckHairGroup.add(this.headLeftHair)
+
+      const headRightHairGeo = new THREE.BoxGeometry(0.7, 1.7, 0.5)
+      headRightHairGeo.vertices[2].x -= 0.2
+      headRightHairGeo.vertices[3].x -= 0.2
+      headRightHairGeo.vertices[3].z += 0.2
+      headRightHairGeo.vertices[6].x += 0.2
+      headRightHairGeo.vertices[7].x += 0.2
+      headRightHairGeo.vertices[6].z += 0.2
+      this.headRightHair = new THREE.Mesh(headRightHairGeo, flatGreen)
+      this.headRightHair.position.x = -1
+      this.headRightHair.position.y = 14.5
+      this.headRightHair.position.z = -5
+      this.headRightHair.rotation.z = 0.5
+      this.headRightHair.rotation.x = 0.5
+      this.duckHairGroup.add(this.headRightHair)
+
+      this.duckHairGroup.position.z += 1
+
+      this.allDuckGroup.add(this.duckHairGroup)
+
       this.duckLeftEyeGroup = new THREE.Group()
       this.duckRightEyeGroup = new THREE.Group()
 
@@ -252,7 +264,7 @@ export default ({ animations }) => {
       const leftEyeIrisGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5)
       this.leftEyeIris = new THREE.Mesh(leftEyeIrisGeo, flatBlack)
       this.leftEyeIris.position.y = 11.3
-      this.leftEyeIris.position.x = 3.3
+      this.leftEyeIris.position.x = 3.1
       this.leftEyeIris.position.z = 2.5
       this.duckLeftEyeGroup.add(this.leftEyeIris)
       // this.allDuckGroup.add(this.leftEyeIris)
@@ -260,37 +272,43 @@ export default ({ animations }) => {
       const rightEyeIrisGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5)
       this.rightEyeIris = new THREE.Mesh(rightEyeIrisGeo, flatBlack)
       this.rightEyeIris.position.y = 11.3
-      this.rightEyeIris.position.x = -3.3
+      this.rightEyeIris.position.x = -3.1
       this.rightEyeIris.position.z = 2.5
       this.duckRightEyeGroup.add(this.rightEyeIris)
       // this.allDuckGroup.add(this.rightEyeIris)
 
-      const rightTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
-      this.rightTopEyeLid = new THREE.Mesh(rightTopEyeLidGeo, flatGreen)
+      this.rightTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
+      this.rightTopEyeLid = new THREE.Mesh(this.rightTopEyeLidGeo, flatGreen)
       this.rightTopEyeLid.position.y = 11.8
       this.rightTopEyeLid.position.x = -3.2
       this.rightTopEyeLid.position.z = 2
       this.duckRightEyeGroup.add(this.rightTopEyeLid)
       // this.allDuckGroup.add(this.rightTopEyeLid)
 
-      const leftTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
-      this.leftTopEyeLid = new THREE.Mesh(leftTopEyeLidGeo, flatGreen)
+      this.leftTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
+      this.leftTopEyeLid = new THREE.Mesh(this.leftTopEyeLidGeo, flatGreen)
       this.leftTopEyeLid.position.y = 11.8
       this.leftTopEyeLid.position.x = 3.2
       this.leftTopEyeLid.position.z = 2
       this.duckLeftEyeGroup.add(this.leftTopEyeLid)
       // this.allDuckGroup.add(this.leftTopEyeLid)
 
-      const rightBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
-      this.rightBottomEyeLid = new THREE.Mesh(rightBottomEyeLidGeo, flatGreen)
+      this.rightBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
+      this.rightBottomEyeLid = new THREE.Mesh(
+        this.rightBottomEyeLidGeo,
+        flatGreen
+      )
       this.rightBottomEyeLid.position.y = 10
       this.rightBottomEyeLid.position.x = -3.2
       this.rightBottomEyeLid.position.z = 2
       this.duckRightEyeGroup.add(this.rightBottomEyeLid)
       // this.allDuckGroup.add(this.rightBottomEyeLid)
 
-      const leftBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
-      this.leftBottomEyeLid = new THREE.Mesh(leftBottomEyeLidGeo, flatGreen)
+      this.leftBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
+      this.leftBottomEyeLid = new THREE.Mesh(
+        this.leftBottomEyeLidGeo,
+        flatGreen
+      )
       this.leftBottomEyeLid.position.y = 10
       this.leftBottomEyeLid.position.x = 3.2
       this.leftBottomEyeLid.position.z = 2
@@ -425,18 +443,64 @@ export default ({ animations }) => {
       })
     }
 
-    Duck.prototype.spin = function spin() {
-      // Increment the angle.
-      this.runningCycle += 0.03
-      var t = this.runningCycle
-
-      // Ensure that the angle we will use is between 0 and 2 Pi.
+    Duck.prototype.blink = function blink() {
+      this.runningCycle += 0.05
+      let t = this.runningCycle
       t = t % (2 * Math.PI)
+      const amp = 4
 
-      // Amplitude is used as the main radius of the legs movement.
-      var amp = 4
+      this.leftBottomEyeLidGeo.verticesNeedUpdate = true
+      this.rightBottomEyeLidGeo.verticesNeedUpdate = true
+      this.leftTopEyeLidGeo.verticesNeedUpdate = true
+      this.rightTopEyeLidGeo.verticesNeedUpdate = true
 
-      this.headGroup.rotation.z = Math.min(3, Math.cos(t) * 2)
+      this.leftBottomEyeLidGeo.vertices[0].y = Math.max(0, Math.cos(t) * 0.9)
+      this.leftBottomEyeLidGeo.vertices[1].y = Math.max(0, Math.cos(t) * 0.9)
+      this.rightBottomEyeLidGeo.vertices[4].y = Math.max(0, Math.cos(t) * 0.9)
+      this.rightBottomEyeLidGeo.vertices[5].y = Math.max(0, Math.cos(t) * 0.9)
+
+      this.leftTopEyeLidGeo.vertices[2].y = Math.min(0, -Math.cos(t) * 0.9)
+      this.leftTopEyeLidGeo.vertices[3].y = Math.min(0, -Math.cos(t) * 0.9)
+      this.rightTopEyeLidGeo.vertices[6].y = Math.min(0, -Math.cos(t) * 0.9)
+      this.rightTopEyeLidGeo.vertices[7].y = Math.min(0, -Math.cos(t) * 0.9)
+    }
+
+    // render
+    const render = () => {
+      renderer.render(scene, camera)
+    }
+
+    // animate
+    const animate = () => {
+      let tempHA
+      let tempVA
+      let tempX
+      let tempY
+      if (window.innerWidth >= 1200) {
+        tempX = mousePos.x - sideBarContainer.offsetWidth
+        tempY = mousePos.y
+        tempHA = (tempX - windowHalfX) / 200
+        tempVA = (mousePos.y - windowHalfY) / 200
+      } else {
+        tempX = mousePos.x
+        tempY = mousePos.y - sideBarContainer.offsetHeight + 250
+        tempHA = (mousePos.x - windowHalfX) / 200
+        tempVA = (tempY - windowHalfY) / 200
+      }
+      const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
+      const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
+      const xTarget = tempX - windowHalfX
+      const yTarget = tempY - windowHalfY
+
+      /**
+       *
+       * Place animation initializers here
+       *
+       */
+      duck.blink()
+
+      requestAnimationFrame(animate)
+      render()
     }
 
     init()
@@ -445,6 +509,7 @@ export default ({ animations }) => {
 
     duck = new Duck()
     scene.add(duck.allDuckGroup)
+
     animate()
   })
 
