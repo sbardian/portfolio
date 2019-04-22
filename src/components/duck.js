@@ -217,64 +217,114 @@ export default ({ animations }) => {
         flatShading: true,
       })
 
-      const headGeo = new THREE.BoxBufferGeometry(6, 8, 10)
+      const headGeo = new THREE.BoxGeometry(6, 8, 9)
+      headGeo.vertices[2].x -= 0.7
+      headGeo.vertices[7].x += 0.7
+      headGeo.vertices[2].z -= 0.7
+      headGeo.vertices[7].z -= 0.7
+      headGeo.vertices[3].x -= 0.7
+      headGeo.vertices[6].x += 0.7
+      headGeo.vertices[3].z += 0.7
+      headGeo.vertices[6].z += 0.7
       this.head = new THREE.Mesh(headGeo, flatGreen)
       this.head.position.y = 10
       this.allDuckGroup.add(this.head)
 
+      this.duckLeftEyeGroup = new THREE.Group()
+      this.duckRightEyeGroup = new THREE.Group()
+
       const leftEyeGeo = new THREE.BoxGeometry(0.5, 2, 2)
-      this.leftEye = new THREE.Mesh(leftEyeGeo, flatBlack)
-      this.leftEye.position.y = 10
+      this.leftEye = new THREE.Mesh(leftEyeGeo, flatWhite)
+      this.leftEye.position.y = 11
       this.leftEye.position.x = 3
-      this.leftEye.position.z = 1
-      this.allDuckGroup.add(this.leftEye)
+      this.leftEye.position.z = 2
+      this.duckLeftEyeGroup.add(this.leftEye)
+      // this.allDuckGroup.add(this.leftEye)
 
       const rightEyeGeo = new THREE.BoxGeometry(0.5, 2, 2)
-      this.rightEye = new THREE.Mesh(rightEyeGeo, flatBlack)
-      this.rightEye.position.y = 10
+      this.rightEye = new THREE.Mesh(rightEyeGeo, flatWhite)
+      this.rightEye.position.y = 11
       this.rightEye.position.x = -3
-      this.rightEye.position.z = 1
-      this.allDuckGroup.add(this.rightEye)
+      this.rightEye.position.z = 2
+      this.duckRightEyeGroup.add(this.rightEye)
+      // this.allDuckGroup.add(this.rightEye)
+
+      const leftEyeIrisGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5)
+      this.leftEyeIris = new THREE.Mesh(leftEyeIrisGeo, flatBlack)
+      this.leftEyeIris.position.y = 11.3
+      this.leftEyeIris.position.x = 3.3
+      this.leftEyeIris.position.z = 2.5
+      this.duckLeftEyeGroup.add(this.leftEyeIris)
+      // this.allDuckGroup.add(this.leftEyeIris)
+
+      const rightEyeIrisGeo = new THREE.BoxGeometry(0.5, 0.5, 0.5)
+      this.rightEyeIris = new THREE.Mesh(rightEyeIrisGeo, flatBlack)
+      this.rightEyeIris.position.y = 11.3
+      this.rightEyeIris.position.x = -3.3
+      this.rightEyeIris.position.z = 2.5
+      this.duckRightEyeGroup.add(this.rightEyeIris)
+      // this.allDuckGroup.add(this.rightEyeIris)
 
       const rightTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
       this.rightTopEyeLid = new THREE.Mesh(rightTopEyeLidGeo, flatGreen)
-      this.rightTopEyeLid.position.y = 10.8
+      this.rightTopEyeLid.position.y = 11.8
       this.rightTopEyeLid.position.x = -3.2
-      this.rightTopEyeLid.position.z = 1
-      this.allDuckGroup.add(this.rightTopEyeLid)
+      this.rightTopEyeLid.position.z = 2
+      this.duckRightEyeGroup.add(this.rightTopEyeLid)
+      // this.allDuckGroup.add(this.rightTopEyeLid)
 
       const leftTopEyeLidGeo = new THREE.BoxGeometry(0.5, 0.5, 2.1)
       this.leftTopEyeLid = new THREE.Mesh(leftTopEyeLidGeo, flatGreen)
-      this.leftTopEyeLid.position.y = 10.8
+      this.leftTopEyeLid.position.y = 11.8
       this.leftTopEyeLid.position.x = 3.2
-      this.leftTopEyeLid.position.z = 1
-      this.allDuckGroup.add(this.leftTopEyeLid)
+      this.leftTopEyeLid.position.z = 2
+      this.duckLeftEyeGroup.add(this.leftTopEyeLid)
+      // this.allDuckGroup.add(this.leftTopEyeLid)
 
       const rightBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
       this.rightBottomEyeLid = new THREE.Mesh(rightBottomEyeLidGeo, flatGreen)
-      this.rightBottomEyeLid.position.y = 9
+      this.rightBottomEyeLid.position.y = 10
       this.rightBottomEyeLid.position.x = -3.2
-      this.rightBottomEyeLid.position.z = 1
-      this.allDuckGroup.add(this.rightBottomEyeLid)
+      this.rightBottomEyeLid.position.z = 2
+      this.duckRightEyeGroup.add(this.rightBottomEyeLid)
+      // this.allDuckGroup.add(this.rightBottomEyeLid)
 
       const leftBottomEyeLidGeo = new THREE.BoxGeometry(0.5, 0.3, 2.1)
       this.leftBottomEyeLid = new THREE.Mesh(leftBottomEyeLidGeo, flatGreen)
-      this.leftBottomEyeLid.position.y = 9
+      this.leftBottomEyeLid.position.y = 10
       this.leftBottomEyeLid.position.x = 3.2
-      this.leftBottomEyeLid.position.z = 1
-      this.allDuckGroup.add(this.leftBottomEyeLid)
+      this.leftBottomEyeLid.position.z = 2
+      this.duckLeftEyeGroup.add(this.leftBottomEyeLid)
+      // this.allDuckGroup.add(this.leftBottomEyeLid)
+
+      this.allDuckGroup.add(this.duckLeftEyeGroup)
+      this.allDuckGroup.add(this.duckRightEyeGroup)
+
+      this.duckLeftEyeGroup.rotation.z -= 0.06
+      this.duckLeftEyeGroup.position.x -= 1
+      this.duckRightEyeGroup.rotation.z += 0.06
+      this.duckRightEyeGroup.position.x += 1
 
       const neckGeo = new THREE.CylinderBufferGeometry(2, 2, 2, 7)
       this.neck = new THREE.Mesh(neckGeo, flatWhite)
       this.neck.position.y = 5
       this.allDuckGroup.add(this.neck)
 
-      const topBeakGeo = new THREE.BoxGeometry(5, 1, 6)
+      const topBeakGeo = new THREE.BoxGeometry(8, 1, 8.7)
       topBeakGeo.vertices[4].x += 0.5
       topBeakGeo.vertices[6].x += 0.5
 
+      topBeakGeo.vertices[4].z += 0.5
+      topBeakGeo.vertices[6].z -= 0.5
+
       topBeakGeo.vertices[1].x -= 0.5
       topBeakGeo.vertices[3].x -= 0.5
+
+      topBeakGeo.vertices[1].z += 0.5
+      topBeakGeo.vertices[3].z -= 0.5
+
+      topBeakGeo.vertices[3].y += 0.5
+      topBeakGeo.vertices[6].y += 0.5
 
       topBeakGeo.vertices[0].x += 0.5
       topBeakGeo.vertices[2].x += 0.5
@@ -284,10 +334,25 @@ export default ({ animations }) => {
 
       this.topBeak = new THREE.Mesh(topBeakGeo, flatYellow)
       this.topBeak.position.y = 8
-      this.topBeak.position.z = 8
+      this.topBeak.position.z = 6.5
       this.allDuckGroup.add(this.topBeak)
 
-      const bottomBeakGeo = new THREE.BoxGeometry(3, 0.5, 4)
+      const topBeakSlopeGeo = new THREE.CylinderGeometry(4.5, 0, 4, 3)
+      topBeakSlopeGeo.vertices[0].z += 1
+      topBeakSlopeGeo.vertices[3].z -= 0.5
+
+      topBeakSlopeGeo.vertices[1].x -= 0.4
+      topBeakSlopeGeo.vertices[2].x += 0.4
+      topBeakSlopeGeo.vertices[1].z -= 0.1
+      topBeakSlopeGeo.vertices[2].z -= 0.1
+
+      this.topBeakSlope = new THREE.Mesh(topBeakSlopeGeo, flatYellow)
+      this.topBeakSlope.position.y = 10.5
+      this.topBeakSlope.position.z = 5
+      this.topBeakSlope.rotation.z = Math.PI
+      this.allDuckGroup.add(this.topBeakSlope)
+
+      const bottomBeakGeo = new THREE.BoxGeometry(6, 0.5, 6)
       bottomBeakGeo.vertices[4].x += 0.5
       bottomBeakGeo.vertices[6].x += 0.5
 
@@ -301,8 +366,8 @@ export default ({ animations }) => {
       bottomBeakGeo.vertices[7].x -= 0.5
 
       this.bottomBeak = new THREE.Mesh(bottomBeakGeo, flatYellow)
-      this.bottomBeak.position.y = 7.0
-      this.bottomBeak.position.z = 6.5
+      this.bottomBeak.position.y = 7.3
+      this.bottomBeak.position.z = 5.5
       this.bottomBeak.rotation.x = 0.3
       this.allDuckGroup.add(this.bottomBeak)
 
