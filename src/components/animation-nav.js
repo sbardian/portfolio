@@ -25,8 +25,20 @@ const AnimationNav = ({ animations, current }) => {
         margin-top: 40px;
       `}
     >
-      <Link to={`${current.to}`}>{current.title}</Link>
-      <Link to={animations[next + 1].to}>
+      <Link
+        css={css`
+          color: white;
+        `}
+        to={`${current.to}`}
+      >
+        {current.title}
+      </Link>
+      <Link
+        css={css`
+          color: white;
+        `}
+        to={animations[next + 1].to}
+      >
         <FontAwesomeIcon
           css={css`
             padding-left: 10px;

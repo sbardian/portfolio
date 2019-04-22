@@ -1,19 +1,19 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
-import Oberyn from "../components/oberyn"
 import "normalize.css"
 // eslint-disable-next-line
 import main from "../assets/main.css"
 
 const Animations = () => {
-  const animations = [
-    { to: "/oberyn", title: "Oberyn" },
-    { to: "/", title: "Home" },
-  ]
-
   return (
     <Layout>
-      <Oberyn animations={animations} />
+      <div>
+        {`I'm just starting on animations. . . something cool to intro them here.
+        . .`}
+        <Link to="/oberynPage">Oberyn</Link>
+        <Link to="/duckPage">Duck</Link>
+      </div>
     </Layout>
   )
 }
