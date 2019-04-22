@@ -49,7 +49,7 @@
     "gatsby-source-sanity": "2.0.3",
     "gatsby-transformer-sharp": "2.1.18",
     "gsap": "2.1.2",
-    "lodash": "^4.17.11",
+    "lodash": "4.17.11",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
     "react": "16.8.6",
