@@ -635,7 +635,6 @@ export default ({ animations }) => {
       this.allDuckGroup.position.z = Math.sin(t) * 55
 
       this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.3
-      // this.duckHeadGroup.rotation.y = Math.cos(t) * 0.4
 
       this.leftFoot.rotation.x = Math.max(0, Math.cos(t * amp) * 1.8)
       this.rightFoot.rotation.x = Math.max(0, -Math.cos(t * amp) * 1.8)
@@ -645,7 +644,6 @@ export default ({ animations }) => {
 
       this.leftFoot.position.y = Math.min(-2.5, -3 - Math.cos(t * amp) * 1.6)
       this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(t * amp) * 1.6)
-      // TODO:  kick those feet!
     }
 
     // render
