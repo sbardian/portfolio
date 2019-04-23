@@ -323,10 +323,21 @@ export default ({ animations }) => {
       this.duckRightEyeGroup.rotation.z += 0.06
       this.duckRightEyeGroup.position.x += 1
 
-      const neckGeo = new THREE.CylinderBufferGeometry(2, 2, 2, 7)
-      this.neck = new THREE.Mesh(neckGeo, flatWhite)
-      this.neck.position.y = 5
-      this.allDuckGroup.add(this.neck)
+      this.neckTopGeo = new THREE.CylinderBufferGeometry(2, 2, 0.5, 7)
+      this.neckTop = new THREE.Mesh(this.neckTopGeo, flatGreen)
+      this.neckTop.position.y = 5.9
+
+      this.neckMiddleGeo = new THREE.CylinderBufferGeometry(2, 2, 0.7, 7)
+      this.neckMiddle = new THREE.Mesh(this.neckMiddleGeo, flatWhite)
+      this.neckMiddle.position.y = 5.3
+
+      this.neckBottomGeo = new THREE.CylinderBufferGeometry(2, 2, 0.5, 7)
+      this.neckBottom = new THREE.Mesh(this.neckBottomGeo, flatGreen)
+      this.neckBottom.position.y = 4.7
+
+      this.allDuckGroup.add(this.neckTop)
+      this.allDuckGroup.add(this.neckMiddle)
+      this.allDuckGroup.add(this.neckBottom)
 
       const topBeakGeo = new THREE.BoxGeometry(8, 1, 8.7)
       topBeakGeo.vertices[4].x += 0.5
@@ -395,7 +406,6 @@ export default ({ animations }) => {
       this.allDuckGroup.add(this.bottomBeak)
 
       this.bottomBeakSlopeGeo = new THREE.CylinderGeometry(3, 0, 3, 3)
-      console.log(this.bottomBeakSlopeGeo)
       this.bottomBeakSlopeGeo.vertices[3].z = -1.7
       this.bottomBeakSlopeGeo.vertices[3].y = -0.75
 
