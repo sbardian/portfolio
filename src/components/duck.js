@@ -205,6 +205,7 @@ export default ({ animations }) => {
       this.allDuckGroup = new THREE.Group()
       this.duckHeadGroup = new THREE.Group()
       this.duckFeetGroup = new THREE.Group()
+      this.duckTorsoGroup = new THREE.Group()
 
       const rgbGreen = new THREE.Color("rgb(23, 167, 104)")
       const green = rgbGreen.getHex()
@@ -495,7 +496,7 @@ export default ({ animations }) => {
       this.body = new THREE.Mesh(this.bodyGeo, flatWhite)
       this.body.position.z = -4
       this.body.position.y = 1
-      this.allDuckGroup.add(this.body)
+      this.duckTorsoGroup.add(this.body)
 
       this.leftWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
       this.leftWingGeo.vertices[2].y += 2
@@ -510,7 +511,7 @@ export default ({ animations }) => {
       this.leftWing.position.y = 1
       this.leftWing.position.x = 4.5
       this.leftWing.rotation.x = 0.2
-      this.allDuckGroup.add(this.leftWing)
+      this.duckTorsoGroup.add(this.leftWing)
 
       this.rightWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
       this.rightWingGeo.vertices[2].y += 2
@@ -525,7 +526,7 @@ export default ({ animations }) => {
       this.rightWing.position.y = 1
       this.rightWing.position.x = -4.5
       this.rightWing.rotation.x = 0.2
-      this.allDuckGroup.add(this.rightWing)
+      this.duckTorsoGroup.add(this.rightWing)
 
       this.chestGeo = new THREE.BoxGeometry(7, 6, 11)
       this.chestGeo.vertices[3].y += 1
@@ -533,7 +534,7 @@ export default ({ animations }) => {
       this.chest = new THREE.Mesh(this.chestGeo, flatBrown)
       this.chest.position.z = -2
       this.chest.position.y = 1
-      this.allDuckGroup.add(this.chest)
+      this.duckTorsoGroup.add(this.chest)
 
       const tailGeo = new THREE.BoxGeometry(7, 1, 5)
       tailGeo.vertices[4].x += 1.4
@@ -551,7 +552,9 @@ export default ({ animations }) => {
       this.tail.position.z = -13
       this.tail.position.y = 5.5
       this.tail.rotation.x = 0.6
-      this.allDuckGroup.add(this.tail)
+      this.duckTorsoGroup.add(this.tail)
+
+      this.allDuckGroup.add(this.duckTorsoGroup)
 
       this.leftFootGeo = new THREE.BoxGeometry(4, 1, 6)
       this.leftFootGeo.vertices[1].x -= 1.5
@@ -634,7 +637,7 @@ export default ({ animations }) => {
       this.allDuckGroup.position.x = Math.cos(t) * 55
       this.allDuckGroup.position.z = Math.sin(t) * 55
 
-      this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.3
+      this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.1
 
       this.leftFoot.rotation.x = Math.max(0, Math.cos(t * amp) * 1.8)
       this.rightFoot.rotation.x = Math.max(0, -Math.cos(t * amp) * 1.8)
@@ -642,8 +645,13 @@ export default ({ animations }) => {
       this.leftFoot.position.z = -4 - Math.cos(t * amp) * 7
       this.rightFoot.position.z = -4 - -Math.cos(t * amp) * 7
 
+      this.leftFoot.rotation.z = Math.cos(t * amp) * -0.4
+      this.rightFoot.rotation.z = -Math.cos(t * amp) * -0.4
+
       this.leftFoot.position.y = Math.min(-2.5, -3 - Math.cos(t * amp) * 1.6)
       this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(t * amp) * 1.6)
+
+      this.duckTorsoGroup.rotation.z = -Math.cos(t * 4) * 0.18
     }
 
     // render
