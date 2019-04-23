@@ -388,10 +388,20 @@ export default ({ animations }) => {
       bottomBeakGeo.vertices[7].x -= 0.5
 
       this.bottomBeak = new THREE.Mesh(bottomBeakGeo, flatYellow)
-      this.bottomBeak.position.y = 7.3
+      this.bottomBeak.position.y = 7.8
       this.bottomBeak.position.z = 5.5
-      this.bottomBeak.rotation.x = 0.3
+      // this.bottomBeak.rotation.x = 0.3
       this.allDuckGroup.add(this.bottomBeak)
+
+      this.bottomBeakSlopeGeo = new THREE.CylinderGeometry(3, 0, 3, 3)
+      console.log(this.bottomBeakSlopeGeo)
+      this.bottomBeakSlopeGeo.vertices[3].z = -1.7
+      this.bottomBeakSlopeGeo.vertices[3].y = -0.75
+
+      this.bottomBeakSlope = new THREE.Mesh(this.bottomBeakSlopeGeo, flatYellow)
+      this.bottomBeakSlope.position.z = 5.5
+      this.bottomBeakSlope.position.y = 6.8
+      this.allDuckGroup.add(this.bottomBeakSlope)
 
       const bodyGeo = new THREE.BoxBufferGeometry(8, 7, 16)
       this.body = new THREE.Mesh(bodyGeo, flatWhite)
