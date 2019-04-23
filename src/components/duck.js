@@ -624,9 +624,9 @@ export default ({ animations }) => {
       const amp = 4
 
       let vec = new THREE.Vector3(
-        Math.cos(t - 5) * 65,
+        Math.cos(t - 4.5) * 80,
         -7,
-        Math.sin(t - 5) * 65
+        Math.sin(t - 4.5) * 80
       )
 
       this.allDuckGroup.position.x = -20
@@ -634,8 +634,8 @@ export default ({ animations }) => {
 
       this.allDuckGroup.lookAt(vec)
 
-      this.allDuckGroup.position.x = Math.cos(t) * 55
-      this.allDuckGroup.position.z = Math.sin(t) * 55
+      this.allDuckGroup.position.x = Math.cos(t) * 70
+      this.allDuckGroup.position.z = Math.sin(t) * 70
 
       this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.1
 
