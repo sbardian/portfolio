@@ -23,6 +23,9 @@ export default ({ animations }) => {
     let scene
     let camera
     let renderer
+    let clock
+    let delta
+    let duckRotation = -1
     let mousePos = { x: 0, y: 0 }
     let duck
     let floor
@@ -72,7 +75,7 @@ export default ({ animations }) => {
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
       camera.position.x = 100
-      camera.position.z = 100
+      camera.position.z = 200
       camera.position.y = 15
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
@@ -193,7 +196,11 @@ export default ({ animations }) => {
     }
 
     function Duck() {
+      this.swimCycle = 0
+      this.blinkCycle = 0
       this.allDuckGroup = new THREE.Group()
+      this.duckHeadGroup = new THREE.Group()
+
       const rgbGreen = new THREE.Color("rgb(23, 167, 104)")
       const green = rgbGreen.getHex()
 
@@ -205,8 +212,6 @@ export default ({ animations }) => {
 
       const rgbBrown = new THREE.Color("rgb(187, 174, 147)")
       const brown = rgbBrown.getHex()
-
-      this.runningCycle = 0
 
       const flatBlack = new THREE.MeshLambertMaterial({
         color: 0x191919,
@@ -245,6 +250,7 @@ export default ({ animations }) => {
       this.head = new THREE.Mesh(headGeo, flatGreen)
       this.head.position.y = 10
       this.allDuckGroup.add(this.head)
+      this.duckHeadGroup.add(this.head)
 
       this.duckHairGroup = new THREE.Group()
 
@@ -294,6 +300,7 @@ export default ({ animations }) => {
       this.duckHairGroup.position.z += 1
 
       this.allDuckGroup.add(this.duckHairGroup)
+      this.duckHeadGroup.add(this.duckHairGroup)
 
       this.duckLeftEyeGroup = new THREE.Group()
       this.duckRightEyeGroup = new THREE.Group()
@@ -370,6 +377,8 @@ export default ({ animations }) => {
 
       this.allDuckGroup.add(this.duckLeftEyeGroup)
       this.allDuckGroup.add(this.duckRightEyeGroup)
+      this.duckHeadGroup.add(this.duckLeftEyeGroup)
+      this.duckHeadGroup.add(this.duckRightEyeGroup)
 
       this.duckLeftEyeGroup.rotation.z -= 0.06
       this.duckLeftEyeGroup.position.x -= 1
@@ -391,6 +400,10 @@ export default ({ animations }) => {
       this.allDuckGroup.add(this.neckTop)
       this.allDuckGroup.add(this.neckMiddle)
       this.allDuckGroup.add(this.neckBottom)
+
+      this.duckHeadGroup.add(this.neckTop)
+      this.duckHeadGroup.add(this.neckMiddle)
+      this.duckHeadGroup.add(this.neckBottom)
 
       const topBeakGeo = new THREE.BoxGeometry(8, 1, 8.7)
       topBeakGeo.vertices[4].x += 0.5
@@ -422,6 +435,7 @@ export default ({ animations }) => {
       this.topBeak.position.y = 8
       this.topBeak.position.z = 6.5
       this.allDuckGroup.add(this.topBeak)
+      this.duckHeadGroup.add(this.topBeak)
 
       const topBeakSlopeGeo = new THREE.CylinderGeometry(4.5, 0, 4, 3)
 
@@ -438,6 +452,7 @@ export default ({ animations }) => {
       this.topBeakSlope.position.z = 5
       this.topBeakSlope.rotation.z = Math.PI
       this.allDuckGroup.add(this.topBeakSlope)
+      this.duckHeadGroup.add(this.topBeakSlope)
 
       const bottomBeakGeo = new THREE.BoxGeometry(6, 0.5, 6)
       bottomBeakGeo.vertices[4].x += 0.5
@@ -457,6 +472,7 @@ export default ({ animations }) => {
       this.bottomBeak.position.z = 5.5
       // this.bottomBeak.rotation.x = 0.3
       this.allDuckGroup.add(this.bottomBeak)
+      this.duckHeadGroup.add(this.bottomBeak)
 
       this.bottomBeakSlopeGeo = new THREE.CylinderGeometry(3, 0, 3, 3)
       this.bottomBeakSlopeGeo.vertices[3].z = -1.7
@@ -466,6 +482,7 @@ export default ({ animations }) => {
       this.bottomBeakSlope.position.z = 5.5
       this.bottomBeakSlope.position.y = 6.8
       this.allDuckGroup.add(this.bottomBeakSlope)
+      this.duckHeadGroup.add(this.bottomBeakSlope)
 
       this.bodyGeo = new THREE.BoxGeometry(8, 7, 14)
       this.bodyGeo.vertices[3].y += 4
@@ -558,6 +575,8 @@ export default ({ animations }) => {
       this.rightFoot.position.x = -2
       this.allDuckGroup.add(this.rightFoot)
 
+      this.allDuckGroup.add(this.duckHeadGroup)
+
       this.allDuckGroup.traverse(function traverse(object) {
         if (object instanceof THREE.Mesh) {
           object.castShadow = true
@@ -567,8 +586,8 @@ export default ({ animations }) => {
     }
 
     Duck.prototype.blink = function blink() {
-      this.runningCycle += 0.05
-      let t = this.runningCycle
+      this.blinkCycle += 0.05
+      let t = this.blinkCycle
       t = t % (2 * Math.PI)
       const amp = 4
 
@@ -586,6 +605,33 @@ export default ({ animations }) => {
       this.leftTopEyeLidGeo.vertices[3].y = Math.min(0, -Math.cos(t) * 0.9)
       this.rightTopEyeLidGeo.vertices[6].y = Math.min(0, -Math.cos(t) * 0.9)
       this.rightTopEyeLidGeo.vertices[7].y = Math.min(0, -Math.cos(t) * 0.9)
+    }
+
+    Duck.prototype.swim = function swim() {
+      this.swimCycle += delta * 1
+
+      let t = this.swimCycle
+      t = t % (2 * Math.PI)
+      const amp = 4
+
+      let vec = new THREE.Vector3(
+        Math.cos(t - 5) * 50,
+        -7,
+        Math.sin(t - 5) * 50
+      )
+
+      this.allDuckGroup.position.x = 0
+      this.allDuckGroup.position.z = 0
+
+      this.allDuckGroup.lookAt(vec)
+
+      this.allDuckGroup.position.x = Math.cos(t) * 55
+      this.allDuckGroup.position.z = Math.sin(t) * 50
+
+      this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.3
+      this.duckHeadGroup.rotation.y = Math.cos(t) * 0.5
+
+      // TODO:  kick those feet!
     }
 
     // render
@@ -621,7 +667,8 @@ export default ({ animations }) => {
        *
        */
       duck.blink()
-
+      delta = clock.getDelta()
+      duck.swim()
       requestAnimationFrame(animate)
       render()
     }
@@ -631,7 +678,10 @@ export default ({ animations }) => {
     createLights()
 
     duck = new Duck()
+    clock = new THREE.Clock()
     scene.add(duck.allDuckGroup)
+
+    duck.allDuckGroup.position.y = -10
 
     animate()
   })

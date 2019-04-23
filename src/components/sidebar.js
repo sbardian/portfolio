@@ -254,9 +254,9 @@ export default () => {
         min-width: 35%;
         position: fixed;
         background: lightgray;
-        /* background-image: url(${overlay}), url(${sidebarBg});
+        background-image: url(${overlay}), url(${sidebarBg});
         background-size: cover;
-        background-repeat: no-repeat; */
+        background-repeat: no-repeat;
         transition: all 0.3s linear;
         padding: 20px 0 20px 0px;
         ${mq.xl(css`
