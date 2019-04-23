@@ -323,15 +323,15 @@ export default ({ animations }) => {
       this.duckRightEyeGroup.rotation.z += 0.06
       this.duckRightEyeGroup.position.x += 1
 
-      this.neckTopGeo = new THREE.CylinderBufferGeometry(2, 2, 0.5, 7)
+      this.neckTopGeo = new THREE.CylinderBufferGeometry(1.7, 1.7, 0.5, 7)
       this.neckTop = new THREE.Mesh(this.neckTopGeo, flatGreen)
       this.neckTop.position.y = 5.9
 
-      this.neckMiddleGeo = new THREE.CylinderBufferGeometry(2, 2, 0.7, 7)
+      this.neckMiddleGeo = new THREE.CylinderBufferGeometry(1.7, 1.7, 0.7, 7)
       this.neckMiddle = new THREE.Mesh(this.neckMiddleGeo, flatWhite)
       this.neckMiddle.position.y = 5.3
 
-      this.neckBottomGeo = new THREE.CylinderBufferGeometry(2, 2, 0.5, 7)
+      this.neckBottomGeo = new THREE.CylinderBufferGeometry(1.7, 1.7, 0.5, 7)
       this.neckBottom = new THREE.Mesh(this.neckBottomGeo, flatGreen)
       this.neckBottom.position.y = 4.7
 
@@ -414,9 +414,11 @@ export default ({ animations }) => {
       this.bottomBeakSlope.position.y = 6.8
       this.allDuckGroup.add(this.bottomBeakSlope)
 
-      const bodyGeo = new THREE.BoxBufferGeometry(8, 7, 16)
-      this.body = new THREE.Mesh(bodyGeo, flatWhite)
-      this.body.position.z = -5
+      this.bodyGeo = new THREE.BoxGeometry(8, 7, 14)
+      this.bodyGeo.vertices[3].y += 4
+      this.bodyGeo.vertices[6].y += 4
+      this.body = new THREE.Mesh(this.bodyGeo, flatWhite)
+      this.body.position.z = -4
       this.body.position.y = 1
       this.allDuckGroup.add(this.body)
 
@@ -436,7 +438,6 @@ export default ({ animations }) => {
       this.allDuckGroup.add(this.leftWing)
 
       this.rightWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
-      console.log(">> ", this.rightWingGeo.vertices)
       this.rightWingGeo.vertices[2].y += 2
       this.rightWingGeo.vertices[7].y += 2
 
@@ -451,9 +452,11 @@ export default ({ animations }) => {
       this.rightWing.rotation.x = 0.2
       this.allDuckGroup.add(this.rightWing)
 
-      const chestGeo = new THREE.BoxBufferGeometry(7, 6, 16)
-      this.chest = new THREE.Mesh(chestGeo, flatBrown)
-      this.chest.position.z = -4.5
+      this.chestGeo = new THREE.BoxGeometry(7, 6, 11)
+      this.chestGeo.vertices[3].y += 1
+      this.chestGeo.vertices[6].y += 1
+      this.chest = new THREE.Mesh(this.chestGeo, flatBrown)
+      this.chest.position.z = -2
       this.chest.position.y = 1
       this.allDuckGroup.add(this.chest)
 
@@ -470,8 +473,8 @@ export default ({ animations }) => {
       tailGeo.vertices[5].x -= 0.4
       tailGeo.vertices[7].x -= 0.4
       this.tail = new THREE.Mesh(tailGeo, flatWhite)
-      this.tail.position.z = -15.2
-      this.tail.position.y = 1
+      this.tail.position.z = -13
+      this.tail.position.y = 5.5
       this.tail.rotation.x = 0.6
       this.allDuckGroup.add(this.tail)
 
