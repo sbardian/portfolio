@@ -346,9 +346,13 @@ export default ({ animations }) => {
 
       topBeakGeo.vertices[0].x += 0.5
       topBeakGeo.vertices[2].x += 0.5
+      topBeakGeo.vertices[0].y += 0.5
+      topBeakGeo.vertices[2].y += 0.5
 
       topBeakGeo.vertices[5].x -= 0.5
       topBeakGeo.vertices[7].x -= 0.5
+      topBeakGeo.vertices[5].y += 0.5
+      topBeakGeo.vertices[7].y += 0.5
 
       this.topBeak = new THREE.Mesh(topBeakGeo, flatYellow)
       this.topBeak.position.y = 8
