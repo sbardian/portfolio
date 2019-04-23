@@ -478,6 +478,33 @@ export default ({ animations }) => {
       this.tail.rotation.x = 0.6
       this.allDuckGroup.add(this.tail)
 
+      this.leftFootGeo = new THREE.BoxGeometry(4, 1, 6)
+      this.leftFootGeo.vertices[1].x -= 1.5
+      this.leftFootGeo.vertices[3].x -= 1.5
+      this.leftFootGeo.vertices[4].x += 1.5
+      this.leftFootGeo.vertices[6].x += 1.5
+      this.leftFootGeo.vertices[5].y -= 0.7
+      this.leftFootGeo.vertices[0].y -= 0.7
+
+      this.leftFoot = new THREE.Mesh(this.leftFootGeo, flatYellow)
+      this.leftFoot.position.y = -4
+      this.leftFoot.position.z = 1
+      this.leftFoot.position.x = 2
+      this.allDuckGroup.add(this.leftFoot)
+
+      this.rightFootGeo = new THREE.BoxGeometry(4, 1, 6)
+      this.rightFootGeo.vertices[1].x -= 1.5
+      this.rightFootGeo.vertices[4].x += 1.5
+      this.rightFootGeo.vertices[6].x += 1.5
+      this.rightFootGeo.vertices[3].x -= 1.5
+      this.rightFootGeo.vertices[5].y -= 0.7
+      this.rightFootGeo.vertices[0].y -= 0.7
+      this.rightFoot = new THREE.Mesh(this.rightFootGeo, flatYellow)
+      this.rightFoot.position.y = -4
+      this.rightFoot.position.z = 1
+      this.rightFoot.position.x = -2
+      this.allDuckGroup.add(this.rightFoot)
+
       this.allDuckGroup.traverse(function traverse(object) {
         if (object instanceof THREE.Mesh) {
           object.castShadow = true
