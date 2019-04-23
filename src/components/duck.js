@@ -71,7 +71,7 @@ export default ({ animations }) => {
       scene = new THREE.Scene()
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
-      camera.position.x = 0
+      camera.position.x = 100
       camera.position.z = 100
       camera.position.y = 15
       camera.lookAt(new THREE.Vector3(0, 0, 0))
@@ -108,8 +108,61 @@ export default ({ animations }) => {
         new THREE.MeshStandardMaterial({ color: 0x3364ea })
       )
       floor.rotation.x = -Math.PI / 2
-      floor.position.y = 0
+      floor.position.y = -10
       floor.receiveShadow = true
+
+      const rockGeo = new THREE.IcosahedronBufferGeometry(10, 0)
+      const rock = new THREE.Mesh(
+        rockGeo,
+        new THREE.MeshLambertMaterial({ color: "gray", flatShading: true })
+      )
+      rock.castShadow = true
+      rock.rotation.x = -0.38
+      rock.rotation.y = 0.5
+      rock.position.y = -12.5
+
+      const lillyGreen = new THREE.MeshLambertMaterial({
+        color: new THREE.Color("rgb(47, 76, 51)").getHex(),
+        flatShading: true,
+      })
+
+      const lillyPadGeo = new THREE.CylinderGeometry(
+        10,
+        10,
+        1,
+        10,
+        1,
+        false,
+        0,
+        6.1
+      )
+      const lillyPad = new THREE.Mesh(lillyPadGeo, lillyGreen)
+      lillyPad.castShadow = true
+      lillyPad.position.x = 30
+      lillyPad.position.y = -10.3
+      lillyPad.rotation.x = 3.14
+      scene.add(lillyPad)
+
+      const lillyPad2Geo = new THREE.CylinderGeometry(
+        5,
+        5,
+        1,
+        10,
+        1,
+        false,
+        0,
+        6.1
+      )
+      const lillyPad2 = new THREE.Mesh(lillyPad2Geo, lillyGreen)
+      lillyPad2.castShadow = true
+      lillyPad2.position.x = 20
+      lillyPad2.position.y = -10.3
+      lillyPad2.rotation.y = Math.PI - 1
+      lillyPad.position.z = 17
+      lillyPad2.rotation.x = Math.PI
+      scene.add(lillyPad2)
+
+      scene.add(rock)
       scene.add(floor)
     }
 
