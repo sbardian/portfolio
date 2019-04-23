@@ -108,7 +108,11 @@ export default ({ animations }) => {
     const createFloor = () => {
       floor = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(1000, 500),
-        new THREE.MeshStandardMaterial({ color: 0x3364ea })
+        new THREE.MeshStandardMaterial({
+          color: 0x3364ea,
+          transparent: true,
+          opacity: 0.9,
+        })
       )
       floor.rotation.x = -Math.PI / 2
       floor.position.y = -10
@@ -200,6 +204,7 @@ export default ({ animations }) => {
       this.blinkCycle = 0
       this.allDuckGroup = new THREE.Group()
       this.duckHeadGroup = new THREE.Group()
+      this.duckFeetGroup = new THREE.Group()
 
       const rgbGreen = new THREE.Color("rgb(23, 167, 104)")
       const green = rgbGreen.getHex()
@@ -560,7 +565,7 @@ export default ({ animations }) => {
       this.leftFoot.position.y = -4
       this.leftFoot.position.z = 1
       this.leftFoot.position.x = 2
-      this.allDuckGroup.add(this.leftFoot)
+      this.duckFeetGroup.add(this.leftFoot)
 
       this.rightFootGeo = new THREE.BoxGeometry(4, 1, 6)
       this.rightFootGeo.vertices[1].x -= 1.5
@@ -573,9 +578,10 @@ export default ({ animations }) => {
       this.rightFoot.position.y = -4
       this.rightFoot.position.z = 1
       this.rightFoot.position.x = -2
-      this.allDuckGroup.add(this.rightFoot)
+      this.duckFeetGroup.add(this.rightFoot)
 
       this.allDuckGroup.add(this.duckHeadGroup)
+      this.allDuckGroup.add(this.duckFeetGroup)
 
       this.allDuckGroup.traverse(function traverse(object) {
         if (object instanceof THREE.Mesh) {
@@ -615,22 +621,30 @@ export default ({ animations }) => {
       const amp = 4
 
       let vec = new THREE.Vector3(
-        Math.cos(t - 5) * 50,
+        Math.cos(t - 5) * 65,
         -7,
-        Math.sin(t - 5) * 50
+        Math.sin(t - 5) * 65
       )
 
-      this.allDuckGroup.position.x = 0
+      this.allDuckGroup.position.x = -20
       this.allDuckGroup.position.z = 0
 
       this.allDuckGroup.lookAt(vec)
 
       this.allDuckGroup.position.x = Math.cos(t) * 55
-      this.allDuckGroup.position.z = Math.sin(t) * 50
+      this.allDuckGroup.position.z = Math.sin(t) * 55
 
       this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.3
-      this.duckHeadGroup.rotation.y = Math.cos(t) * 0.5
+      // this.duckHeadGroup.rotation.y = Math.cos(t) * 0.4
 
+      this.leftFoot.rotation.x = Math.max(0, Math.cos(t * amp) * 1.8)
+      this.rightFoot.rotation.x = Math.max(0, -Math.cos(t * amp) * 1.8)
+
+      this.leftFoot.position.z = -4 - Math.cos(t * amp) * 7
+      this.rightFoot.position.z = -4 - -Math.cos(t * amp) * 7
+
+      this.leftFoot.position.y = Math.min(-2.5, -3 - Math.cos(t * amp) * 1.6)
+      this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(t * amp) * 1.6)
       // TODO:  kick those feet!
     }
 
