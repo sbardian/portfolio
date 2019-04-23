@@ -360,8 +360,9 @@ export default ({ animations }) => {
       this.allDuckGroup.add(this.topBeak)
 
       const topBeakSlopeGeo = new THREE.CylinderGeometry(4.5, 0, 4, 3)
+
       topBeakSlopeGeo.vertices[0].z += 1
-      topBeakSlopeGeo.vertices[3].z -= 0.5
+      topBeakSlopeGeo.vertices[3].z -= 0.7
 
       topBeakSlopeGeo.vertices[1].x -= 0.4
       topBeakSlopeGeo.vertices[2].x += 0.4
