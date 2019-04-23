@@ -28,7 +28,8 @@ export default ({ animations }) => {
     let duckRotation = -1
     let mousePos = { x: 0, y: 0 }
     let duck
-    let floor
+    let water
+    let ground
     const DUCK_COLORS = {
       green: "0x17A768",
       orange: "0xf1601d",
@@ -106,17 +107,27 @@ export default ({ animations }) => {
     }
 
     const createFloor = () => {
-      floor = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(1000, 500),
+      ground = new THREE.Mesh(
+        new THREE.PlaneBufferGeometry(300, 200),
+        new THREE.MeshStandardMaterial({
+          color: 0x70471f,
+        })
+      )
+      ground.rotation.x = -Math.PI / 2
+      ground.position.y = -20
+      ground.receiveShadow = true
+
+      water = new THREE.Mesh(
+        new THREE.PlaneBufferGeometry(300, 200),
         new THREE.MeshStandardMaterial({
           color: 0x3364ea,
           transparent: true,
-          opacity: 0.9,
+          opacity: 0.7,
         })
       )
-      floor.rotation.x = -Math.PI / 2
-      floor.position.y = -10
-      floor.receiveShadow = true
+      water.rotation.x = -Math.PI / 2
+      water.position.y = -10
+      water.receiveShadow = true
 
       const rockGeo = new THREE.IcosahedronBufferGeometry(10, 0)
       const rock = new THREE.Mesh(
@@ -170,7 +181,8 @@ export default ({ animations }) => {
       scene.add(lillyPad2)
 
       scene.add(rock)
-      scene.add(floor)
+      scene.add(water)
+      scene.add(ground)
     }
 
     const createLights = () => {
