@@ -420,16 +420,31 @@ export default ({ animations }) => {
       this.body.position.y = 1
       this.allDuckGroup.add(this.body)
 
-      const leftWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
-      this.leftWing = new THREE.Mesh(leftWingGeo, flatWhite)
+      this.leftWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
+      this.leftWingGeo.vertices[2].y += 2
+      this.leftWingGeo.vertices[7].y += 2
+
+      this.leftWingGeo.vertices[3].z += 4
+      this.leftWingGeo.vertices[6].z += 4
+      this.leftWingGeo.vertices[3].y += 2
+      this.leftWingGeo.vertices[6].y += 2
+      this.leftWing = new THREE.Mesh(this.leftWingGeo, flatWhite)
       this.leftWing.position.z = -5
       this.leftWing.position.y = 1
       this.leftWing.position.x = 4.5
       this.leftWing.rotation.x = 0.2
       this.allDuckGroup.add(this.leftWing)
 
-      const rightWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
-      this.rightWing = new THREE.Mesh(rightWingGeo, flatWhite)
+      this.rightWingGeo = new THREE.BoxGeometry(0.5, 7, 16)
+      console.log(">> ", this.rightWingGeo.vertices)
+      this.rightWingGeo.vertices[2].y += 2
+      this.rightWingGeo.vertices[7].y += 2
+
+      this.rightWingGeo.vertices[3].y += 2
+      this.rightWingGeo.vertices[6].y += 2
+      this.rightWingGeo.vertices[3].z += 4
+      this.rightWingGeo.vertices[6].z += 4
+      this.rightWing = new THREE.Mesh(this.rightWingGeo, flatWhite)
       this.rightWing.position.z = -5
       this.rightWing.position.y = 1
       this.rightWing.position.x = -4.5
