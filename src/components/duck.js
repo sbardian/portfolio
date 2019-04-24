@@ -716,6 +716,7 @@ export default ({ animations }) => {
       duck.blink()
       delta = clock.getDelta()
       duck.swim()
+      duck.allDuckGroup.position.y = -11
       requestAnimationFrame(animate)
       render()
     }
@@ -727,8 +728,6 @@ export default ({ animations }) => {
     duck = new Duck()
     clock = new THREE.Clock()
     scene.add(duck.allDuckGroup)
-
-    duck.allDuckGroup.position.y = -10
 
     animate()
   })
