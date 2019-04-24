@@ -25,7 +25,6 @@ export default ({ animations }) => {
     let renderer
     let clock
     let delta
-    let duckRotation = -1
     let mousePos = { x: 0, y: 0 }
     let duck
     let water
@@ -215,8 +214,10 @@ export default ({ animations }) => {
     }
 
     function Duck() {
-      this.swimCycle = 0
+      this.swimFeetCycle = 0
+      this.swimForwardMotionCycle = 0
       this.blinkCycle = 0
+
       this.allDuckGroup = new THREE.Group()
       this.duckHeadGroup = new THREE.Group()
       this.duckFeetGroup = new THREE.Group()
@@ -632,41 +633,52 @@ export default ({ animations }) => {
     }
 
     Duck.prototype.swim = function swim() {
-      this.swimCycle += delta * 1
-
-      let t = this.swimCycle
-      t = t % (2 * Math.PI)
+      this.swimForwardMotionCycle += delta * 0.6
       const amp = 4
 
-      let vec = new THREE.Vector3(
-        Math.cos(t - 4.5) * 80,
+      let forwardMotionT = this.swimForwardMotionCycle
+      forwardMotionT = forwardMotionT % (2 * Math.PI)
+
+      const vec = new THREE.Vector3(
+        Math.cos(forwardMotionT - 4.5) * 80,
         -7,
-        Math.sin(t - 4.5) * 80
+        Math.sin(forwardMotionT - 4.5) * 80
       )
+
+      this.swimFeetCycle += delta * 0.8
+
+      let feetT = this.swimFeetCycle
+      feetT = feetT % (2 * Math.PI)
 
       this.allDuckGroup.position.x = -20
       this.allDuckGroup.position.z = 0
 
       this.allDuckGroup.lookAt(vec)
 
-      this.allDuckGroup.position.x = Math.cos(t) * 70
-      this.allDuckGroup.position.z = Math.sin(t) * 70
+      this.allDuckGroup.position.x = Math.cos(forwardMotionT) * 70
+      this.allDuckGroup.position.z = Math.sin(forwardMotionT) * 70
 
-      this.duckHeadGroup.rotation.z = Math.cos(t * 4) * 0.1
+      this.duckHeadGroup.rotation.z = Math.cos(forwardMotionT * 4) * 0.1
 
-      this.leftFoot.rotation.x = Math.max(0, Math.cos(t * amp) * 1.8)
-      this.rightFoot.rotation.x = Math.max(0, -Math.cos(t * amp) * 1.8)
+      this.leftFoot.rotation.x = Math.max(0, Math.cos(feetT * amp) * 1.8)
+      this.rightFoot.rotation.x = Math.max(0, -Math.cos(feetT * amp) * 1.8)
 
-      this.leftFoot.position.z = -4 - Math.cos(t * amp) * 7
-      this.rightFoot.position.z = -4 - -Math.cos(t * amp) * 7
+      this.leftFoot.position.z = -4 - Math.cos(feetT * amp) * 7
+      this.rightFoot.position.z = -4 - -Math.cos(feetT * amp) * 7
 
-      this.leftFoot.rotation.z = Math.cos(t * amp) * -0.4
-      this.rightFoot.rotation.z = -Math.cos(t * amp) * -0.4
+      this.leftFoot.rotation.z = Math.cos(feetT * amp) * -0.4
+      this.rightFoot.rotation.z = -Math.cos(feetT * amp) * -0.4
 
-      this.leftFoot.position.y = Math.min(-2.5, -3 - Math.cos(t * amp) * 1.6)
-      this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(t * amp) * 1.6)
+      this.leftFoot.position.y = Math.min(
+        -2.5,
+        -3 - Math.cos(feetT * amp) * 1.6
+      )
+      this.rightFoot.position.y = Math.min(
+        -2.5,
+        -3 - -Math.cos(feetT * amp) * 1.6
+      )
 
-      this.duckTorsoGroup.rotation.z = -Math.cos(t * 4) * 0.18
+      this.duckTorsoGroup.rotation.z = -Math.cos(feetT * 4) * 0.18
     }
 
     // render
