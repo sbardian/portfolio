@@ -4,20 +4,19 @@
 // eslint-disable-next-line
 import React from "react"
 import * as THREE from "three"
-import OrbitControls from "three-orbitcontrols"
-import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
+// import OrbitControls from "three-orbitcontrols"
+// import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
-import mq from "./media-queries"
 
-export default ({ animations }) => {
+const OberynAnimation = ({ animations }) => {
   React.useEffect(() => {
     // setup
     const canvas = document.querySelector("#ob-scene")
     const bodyContainer = document.querySelector("#main-body")
     const sideBarContainer = document.querySelector("#sidebar-container")
     let WIDTH = bodyContainer.offsetWidth
-    let HEIGHT = bodyContainer.offsetHeight
+    const HEIGHT = bodyContainer.offsetHeight
     let windowHalfX
     let windowHalfY
     let scene
@@ -34,7 +33,6 @@ export default ({ animations }) => {
     function onWindowResize() {
       //   HEIGHT = bodyContainer.offsetHeight
       WIDTH = bodyContainer.offsetWidth
-      console.log("height ", HEIGHT, ", width ", WIDTH)
       if (window.innerWidth <= 1200) {
         windowHalfX = WIDTH / 2
         windowHalfY = HEIGHT / 2
@@ -835,7 +833,6 @@ export default ({ animations }) => {
 
     scene.add(ob.obAllGroup)
 
-    console.log("ob >>>>  ", ob)
     animate()
   })
 
@@ -861,3 +858,14 @@ export default ({ animations }) => {
     </div>
   )
 }
+
+OberynAnimation.propTypes = {
+  animations: PropTypes.arrayOf(
+    PropTypes.shape({
+      to: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+}
+
+export default OberynAnimation

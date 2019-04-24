@@ -1,68 +1,54 @@
 /** @jsx jsx */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
 // eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
 import * as THREE from "three"
 import OrbitControls from "three-orbitcontrols"
-import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
+// import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
-import mq from "./media-queries"
 
-export default ({ animations }) => {
+const DuckAnimation = ({ animations }) => {
   React.useEffect(() => {
     // setup
     const canvas = document.querySelector("#ob-scene")
     const bodyContainer = document.querySelector("#main-body")
-    const sideBarContainer = document.querySelector("#sidebar-container")
     let WIDTH = bodyContainer.offsetWidth
-    let HEIGHT = bodyContainer.offsetHeight
+    const HEIGHT = bodyContainer.offsetHeight
+
+    // SAVE:  Follow mouse logic
+    // let mousePos = { x: 0, y: 0 }
+
+    // eslint-disable-next-line
     let windowHalfX
+    // eslint-disable-next-line
     let windowHalfY
     let scene
     let camera
     let renderer
     let clock
     let delta
-    let mousePos = { x: 0, y: 0 }
     let duck
     let water
     let ground
-    const DUCK_COLORS = {
-      green: "0x17A768",
-      orange: "0xf1601d",
-      yellow: "0xf1ad1d",
-      offWhite: "0xe7e0d2",
-      brown: "0xbbae93",
-      gray: "0x9b9b9b",
-    }
 
-    function rule3(xTarget, vmin, vmax, tmin, tmax) {
-      const nv = Math.max(Math.min(xTarget, vmax), vmin)
-      const dv = vmax - vmin
-      const pc = (nv - vmin) / dv
-      const dt = tmax - tmin
-      const tv = tmin + pc * dt
-      return tv
-    }
-
-    function handleMouseMove(event) {
-      mousePos = { x: event.clientX, y: event.clientY }
-    }
+    // SAVE:  Follow mouse logic
+    // function handleMouseMove(event) {
+    //   mousePos = { x: event.clientX, y: event.clientY }
+    // }
 
     function onWindowResize() {
-      //   HEIGHT = bodyContainer.offsetHeight
       WIDTH = bodyContainer.offsetWidth
+      windowHalfX = WIDTH / 2
+      windowHalfY = HEIGHT / 2
 
       if (window.innerWidth <= 1200) {
-        windowHalfX = WIDTH / 2
-        windowHalfY = HEIGHT / 2
         renderer.setSize(WIDTH, HEIGHT)
         camera.aspect = WIDTH / HEIGHT
       } else {
-        windowHalfX = WIDTH / 2
-        windowHalfY = HEIGHT / 2
         renderer.setSize(WIDTH, HEIGHT)
         camera.aspect = WIDTH / HEIGHT
       }
@@ -99,7 +85,9 @@ export default ({ animations }) => {
       const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
-      bodyContainer.addEventListener("mousemove", handleMouseMove, false)
+      // SAVE:  Follow mouse logic
+      // bodyContainer.addEventListener("mousemove", handleMouseMove, false)
+
       // document.addEventListener("touchstart", handleTouchStart, false)
       // document.addEventListener("touchend", handleTouchEnd, false)
       // document.addEventListener("touchmove", handleTouchMove, false)
@@ -613,8 +601,7 @@ export default ({ animations }) => {
     Duck.prototype.blink = function blink() {
       this.blinkCycle += 0.05
       let t = this.blinkCycle
-      t = t % (2 * Math.PI)
-      const amp = 4
+      t %= 2 * Math.PI
 
       this.leftBottomEyeLidGeo.verticesNeedUpdate = true
       this.rightBottomEyeLidGeo.verticesNeedUpdate = true
@@ -637,7 +624,7 @@ export default ({ animations }) => {
       const amp = 4
 
       let forwardMotionT = this.swimForwardMotionCycle
-      forwardMotionT = forwardMotionT % (2 * Math.PI)
+      forwardMotionT %= 2 * Math.PI
 
       const vec = new THREE.Vector3(
         Math.cos(forwardMotionT - 4.5) * 80,
@@ -648,7 +635,7 @@ export default ({ animations }) => {
       this.swimFeetCycle += delta * 0.8
 
       let feetT = this.swimFeetCycle
-      feetT = feetT % (2 * Math.PI)
+      feetT %= 2 * Math.PI
 
       this.allDuckGroup.position.x = -20
       this.allDuckGroup.position.z = 0
@@ -688,25 +675,27 @@ export default ({ animations }) => {
 
     // animate
     const animate = () => {
-      let tempHA
-      let tempVA
-      let tempX
-      let tempY
-      if (window.innerWidth >= 1200) {
-        tempX = mousePos.x - sideBarContainer.offsetWidth
-        tempY = mousePos.y
-        tempHA = (tempX - windowHalfX) / 200
-        tempVA = (mousePos.y - windowHalfY) / 200
-      } else {
-        tempX = mousePos.x
-        tempY = mousePos.y - sideBarContainer.offsetHeight + 250
-        tempHA = (mousePos.x - windowHalfX) / 200
-        tempVA = (tempY - windowHalfY) / 200
-      }
-      const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
-      const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
-      const xTarget = tempX - windowHalfX
-      const yTarget = tempY - windowHalfY
+      // SAVE:  Follow mouse logic
+      //------------------------------------------------------------------------
+      // let tempHA
+      // let tempVA
+      // let tempX
+      // let tempY
+      // if (window.innerWidth >= 1200) {
+      //   tempX = mousePos.x - sideBarContainer.offsetWidth
+      //   tempY = mousePos.y
+      //   tempHA = (tempX - windowHalfX) / 200
+      //   tempVA = (mousePos.y - windowHalfY) / 200
+      // } else {
+      //   tempX = mousePos.x
+      //   tempY = mousePos.y - sideBarContainer.offsetHeight + 250
+      //   tempHA = (mousePos.x - windowHalfX) / 200
+      //   tempVA = (tempY - windowHalfY) / 200
+      // }
+      // const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
+      // const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
+      // const xTarget = tempX - windowHalfX
+      // const yTarget = tempY - windowHalfY
 
       /**
        *
@@ -755,3 +744,14 @@ export default ({ animations }) => {
     </div>
   )
 }
+
+DuckAnimation.propTypes = {
+  animations: PropTypes.arrayOf(
+    PropTypes.shape({
+      to: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+}
+
+export default DuckAnimation
