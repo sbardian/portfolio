@@ -10143,10 +10143,10 @@ three.phenomenon@1.1.0:
   resolved "https://registry.yarnpkg.com/three.phenomenon/-/three.phenomenon-1.1.0.tgz#85f903bc79c16f4a0c831968ce0605e44dc857db"
   integrity sha512-JxHkjNscp4sg9Xp3o1eR9x4f+TDBojv52xc26cnapH9nAS1MJgCFpCCknuKbfjw/ftsfAwH9YXfx5rAbEPDujw==
 
-three@0.103.0:
-  version "0.103.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.103.0.tgz#63b3dbccc861caad93269618061a73dadebae71b"
-  integrity sha512-4WKRHTMt96sp+lX+Hx/eHtN9CWFyejDqr1ikgxZUJIkKEHVglSE7FY8n81NC6yWXqVSjUIQQppaxsoUe26Zi9g==
+three@0.104.0:
+  version "0.104.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.104.0.tgz#9ad1da492153b753a89e0df066631215bd9d9087"
+  integrity sha512-q617IMBC5k40U2E9UC4/LtmhzTOOLB1jGMIooUL+QrhZ7abiGCSDrKrpCDt9V8RTl6xw+0FYfA1PYsIPKbQOgg==
 
 throttleit@^0.0.2:
   version "0.0.2"
