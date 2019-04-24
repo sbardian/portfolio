@@ -75,9 +75,9 @@ export default ({ animations }) => {
       scene = new THREE.Scene()
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
-      camera.position.x = 100
-      camera.position.z = 200
-      camera.position.y = 15
+      camera.position.x = 50
+      camera.position.z = 175
+      camera.position.y = 60
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
       renderer = new THREE.WebGLRenderer({
@@ -135,6 +135,7 @@ export default ({ animations }) => {
         new THREE.MeshLambertMaterial({ color: "gray", flatShading: true })
       )
       rock.castShadow = true
+      rock.receiveShadow = true
       rock.rotation.x = -0.38
       rock.rotation.y = 0.5
       rock.position.y = -12.5
@@ -156,6 +157,7 @@ export default ({ animations }) => {
       )
       const lillyPad = new THREE.Mesh(lillyPadGeo, lillyGreen)
       lillyPad.castShadow = true
+      lillyPad.receiveShadow = true
       lillyPad.position.x = 30
       lillyPad.position.y = -10.3
       lillyPad.rotation.x = 3.14
@@ -173,6 +175,7 @@ export default ({ animations }) => {
       )
       const lillyPad2 = new THREE.Mesh(lillyPad2Geo, lillyGreen)
       lillyPad2.castShadow = true
+      lillyPad2.receiveShadow = true
       lillyPad2.position.x = 20
       lillyPad2.position.y = -10.3
       lillyPad2.rotation.y = Math.PI - 1
@@ -190,22 +193,22 @@ export default ({ animations }) => {
 
       const shadowLight = new THREE.DirectionalLight(0xffffff, 0.7, 100)
 
-      shadowLight.position.set(50, 30, 50)
+      shadowLight.position.set(50, 30, 100)
 
       shadowLight.castShadow = true
       shadowLight.shadow.mapSize.width = 4096
       shadowLight.shadow.mapSize.height = 4096
-      shadowLight.shadow.camera.left = -50
-      shadowLight.shadow.camera.right = 50
-      shadowLight.shadow.camera.top = 50
-      shadowLight.shadow.camera.bottom = -50
-      shadowLight.shadow.camera.near = 40
-      shadowLight.shadow.camera.far = 150
+      shadowLight.shadow.camera.left = -200
+      shadowLight.shadow.camera.right = 200
+      shadowLight.shadow.camera.top = 200
+      shadowLight.shadow.camera.bottom = -200
+      shadowLight.shadow.camera.near = 1
+      shadowLight.shadow.camera.far = 200
 
-      //   const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
-      //   const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
-      //   scene.add(lightHelper)
-      //   scene.add(helper)
+      // const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
+      // const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
+      // scene.add(lightHelper)
+      // scene.add(helper)
 
       scene.add(hemisphereLight)
       scene.add(shadowLight)
