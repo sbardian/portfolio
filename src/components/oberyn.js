@@ -4,8 +4,9 @@
 // eslint-disable-next-line
 import React from "react"
 import * as THREE from "three"
+import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
-// import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
+import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
 
