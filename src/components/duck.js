@@ -60,9 +60,9 @@ const DuckAnimation = ({ animations }) => {
       scene = new THREE.Scene()
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
-      camera.position.x = 50
-      camera.position.z = 175
-      camera.position.y = 60
+      camera.position.x = 0
+      camera.position.z = 250
+      camera.position.y = 50
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
       renderer = new THREE.WebGLRenderer({
@@ -95,28 +95,59 @@ const DuckAnimation = ({ animations }) => {
 
     const createFloor = () => {
       ground = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(300, 200),
+        new THREE.PlaneBufferGeometry(500, 500),
         new THREE.MeshStandardMaterial({
           color: 0x70471f,
         })
       )
       ground.rotation.x = -Math.PI / 2
       ground.position.y = -35
-      ground.position.z = -40
+      ground.position.z = -80
       ground.receiveShadow = true
 
       water = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(300, 350),
+        new THREE.PlaneBufferGeometry(450, 450),
         new THREE.MeshStandardMaterial({
           color: 0x3364ea,
           transparent: true,
-          opacity: 0.7,
+          opacity: 0.9,
         })
       )
       water.rotation.x = -Math.PI / 2
       water.position.y = -10
-      water.position.z = -60
+      water.position.z = 20
       water.receiveShadow = true
+
+      const backgroundGeom = new THREE.PlaneGeometry(800, 800, 20, 20)
+      const matBackground = new THREE.MeshPhongMaterial({
+        color: 0x664c21,
+        vertexColors: THREE.VertexColors,
+      })
+
+      let randomFloorVertexPos
+      backgroundGeom.vertices.forEach(function randomize(floorVertex, index) {
+        if (index < 300) {
+          randomFloorVertexPos = Math.floor(Math.random() * (0 - -35) + 10)
+          floorVertex.z = randomFloorVertexPos
+          backgroundGeom.verticesNeedUpdate = true
+        }
+      })
+
+      const background = new THREE.Mesh(backgroundGeom, matBackground)
+
+      let color
+      for (let i = 0; i < backgroundGeom.faces.length; i++) {
+        const face = backgroundGeom.faces[i]
+        for (let j = 0; j < 3; j++) {
+          color = new THREE.Color(0xffffff)
+          color.setHex(Math.random() * 10 * 0x664c21)
+          face.vertexColors[j] = color
+        }
+      }
+
+      background.position.z = -240
+      background.position.y = -30
+      background.rotation.x = -1.5
 
       const rockGeo = new THREE.IcosahedronBufferGeometry(10, 0)
       const rock = new THREE.Mesh(
@@ -172,38 +203,6 @@ const DuckAnimation = ({ animations }) => {
       lillyPad2.rotation.x = Math.PI
       scene.add(lillyPad2)
 
-      const backgroundGeom = new THREE.PlaneGeometry(300, 300, 20, 20)
-      const matBackground = new THREE.MeshPhongMaterial({
-        color: 0x664c21,
-        vertexColors: THREE.VertexColors,
-      })
-
-      let randomFloorVertexPos
-      backgroundGeom.vertices.forEach(function randomize(floorVertex, index) {
-        if (index < 300) {
-          randomFloorVertexPos = Math.floor(Math.random() * (0 - -35) + 10)
-          floorVertex.z = randomFloorVertexPos
-          backgroundGeom.verticesNeedUpdate = true
-        }
-      })
-
-      const background = new THREE.Mesh(backgroundGeom, matBackground)
-
-      let color
-      for (let i = 0; i < backgroundGeom.faces.length; i++) {
-        const face = backgroundGeom.faces[i]
-        for (let j = 0; j < 3; j++) {
-          color = new THREE.Color(0xffffff)
-          color.setHex(Math.random() * 10 * 0x664c21)
-          face.vertexColors[j] = color
-        }
-      }
-
-      background.position.z = -200
-      background.position.y = -30
-      background.rotation.x = -1.5
-      scene.add(background)
-
       // const wireframe = new THREE.WireframeGeometry(backgroundGeom)
 
       // const line = new THREE.LineSegments(wireframe)
@@ -219,6 +218,7 @@ const DuckAnimation = ({ animations }) => {
       scene.add(rock)
       scene.add(water)
       scene.add(ground)
+      scene.add(background)
     }
 
     const createLights = () => {
