@@ -34,6 +34,8 @@ const DuckAnimation = ({ animations }) => {
     let duck
     let water
     let ground
+    let shore
+    let worldGroup
 
     // SAVE:  Follow mouse logic
     // function handleMouseMove(event) {
@@ -62,7 +64,7 @@ const DuckAnimation = ({ animations }) => {
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
       camera.position.x = 0
       camera.position.z = 250
-      camera.position.y = 50
+      camera.position.y = 25
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
       renderer = new THREE.WebGLRenderer({
@@ -93,9 +95,37 @@ const DuckAnimation = ({ animations }) => {
       // document.addEventListener("touchmove", handleTouchMove, false)
     }
 
+    const createLights = () => {
+      const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0xffffff, 0.7)
+
+      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.7, 100)
+
+      shadowLight.position.set(50, 100, 300)
+
+      shadowLight.castShadow = true
+      shadowLight.shadow.mapSize.width = 4096
+      shadowLight.shadow.mapSize.height = 4096
+      shadowLight.shadow.camera.left = -500
+      shadowLight.shadow.camera.right = 500
+      shadowLight.shadow.camera.top = 500
+      shadowLight.shadow.camera.bottom = -500
+      shadowLight.shadow.camera.near = -300
+      shadowLight.shadow.camera.far = 800
+
+      const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
+      const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
+      scene.add(lightHelper)
+      scene.add(helper)
+
+      scene.add(hemisphereLight)
+      scene.add(shadowLight)
+    }
+
     const createFloor = () => {
+      worldGroup = new THREE.Group()
+
       ground = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(500, 500),
+        new THREE.PlaneBufferGeometry(800, 800),
         new THREE.MeshStandardMaterial({
           color: 0x70471f,
         })
@@ -105,8 +135,10 @@ const DuckAnimation = ({ animations }) => {
       ground.position.z = -80
       ground.receiveShadow = true
 
+      worldGroup.add(ground)
+
       water = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(450, 450),
+        new THREE.PlaneBufferGeometry(600, 600),
         new THREE.MeshStandardMaterial({
           color: 0x3364ea,
           transparent: true,
@@ -118,36 +150,53 @@ const DuckAnimation = ({ animations }) => {
       water.position.z = 20
       water.receiveShadow = true
 
-      const backgroundGeom = new THREE.PlaneGeometry(800, 800, 20, 20)
-      const matBackground = new THREE.MeshPhongMaterial({
-        color: 0x664c21,
-        vertexColors: THREE.VertexColors,
+      worldGroup.add(water)
+
+      const shoreGeom = new THREE.PlaneGeometry(800, 800, 20, 20)
+      const matShore = new THREE.MeshPhongMaterial({
+        color: 0xa07a3b,
+        vertexColors: THREE.FaceColors,
+        flatShading: true,
       })
 
-      let randomFloorVertexPos
-      backgroundGeom.vertices.forEach(function randomize(floorVertex, index) {
+      let randomShoreVertexPos
+      shoreGeom.vertices.forEach(function randomize(floorVertex, index) {
         if (index < 300) {
-          randomFloorVertexPos = Math.floor(Math.random() * (0 - -35) + 10)
-          floorVertex.z = randomFloorVertexPos
-          backgroundGeom.verticesNeedUpdate = true
+          randomShoreVertexPos = Math.floor(Math.random() * (0 - -45) + 10)
+          floorVertex.z = randomShoreVertexPos
+          shoreGeom.verticesNeedUpdate = true
         }
       })
 
-      const background = new THREE.Mesh(backgroundGeom, matBackground)
+      shore = new THREE.Mesh(shoreGeom, matShore)
 
       let color
-      for (let i = 0; i < backgroundGeom.faces.length; i++) {
-        const face = backgroundGeom.faces[i]
-        for (let j = 0; j < 3; j++) {
+      const r = 160
+      const g = 122
+      const b = 59
+      for (let i = 0; i < shoreGeom.faces.length; i++) {
+        const face = shoreGeom.faces[i]
+        for (let j = 1; j <= 3; j++) {
           color = new THREE.Color(0xffffff)
-          color.setHex(Math.random() * 10 * 0x664c21)
-          face.vertexColors[j] = color
+          const max = Math.max(r, Math.max(g, b))
+
+          const step = 255 / (max * 10)
+          color.setRGB(
+            (j * step * r) / 100,
+            (j * step * g) / 100,
+            (j * step * b) / 100
+          )
+          face.color.set(color)
         }
       }
 
-      background.position.z = -240
-      background.position.y = -30
-      background.rotation.x = -1.5
+      shore.receiveShadow = true
+      shore.castShadow = true
+      shore.position.z = -240
+      shore.position.y = -30
+      shore.rotation.x = -1.5
+
+      worldGroup.add(shore)
 
       const rockGeo = new THREE.IcosahedronBufferGeometry(10, 0)
       const rock = new THREE.Mesh(
@@ -159,6 +208,8 @@ const DuckAnimation = ({ animations }) => {
       rock.rotation.x = -0.38
       rock.rotation.y = 0.5
       rock.position.y = -12.5
+
+      scene.add(rock)
 
       const lillyGreen = new THREE.MeshLambertMaterial({
         color: new THREE.Color("rgb(47, 76, 51)").getHex(),
@@ -181,6 +232,7 @@ const DuckAnimation = ({ animations }) => {
       lillyPad.position.x = 30
       lillyPad.position.y = -10.3
       lillyPad.rotation.x = 3.14
+
       scene.add(lillyPad)
 
       const lillyPad2Geo = new THREE.CylinderGeometry(
@@ -201,50 +253,21 @@ const DuckAnimation = ({ animations }) => {
       lillyPad2.rotation.y = Math.PI - 1
       lillyPad.position.z = 17
       lillyPad2.rotation.x = Math.PI
-      scene.add(lillyPad2)
 
-      // const wireframe = new THREE.WireframeGeometry(backgroundGeom)
+      scene.add(lillyPad2)
+      // const wireframe = new THREE.WireframeGeometry(backgroundGeo)
 
       // const line = new THREE.LineSegments(wireframe)
-      // line.position.z = -200
-      // line.position.y = -30
-      // line.rotation.x = -1.5
+      // line.position.z = -600
+      // // line.position.y = -30
+      // // line.rotation.x = -1.5
       // line.material.depthTest = false
       // line.material.opacity = 0.25
       // line.material.transparent = true
-
       // scene.add(line)
 
-      scene.add(rock)
-      scene.add(water)
-      scene.add(ground)
-      scene.add(background)
-    }
-
-    const createLights = () => {
-      const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0xffffff, 0.7)
-
-      const shadowLight = new THREE.DirectionalLight(0xffffff, 0.7, 100)
-
-      shadowLight.position.set(50, 30, 100)
-
-      shadowLight.castShadow = true
-      shadowLight.shadow.mapSize.width = 4096
-      shadowLight.shadow.mapSize.height = 4096
-      shadowLight.shadow.camera.left = -200
-      shadowLight.shadow.camera.right = 200
-      shadowLight.shadow.camera.top = 200
-      shadowLight.shadow.camera.bottom = -200
-      shadowLight.shadow.camera.near = 1
-      shadowLight.shadow.camera.far = 200
-
-      // const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
-      // const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
-      // scene.add(lightHelper)
-      // scene.add(helper)
-
-      scene.add(hemisphereLight)
-      scene.add(shadowLight)
+      worldGroup.position.z = -100
+      scene.add(worldGroup)
     }
 
     function Duck() {
