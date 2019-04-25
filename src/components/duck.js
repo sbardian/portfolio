@@ -6,7 +6,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import * as THREE from "three"
-import OrbitControls from "three-orbitcontrols"
+// import OrbitControls from "three-orbitcontrols"
 // import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
@@ -84,7 +84,7 @@ const DuckAnimation = ({ animations }) => {
       windowHalfY = HEIGHT / 2
 
       // eslint-disable-next-line
-      const controls = new OrbitControls(camera, renderer.domElement)
+      // const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       // SAVE:  Follow mouse logic
@@ -112,10 +112,10 @@ const DuckAnimation = ({ animations }) => {
       shadowLight.shadow.camera.near = -300
       shadowLight.shadow.camera.far = 800
 
-      const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
-      const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
-      scene.add(lightHelper)
-      scene.add(helper)
+      // const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
+      // const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
+      // scene.add(lightHelper)
+      // scene.add(helper)
 
       scene.add(hemisphereLight)
       scene.add(shadowLight)
