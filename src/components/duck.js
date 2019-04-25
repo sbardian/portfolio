@@ -101,11 +101,12 @@ const DuckAnimation = ({ animations }) => {
         })
       )
       ground.rotation.x = -Math.PI / 2
-      ground.position.y = -20
+      ground.position.y = -35
+      ground.position.z = -40
       ground.receiveShadow = true
 
       water = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(300, 200),
+        new THREE.PlaneBufferGeometry(300, 350),
         new THREE.MeshStandardMaterial({
           color: 0x3364ea,
           transparent: true,
@@ -114,6 +115,7 @@ const DuckAnimation = ({ animations }) => {
       )
       water.rotation.x = -Math.PI / 2
       water.position.y = -10
+      water.position.z = -60
       water.receiveShadow = true
 
       const rockGeo = new THREE.IcosahedronBufferGeometry(10, 0)
@@ -169,6 +171,50 @@ const DuckAnimation = ({ animations }) => {
       lillyPad.position.z = 17
       lillyPad2.rotation.x = Math.PI
       scene.add(lillyPad2)
+
+      const backgroundGeom = new THREE.PlaneGeometry(300, 300, 20, 20)
+      const matBackground = new THREE.MeshPhongMaterial({
+        color: 0x664c21,
+        vertexColors: THREE.VertexColors,
+      })
+
+      let randomFloorVertexPos
+      backgroundGeom.vertices.forEach(function randomize(floorVertex, index) {
+        if (index < 300) {
+          randomFloorVertexPos = Math.floor(Math.random() * (0 - -35) + 10)
+          floorVertex.z = randomFloorVertexPos
+          backgroundGeom.verticesNeedUpdate = true
+        }
+      })
+
+      const background = new THREE.Mesh(backgroundGeom, matBackground)
+
+      let color
+      for (let i = 0; i < backgroundGeom.faces.length; i++) {
+        const face = backgroundGeom.faces[i]
+        for (let j = 0; j < 3; j++) {
+          color = new THREE.Color(0xffffff)
+          color.setHex(Math.random() * 10 * 0x664c21)
+          face.vertexColors[j] = color
+        }
+      }
+
+      background.position.z = -200
+      background.position.y = -30
+      background.rotation.x = -1.5
+      scene.add(background)
+
+      // const wireframe = new THREE.WireframeGeometry(backgroundGeom)
+
+      // const line = new THREE.LineSegments(wireframe)
+      // line.position.z = -200
+      // line.position.y = -30
+      // line.rotation.x = -1.5
+      // line.material.depthTest = false
+      // line.material.opacity = 0.25
+      // line.material.transparent = true
+
+      // scene.add(line)
 
       scene.add(rock)
       scene.add(water)
