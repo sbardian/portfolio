@@ -465,3 +465,5 @@ Duck.prototype.swim = function swim() {
 
   this.duckTorsoGroup.rotation.z = -Math.cos(feetT * 4) * 0.18
 }
+
+export default Duck
