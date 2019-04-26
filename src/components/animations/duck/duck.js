@@ -2,12 +2,12 @@
 // eslint-disable-next-line
 import React from "react"
 import PropTypes from "prop-types"
-// import * as THREE from "three"
-// import OrbitControls from "three-orbitcontrols"
+import * as THREE from "three"
+import OrbitControls from "three-orbitcontrols"
 // import { TweenMax, Back, Elastic, TweenLite, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "../../animation-nav"
-// import init from './init'
+import init from "./init"
 
 const DuckAnimation = ({ animations }) => {
   React.useEffect(() => {})
