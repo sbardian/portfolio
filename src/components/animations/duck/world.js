@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+/* eslint-disable no-plusplus */
+/* eslint-disable no-param-reassign */
 import * as THREE from "three"
 
 const {

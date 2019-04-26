@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import * as THREE from "three"
 
 const {
@@ -134,7 +135,6 @@ function Duck() {
   this.leftEye.position.x = 3
   this.leftEye.position.z = 2
   this.duckLeftEyeGroup.add(this.leftEye)
-  // this.allDuckGroup.add(this.leftEye)
 
   const rightEyeGeo = new BoxGeometry(0.5, 2, 2)
   this.rightEye = new Mesh(rightEyeGeo, flatWhite)
@@ -142,7 +142,6 @@ function Duck() {
   this.rightEye.position.x = -3
   this.rightEye.position.z = 2
   this.duckRightEyeGroup.add(this.rightEye)
-  // this.allDuckGroup.add(this.rightEye)
 
   const leftEyeIrisGeo = new BoxGeometry(0.5, 0.5, 0.5)
   this.leftEyeIris = new Mesh(leftEyeIrisGeo, flatBlack)
@@ -150,7 +149,6 @@ function Duck() {
   this.leftEyeIris.position.x = 3.1
   this.leftEyeIris.position.z = 2.5
   this.duckLeftEyeGroup.add(this.leftEyeIris)
-  // this.allDuckGroup.add(this.leftEyeIris)
 
   const rightEyeIrisGeo = new BoxGeometry(0.5, 0.5, 0.5)
   this.rightEyeIris = new Mesh(rightEyeIrisGeo, flatBlack)
@@ -158,7 +156,6 @@ function Duck() {
   this.rightEyeIris.position.x = -3.1
   this.rightEyeIris.position.z = 2.5
   this.duckRightEyeGroup.add(this.rightEyeIris)
-  // this.allDuckGroup.add(this.rightEyeIris)
 
   this.rightTopEyeLidGeo = new BoxGeometry(0.5, 0.5, 2.1)
   this.rightTopEyeLid = new Mesh(this.rightTopEyeLidGeo, flatGreen)
@@ -166,7 +163,6 @@ function Duck() {
   this.rightTopEyeLid.position.x = -3.2
   this.rightTopEyeLid.position.z = 2
   this.duckRightEyeGroup.add(this.rightTopEyeLid)
-  // this.allDuckGroup.add(this.rightTopEyeLid)
 
   this.leftTopEyeLidGeo = new BoxGeometry(0.5, 0.5, 2.1)
   this.leftTopEyeLid = new Mesh(this.leftTopEyeLidGeo, flatGreen)
@@ -174,7 +170,6 @@ function Duck() {
   this.leftTopEyeLid.position.x = 3.2
   this.leftTopEyeLid.position.z = 2
   this.duckLeftEyeGroup.add(this.leftTopEyeLid)
-  // this.allDuckGroup.add(this.leftTopEyeLid)
 
   this.rightBottomEyeLidGeo = new BoxGeometry(0.5, 0.3, 2.1)
   this.rightBottomEyeLid = new Mesh(this.rightBottomEyeLidGeo, flatGreen)
@@ -182,7 +177,6 @@ function Duck() {
   this.rightBottomEyeLid.position.x = -3.2
   this.rightBottomEyeLid.position.z = 2
   this.duckRightEyeGroup.add(this.rightBottomEyeLid)
-  // this.allDuckGroup.add(this.rightBottomEyeLid)
 
   this.leftBottomEyeLidGeo = new BoxGeometry(0.5, 0.3, 2.1)
   this.leftBottomEyeLid = new Mesh(this.leftBottomEyeLidGeo, flatGreen)
@@ -190,7 +184,6 @@ function Duck() {
   this.leftBottomEyeLid.position.x = 3.2
   this.leftBottomEyeLid.position.z = 2
   this.duckLeftEyeGroup.add(this.leftBottomEyeLid)
-  // this.allDuckGroup.add(this.leftBottomEyeLid)
 
   this.allDuckGroup.add(this.duckLeftEyeGroup)
   this.allDuckGroup.add(this.duckRightEyeGroup)
@@ -287,7 +280,6 @@ function Duck() {
   this.bottomBeak = new Mesh(bottomBeakGeo, flatYellow)
   this.bottomBeak.position.y = 7.8
   this.bottomBeak.position.z = 5.5
-  // this.bottomBeak.rotation.x = 0.3
   this.allDuckGroup.add(this.bottomBeak)
   this.duckHeadGroup.add(this.bottomBeak)
 

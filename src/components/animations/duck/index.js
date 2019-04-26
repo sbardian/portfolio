@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import * as THREE from "three"
+/* eslint-disable no-plusplus */
 import init from "./init"
 import world from "./world"
 import Rock from "./rock"
