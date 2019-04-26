@@ -99,7 +99,7 @@ export default () => {
   // line.material.transparent = true
   // scene.add(line)
 
-  worldGroup.position.z = -100
+  //   worldGroup.position.z = -100
 
   return {
     worldGroup,
