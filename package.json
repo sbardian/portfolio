@@ -46,7 +46,7 @@
     "gatsby-plugin-sharp": "2.0.35",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.0.32",
-    "gatsby-source-sanity": "2.1.0",
+    "gatsby-source-sanity": "3.0.0",
     "gatsby-transformer-sharp": "2.1.18",
     "gsap": "2.1.2",
     "lodash": "4.17.11",
