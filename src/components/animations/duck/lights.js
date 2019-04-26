@@ -1,7 +1,12 @@
 /* eslint-disable no-undef */
 import * as THREE from "three"
 
-const { HemisphereLight, DirectionalLight } = THREE
+const {
+  HemisphereLight,
+  DirectionalLight,
+  CameraHelper,
+  DirectionalLightHelper,
+} = THREE
 
 export default () => {
   const hemisphereLight = new HemisphereLight(0xaaaaaa, 0xffffff, 0.7)
@@ -20,13 +25,13 @@ export default () => {
   shadowLight.shadow.camera.near = -300
   shadowLight.shadow.camera.far = 800
 
-  // const helper = new THREE.CameraHelper(shadowLight.shadow.camera)
-  // const lightHelper = new THREE.DirectionalLightHelper(shadowLight, 1)
-  // scene.add(lightHelper)
-  // scene.add(helper)
+  const cameraHelper = new CameraHelper(shadowLight.shadow.camera)
+  const lightHelper = new DirectionalLightHelper(shadowLight, 1)
 
   return {
     hemisphereLight,
     shadowLight,
+    cameraHelper,
+    lightHelper,
   }
 }
