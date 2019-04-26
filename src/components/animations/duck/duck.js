@@ -11,7 +11,8 @@ const {
   Vector3,
 } = THREE
 
-function Duck() {
+function Duck({ delta }) {
+  this.delta = delta
   this.swimFeetCycle = 0
   this.swimForwardMotionCycle = 0
   this.blinkCycle = 0
@@ -424,7 +425,7 @@ Duck.prototype.blink = function blink() {
 }
 
 Duck.prototype.swim = function swim() {
-  this.swimForwardMotionCycle += delta * 0.6
+  this.swimForwardMotionCycle += this.delta * 0.6
   const amp = 4
 
   let forwardMotionT = this.swimForwardMotionCycle
@@ -436,7 +437,7 @@ Duck.prototype.swim = function swim() {
     Math.sin(forwardMotionT - 4.5) * 80
   )
 
-  this.swimFeetCycle += delta * 0.8
+  this.swimFeetCycle += this.delta * 0.8
 
   let feetT = this.swimFeetCycle
   feetT %= 2 * Math.PI

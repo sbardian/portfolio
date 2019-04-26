@@ -6,8 +6,10 @@ import Duck from "./duck"
 
 const { Clock } = THREE
 let duck
-let delta
-let clock
+
+const clock = new Clock()
+const delta = clock.getDelta()
+const { scene, camera, renderer } = init()
 
 const render = () => {
   renderer.render(scene, camera)
@@ -16,21 +18,20 @@ const render = () => {
 // animate
 const animate = () => {
   duck.blink()
-  delta = clock.getDelta()
   duck.swim()
   duck.allDuckGroup.position.y = -11
   requestAnimationFrame(animate)
   render()
 }
 
-const { scene, camera, renderer } = init()
+const { worldGroup } = world()
+const { hemisphereLight, shadowLight } = lights()
 
-world()
-lights()
+duck = new Duck({ delta })
 
-duck = new Duck()
-clock = new Clock()
-
+scene.add(worldGroup)
 scene.add(duck.allDuckGroup)
+scene.add(hemisphereLight)
+scene.add(shadowLight)
 
 animate()
