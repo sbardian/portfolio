@@ -3,6 +3,7 @@ import * as THREE from "three"
 const {
   Group,
   Color,
+  Clock,
   MeshLambertMaterial,
   BoxGeometry,
   Mesh,
@@ -11,8 +12,9 @@ const {
   Vector3,
 } = THREE
 
-function Duck({ delta }) {
-  this.delta = delta
+function Duck() {
+  this.delta = 0
+  this.clock = new Clock()
   this.swimFeetCycle = 0
   this.swimForwardMotionCycle = 0
   this.blinkCycle = 0
@@ -425,6 +427,7 @@ Duck.prototype.blink = function blink() {
 }
 
 Duck.prototype.swim = function swim() {
+  this.delta = this.clock.getDelta()
   this.swimForwardMotionCycle += this.delta * 0.6
   const amp = 4
 

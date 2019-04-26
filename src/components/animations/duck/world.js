@@ -7,8 +7,11 @@ const {
   Color,
   PlaneBufferGeometry,
   MeshStandardMaterial,
+  MeshPhongMaterial,
   PlaneGeometry,
   FaceColors,
+  WireframeGeometry,
+  LineSegments,
 } = THREE
 
 export default () => {
@@ -88,20 +91,16 @@ export default () => {
 
   worldGroup.add(shore)
 
-  // const wireframe = new WireframeGeometry(backgroundGeo)
+  const wireframe = new WireframeGeometry(shoreGeom)
 
-  // const line = new LineSegments(wireframe)
-  // line.position.z = -600
-  // // line.position.y = -30
-  // // line.rotation.x = -1.5
-  // line.material.depthTest = false
-  // line.material.opacity = 0.25
-  // line.material.transparent = true
-  // scene.add(line)
-
-  //   worldGroup.position.z = -100
+  const line = new LineSegments(wireframe)
+  line.position.z = -600
+  line.material.depthTest = false
+  line.material.opacity = 0.25
+  line.material.transparent = true
 
   return {
     worldGroup,
+    line,
   }
 }
