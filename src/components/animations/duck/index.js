@@ -8,11 +8,7 @@ import lights from "./lights"
 import Duck from "./duck"
 
 export default () => {
-  //   const { Clock } = THREE
   let duck
-
-  //   const clock = new Clock()
-  //   const delta = clock.getDelta()
   const { scene, camera, renderer } = init()
 
   const render = () => {
