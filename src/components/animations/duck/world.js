@@ -7,7 +7,6 @@ const {
   Group,
   Mesh,
   Color,
-  PlaneBufferGeometry,
   MeshStandardMaterial,
   MeshPhongMaterial,
   PlaneGeometry,
@@ -20,7 +19,7 @@ export default () => {
   const worldGroup = new Group()
 
   const ground = new Mesh(
-    new PlaneBufferGeometry(800, 800),
+    new PlaneGeometry(800, 800),
     new MeshStandardMaterial({
       color: 0x70471f,
     })
@@ -33,7 +32,7 @@ export default () => {
   worldGroup.add(ground)
 
   const water = new Mesh(
-    new PlaneBufferGeometry(600, 600),
+    new PlaneGeometry(600, 600),
     new MeshStandardMaterial({
       color: 0x3364ea,
       transparent: true,
@@ -104,5 +103,6 @@ export default () => {
   return {
     worldGroup,
     line,
+    water,
   }
 }

@@ -37,13 +37,14 @@ function onWindowResize() {
 export default () => {
   canvas = document.querySelector("#ob-scene")
   bodyContainer = document.querySelector("#main-body")
+  const sideBarContainer = document.querySelector("#sidebar-container")
   const scene = new Scene()
   WIDTH = bodyContainer.offsetWidth
   HEIGHT = bodyContainer.offsetHeight
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
-  camera.position.z = 250
+  camera.position.z = 300
   camera.position.y = 25
   camera.lookAt(new Vector3(0, 0, 0))
 
@@ -67,7 +68,6 @@ export default () => {
   window.addEventListener("resize", onWindowResize, false)
 
   // SAVE:  Follow mouse logic
-  // bodyContainer.addEventListener("mousemove", handleMouseMove, false)
   // document.addEventListener("touchstart", handleTouchStart, false)
   // document.addEventListener("touchend", handleTouchEnd, false)
   // document.addEventListener("touchmove", handleTouchMove, false)
@@ -75,6 +75,7 @@ export default () => {
   return {
     canvas,
     bodyContainer,
+    sideBarContainer,
     scene,
     WIDTH,
     HEIGHT,
@@ -82,5 +83,6 @@ export default () => {
     renderer,
     windowHalfX,
     windowHalfY,
+    // mousePos,
   }
 }

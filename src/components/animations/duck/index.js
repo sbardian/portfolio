@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
+import * as THREE from "three"
 import init from "./init"
 import world from "./world"
 import Rock from "./rock"
@@ -9,22 +10,49 @@ import Duck from "./duck"
 
 export default () => {
   let duck
-  const { scene, camera, renderer } = init()
+  // let mousePos = { x: 0, y: 0 }
+  const { worldGroup, water } = world()
+  const { Raycaster, Vector2 } = THREE
+  const raycaster = new Raycaster()
+  const mouse = new Vector2()
+  const objects = []
+  // eslint-disable-next-line
+  let INTERSECTED
+
+  const { scene, camera, renderer, bodyContainer } = init()
+
+  function handleMouseMove(event) {
+    event.preventDefault()
+    mouse.x = (event.clientX / bodyContainer.offsetWidth) * 2 - 1
+    mouse.y = -(event.clientY / bodyContainer.offsetHeight) * 2 + 1
+
+    objects.push(water)
+    raycaster.setFromCamera(mouse, camera)
+    const intersects = raycaster.intersectObjects(objects)
+    if (intersects.length > 0) {
+      ;[INTERSECTED] = intersects
+      duck.swimTowards(
+        intersects[0].point.x,
+        intersects[0].point.y,
+        intersects[0].point.z
+      )
+    } else {
+      INTERSECTED = null
+    }
+  }
+
+  bodyContainer.addEventListener("mousemove", handleMouseMove, false)
 
   const render = () => {
     renderer.render(scene, camera)
   }
 
-  // animate
   const animate = () => {
     duck.blink()
-    duck.swim()
-    duck.allDuckGroup.position.y = -11
     requestAnimationFrame(animate)
     render()
   }
 
-  const { worldGroup } = world()
   const rock = new Rock({ radius: 10 })
   rock.rockMesh.rotation.x = -0.38
   rock.rockMesh.rotation.y = 0.5

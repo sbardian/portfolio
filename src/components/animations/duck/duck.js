@@ -19,6 +19,8 @@ function Duck() {
   this.swimFeetCycle = 0
   this.swimForwardMotionCycle = 0
   this.blinkCycle = 0
+  this.prevX = 0
+  this.prevY = 0
 
   this.allDuckGroup = new Group()
   this.duckHeadGroup = new Group()
@@ -420,7 +422,7 @@ Duck.prototype.blink = function blink() {
 
 Duck.prototype.swim = function swim() {
   this.delta = this.clock.getDelta()
-  this.swimForwardMotionCycle += this.delta * 0.6
+  this.swimForwardMotionCycle += this.delta * 0.9
   const amp = 4
 
   let forwardMotionT = this.swimForwardMotionCycle
@@ -460,6 +462,43 @@ Duck.prototype.swim = function swim() {
   this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(feetT * amp) * 1.6)
 
   this.duckTorsoGroup.rotation.z = -Math.cos(feetT * 4) * 0.18
+}
+
+Duck.prototype.swimTowards = function swim(x, y, z) {
+  this.delta = this.clock.getDelta()
+  this.swimForwardMotionCycle += this.delta * 0.6
+  const amp = 4
+
+  let forwardMotionT = this.swimForwardMotionCycle
+  forwardMotionT %= 2 * Math.PI
+
+  const vec = new Vector3(x - 90, -11, z)
+  this.allDuckGroup.lookAt(vec)
+
+  this.swimFeetCycle += this.delta * 0.8
+
+  let feetT = this.swimFeetCycle
+  feetT %= 2 * Math.PI
+
+  this.allDuckGroup.position.z = z
+  this.allDuckGroup.position.x = x - 90
+  this.allDuckGroup.position.y = -11
+
+  this.duckHeadGroup.rotation.z = Math.cos(forwardMotionT * 4) * 0.1
+
+  this.leftFoot.rotation.x = Math.max(0, Math.cos(feetT * amp) * 1.8)
+  this.rightFoot.rotation.x = Math.max(0, -Math.cos(feetT * amp) * 1.8)
+
+  this.leftFoot.position.z = -4 - Math.cos(feetT * amp) * 7
+  this.rightFoot.position.z = -4 - -Math.cos(feetT * amp) * 7
+
+  this.leftFoot.rotation.z = Math.cos(feetT * amp) * -0.4
+  this.rightFoot.rotation.z = -Math.cos(feetT * amp) * -0.4
+
+  this.leftFoot.position.y = Math.min(-2.5, -3 - Math.cos(feetT * amp) * 1.6)
+  this.rightFoot.position.y = Math.min(-2.5, -3 - -Math.cos(feetT * amp) * 1.6)
+
+  // this.duckTorsoGroup.rotation.z = -Math.cos(feetT * 4) * 0.18
 }
 
 export default Duck
