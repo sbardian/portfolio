@@ -11,11 +11,12 @@ import Duck from "./duck"
 export default () => {
   let duck
   // let mousePos = { x: 0, y: 0 }
-  const { worldGroup, water } = world()
-  const { Raycaster, Vector2 } = THREE
-  const raycaster = new Raycaster()
+  const { worldGroup /* water */ } = world()
+  const { /* Raycaster, */ Vector2 } = THREE
+  // const raycaster = new Raycaster()
   const mouse = new Vector2()
-  const objects = []
+  // const objects = []
+
   // eslint-disable-next-line
   let INTERSECTED
 
@@ -25,20 +26,22 @@ export default () => {
     event.preventDefault()
     mouse.x = (event.clientX / bodyContainer.offsetWidth) * 2 - 1
     mouse.y = -(event.clientY / bodyContainer.offsetHeight) * 2 + 1
+    duck.swimTowards(mouse.x - 1.1, mouse.y, 0.5, camera)
 
-    objects.push(water)
-    raycaster.setFromCamera(mouse, camera)
-    const intersects = raycaster.intersectObjects(objects)
-    if (intersects.length > 0) {
-      ;[INTERSECTED] = intersects
-      duck.swimTowards(
-        intersects[0].point.x,
-        intersects[0].point.y,
-        intersects[0].point.z
-      )
-    } else {
-      INTERSECTED = null
-    }
+    // objects.push(water)
+    // raycaster.setFromCamera(mouse, camera)
+    // const intersects = raycaster.intersectObjects(objects)
+    // if (intersects.length > 0) {
+    //   ;[INTERSECTED] = intersects
+    //   duck.swimTowards(
+    //     intersects[0].point.x,
+    //     intersects[0].point.y,
+    //     intersects[0].point.z,
+    //     camera
+    //   )
+    // } else {
+    //   INTERSECTED = null
+    // }
   }
 
   bodyContainer.addEventListener("mousemove", handleMouseMove, false)
