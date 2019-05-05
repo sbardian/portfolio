@@ -487,6 +487,7 @@ Duck.prototype.swimTowards = function swim(x, y) {
   vector.multiplyScalar(25)
   vector.multiplyScalar(10)
   vector.y = -10
+  vector.z *= 0.8
   this.allDuckGroup.lookAt(vector)
   this.allDuckGroup.position.copy(vector)
 
