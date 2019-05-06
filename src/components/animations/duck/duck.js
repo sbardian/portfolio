@@ -464,7 +464,7 @@ Duck.prototype.swim = function swim() {
   this.duckTorsoGroup.rotation.z = -Math.cos(feetT * 4) * 0.18
 }
 
-Duck.prototype.swimTowards = function swim(x, y) {
+Duck.prototype.swimTowards = function swim(x, y, z, camera) {
   this.delta = this.clock.getDelta()
   this.swimForwardMotionCycle += this.delta * 0.6
   const amp = 4
@@ -490,6 +490,9 @@ Duck.prototype.swimTowards = function swim(x, y) {
   vector.z *= 0.8
   this.allDuckGroup.lookAt(vector)
   this.allDuckGroup.position.copy(vector)
+  vector.y += 20
+  vector.z += 75
+  camera.position.copy(vector)
 
   this.duckHeadGroup.rotation.z = Math.cos(forwardMotionT * 4) * 0.1
 
