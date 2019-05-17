@@ -59,7 +59,7 @@
     "three": "0.104.0",
     "three-orbitcontrols": "2.102.1",
     "three.phenomenon": "1.1.0",
-    "uon": "1.0.0"
+    "uon": "1.2.1"
   },
   "devDependencies": {
     "babel-eslint": "10.0.1",
