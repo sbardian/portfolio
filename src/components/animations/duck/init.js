@@ -44,7 +44,7 @@ export default () => {
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
-  camera.position.z = 300
+  camera.position.z = 600
   camera.position.y = 25
   camera.lookAt(new Vector3(0, 0, 0))
 

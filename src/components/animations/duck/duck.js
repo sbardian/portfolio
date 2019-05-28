@@ -491,7 +491,7 @@ Duck.prototype.swimTowards = function swim(x, y, z, camera) {
   this.allDuckGroup.lookAt(vector)
   this.allDuckGroup.position.copy(vector)
   vector.y += 20
-  vector.z += 75
+  vector.z += 125
   camera.position.copy(vector)
 
   this.duckHeadGroup.rotation.z = Math.cos(forwardMotionT * 4) * 0.1
