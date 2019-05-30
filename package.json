@@ -56,7 +56,7 @@
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
     "react-reveal": "1.2.2",
-    "three": "0.105.0",
+    "three": "0.105.1",
     "three-orbitcontrols": "2.102.1",
     "three.phenomenon": "1.2.0",
     "uon": "1.2.1"
