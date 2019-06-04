@@ -21,7 +21,12 @@ export default () => {
         If you would rather reach out via email, github or twitter see icons for
         each. I will get back with you as soon as possible.
       </p>
-
+      <canvas
+        css={css`
+          background: transparent;
+        `}
+        id="ob-scene"
+      />
       <form
         data-testid="test-contact-form"
         name="contact"
