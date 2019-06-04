@@ -3,10 +3,9 @@
 import * as THREE from "three"
 import init from "./init"
 import lights from "./lights"
-// import Duck from "./duck"
+import Circle from "./circle"
 
 export default () => {
-  // let duck
   const { Vector2 } = THREE
   const mouse = new Vector2()
 
@@ -24,6 +23,8 @@ export default () => {
     renderer.render(scene, camera)
   }
 
+  const innerCircle = new Circle()
+
   const animate = () => {
     // duck.blink()
     requestAnimationFrame(animate)
@@ -32,9 +33,9 @@ export default () => {
 
   const { hemisphereLight, shadowLight } = lights()
 
-  // duck = new Duck()
+  innerCircle.rotation.x = Math.PI / 2
 
-  // scene.add(duck.allDuckGroup)
+  scene.add(innerCircle)
   scene.add(hemisphereLight)
   scene.add(shadowLight)
 
