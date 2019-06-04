@@ -4,8 +4,13 @@
 import React from "react"
 import { jsx, css } from "@emotion/core"
 import mq from "./media-queries"
+import createAnimation from "./animations/contact/index"
 
 export default () => {
+  React.useEffect(() => {
+    createAnimation()
+  })
+
   return (
     <section
       css={css`
@@ -25,7 +30,7 @@ export default () => {
         css={css`
           background: transparent;
         `}
-        id="ob-scene"
+        id="contact-scene"
       />
       <form
         data-testid="test-contact-form"
