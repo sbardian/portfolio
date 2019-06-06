@@ -6,6 +6,7 @@ import lights from "./lights"
 import Circle from "./circle"
 
 export default () => {
+  let innerCircle
   const { Vector2 } = THREE
   const mouse = new Vector2()
 
@@ -23,19 +24,18 @@ export default () => {
     renderer.render(scene, camera)
   }
 
-  const innerCircle = new Circle()
-
   const animate = () => {
     // duck.blink()
+    innerCircle.expand()
     requestAnimationFrame(animate)
     render()
   }
 
   const { hemisphereLight, shadowLight } = lights()
 
-  innerCircle.rotation.x = Math.PI / 2
+  innerCircle = new Circle()
 
-  scene.add(innerCircle)
+  scene.add(innerCircle.allCirclesGroup)
   scene.add(hemisphereLight)
   scene.add(shadowLight)
 
