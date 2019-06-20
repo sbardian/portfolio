@@ -829,10 +829,10 @@
     in-publish "^2.0.0"
     prop-types "^15.6.0"
 
-"@sanity/desk-tool@0.140.36":
-  version "0.140.36"
-  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-0.140.36.tgz#4bd29c784d417d647b41c40a60789808eb2f938c"
-  integrity sha512-S2q6fLaTNBkQ/FWeu7I40B/5v3QJFmF6zYKAAQzTuHBlKLS5Laomtda7VnIpUSPqBNqVN3O2dXmgmoP22ZSrMg==
+"@sanity/desk-tool@0.140.37":
+  version "0.140.37"
+  resolved "https://registry.yarnpkg.com/@sanity/desk-tool/-/desk-tool-0.140.37.tgz#72b414d5b173e1d3c43cfa70d36a0918d2ec21bd"
+  integrity sha512-jwWnVHxzdwaPqith3YLS+XmMIDcVn1rXhB2exzq3HW+rqsk442ceYG/uL7Gp/Fj3bVvVg+yEa40NP0GB+JOgNw==
   dependencies:
     "@sanity/data-aspects" "0.140.34"
     "@sanity/form-builder" "0.140.36"
