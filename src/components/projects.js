@@ -26,56 +26,85 @@ const Projects = ({ projects }) => {
       </p>
       <div
         css={css`
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-gap: 20px;
+          grid-template-columns: 1fr;
           justify-content: center;
         `}
       >
         {projects.edges.map((project, index) => {
           return (
-            <div
-              key={project.node.id}
-              css={css`
-                flex-basis: 350px;
-              `}
-            >
+            <div key={project.node.id}>
               <Fade
                 right={parseInt(index, 10) % 2 !== 0}
                 left={parseInt(index, 10) % 2 === 0}
               >
-                <article>
-                  <a
-                    href={project.node.demoUrl}
-                    title="Demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Img
-                      fluid={project.node.image.asset.fluid}
-                      alt={project.node.name}
-                    />
-                  </a>
+                <article
+                  css={css`
+                    background-color: white;
+                    border-radius: 3px;
+                    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+                    padding: 20px;
+                    width: 620px;
+                    height: 600px;
+                  `}
+                >
                   <div
                     css={css`
-                      margin-top: 10px;
+                      width: 700px;
+                      z-index: 2;
+                      position: absolute;
+                      left: 0;
+                      top: 0;
+                      height: 350px;
+                      overflow: hidden;
+                      border: 1px solid #666;
+                      border-radius: 5px;
                     `}
                   >
-                    <h3
+                    <a
+                      href={project.node.demoUrl}
+                      title="Demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Img
+                        fluid={project.node.image.asset.fluid}
+                        alt={project.node.name}
+                      />
+                    </a>
+                  </div>
+                  <div
+                    css={css`
+                      display: grid;
+                      grid-gap: 20px;
+                      grid-template-columns: 1fr;
+                      margin-top: 370px;
+                    `}
+                  >
+                    <h1
                       css={css`
                         display: inline;
                         padding-right: 10px;
+                        color: #92e5f3;
                       `}
                     >
                       {project.node.name}
-                    </h3>
-                    <p>{project.node.description}</p>
+                    </h1>
+                    <p
+                      css={css`
+                        color: #666;
+                      `}
+                    >
+                      {project.node.description}
+                    </p>
                     <a
                       css={css`
-                        color: #e1e1e1;
+                        color: #666;
                       `}
                       href={project.node.repoUrl}
                     >
-                      <FontAwesomeIcon size="lg" icon={faGithub} />
+                      <FontAwesomeIcon size="3x" icon={faGithub} />
                     </a>
                   </div>
                 </article>
