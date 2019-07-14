@@ -46,20 +46,25 @@ const Projects = ({ projects }) => {
                     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
                     padding: 20px;
                     width: 620px;
-                    height: 600px;
+                    height: 670px;
+                    ${mq.sm(css`
+                      width: inherit;
+                    `)}
                   `}
                 >
                   <div
                     css={css`
                       width: 700px;
                       z-index: 2;
-                      position: absolute;
+                      position: fixed;
                       left: 0;
                       top: 0;
-                      height: 350px;
+                      height: 450px;
                       overflow: hidden;
-                      border: 1px solid #666;
                       border-radius: 5px;
+                      ${mq.sm(css`
+                        width: 100%;
+                      `)}
                     `}
                   >
                     <a
@@ -86,7 +91,7 @@ const Projects = ({ projects }) => {
                       css={css`
                         display: inline;
                         padding-right: 10px;
-                        color: #92e5f3;
+                        color: #666;
                       `}
                     >
                       {project.node.name}
