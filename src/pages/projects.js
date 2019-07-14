@@ -60,7 +60,7 @@ export const projectImages = graphql`
           repoUrl
           image {
             asset {
-              fluid(maxWidth: 350) {
+              fluid {
                 ...GatsbySanityImageFluid
               }
             }
