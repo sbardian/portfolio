@@ -83,7 +83,7 @@ export default () => {
           <span>
             {`Web developer and problem solver! I enjoy using code to solve
             complex problems so other people don't have to. Hopefully you will
-            find something here to make your life easier. Sorry about the dots, learning animation...`}
+            find something here to make your life easier.`}
           </span>
         </div>
         <div
