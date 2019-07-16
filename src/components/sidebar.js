@@ -61,10 +61,6 @@ const PersonalInfoWrapper = styled.div`
   `)}
 `
 
-const Name = styled.h1`
-  color: #92e5f3;
-`
-
 const AboutMe = styled.span`
   padding: 0px 20px 0px 20px;
 `
@@ -96,7 +92,7 @@ export default () => {
         <Avatar src={avatar} alt="Avatar" />
       </AvatarWrapper>
       <PersonalInfoWrapper>
-        <Name>Brian Andrews</Name>
+        <h1>Brian Andrews</h1>
         <AboutMe>
           {`Web developer and problem solver! I enjoy using code to solve
             complex problems so other people don't have to. Hopefully you will

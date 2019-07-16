@@ -37,7 +37,6 @@ const Article = styled.article`
 const ProjectTitle = styled.h1`
   display: inline;
   padding-right: 10px;
-  color: #92e5f3;
 `
 
 const ProjectImageWrapper = styled.div`
