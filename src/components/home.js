@@ -182,8 +182,7 @@ export default () => {
         </p>
         <p>
           That is all I can think of at the moment. Though, this is an ever
-          changing site, so more to come on. Maybe I will implement that blog
-          someday...
+          changing site, maybe I will implement that blog someday...
         </p>
       </div>
     </section>
