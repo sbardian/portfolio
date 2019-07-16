@@ -65,49 +65,47 @@ const ProjectInfo = styled.p`
   color: #666;
 `
 
-const Projects = ({ projects }) => {
-  return (
-    <ProjectsSection>
-      <h1>Recent Projects</h1>
-      <p>This is a list of my recent projects.</p>
-      <ProjectWrapper>
-        {projects.edges.map((project, index) => {
-          return (
-            <div key={project.node.id}>
-              <Fade
-                right={parseInt(index, 10) % 2 !== 0}
-                left={parseInt(index, 10) % 2 === 0}
-              >
-                <Article>
-                  <ProjectImageWrapper>
-                    <a
-                      href={project.node.demoUrl}
-                      title="Demo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Img
-                        fluid={project.node.image.asset.fluid}
-                        alt={project.node.name}
-                      />
-                    </a>
-                  </ProjectImageWrapper>
-                  <ProjectInfoWrapper>
-                    <ProjectTitle>{project.node.name}</ProjectTitle>
-                    <ProjectInfo>{project.node.description}</ProjectInfo>
-                    <a href={project.node.repoUrl}>
-                      <FaGithub size="2.5em" />
-                    </a>
-                  </ProjectInfoWrapper>
-                </Article>
-              </Fade>
-            </div>
-          )
-        })}
-      </ProjectWrapper>
-    </ProjectsSection>
-  )
-}
+const Projects = ({ projects }) => (
+  <ProjectsSection>
+    <h1>Recent Projects</h1>
+    <p>This is a list of my recent projects.</p>
+    <ProjectWrapper>
+      {projects.edges.map((project, index) => {
+        return (
+          <div key={project.node.id}>
+            <Fade
+              right={parseInt(index, 10) % 2 !== 0}
+              left={parseInt(index, 10) % 2 === 0}
+            >
+              <Article>
+                <ProjectImageWrapper>
+                  <a
+                    href={project.node.demoUrl}
+                    title="Demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Img
+                      fluid={project.node.image.asset.fluid}
+                      alt={project.node.name}
+                    />
+                  </a>
+                </ProjectImageWrapper>
+                <ProjectInfoWrapper>
+                  <ProjectTitle>{project.node.name}</ProjectTitle>
+                  <ProjectInfo>{project.node.description}</ProjectInfo>
+                  <a href={project.node.repoUrl}>
+                    <FaGithub size="2.5em" />
+                  </a>
+                </ProjectInfoWrapper>
+              </Article>
+            </Fade>
+          </div>
+        )
+      })}
+    </ProjectWrapper>
+  </ProjectsSection>
+)
 
 Projects.propTypes = {
   projects: PropTypes.shape({

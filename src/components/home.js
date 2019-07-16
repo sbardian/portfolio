@@ -15,55 +15,53 @@ const SectionWrapper = styled.section`
   font-size: 1.3em;
 `
 
-export default () => {
-  return (
-    <SectionWrapper>
-      <h1>Welcome to my portfolio site!</h1>
-      <p>
-        {`I hope to update this site
+export default () => (
+  <SectionWrapper>
+    <h1>Welcome to my portfolio site!</h1>
+    <p>
+      {`I hope to update this site
         frequently with new projects, and updates to old projects. So check in
         often to make sure you don't miss anything!`}
-      </p>
-      <h2>Here are a few of the technologies I am proficient in.</h2>
-      <Technologies />
-      <h2>Interests</h2>
-      <div>
-        <p>
-          {`As you might have assumed I enjoy development, but that is not 
+    </p>
+    <h2>Here are a few of the technologies I am proficient in.</h2>
+    <Technologies />
+    <h2>Interests</h2>
+    <div>
+      <p>
+        {`As you might have assumed I enjoy development, but that is not 
             what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
             developing.`}
-        </p>
-        <p>
-          Most of my free time is spent hanging out with my three year old son
-          and my wife. Trucks, trains, building forts and dirt are a pretty big
-          deal around here.
-        </p>
-        <p>
-          {`Yard work and home improvement is another thing 
+      </p>
+      <p>
+        Most of my free time is spent hanging out with my three year old son and
+        my wife. Trucks, trains, building forts and dirt are a pretty big deal
+        around here.
+      </p>
+      <p>
+        {`Yard work and home improvement is another thing 
             I enjoy. You know, "Well, um, actually a pretty nice little Saturday, 
             we're going to go to Home Depot. Yeah, buy some wallpaper, maybe 
             get some flooring, stuff like that. Maybe Bed, Bath, & Beyond, I 
             don't know, I don't know if we'll have enough time".`}
-        </p>
-        <p>
-          I also spend a lot of time reading so I decided to make a site to
-          track and share some of the books I have read recently. Simply called{" "}
-          <a
-            href="https://sbardian-books.netlify.com"
-            alt="Books"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Books
-          </a>
-          . The list is not exhaustive of course, just books since I published
-          the site, and maybe a couple more from that year.
-        </p>
-        <p>
-          That is all I can think of at the moment. Though, this is an ever
-          changing site, maybe I will implement that blog someday...
-        </p>
-      </div>
-    </SectionWrapper>
-  )
-}
+      </p>
+      <p>
+        I also spend a lot of time reading so I decided to make a site to track
+        and share some of the books I have read recently. Simply called{" "}
+        <a
+          href="https://sbardian-books.netlify.com"
+          alt="Books"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Books
+        </a>
+        . The list is not exhaustive of course, just books since I published the
+        site, and maybe a couple more from that year.
+      </p>
+      <p>
+        That is all I can think of at the moment. Though, this is an ever
+        changing site, maybe I will implement that blog someday...
+      </p>
+    </div>
+  </SectionWrapper>
+)

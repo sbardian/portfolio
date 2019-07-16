@@ -7,13 +7,11 @@ import "normalize.css"
 // eslint-disable-next-line
 import main from "../assets/main.css"
 
-const ProjectsPage = ({ data: { allSanityProjects } }) => {
-  return (
-    <Layout>
-      <Projects projects={allSanityProjects} />
-    </Layout>
-  )
-}
+const ProjectsPage = ({ data: { allSanityProjects } }) => (
+  <Layout>
+    <Projects projects={allSanityProjects} />
+  </Layout>
+)
 
 ProjectsPage.propTypes = {
   data: PropTypes.shape({

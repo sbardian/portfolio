@@ -18,13 +18,11 @@ const NavWrapper = styled.div`
   `)}
 `
 
-export default () => {
-  return (
-    <NavWrapper>
-      <NavButton title="Home" to="/" />
-      <NavButton title="Projects" to="/projects" />
-      <NavButton title="Animations" to="/animations" />
-      <NavButton title="Contact" to="/contact" />
-    </NavWrapper>
-  )
-}
+export default () => (
+  <NavWrapper>
+    <NavButton title="Home" to="/" />
+    <NavButton title="Projects" to="/projects" />
+    <NavButton title="Animations" to="/animations" />
+    <NavButton title="Contact" to="/contact" />
+  </NavWrapper>
+)

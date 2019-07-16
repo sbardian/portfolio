@@ -85,36 +85,34 @@ const GatsbyIcon = styled.img`
   height: 1em;
 `
 
-export default () => {
-  return (
-    <SidebarContainer id="sidebar-container">
-      <AvatarWrapper>
-        <Avatar src={avatar} alt="Avatar" />
-      </AvatarWrapper>
-      <PersonalInfoWrapper>
-        <h1>Brian Andrews</h1>
-        <AboutMe>
-          {`Web developer and problem solver! I enjoy using code to solve
+export default () => (
+  <SidebarContainer id="sidebar-container">
+    <AvatarWrapper>
+      <Avatar src={avatar} alt="Avatar" />
+    </AvatarWrapper>
+    <PersonalInfoWrapper>
+      <h1>Brian Andrews</h1>
+      <AboutMe>
+        {`Web developer and problem solver! I enjoy using code to solve
             complex problems so other people don't have to. Hopefully you will
             find something here to make your life easier.`}
-        </AboutMe>
-        <IconWrapper>
-          <a href="https://github.com/sbardian">
-            <FaGithub size="2.5em" />
-          </a>
-          <a href="https://twitter.com/xsbardianx">
-            <FaTwitter size="2.5em" />
-          </a>
-          <a href="mailto:sbardian@gmail.com?Subject=Dear Developer...">
-            <FaEnvelope size="2.5em" />
-          </a>
-        </IconWrapper>
-      </PersonalInfoWrapper>
-      <GatsbyIconWrapper>
-        <a href="https://gatsby.com">
-          <GatsbyIcon src={gatsby} alt="Gatsby" title="Built with Gatsby" />
+      </AboutMe>
+      <IconWrapper>
+        <a href="https://github.com/sbardian">
+          <FaGithub size="2.5em" />
         </a>
-      </GatsbyIconWrapper>
-    </SidebarContainer>
-  )
-}
+        <a href="https://twitter.com/xsbardianx">
+          <FaTwitter size="2.5em" />
+        </a>
+        <a href="mailto:sbardian@gmail.com?Subject=Dear Developer...">
+          <FaEnvelope size="2.5em" />
+        </a>
+      </IconWrapper>
+    </PersonalInfoWrapper>
+    <GatsbyIconWrapper>
+      <a href="https://gatsby.com">
+        <GatsbyIcon src={gatsby} alt="Gatsby" title="Built with Gatsby" />
+      </a>
+    </GatsbyIconWrapper>
+  </SidebarContainer>
+)
