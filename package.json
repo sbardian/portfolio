@@ -51,7 +51,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
-    "react-icons": "^3.7.0",
+    "react-icons": "3.7.0",
     "react-reveal": "1.2.2",
     "three": "0.106.2",
     "three-orbitcontrols": "2.102.2",
