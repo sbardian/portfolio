@@ -27,11 +27,17 @@ const Article = styled.article`
   background-color: white;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 20px;
+  margin-bottom: 40px;
   width: 620px;
-  height: 670px;
   ${mq.sm(css`
     width: inherit;
   `)}
+`
+
+const ProjectTitle = styled.h1`
+  display: inline;
+  padding-right: 10px;
+  color: #92e5f3;
 `
 
 const ProjectImageWrapper = styled.div`
@@ -40,7 +46,7 @@ const ProjectImageWrapper = styled.div`
   position: fixed;
   left: 0;
   top: 0;
-  height: 450px;
+  height: 380px;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -54,6 +60,10 @@ const ProjectInfoWrapper = styled.div`
   grid-gap: 20px;
   grid-template-columns: 1fr;
   margin-top: 370px;
+`
+
+const ProjectInfo = styled.p`
+  color: #666;
 `
 
 const Projects = ({ projects }) => {
@@ -84,28 +94,9 @@ const Projects = ({ projects }) => {
                     </a>
                   </ProjectImageWrapper>
                   <ProjectInfoWrapper>
-                    <h1
-                      css={css`
-                        display: inline;
-                        padding-right: 10px;
-                        color: #666;
-                      `}
-                    >
-                      {project.node.name}
-                    </h1>
-                    <p
-                      css={css`
-                        color: #666;
-                      `}
-                    >
-                      {project.node.description}
-                    </p>
-                    <a
-                      css={css`
-                        color: #666;
-                      `}
-                      href={project.node.repoUrl}
-                    >
+                    <ProjectTitle>{project.node.name}</ProjectTitle>
+                    <ProjectInfo>{project.node.description}</ProjectInfo>
+                    <a href={project.node.repoUrl}>
                       <FaGithub size="2.5em" />
                     </a>
                   </ProjectInfoWrapper>
