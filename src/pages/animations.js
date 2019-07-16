@@ -28,6 +28,7 @@ const Animations = () => {
         </div>
         <div
           css={css`
+            display: flex;
             margin: 10px;
             border: 1px solid white;
           `}
@@ -39,7 +40,17 @@ const Animations = () => {
             `}
             to="/oberynPage"
           >
-            <img src={oberynImage} alt="Oberyn" />
+            <img
+              css={css`
+                margin: 0;
+                background-position: center;
+                background-size: cover;
+                width: 100%;
+                height: 450px;
+              `}
+              src={oberynImage}
+              alt="Oberyn"
+            />
           </Link>
         </div>
         <div
@@ -55,7 +66,17 @@ const Animations = () => {
             `}
             to="/duckPage"
           >
-            <img src={duckImage} alt="Duck" />
+            <img
+              css={css`
+                margin: 0;
+                background-position: center;
+                background-size: cover;
+                width: 100%;
+                height: 450px;
+              `}
+              src={duckImage}
+              alt="Duck"
+            />
           </Link>
         </div>
       </div>
