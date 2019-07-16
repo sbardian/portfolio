@@ -25,7 +25,6 @@ const ProjectWrapper = styled.div`
 
 const Article = styled.article`
   background-color: white;
-  border-radius: 3px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 20px;
   width: 620px;
