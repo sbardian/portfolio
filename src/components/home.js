@@ -1,6 +1,7 @@
 // eslint-disable-next-line
 import React from "react"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 import Technologies from "./technologies"
 import "normalize.css"
 // eslint-disable-next-line
@@ -58,8 +59,8 @@ export default () => (
         .
       </p>
       <p>
-        That is all I can think of at the moment. Though, this is an ever
-        changing site, maybe I will implement that blog someday...
+        I hope you enjoy what you see and feel free to reach out to me via the{" "}
+        <Link to="/contact">Contact</Link> page!
       </p>
     </div>
   </SectionWrapper>
