@@ -1,7 +1,6 @@
-/** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import styled from "@emotion/styled"
 import Technologies from "./technologies"
 import "normalize.css"
 // eslint-disable-next-line
@@ -11,14 +10,14 @@ import main from "../assets/main.css"
  * TODO: find icons for bash, python, and others.
  */
 
+const SectionWrapper = styled.section`
+  margin: 0 20px 20px 20px;
+  font-size: 1.3em;
+`
+
 export default () => {
   return (
-    <section
-      css={css`
-        margin: 0 20px 20px 20px;
-        font-size: 1.3em;
-      `}
-    >
+    <SectionWrapper>
       <h1>Welcome to my portfolio site!</h1>
       <p>
         {`I hope to update this site
@@ -65,6 +64,6 @@ export default () => {
           changing site, maybe I will implement that blog someday...
         </p>
       </div>
-    </section>
+    </SectionWrapper>
   )
 }
