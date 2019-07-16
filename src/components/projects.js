@@ -61,10 +61,7 @@ const Projects = ({ projects }) => {
       `}
     >
       <h1>Recent Projects</h1>
-      <p>
-        This is a list of my recent side projects. I have not included any
-        projects done for work.
-      </p>
+      <p>This is a list of my recent projects.</p>
       <ProjectWrapper>
         {projects.edges.map((project, index) => {
           return (
