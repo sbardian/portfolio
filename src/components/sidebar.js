@@ -45,7 +45,13 @@ const AvatarWrapper = styled.div`
 const Avatar = styled.img`
   height: 150px;
   width: 150px;
-  padding-top: 20px;
+  border-radius: 90px;
+  perspective: 100px;
+  transition: all 1s ease-in-out;
+  :hover {
+    transform: scale(1.1);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  }
 `
 
 const PersonalInfoWrapper = styled.div`
