@@ -45,91 +45,39 @@ const TechWrapper = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
+const TechImage = styled.img`
+  width: 48px;
+`
+
 export default () => (
   <TechWrapper>
-    <div>
-      <img width="48" src={react} alt="react" />
-    </div>
-    <div>
-      <img width="48" src={redux} alt="redux" />
-    </div>
-    <div>
-      <img width="42" src={gatsby} alt="gatsby" />
-    </div>
-    <div>
-      <img width="48" src={git} alt="git" />
-    </div>
-    <div>
-      <img width="48" src={github} alt="github" />
-    </div>
-    <div>
-      <img width="48" src={html5} alt="html5" />
-    </div>
-    <div>
-      <img width="48" src={javascript} alt="javascript" />
-    </div>
-    <div>
-      <img width="48" src={joomla} alt="joomla" />
-    </div>
-    <div>
-      <img width="48" src={sharepoint} alt="sharepoint" />
-    </div>
-    <div>
-      <img width="48" src={css3} alt="C#" />
-    </div>
-    <div>
-      <img width="48" src={mongodb} alt="mongodb" />
-    </div>
-    <div>
-      <img width="48" src={nodejs} alt="nodejs" />
-    </div>
-    <div>
-      <img width="48" src={npm} alt="npm" />
-    </div>
-    <div>
-      <img width="48" src={wordpress} alt="wordpress" />
-    </div>
-    <div>
-      <img width="48" src={android} alt="android" />
-    </div>
-    <div>
-      <img width="48" src={gitlab} alt="gitlab" />
-    </div>
-    <div>
-      <img width="48" src={java} alt="java" />
-    </div>
-    <div>
-      <img width="48" src={jquery} alt="jquery" />
-    </div>
-    <div>
-      <img width="48" src={nginx} alt="nginx" />
-    </div>
-    <div>
-      <img width="48" src={typescript} alt="typescript" />
-    </div>
-    <div>
-      <img width="48" src={visualstudio} alt="visualstudio" />
-    </div>
-    <div>
-      <img width="48" src={php} alt="php" />
-    </div>
-    <div>
-      <img width="48" src={powershell} alt="powershell" />
-    </div>
-    <div>
-      <img width="48" src={cSharp} alt="C#" />
-    </div>
-    <div>
-      <img width="48" src={babel} alt="babel" />
-    </div>
-    <div>
-      <img width="48" src={webpack} alt="webpack" />
-    </div>
-    <div>
-      <img width="48" src={yarn} alt="yarn" />
-    </div>
-    <div>
-      <img width="48" src={sequelize} alt="C#" />
-    </div>
+    <TechImage src={react} alt="react" />
+    <TechImage src={redux} alt="redux" />
+    <TechImage src={gatsby} alt="gatsby" />
+    <TechImage src={git} alt="git" />
+    <TechImage src={github} alt="github" />
+    <TechImage src={html5} alt="html5" />
+    <TechImage src={javascript} alt="javascript" />
+    <TechImage src={joomla} alt="joomla" />
+    <TechImage src={sharepoint} alt="sharepoint" />
+    <TechImage src={css3} alt="C#" />
+    <TechImage src={mongodb} alt="mongodb" />
+    <TechImage src={nodejs} alt="nodejs" />
+    <TechImage src={npm} alt="npm" />
+    <TechImage src={wordpress} alt="wordpress" />
+    <TechImage src={android} alt="android" />
+    <TechImage src={gitlab} alt="gitlab" />
+    <TechImage src={java} alt="java" />
+    <TechImage src={jquery} alt="jquery" />
+    <TechImage src={nginx} alt="nginx" />
+    <TechImage src={typescript} alt="typescript" />
+    <TechImage src={visualstudio} alt="visualstudio" />
+    <TechImage src={php} alt="php" />
+    <TechImage src={powershell} alt="powershell" />
+    <TechImage src={cSharp} alt="C#" />
+    <TechImage src={babel} alt="babel" />
+    <TechImage src={webpack} alt="webpack" />
+    <TechImage src={yarn} alt="yarn" />
+    <TechImage src={sequelize} alt="C#" />
   </TechWrapper>
 )

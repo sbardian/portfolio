@@ -23,7 +23,7 @@ export default () => (
         frequently with new projects, and updates to old projects. So check in
         often to make sure you don't miss anything!`}
     </p>
-    <h2>Here are a few of the technologies I am proficient in.</h2>
+    <h2>Technologies</h2>
     <Technologies />
     <h2>Interests</h2>
     <div>
@@ -55,8 +55,7 @@ export default () => (
         >
           Books
         </a>
-        . The list is not exhaustive of course, just books since I published the
-        site, and maybe a couple more from that year.
+        .
       </p>
       <p>
         That is all I can think of at the moment. Though, this is an ever
