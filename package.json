@@ -33,10 +33,6 @@
   "dependencies": {
     "@emotion/core": "10.0.14",
     "@emotion/styled": "10.0.14",
-    "@fortawesome/fontawesome-svg-core": "1.2.19",
-    "@fortawesome/free-brands-svg-icons": "5.9.0",
-    "@fortawesome/free-solid-svg-icons": "5.9.0",
-    "@fortawesome/react-fontawesome": "0.1.4",
     "gatsby": "2.13.23",
     "gatsby-image": "2.2.6",
     "gatsby-plugin-emotion": "4.1.2",
@@ -55,6 +51,7 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
+    "react-icons": "^3.7.0",
     "react-reveal": "1.2.2",
     "three": "0.106.2",
     "three-orbitcontrols": "2.102.2",

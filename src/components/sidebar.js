@@ -2,9 +2,7 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa"
 import mq from "./media-queries"
 import sidebarBg from "../images/sidebar-bg.jpg"
 import overlay from "../images/overlay.png"
@@ -102,7 +100,7 @@ export default () => {
             `}
             href="https://github.com/sbardian"
           >
-            <FontAwesomeIcon size="2x" icon={faGithub} />
+            <FaGithub size="2.5em" />
           </a>
           <a
             css={css`
@@ -110,7 +108,7 @@ export default () => {
             `}
             href="https://twitter.com/xsbardianx"
           >
-            <FontAwesomeIcon size="2x" icon={faTwitter} />
+            <FaTwitter size="2.5em" />
           </a>
           <a
             css={css`
@@ -118,7 +116,7 @@ export default () => {
             `}
             href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
           >
-            <FontAwesomeIcon size="2x" icon={faEnvelope} />
+            <FaEnvelope size="2.5em" />
           </a>
         </div>
       </div>

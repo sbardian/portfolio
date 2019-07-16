@@ -5,8 +5,7 @@ import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { FaGithub } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
 import mq from "./media-queries"
 
@@ -107,7 +106,7 @@ const Projects = ({ projects }) => {
                       `}
                       href={project.node.repoUrl}
                     >
-                      <FontAwesomeIcon size="3x" icon={faGithub} />
+                      <FaGithub size="2.5em" />
                     </a>
                   </ProjectInfoWrapper>
                 </Article>

@@ -3,8 +3,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { findIndex } from "lodash"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import { FaArrowRight } from "react-icons/fa"
 import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 
@@ -39,12 +38,10 @@ const AnimationNav = ({ animations, current }) => {
         `}
         to={animations[next + 1].to}
       >
-        <FontAwesomeIcon
+        <FaArrowRight
           css={css`
             padding-left: 10px;
           `}
-          size="sm"
-          icon={faArrowRight}
         />
       </Link>
     </div>
