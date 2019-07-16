@@ -10,6 +10,13 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./media-queries"
 
+const ProjectsSection = styled.section`
+  margin: 0 20px 20px 20px;
+  ${mq.sm(css`
+    grid-template-columns: 1fr;
+  `)};
+`
+
 const ProjectWrapper = styled.div`
   margin: 0 20px 20px 20px;
   ${mq.sm(css`
@@ -52,14 +59,7 @@ const ProjectInfoWrapper = styled.div`
 
 const Projects = ({ projects }) => {
   return (
-    <section
-      css={css`
-        margin: 0 20px 20px 20px;
-        ${mq.sm(css`
-          grid-template-columns: 1fr;
-        `)};
-      `}
-    >
+    <ProjectsSection>
       <h1>Recent Projects</h1>
       <p>This is a list of my recent projects.</p>
       <ProjectWrapper>
@@ -116,7 +116,7 @@ const Projects = ({ projects }) => {
           )
         })}
       </ProjectWrapper>
-    </section>
+    </ProjectsSection>
   )
 }
 
