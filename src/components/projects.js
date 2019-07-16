@@ -2,12 +2,53 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./media-queries"
+
+const ProjectWrapper = styled.div`
+  margin: 0 20px 20px 20px;
+  ${mq.sm(css`
+    grid-template-columns: 1fr;
+  `)};
+`
+
+const Article = styled.article`
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  width: 620px;
+  height: 670px;
+  ${mq.sm(css`
+    width: inherit;
+  `)}
+`
+
+const ProjectImageWrapper = styled.div`
+  width: 700px;
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 5px;
+  ${mq.sm(css`
+    width: 100%;
+  `)}
+`
+
+const ProjectInfoWrapper = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  margin-top: 370px;
+`
 
 const Projects = ({ projects }) => {
   return (
@@ -20,70 +61,61 @@ const Projects = ({ projects }) => {
       `}
     >
       <h1>Recent Projects</h1>
-      <p>
-        This is a list of my recent side projects. I have not included any
-        projects done for work.
-      </p>
-      <div
-        css={css`
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-        `}
-      >
+      <p>This is a list of my recent projects.</p>
+      <ProjectWrapper>
         {projects.edges.map((project, index) => {
           return (
-            <div
-              key={project.node.id}
-              css={css`
-                flex-basis: 350px;
-              `}
-            >
+            <div key={project.node.id}>
               <Fade
                 right={parseInt(index, 10) % 2 !== 0}
                 left={parseInt(index, 10) % 2 === 0}
               >
-                <article>
-                  <a
-                    href={project.node.demoUrl}
-                    title="Demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Img
-                      fluid={project.node.image.asset.fluid}
-                      alt={project.node.name}
-                    />
-                  </a>
-                  <div
-                    css={css`
-                      margin-top: 10px;
-                    `}
-                  >
-                    <h3
+                <Article>
+                  <ProjectImageWrapper>
+                    <a
+                      href={project.node.demoUrl}
+                      title="Demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Img
+                        fluid={project.node.image.asset.fluid}
+                        alt={project.node.name}
+                      />
+                    </a>
+                  </ProjectImageWrapper>
+                  <ProjectInfoWrapper>
+                    <h1
                       css={css`
                         display: inline;
                         padding-right: 10px;
+                        color: #666;
                       `}
                     >
                       {project.node.name}
-                    </h3>
-                    <p>{project.node.description}</p>
+                    </h1>
+                    <p
+                      css={css`
+                        color: #666;
+                      `}
+                    >
+                      {project.node.description}
+                    </p>
                     <a
                       css={css`
-                        color: #e1e1e1;
+                        color: #666;
                       `}
                       href={project.node.repoUrl}
                     >
-                      <FontAwesomeIcon size="lg" icon={faGithub} />
+                      <FontAwesomeIcon size="3x" icon={faGithub} />
                     </a>
-                  </div>
-                </article>
+                  </ProjectInfoWrapper>
+                </Article>
               </Fade>
             </div>
           )
         })}
-      </div>
+      </ProjectWrapper>
     </section>
   )
 }
