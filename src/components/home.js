@@ -60,6 +60,10 @@ export default () => {
           grid-gap: 20px;
           margin: 20px;
           justify-content: center;
+          background: #e1e1e1;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
         `}
       >
         <div>
