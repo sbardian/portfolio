@@ -61,6 +61,10 @@ const PersonalInfoWrapper = styled.div`
   `)}
 `
 
+const Name = styled.h1`
+  color: #92e5f3;
+`
+
 const AboutMe = styled.span`
   padding: 0px 20px 0px 20px;
 `
@@ -72,10 +76,6 @@ const IconWrapper = styled.div`
   padding-bottom: 20px;
   align-items: center;
   justify-items: center;
-  color: #666;
-`
-
-const SocialLink = styled.a`
   color: #666;
 `
 
@@ -96,22 +96,22 @@ export default () => {
         <Avatar src={avatar} alt="Avatar" />
       </AvatarWrapper>
       <PersonalInfoWrapper>
-        <h1>Brian Andrews</h1>
+        <Name>Brian Andrews</Name>
         <AboutMe>
           {`Web developer and problem solver! I enjoy using code to solve
             complex problems so other people don't have to. Hopefully you will
             find something here to make your life easier.`}
         </AboutMe>
         <IconWrapper>
-          <SocialLink href="https://github.com/sbardian">
+          <a href="https://github.com/sbardian">
             <FaGithub size="2.5em" />
-          </SocialLink>
-          <SocialLink href="https://twitter.com/xsbardianx">
+          </a>
+          <a href="https://twitter.com/xsbardianx">
             <FaTwitter size="2.5em" />
-          </SocialLink>
-          <SocialLink href="mailto:sbardian@gmail.com?Subject=Dear Developer...">
+          </a>
+          <a href="mailto:sbardian@gmail.com?Subject=Dear Developer...">
             <FaEnvelope size="2.5em" />
-          </SocialLink>
+          </a>
         </IconWrapper>
       </PersonalInfoWrapper>
       <GatsbyIconWrapper>
