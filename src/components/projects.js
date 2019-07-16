@@ -2,12 +2,53 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import Fade from "react-reveal/Fade"
 import mq from "./media-queries"
+
+const ProjectWrapper = styled.div`
+  margin: 0 20px 20px 20px;
+  ${mq.sm(css`
+    grid-template-columns: 1fr;
+  `)};
+`
+
+const Article = styled.article`
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 20px;
+  width: 620px;
+  height: 670px;
+  ${mq.sm(css`
+    width: inherit;
+  `)}
+`
+
+const ProjectImageWrapper = styled.div`
+  width: 700px;
+  z-index: 2;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 5px;
+  ${mq.sm(css`
+    width: 100%;
+  `)}
+`
+
+const ProjectInfoWrapper = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  margin-top: 370px;
+`
 
 const Projects = ({ projects }) => {
   return (
@@ -24,14 +65,7 @@ const Projects = ({ projects }) => {
         This is a list of my recent side projects. I have not included any
         projects done for work.
       </p>
-      <div
-        css={css`
-          display: grid;
-          grid-gap: 20px;
-          grid-template-columns: 1fr;
-          justify-content: center;
-        `}
-      >
+      <ProjectWrapper>
         {projects.edges.map((project, index) => {
           return (
             <div key={project.node.id}>
@@ -39,34 +73,8 @@ const Projects = ({ projects }) => {
                 right={parseInt(index, 10) % 2 !== 0}
                 left={parseInt(index, 10) % 2 === 0}
               >
-                <article
-                  css={css`
-                    background-color: white;
-                    border-radius: 3px;
-                    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-                    padding: 20px;
-                    width: 620px;
-                    height: 670px;
-                    ${mq.sm(css`
-                      width: inherit;
-                    `)}
-                  `}
-                >
-                  <div
-                    css={css`
-                      width: 700px;
-                      z-index: 2;
-                      position: fixed;
-                      left: 0;
-                      top: 0;
-                      height: 450px;
-                      overflow: hidden;
-                      border-radius: 5px;
-                      ${mq.sm(css`
-                        width: 100%;
-                      `)}
-                    `}
-                  >
+                <Article>
+                  <ProjectImageWrapper>
                     <a
                       href={project.node.demoUrl}
                       title="Demo"
@@ -78,15 +86,8 @@ const Projects = ({ projects }) => {
                         alt={project.node.name}
                       />
                     </a>
-                  </div>
-                  <div
-                    css={css`
-                      display: grid;
-                      grid-gap: 20px;
-                      grid-template-columns: 1fr;
-                      margin-top: 370px;
-                    `}
-                  >
+                  </ProjectImageWrapper>
+                  <ProjectInfoWrapper>
                     <h1
                       css={css`
                         display: inline;
@@ -111,13 +112,13 @@ const Projects = ({ projects }) => {
                     >
                       <FontAwesomeIcon size="3x" icon={faGithub} />
                     </a>
-                  </div>
-                </article>
+                  </ProjectInfoWrapper>
+                </Article>
               </Fade>
             </div>
           )
         })}
-      </div>
+      </ProjectWrapper>
     </section>
   )
 }
