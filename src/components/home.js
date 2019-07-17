@@ -58,6 +58,29 @@ export default () => (
         </a>
         .
       </p>
+      <h2>Work</h2>
+      <p>
+        I have worked in IT since 2000 at{" "}
+        <Link to="http://www.trinity-health.org/">Trinity Health</Link> as a
+        System Administrator Senior. My web development work at Trinity Health
+        started when I became the SharePoint Administrator for the Boise Region,
+        though I have worked with web development for more than 25 years. Using
+        SharePoint as a framework, I have implemented and deployed two intranet
+        solutions. These were massively customized intranet solutions. As a
+        SharePoint Administrator I have also deployed many different SharePoint
+        solutions for different department needs. Other web projects I have been
+        involved in at Trinity Health include a Javascript Graphql Master
+        Provider Index API, a React Native Find a Provider App, a Javascript
+        Events and Daily Announcemnts calendar, and a Javascript Service Account
+        Manager webapp.
+      </p>
+      <p>
+        I have also worked with <Link to="https://seoidaho.com">SEO Idaho</Link>{" "}
+        on many web development projects. Working with SEO Idaho has exposed me
+        to countless different web framworks and languagues. I enjoy the
+        challenge of not knowing what the next client could present.
+      </p>
+      <h2>Thanks!</h2>
       <p>
         I hope you enjoy what you see and feel free to reach out to me via the{" "}
         <Link to="/contact">Contact</Link> page!
