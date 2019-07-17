@@ -55,6 +55,7 @@ const ProjectImageWrapper = styled.div`
     left: 0px;
     height: 220px;
     border-radius: 0px;
+    box-shadow: none;
   `)}
 `
 
