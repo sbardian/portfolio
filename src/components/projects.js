@@ -23,12 +23,13 @@ const ProjectWrapper = styled.div`
   `)};
 `
 
-const Article = styled.article`
+const Article = styled.div`
   background-color: white;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 20px;
   margin-bottom: 40px;
   width: 620px;
+  position: relative;
   ${mq.sm(css`
     width: inherit;
   `)}
@@ -42,15 +43,17 @@ const ProjectTitle = styled.h1`
 const ProjectImageWrapper = styled.div`
   width: 700px;
   z-index: 2;
-  position: fixed;
-  left: 0;
+  position: absolute;
+  left: -20px;
   top: 0;
   height: 380px;
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   ${mq.sm(css`
-    width: 100%;
+    width: 110%;
+    height: 250px;
+    left: -20px;
   `)}
 `
 
@@ -59,6 +62,9 @@ const ProjectInfoWrapper = styled.div`
   grid-gap: 20px;
   grid-template-columns: 1fr;
   margin-top: 370px;
+  ${mq.sm(css`
+    margin-top: 250px;
+  `)}
 `
 
 const ProjectInfo = styled.p`
