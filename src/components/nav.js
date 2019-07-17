@@ -12,6 +12,11 @@ const NavWrapper = styled.div`
   margin: 0 20px 20px 20px;
   justify-items: center;
   padding: 40px 0 0 0;
+  ${mq.md(css`
+    width: auto;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  `)}
   ${mq.sm(css`
     grid-template-columns: 1fr;
     justify-items: start;

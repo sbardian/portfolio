@@ -30,6 +30,11 @@ const SidebarContainer = styled.div`
     min-height: 300px;
     position: absolute;
   `)};
+  ${mq.md(css`
+    min-width: 100%;
+    min-height: 300px;
+    position: absolute;
+  `)};
   ${mq.sm(css`
     grid-template-columns: 1fr;
     justify-items: center;

@@ -31,6 +31,9 @@ const NavButton = ({ title, to }) => (
         color: #92e5f3;
         border-color: #92e5f3;
       }
+      ${mq.md(css`
+        min-width: 18em;
+      `)}
       ${mq.sm(css`
         min-width: 12em;
       `)}

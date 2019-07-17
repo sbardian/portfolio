@@ -30,6 +30,9 @@ const Article = styled.div`
   margin-bottom: 40px;
   width: 620px;
   position: relative;
+  ${mq.md(css`
+    width: inherit;
+  `)}
   ${mq.sm(css`
     width: inherit;
   `)}
@@ -50,6 +53,13 @@ const ProjectImageWrapper = styled.div`
   overflow: hidden;
   border-radius: 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
+  ${mq.md(css`
+    width: 100%;
+    left: 0px;
+    height: 220px;
+    border-radius: 0px;
+    box-shadow: none;
+  `)}
   ${mq.sm(css`
     width: 100%;
     left: 0px;
@@ -64,6 +74,9 @@ const ProjectInfoWrapper = styled.div`
   grid-gap: 20px;
   grid-template-columns: 1fr;
   margin-top: 370px;
+  ${mq.md(css`
+    margin-top: 200px;
+  `)}
   ${mq.sm(css`
     margin-top: 220px;
   `)}
