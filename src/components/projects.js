@@ -51,9 +51,10 @@ const ProjectImageWrapper = styled.div`
   border-radius: 5px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   ${mq.sm(css`
-    width: 110%;
-    height: 250px;
-    left: -20px;
+    width: 100%;
+    left: 0px;
+    height: 220px;
+    border-radius: 0px;
   `)}
 `
 
@@ -63,7 +64,7 @@ const ProjectInfoWrapper = styled.div`
   grid-template-columns: 1fr;
   margin-top: 370px;
   ${mq.sm(css`
-    margin-top: 250px;
+    margin-top: 220px;
   `)}
 `
 
