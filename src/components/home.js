@@ -47,7 +47,7 @@ export default () => (
       </p>
       <p>
         I also spend a lot of time reading so I decided to make a site to track
-        and share some of the books I have read recently. Simply called{" "}
+        and share some of the books I have read recently (
         <a
           href="https://sbardian-books.netlify.com"
           alt="Books"
@@ -56,7 +56,7 @@ export default () => (
         >
           Books
         </a>
-        .
+        ).
       </p>
       <h2>Work</h2>
       <p>
