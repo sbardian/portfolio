@@ -5266,10 +5266,10 @@ gatsby-source-filesystem@2.1.9:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-sanity@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-5.0.1.tgz#d772ff89e084b23481311ceaf98d309c1d775ac6"
-  integrity sha512-zBcSVcNpKcYY7hF9wx2hkDAzICrhcoEtZTlmaLqsRfrlo3G2BejRg/bYACZJEqjQUu2nSxPOgTwjQvoQqBQGwg==
+gatsby-source-sanity@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/gatsby-source-sanity/-/gatsby-source-sanity-5.0.2.tgz#961f3f3b3fe5cadb3dc5ab2f256d5598d1799628"
+  integrity sha512-8+7ePq6r9DgyXbN3jp/Mtu0NGCIVES3X1AgX8XUZM7fE7GEf9nG46NvMdwfwbvSTrooecA9pEX36znX92aQYvw==
   dependencies:
     "@sanity/client" "^0.140.11"
     "@sanity/image-url" "^0.140.9"
@@ -5278,7 +5278,7 @@ gatsby-source-sanity@5.0.1:
     axios "^0.19.0"
     debug "^4.1.0"
     fs-extra "^8.0.1"
-    lodash "^4.17.11"
+    lodash "^4.17.15"
     oneline "^1.0.2"
     pump "^3.0.0"
     rxjs "^6.3.3"
@@ -7227,7 +7227,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@4.17.15, lodash@^4.17.12:
+lodash@4.17.15, lodash@^4.17.12, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
