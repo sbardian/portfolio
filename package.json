@@ -31,7 +31,7 @@
     "url": "https://github.com/sbardian/portfolio/issues"
   },
   "dependencies": {
-    "@emotion/core": "10.0.15",
+    "@emotion/core": "10.0.16",
     "@emotion/styled": "10.0.15",
     "gatsby": "2.13.65",
     "gatsby-image": "2.2.8",
