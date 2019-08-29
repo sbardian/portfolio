@@ -59,7 +59,7 @@
     "uon": "1.2.1"
   },
   "devDependencies": {
-    "@testing-library/cypress": "4.1.1",
+    "@testing-library/cypress": "4.2.0",
     "babel-eslint": "10.0.3",
     "cypress": "3.4.1",
     "eslint": "6.2.2",
