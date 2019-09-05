@@ -24,7 +24,7 @@ const NavWrapper = styled.div`
 `
 
 export default () => (
-  <NavWrapper>
+  <NavWrapper data-testid="nav-test">
     <NavButton title="Home" to="/" />
     <NavButton title="Projects" to="/projects" />
     <NavButton title="Animations" to="/animations" />
