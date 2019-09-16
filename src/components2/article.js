@@ -8,7 +8,6 @@ import styled from "@emotion/styled"
 
 const ArticleWrapper = styled.article`
   color: #a8a7a8;
-  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -23,7 +22,7 @@ const Generic = styled.div`
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
-  width: 1200px;
+  margin: 0 20px;
 `
 
 const Light = styled.div`
@@ -33,7 +32,7 @@ const Light = styled.div`
   justify-content: center;
   color: #fff;
   border-radius: 10px;
-  width: 1200px;
+  margin: 0 20px;
 `
 
 const Dark = styled.div`
@@ -43,7 +42,7 @@ const Dark = styled.div`
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
-  width: 1200px;
+  margin: 0 20px;
 `
 
 const Article = ({ type, children }) => {

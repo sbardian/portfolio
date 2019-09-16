@@ -1,5 +1,7 @@
 // eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
 import "normalize.css"
 // eslint-disable-next-line
 import main from "../assets/main.css"
@@ -12,10 +14,64 @@ import { PageProvider } from "../components2/page-context"
  *
  */
 
-const IndexPage = () => (
+const IndexPage = ({ data: { allSanityProjects } }) => (
   <PageProvider>
-    <PageLayout />
+    <PageLayout projects={allSanityProjects} />
   </PageProvider>
 )
 
 export default IndexPage
+
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    allSanityProjects: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            description: PropTypes.string,
+            demoUrl: PropTypes.string,
+            repoUrl: PropTypes.string,
+            image: PropTypes.shape({
+              asset: PropTypes.shape({
+                fluid: PropTypes.shape({
+                  base64: PropTypes.string,
+                  aspectRatio: PropTypes.number,
+                  src: PropTypes.string,
+                  srcSet: PropTypes.string,
+                  srcWebp: PropTypes.string,
+                  srcSetWebp: PropTypes.string,
+                  sizes: PropTypes.string,
+                }),
+              }),
+            }),
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+}
+
+export const projectImages = graphql`
+  {
+    allSanityProjects {
+      edges {
+        node {
+          id
+          name
+          description
+          demoUrl
+          repoUrl
+          image {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`

@@ -3,18 +3,12 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx } from "@emotion/core"
-import posed from "react-pose"
 
 import Article from "./article"
 
-const PosedDiv = posed.div({
-  enter: { opacity: 1 },
-  exit: { opacity: 0 },
-})
-
 const Main = () => {
   return (
-    <PosedDiv>
+    <div>
       <Article>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -48,7 +42,7 @@ const Main = () => {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </Article>
-    </PosedDiv>
+    </div>
   )
 }
 
