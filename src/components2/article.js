@@ -19,6 +19,7 @@ const ArticleWrapper = styled.article`
 const Generic = styled.div`
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
@@ -29,8 +30,9 @@ const Light = styled.div`
   background-color: #cc527a;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  color: #fff;
+  color: #e1e1e1;
   border-radius: 10px;
   margin: 0 20px;
 `
@@ -39,6 +41,7 @@ const Dark = styled.div`
   background-color: #474747;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
