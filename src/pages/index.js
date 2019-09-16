@@ -1,10 +1,9 @@
 // eslint-disable-next-line
 import React from "react"
-import Layout from "../components/layout"
-import Home from "../components/home"
 import "normalize.css"
 // eslint-disable-next-line
 import main from "../assets/main.css"
+import PageLayout from "../components/page-layout"
 
 /**
  * TODO: fade a color overlay over the top image. or make new images
@@ -12,10 +11,6 @@ import main from "../assets/main.css"
  *
  */
 
-const IndexPage = () => (
-  <Layout>
-    <Home />
-  </Layout>
-)
+const IndexPage = () => <PageLayout />
 
 export default IndexPage

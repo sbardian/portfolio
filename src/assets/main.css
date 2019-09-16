@@ -1,9 +1,22 @@
+html,
 body {
   margin: 0;
-  background-color: #666;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
+  background-color: #363636;
+  font-family: "Roboto", sans-serif;
   color: #e1e1e1;
   overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+#___gatsby {
+  height: 100%;
+  width: 100%;
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 article {
