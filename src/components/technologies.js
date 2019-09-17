@@ -36,7 +36,6 @@ const TechWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, 48px);
   grid-gap: 20px;
-  margin: 20px;
   justify-content: center;
   background: #e1e1e1;
   padding: 20px;
