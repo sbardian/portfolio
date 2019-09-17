@@ -6,6 +6,8 @@ import React from "react"
 import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { PageContext } from "./page-context"
+import Avatar from "./avatar"
+import Social from "./social"
 
 const StyledUL = styled.ul`
   margin: 0;
@@ -113,6 +115,8 @@ const Header = () => {
           />
         </StyledLI>
       </StyledUL>
+      <Avatar />
+      <Social />
     </div>
   )
 }
