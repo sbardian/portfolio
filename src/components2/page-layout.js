@@ -43,7 +43,11 @@ const PageLayout = ({ projects }) => {
       `}
     >
       <Header />
-      <div>
+      <div
+        css={css`
+          max-width: 1000px;
+        `}
+      >
         <PoseGroup>
           {page === "home" && (
             <PosedDiv key={1}>
