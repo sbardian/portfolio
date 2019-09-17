@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import { PageContext } from "./page-context"
 
@@ -13,6 +13,7 @@ const StyledUL = styled.ul`
   display: flex;
   justify-content: center;
   align-content: center;
+  padding: 0;
 `
 
 const StyledLI = styled.li`
@@ -66,58 +67,52 @@ const Header = () => {
   }
   return (
     <div>
-      <div
-        css={css`
-          margin-bottom: 60px;
-        `}
-      >
-        <StyledUL>
-          <StyledLI>
-            <StyledHref
-              onClick={e => {
-                updatePage(e, "home")
-              }}
-              label="navLink"
-              href="https://gatsbyjs.org"
-              data-name-start="H"
-              data-name-end="ome"
-            />
-          </StyledLI>
-          <StyledLI>
-            <StyledHref
-              onClick={e => {
-                updatePage(e, "projects")
-              }}
-              label="navLink"
-              href="https://gatsbyjs.org"
-              data-name-start="P"
-              data-name-end="rojects"
-            />
-          </StyledLI>
-          <StyledLI>
-            <StyledHref
-              onClick={e => {
-                updatePage(e, "animations")
-              }}
-              label="navLink"
-              href="https://gatsbyjs.org"
-              data-name-start="A"
-              data-name-end="nimations"
-            />
-          </StyledLI>
-          <StyledLI>
-            <StyledHref
-              onClick={e => {
-                updatePage(e, "contact")
-              }}
-              label="navLink"
-              href="https://gatsbyjs.org"
-              data-name-start="C"
-              data-name-end="ontact"
-            />
-          </StyledLI>
-        </StyledUL>
-      </div>
+      <StyledUL>
+        <StyledLI>
+          <StyledHref
+            onClick={e => {
+              updatePage(e, "home")
+            }}
+            label="navLink"
+            href="https://gatsbyjs.org"
+            data-name-start="H"
+            data-name-end="ome"
+          />
+        </StyledLI>
+        <StyledLI>
+          <StyledHref
+            onClick={e => {
+              updatePage(e, "projects")
+            }}
+            label="navLink"
+            href="https://gatsbyjs.org"
+            data-name-start="P"
+            data-name-end="rojects"
+          />
+        </StyledLI>
+        <StyledLI>
+          <StyledHref
+            onClick={e => {
+              updatePage(e, "animations")
+            }}
+            label="navLink"
+            href="https://gatsbyjs.org"
+            data-name-start="A"
+            data-name-end="nimations"
+          />
+        </StyledLI>
+        <StyledLI>
+          <StyledHref
+            onClick={e => {
+              updatePage(e, "contact")
+            }}
+            label="navLink"
+            href="https://gatsbyjs.org"
+            data-name-start="C"
+            data-name-end="ontact"
+          />
+        </StyledLI>
+      </StyledUL>
     </div>
   )
 }
