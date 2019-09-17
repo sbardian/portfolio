@@ -23,7 +23,7 @@ const Generic = styled.div`
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 20px 20px;
 `
 
 const Light = styled.div`
@@ -34,7 +34,7 @@ const Light = styled.div`
   justify-content: center;
   color: #e1e1e1;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 20px 20px;
 `
 
 const Dark = styled.div`
@@ -45,7 +45,7 @@ const Dark = styled.div`
   justify-content: center;
   color: #a8a7a8;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 20px 20px;
 `
 
 const Article = ({ type, children }) => {
