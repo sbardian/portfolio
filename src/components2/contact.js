@@ -3,6 +3,7 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
+import Article from "./article"
 import mq from "./media-queries"
 
 export default () => (
@@ -14,12 +15,14 @@ export default () => (
       `)};
     `}
   >
-    <h1>Contact me</h1>
-    <p>
-      Feel free to contact me for job opportunities, or any reason you want. If
-      you would rather reach out via email, github or twitter see icons for
-      each. I will get back with you as soon as possible.
-    </p>
+    <Article type="dark">
+      <h1>Contact me</h1>
+      <p>
+        Feel free to contact me for job opportunities, or any reason you want.
+        If you would rather reach out via email, github or twitter see icons for
+        each. I will get back with you as soon as possible.
+      </p>
+    </Article>
     <form
       data-testid="test-contact-form"
       name="contact"
@@ -65,7 +68,7 @@ export default () => (
             border: 2px solid #e1e1e1;
             transition: all 0.2s ease-in-out;
             &:focus {
-              border: 2px solid #92e5f3;
+              border: 2px solid #e8175d;
             }
           `}
         />
@@ -79,7 +82,7 @@ export default () => (
             border: 2px solid #e1e1e1;
             transition: all 0.2s ease-in-out;
             &:focus {
-              border: 2px solid #92e5f3;
+              border: 2px solid #e8175d;
             }
           `}
         />
@@ -102,7 +105,7 @@ export default () => (
             padding: 1em;
             height: auto;
             &:focus {
-              border: 2px solid #92e5f3;
+              border: 2px solid #e8175d;
             }
           `}
         />
