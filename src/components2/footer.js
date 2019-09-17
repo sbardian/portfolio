@@ -1,19 +1,27 @@
 /** @jsx jsx */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "@emotion/core"
+import styled from "@emotion/styled"
+import gatsby from "../images/gatsby.png"
 
-const Footer = () => {
-  return (
-    <div
-      css={css`
-        padding: 20px;
-      `}
-    >
-      Footer
-    </div>
-  )
-}
+const Footer = styled.div`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  padding: 20px;
+`
 
-export default Footer
+const GatsbyImage = styled.img`
+  height: 3em;
+`
+
+export default () => (
+  <Footer>
+    <a data-testid="footer-link-test" href="https://gatsbyjs.org">
+      <GatsbyImage src={gatsby} alt="Gatsby" title="Built with Gatsby" />
+    </a>
+  </Footer>
+)
