@@ -9,7 +9,7 @@ import Header from "./header"
 import Main from "./main"
 import Footer from "./footer"
 import { PageContext } from "./page-context"
-import Projects from "../components/projects"
+import Projects from "./projects"
 import Contact from "./contact"
 
 const PosedDiv = posed.div({
