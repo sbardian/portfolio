@@ -10,6 +10,7 @@ import Main from "./main"
 import Footer from "./footer"
 import { PageContext } from "./page-context"
 import Projects from "../components/projects"
+import Contact from "./contact"
 
 const PosedDiv = posed.div({
   enter: {
@@ -60,7 +61,11 @@ const PageLayout = ({ projects }) => {
             </PosedDiv>
           )}
           {page === "animations" && <PosedDiv key={3}>animations</PosedDiv>}
-          {page === "contact" && <PosedDiv key={4}>contact</PosedDiv>}
+          {page === "contact" && (
+            <PosedDiv key={4}>
+              <Contact />
+            </PosedDiv>
+          )}
         </PoseGroup>
       </div>
       <Footer />
