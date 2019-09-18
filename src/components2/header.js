@@ -16,6 +16,7 @@ const StyledUL = styled.ul`
   justify-content: center;
   align-content: center;
   padding: 0;
+  margin-bottom: 20px;
 `
 
 const StyledLI = styled.li`
