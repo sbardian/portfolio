@@ -7,11 +7,14 @@ import gatsby from "../images/gatsby.png"
 
 const Footer = styled.div`
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   justify-items: center;
   align-items: center;
   padding: 20px;
+`
+
+const BuiltWith = styled.pre`
+  font-size: 0.8rem;
 `
 
 const GatsbyImage = styled.img`
@@ -20,6 +23,7 @@ const GatsbyImage = styled.img`
 
 export default () => (
   <Footer>
+    <BuiltWith>built with</BuiltWith>
     <a data-testid="footer-link-test" href="https://gatsbyjs.org">
       <GatsbyImage src={gatsby} alt="Gatsby" title="Built with Gatsby" />
     </a>
