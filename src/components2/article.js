@@ -35,6 +35,7 @@ const Light = styled.div`
   color: #e1e1e1;
   border-radius: 10px;
   margin: 20px 20px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
 const Dark = styled.div`
@@ -46,6 +47,7 @@ const Dark = styled.div`
   color: #a8a7a8;
   border-radius: 10px;
   margin: 20px 20px;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
 const Article = ({ type, children }) => {
