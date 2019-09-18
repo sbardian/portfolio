@@ -1,16 +1,38 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
+import posed from "react-pose"
 import PageLayout from "../components2/page-layout"
 import Projects from "../components2/projects"
 import "normalize.css"
 import "../assets/main.css"
 
-const ProjectsPage = ({ data: { allSanityProjects } }) => (
+const AnimationDiv = posed.div({
+  visible: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 0,
+  },
+})
+
+const ProjectsPage = ({ data: { allSanityProjects }, transitionStatus }) => (
   <PageLayout>
-    <Projects projects={allSanityProjects} />
+    <AnimationDiv
+      pose={
+        ["entering", "entered"].includes(transitionStatus)
+          ? "visible"
+          : "hidden"
+      }
+    >
+      <Projects projects={allSanityProjects} />
+    </AnimationDiv>
   </PageLayout>
 )
+
+ProjectsPage.defaultProps = {
+  transitionStatus: "",
+}
 
 ProjectsPage.propTypes = {
   data: PropTypes.shape({
@@ -41,6 +63,7 @@ ProjectsPage.propTypes = {
       ),
     }),
   }).isRequired,
+  transitionStatus: PropTypes.string,
 }
 
 export default ProjectsPage

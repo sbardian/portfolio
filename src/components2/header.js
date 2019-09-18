@@ -44,7 +44,7 @@ const StyledLink = props => (
       length: 0.6,
     }}
     entry={{
-      delay: 1,
+      delay: 0.6,
     }}
     {...props}
     css={css`
