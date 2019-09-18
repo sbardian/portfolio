@@ -8,16 +8,15 @@ import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
+import Header from "../components2/header"
 import AnimationNav from "./animation-nav"
 
 const OberynAnimation = ({ animations }) => {
   React.useEffect(() => {
     // setup
     const canvas = document.querySelector("#ob-scene")
-    const bodyContainer = document.querySelector("#main-body")
-    const sideBarContainer = document.querySelector("#sidebar-container")
-    let WIDTH = bodyContainer.offsetWidth
-    const HEIGHT = bodyContainer.offsetHeight
+    const WIDTH = window.innerWidth
+    const HEIGHT = window.innerHeight - 555
     let windowHalfX
     let windowHalfY
     let scene
@@ -32,19 +31,10 @@ const OberynAnimation = ({ animations }) => {
     }
 
     function onWindowResize() {
-      //   HEIGHT = bodyContainer.offsetHeight
-      WIDTH = bodyContainer.offsetWidth
-      if (window.innerWidth <= 1200) {
-        windowHalfX = WIDTH / 2
-        windowHalfY = HEIGHT / 2
-        renderer.setSize(WIDTH, HEIGHT)
-        camera.aspect = WIDTH / HEIGHT
-      } else {
-        windowHalfX = WIDTH / 2
-        windowHalfY = HEIGHT / 2
-        renderer.setSize(WIDTH, HEIGHT)
-        camera.aspect = WIDTH / HEIGHT
-      }
+      windowHalfX = WIDTH / 2
+      windowHalfY = HEIGHT / 2
+      renderer.setSize(WIDTH, HEIGHT)
+      camera.aspect = WIDTH / HEIGHT
       camera.updateProjectionMatrix()
     }
 
@@ -53,7 +43,7 @@ const OberynAnimation = ({ animations }) => {
       scene = new THREE.Scene()
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 4000)
-      camera.position.z = 1000
+      camera.position.z = 800
       camera.position.y = 300
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
@@ -74,7 +64,7 @@ const OberynAnimation = ({ animations }) => {
       // const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
-      bodyContainer.addEventListener("mousemove", handleMouseMove, false)
+      window.addEventListener("mousemove", handleMouseMove, false)
       // document.addEventListener("touchstart", handleTouchStart, false)
       // document.addEventListener("touchend", handleTouchEnd, false)
       // document.addEventListener("touchmove", handleTouchMove, false)
@@ -83,7 +73,7 @@ const OberynAnimation = ({ animations }) => {
     const createFloor = () => {
       floor = new THREE.Mesh(
         new THREE.PlaneBufferGeometry(2000, 4000),
-        new THREE.MeshStandardMaterial({ color: 0xc2efb3 })
+        new THREE.MeshStandardMaterial({ color: 0x363636 })
       )
       floor.rotation.x = -Math.PI / 2
       floor.position.y = -120
@@ -788,25 +778,15 @@ const OberynAnimation = ({ animations }) => {
 
     // animate
     const animate = () => {
-      let tempHA
-      let tempVA
-      let tempX
-      let tempY
-      if (window.innerWidth >= 1200) {
-        tempX = mousePos.x - sideBarContainer.offsetWidth
-        tempY = mousePos.y
-        tempHA = (tempX - windowHalfX) / 200
-        tempVA = (mousePos.y - windowHalfY) / 200
-      } else {
-        tempX = mousePos.x
-        tempY = mousePos.y - sideBarContainer.offsetHeight + 250
-        tempHA = (mousePos.x - windowHalfX) / 200
-        tempVA = (tempY - windowHalfY) / 200
-      }
+      const mouseX = mousePos.x
+      const mouseY = mousePos.y - 380
+      const tempHA = (mouseX - windowHalfX) / 100
+      const tempVA = (mouseY - windowHalfY) / 100
+
       const userHAngle = Math.min(Math.max(tempHA, -Math.PI / 3), Math.PI / 3)
       const userVAngle = Math.min(Math.max(tempVA, -Math.PI / 3), Math.PI / 3)
-      const xTarget = tempX - windowHalfX
-      const yTarget = tempY - windowHalfY
+      const xTarget = mouseX - windowHalfX
+      const yTarget = mouseY - windowHalfY
       ob.lookAt(userHAngle, userVAngle, xTarget, yTarget)
 
       requestAnimationFrame(animate)
@@ -822,6 +802,7 @@ const OberynAnimation = ({ animations }) => {
     ob.obAllGroup.add(ob.obBodyGroup)
     // ob.obAllGroup.rotation.y = 260
     ob.obAllGroup.rotation.y = 0.1
+    // ob.obAllGroup.position.y = -100
 
     // ob.obAllGroup.traverse(object => {
     //   if (object instanceof THREE.Mesh) {
@@ -839,11 +820,13 @@ const OberynAnimation = ({ animations }) => {
     <div
       css={css`
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #698161;
+        background-color: #8ab3b9;
       `}
     >
+      <Header />
       <AnimationNav
         animations={animations}
         current={{ to: "/oberynPage", title: "Oberyn" }}

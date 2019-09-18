@@ -20,13 +20,13 @@ export default () => {
   // eslint-disable-next-line
   let INTERSECTED
 
-  const { scene, camera, renderer, bodyContainer } = init()
+  const { scene, camera, renderer } = init()
 
   function handleMouseMove(event) {
     event.preventDefault()
-    mouse.x = (event.clientX / bodyContainer.offsetWidth) * 2 - 1
-    mouse.y = -(event.clientY / bodyContainer.offsetHeight) * 2 + 1
-    duck.swimTowards(mouse.x - 1.1, mouse.y, 0.5, camera)
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1
+    duck.swimTowards(mouse.x, mouse.y, 0.5, camera)
 
     // objects.push(water)
     // raycaster.setFromCamera(mouse, camera)
@@ -44,7 +44,7 @@ export default () => {
     // }
   }
 
-  bodyContainer.addEventListener("mousemove", handleMouseMove, false)
+  window.addEventListener("mousemove", handleMouseMove, false)
 
   const render = () => {
     renderer.render(scene, camera)

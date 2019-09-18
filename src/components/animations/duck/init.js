@@ -10,7 +10,6 @@ const {
   PCFSoftShadowMap,
 } = THREE
 
-let bodyContainer
 let canvas
 let camera
 let renderer
@@ -20,31 +19,24 @@ let windowHalfX
 let windowHalfY
 
 function onWindowResize() {
-  WIDTH = bodyContainer.offsetWidth
+  WIDTH = window.innerWidth
   windowHalfX = WIDTH / 2
   windowHalfY = HEIGHT / 2
 
-  if (window.innerWidth <= 1200) {
-    renderer.setSize(WIDTH, HEIGHT)
-    camera.aspect = WIDTH / HEIGHT
-  } else {
-    renderer.setSize(WIDTH, HEIGHT)
-    camera.aspect = WIDTH / HEIGHT
-  }
+  renderer.setSize(WIDTH, HEIGHT)
+  camera.aspect = WIDTH / HEIGHT
   camera.updateProjectionMatrix()
 }
 
 export default () => {
   canvas = document.querySelector("#ob-scene")
-  bodyContainer = document.querySelector("#main-body")
-  const sideBarContainer = document.querySelector("#sidebar-container")
   const scene = new Scene()
-  WIDTH = bodyContainer.offsetWidth
-  HEIGHT = bodyContainer.offsetHeight
+  WIDTH = window.innerWidth
+  HEIGHT = window.innerHeight - 555
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
-  camera.position.z = 600
+  camera.position.z = 100
   camera.position.y = 25
   camera.lookAt(new Vector3(0, 0, 0))
 
@@ -74,8 +66,6 @@ export default () => {
 
   return {
     canvas,
-    bodyContainer,
-    sideBarContainer,
     scene,
     WIDTH,
     HEIGHT,

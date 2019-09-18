@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
 import createAnimation from "./animations/duck/index"
+import Header from "../components2/header"
 
 const DuckAnimation = ({ animations }) => {
   React.useEffect(() => {
@@ -14,11 +15,13 @@ const DuckAnimation = ({ animations }) => {
     <div
       css={css`
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #e5ebf9;
+        background-color: #8ab3b9;
       `}
     >
+      <Header />
       <AnimationNav
         animations={animations}
         current={{ to: "/nikkoPage", title: "Duck" }}
