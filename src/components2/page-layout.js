@@ -11,6 +11,7 @@ import Footer from "./footer"
 import { PageContext } from "./page-context"
 import Projects from "./projects"
 import Contact from "./contact"
+import Animations from "./animations"
 
 const PosedDiv = posed.div({
   enter: {
@@ -60,7 +61,11 @@ const PageLayout = ({ projects }) => {
               <Projects projects={projects} />
             </PosedDiv>
           )}
-          {page === "animations" && <PosedDiv key={3}>animations</PosedDiv>}
+          {page === "animations" && (
+            <PosedDiv key={3}>
+              <Animations />
+            </PosedDiv>
+          )}
           {page === "contact" && (
             <PosedDiv key={4}>
               <Contact />
