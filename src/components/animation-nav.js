@@ -3,47 +3,62 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { findIndex } from "lodash"
-import { FaArrowRight } from "react-icons/fa"
+import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 
 const AnimationNav = ({ animations, current }) => {
-  const next = findIndex(
+  const currentIndex = findIndex(
     animations,
     animation => animation.title === current.title
   )
+
+  let next = currentIndex + 1
+  let previous = currentIndex - 1
+  if (previous < 0) {
+    previous = animations.length - 1
+  }
+  if (next > animations.length - 1) {
+    next = 0
+  }
+
   return (
     <div
       css={css`
-        position: absolute;
-        align-self: center;
-        justify-content: start;
-        height: 80%;
+        display: grid;
+        grid-auto-rows: 50px 150px;
+        justify-items: center;
         font-size: 28pt;
-        font-style: italic;
-        margin-top: 40px;
+        width: 100%;
+        top: 450px;
       `}
     >
-      <Link
+      <Link to={`${current.to}`}>{current.title}</Link>
+      <div
         css={css`
-          color: white;
+          display: grid;
+          grid-template-columns: auto 800px auto;
+          justify-content: space-between;
         `}
-        to={`${current.to}`}
       >
-        {current.title}
-      </Link>
-      <Link
-        css={css`
-          color: white;
-        `}
-        to={animations[next + 1].to}
-      >
-        <FaArrowRight
+        <Link
           css={css`
-            padding-left: 10px;
+            color: white;
           `}
-        />
-      </Link>
+          to={animations[previous].to}
+        >
+          <GoChevronLeft size={100} />
+        </Link>
+        <div />
+        <Link
+          css={css`
+            color: white;
+          `}
+          to={animations[next].to}
+        >
+          <GoChevronRight size={100} />
+        </Link>
+      </div>
     </div>
   )
 }
