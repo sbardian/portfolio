@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import React from "react"
 import PropTypes from "prop-types"
+import { Link } from "gatsby"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
 import createAnimation from "./animations/duck/index"
-import Header from "../components2/header"
+// import Header from "../components2/header"
 
 const DuckAnimation = ({ animations }) => {
   React.useEffect(() => {
@@ -21,7 +22,8 @@ const DuckAnimation = ({ animations }) => {
         background-color: #8ab3b9;
       `}
     >
-      <Header />
+      {/* <Header /> */}
+      <Link to="/">Home</Link>
       <AnimationNav
         animations={animations}
         current={{ to: "/nikkoPage", title: "Duck" }}

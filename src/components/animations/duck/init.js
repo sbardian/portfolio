@@ -32,7 +32,7 @@ export default () => {
   canvas = document.querySelector("#ob-scene")
   const scene = new Scene()
   WIDTH = window.innerWidth
-  HEIGHT = window.innerHeight - 555
+  HEIGHT = window.innerHeight - 175 // - 555 with header
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
