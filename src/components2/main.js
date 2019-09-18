@@ -67,7 +67,7 @@ const Main = () => {
         <h2>Work</h2>
         <p>
           I have worked in IT since 2000 at{" "}
-          <Link to="http://www.trinity-health.org/">Trinity Health</Link> as a
+          <a href="http://www.trinity-health.org/">Trinity Health</a> as a
           System Administrator Senior. My web development work at Trinity Health
           started when I became the SharePoint Administrator for the Boise
           Region, though I have worked with web development for more than 25
@@ -81,10 +81,9 @@ const Main = () => {
           a Javascript Service Account Manager webapp.
         </p>
         <p>
-          I have also worked with{" "}
-          <Link to="https://seoidaho.com">SEO Idaho</Link> on many web
-          development projects. Working with SEO Idaho has exposed me to
-          countless different web framworks and languagues. I enjoy the
+          I have also worked with <a href="https://seoidaho.com">SEO Idaho</a>{" "}
+          on many web development projects. Working with SEO Idaho has exposed
+          me to countless different web framworks and languagues. I enjoy the
           challenge of not knowing what the next client could present.
         </p>
       </Article>
