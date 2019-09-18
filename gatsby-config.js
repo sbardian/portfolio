@@ -51,5 +51,6 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-transition-link`,
   ],
 }

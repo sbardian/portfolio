@@ -6,7 +6,7 @@
 import React from "react"
 import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
+import TransitionLink from "gatsby-plugin-transition-link"
 import Avatar from "./avatar"
 import Social from "./social"
 
@@ -39,7 +39,13 @@ const StyledLI = styled.li`
 `
 
 const StyledLink = props => (
-  <Link
+  <TransitionLink
+    exit={{
+      length: 0.6,
+    }}
+    entry={{
+      delay: 1,
+    }}
     {...props}
     css={css`
       text-decoration: none;
