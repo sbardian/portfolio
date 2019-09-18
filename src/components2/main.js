@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "@emotion/core"
+import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 import Article from "./article"
 import Technologies from "../components/technologies"
@@ -11,7 +11,14 @@ const Main = () => {
   return (
     <div>
       <Article>
-        <h1>Brian Andrews</h1>
+        <h1
+          css={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          Brian Andrews
+        </h1>
         <h2>Welcome to my portfolio site!</h2>
         <p>
           {`I hope to update this site
