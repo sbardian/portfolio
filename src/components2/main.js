@@ -81,7 +81,7 @@ const Main = () => {
           challenge of not knowing what the next client could present.
         </p>
       </Article>
-      <Article type="light">
+      <Article>
         <h2>Thanks!</h2>
         <p>
           I hope you enjoy what you see and feel free to reach out to me via the{" "}
