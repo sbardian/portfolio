@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import React from "react"
 import styled from "@emotion/styled"
 import cSharp from "../images/c-sharp.svg"
@@ -28,9 +27,6 @@ import yarn from "../images/yarn.png"
 import sequelize from "../images/sequelize.png"
 import redux from "../images/redux.svg"
 import react from "../images/react.svg"
-import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
 
 const TechWrapper = styled.div`
   display: grid;

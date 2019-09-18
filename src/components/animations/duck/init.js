@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import * as THREE from "three"
-import OrbitControls from "three-orbitcontrols"
+// import OrbitControls from "three-orbitcontrols"
 
 const {
   Scene,
@@ -32,7 +32,7 @@ export default () => {
   canvas = document.querySelector("#ob-scene")
   const scene = new Scene()
   WIDTH = window.innerWidth
-  HEIGHT = window.innerHeight - 175 // - 555 with header
+  HEIGHT = window.innerHeight - 580
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
@@ -55,7 +55,7 @@ export default () => {
   windowHalfY = HEIGHT / 2
 
   // eslint-disable-next-line
-  const controls = new OrbitControls(camera, renderer.domElement)
+  // const controls = new OrbitControls(camera, renderer.domElement)
 
   window.addEventListener("resize", onWindowResize, false)
 

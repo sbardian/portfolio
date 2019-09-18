@@ -1,11 +1,12 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "@emotion/core"
+import { jsx, css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { PageContext } from "./page-context"
+import { Link } from "gatsby"
 import Avatar from "./avatar"
 import Social from "./social"
 
@@ -37,80 +38,59 @@ const StyledLI = styled.li`
   }
 `
 
-const StyledHref = styled.a`
-  text-decoration: none;
-  color: #e8175d;
-  border-radius: 100%;
-  font-size: 2rem;
-  display: flex;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  transition: font-size 400ms ease-in-out;
-  &:before {
-    content: attr(data-name-start);
-  }
-  &:hover {
-    font-size: 2rem;
-    color: #e1e1e1;
-  }
-  &:hover:after {
-    content: attr(data-name-end);
-    font-size: 2rem;
-  }
-`
+const StyledLink = props => (
+  <Link
+    {...props}
+    css={css`
+      text-decoration: none;
+      color: #e8175d;
+      border-radius: 100%;
+      font-size: 2rem;
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      transition: font-size 400ms ease-in-out;
+      &:before {
+        content: attr(data-name-start);
+      }
+      &:hover {
+        font-size: 2rem;
+        color: #e1e1e1;
+      }
+      &:hover:after {
+        content: attr(data-name-end);
+        font-size: 2rem;
+      }
+    `}
+  />
+)
 
 const Header = () => {
-  const { setPage } = React.useContext(PageContext)
-
-  const updatePage = (e, value) => {
-    e.preventDefault()
-    setPage(value)
-  }
   return (
     <div>
       <StyledUL>
         <StyledLI>
-          <StyledHref
-            onClick={e => {
-              updatePage(e, "home")
-            }}
-            label="navLink"
-            href="https://gatsbyjs.org"
-            data-name-start="H"
-            data-name-end="ome"
-          />
+          <StyledLink to="/" data-name-start="H" data-name-end="ome" />
         </StyledLI>
         <StyledLI>
-          <StyledHref
-            onClick={e => {
-              updatePage(e, "projects")
-            }}
-            label="navLink"
-            href="https://gatsbyjs.org"
+          <StyledLink
+            to="/projects"
             data-name-start="P"
             data-name-end="rojects"
           />
         </StyledLI>
         <StyledLI>
-          <StyledHref
-            onClick={e => {
-              updatePage(e, "animations")
-            }}
-            label="navLink"
-            href="https://gatsbyjs.org"
+          <StyledLink
+            to="/animations"
             data-name-start="A"
             data-name-end="nimations"
           />
         </StyledLI>
         <StyledLI>
-          <StyledHref
-            onClick={e => {
-              updatePage(e, "contact")
-            }}
-            label="navLink"
-            href="https://gatsbyjs.org"
+          <StyledLink
+            to="/contact"
             data-name-start="C"
             data-name-end="ontact"
           />

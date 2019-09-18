@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react"
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
 import createAnimation from "./animations/duck/index"
@@ -19,11 +18,8 @@ const DuckAnimation = ({ animations }) => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #8ab3b9;
       `}
     >
-      {/* <Header /> */}
-      <Link to="/">Home</Link>
       <AnimationNav
         animations={animations}
         current={{ to: "/nikkoPage", title: "Duck" }}

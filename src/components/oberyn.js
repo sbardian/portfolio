@@ -4,7 +4,6 @@
 // eslint-disable-next-line
 import React from "react"
 import * as THREE from "three"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
@@ -17,7 +16,7 @@ const OberynAnimation = ({ animations }) => {
     // setup
     const canvas = document.querySelector("#ob-scene")
     const WIDTH = window.innerWidth
-    const HEIGHT = window.innerHeight - 175 // - 555 with header
+    const HEIGHT = window.innerHeight - 575
     let windowHalfX
     let windowHalfY
     let scene
@@ -73,7 +72,7 @@ const OberynAnimation = ({ animations }) => {
 
     const createFloor = () => {
       floor = new THREE.Mesh(
-        new THREE.PlaneBufferGeometry(2000, 4000),
+        new THREE.PlaneBufferGeometry(8000, 4000),
         new THREE.MeshStandardMaterial({ color: 0x363636 })
       )
       floor.rotation.x = -Math.PI / 2
@@ -780,7 +779,7 @@ const OberynAnimation = ({ animations }) => {
     // animate
     const animate = () => {
       const mouseX = mousePos.x
-      const mouseY = mousePos.y - 30 // - 380 with header
+      const mouseY = mousePos.y - 475
       const tempHA = (mouseX - windowHalfX) / 100
       const tempVA = (mouseY - windowHalfY) / 100
 
@@ -824,11 +823,8 @@ const OberynAnimation = ({ animations }) => {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #8ab3b9;
       `}
     >
-      {/* <Header /> */}
-      <Link to="/">Home</Link>
       <AnimationNav
         animations={animations}
         current={{ to: "/oberynPage", title: "Oberyn" }}
@@ -836,7 +832,6 @@ const OberynAnimation = ({ animations }) => {
       <canvas
         css={css`
           background: transparent;
-          /* position: fixed; */
         `}
         id="ob-scene"
       />

@@ -1,14 +1,13 @@
 import React from "react"
-import Layout from "../components/layout"
-import Contact from "../components/contact"
+import Contact from "../components2/contact"
+import PageLayout from "../components2/page-layout"
 import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
+import "../assets/main.css"
 
 const ContactPage = () => (
-  <Layout>
+  <PageLayout>
     <Contact />
-  </Layout>
+  </PageLayout>
 )
 
 export default ContactPage

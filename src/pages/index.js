@@ -1,77 +1,14 @@
 // eslint-disable-next-line
 import React from "react"
-import PropTypes from "prop-types"
-import { graphql } from "gatsby"
-import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
 import PageLayout from "../components2/page-layout"
-import { PageProvider } from "../components2/page-context"
+import Main from "../components2/main"
+import "normalize.css"
+import "../assets/main.css"
 
-/**
- * TODO: fade a color overlay over the top image. or make new images
- * with different colors and animate the change.
- *
- */
-
-const IndexPage = ({ data: { allSanityProjects } }) => (
-  <PageProvider>
-    <PageLayout projects={allSanityProjects} />
-  </PageProvider>
+const IndexPage = () => (
+  <PageLayout>
+    <Main />
+  </PageLayout>
 )
 
 export default IndexPage
-
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    allSanityProjects: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          node: PropTypes.shape({
-            id: PropTypes.string,
-            name: PropTypes.string,
-            description: PropTypes.string,
-            demoUrl: PropTypes.string,
-            repoUrl: PropTypes.string,
-            image: PropTypes.shape({
-              asset: PropTypes.shape({
-                fluid: PropTypes.shape({
-                  base64: PropTypes.string,
-                  aspectRatio: PropTypes.number,
-                  src: PropTypes.string,
-                  srcSet: PropTypes.string,
-                  srcWebp: PropTypes.string,
-                  srcSetWebp: PropTypes.string,
-                  sizes: PropTypes.string,
-                }),
-              }),
-            }),
-          }),
-        })
-      ),
-    }),
-  }).isRequired,
-}
-
-export const projectImages = graphql`
-  {
-    allSanityProjects {
-      edges {
-        node {
-          id
-          name
-          description
-          demoUrl
-          repoUrl
-          image {
-            asset {
-              fluid {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`

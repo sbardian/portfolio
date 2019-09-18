@@ -1,9 +1,8 @@
 import React from "react"
 import Duck from "../components/duck"
+import PageLayout from "../components2/page-layout"
 import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
-import { PageProvider } from "../components2/page-context"
+import "../assets/main.css"
 
 const DuckPage = () => {
   const animations = [
@@ -11,9 +10,9 @@ const DuckPage = () => {
     { to: "/duckPage", title: "Duck" },
   ]
   return (
-    <PageProvider>
+    <PageLayout showFooter={false}>
       <Duck animations={animations} />
-    </PageProvider>
+    </PageLayout>
   )
 }
 

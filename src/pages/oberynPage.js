@@ -1,9 +1,8 @@
 import React from "react"
 import Oberyn from "../components/oberyn"
+import PageLayout from "../components2/page-layout"
 import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
-import { PageProvider } from "../components2/page-context"
+import "../assets/main.css"
 
 const OberynPage = () => {
   const animations = [
@@ -11,9 +10,9 @@ const OberynPage = () => {
     { to: "/duckPage", title: "Duck" },
   ]
   return (
-    <PageProvider>
+    <PageLayout showFooter={false}>
       <Oberyn animations={animations} />
-    </PageProvider>
+    </PageLayout>
   )
 }
 

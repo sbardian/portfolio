@@ -29,7 +29,6 @@ const AnimationNav = ({ animations, current }) => {
         grid-auto-rows: 50px 150px;
         justify-items: center;
         font-size: 28pt;
-        width: 100%;
         top: 450px;
       `}
     >

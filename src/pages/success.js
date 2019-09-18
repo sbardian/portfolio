@@ -1,12 +1,13 @@
 import React from "react"
-import Layout from "../components/layout"
+import PageLayout from "../components2/page-layout"
 import Success from "../components/success"
 import "normalize.css"
+import "../assets/main.css"
 
 const ContactPage = () => (
-  <Layout>
+  <PageLayout>
     <Success />
-  </Layout>
+  </PageLayout>
 )
 
 export default ContactPage

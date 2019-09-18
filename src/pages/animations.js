@@ -3,15 +3,15 @@
 import React from "react"
 import { Link } from "gatsby"
 import { jsx, css } from "@emotion/core"
-import Layout from "../components/layout"
-import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
+import PageLayout from "../components2/page-layout"
+import Article from "../components2/article"
 import duckImage from "../images/duck-image.png"
 import oberynImage from "../images/oberyn-image.png"
+import "../assets/main.css"
+import "normalize.css"
 
 const Animations = () => (
-  <Layout>
+  <PageLayout>
     <div
       css={css`
         display: flex;
@@ -22,9 +22,11 @@ const Animations = () => (
         margin-right: 20px;
       `}
     >
-      <div>
-        {`I have started playing with three.js.  Here are a couple of characters I have made so far.  These have been pretty fun to make, so probably some more to come here...`}
-      </div>
+      <Article type="dark">
+        <p>
+          {`I have started playing with three.js.  Here are a couple of characters I have made so far.  These have been pretty fun to make, so probably some more to come here...`}
+        </p>
+      </Article>
       <div
         css={css`
           display: flex;
@@ -79,7 +81,7 @@ const Animations = () => (
         </Link>
       </div>
     </div>
-  </Layout>
+  </PageLayout>
 )
 
 export default Animations

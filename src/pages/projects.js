@@ -1,16 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
-import Projects from "../components/projects"
+import PageLayout from "../components2/page-layout"
+import Projects from "../components2/projects"
 import "normalize.css"
-// eslint-disable-next-line
-import main from "../assets/main.css"
+import "../assets/main.css"
 
 const ProjectsPage = ({ data: { allSanityProjects } }) => (
-  <Layout>
+  <PageLayout>
     <Projects projects={allSanityProjects} />
-  </Layout>
+  </PageLayout>
 )
 
 ProjectsPage.propTypes = {
