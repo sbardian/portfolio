@@ -46,7 +46,7 @@ const PageLayout = ({ projects }) => {
       <Header />
       <div
         css={css`
-          max-width: 1000px;
+          max-width: 900px;
         `}
       >
         <PoseGroup>
