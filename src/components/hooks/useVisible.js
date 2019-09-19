@@ -21,7 +21,7 @@ export default ids => {
       }
       newObj = { ...newObj, [id]: false }
       if (
-        document.getElementById(id).getBoundingClientRect().top + 50 <=
+        document.getElementById(id).getBoundingClientRect().top - 80 <=
         window.innerHeight
       ) {
         newObj = { ...newObj, [id]: true }
