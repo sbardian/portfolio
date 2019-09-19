@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 import React from "react"
+import { document } from "browser-monads"
 
 export default ids => {
   const [top, setTop] = React.useState(0)
