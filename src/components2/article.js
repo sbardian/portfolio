@@ -50,12 +50,12 @@ const Dark = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
-const Article = ({ type, children }) => {
+const Article = ({ type, children, name }) => {
   return (
     <ArticleWrapper>
-      {type === "light" && <Light>{children}</Light>}
-      {type === "dark" && <Dark>{children}</Dark>}
-      {type === undefined && <Generic>{children}</Generic>}
+      {type === "light" && <Light id={name}>{children}</Light>}
+      {type === "dark" && <Dark id={name}>{children}</Dark>}
+      {type === undefined && <Generic id={name}>{children}</Generic>}
     </ArticleWrapper>
   )
 }
@@ -65,9 +65,11 @@ export default Article
 Article.defaultProps = {
   type: undefined,
   children: () => {},
+  name: "",
 }
 
 Article.propTypes = {
   type: PropTypes.string,
   children: PropTypes.node,
+  name: PropTypes.string,
 }
