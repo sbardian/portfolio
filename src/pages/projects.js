@@ -1,20 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import usePose from "../components/hooks/usePose"
-import PageAnimation from "../components/page-animation"
 import PageLayout from "../components/page-layout"
 import Projects from "../components/projects"
 import "normalize.css"
 import "../assets/main.css"
 
 const ProjectsPage = ({ data: { allSanityProjects } }) => {
-  const visible = usePose()
   return (
     <PageLayout>
-      <PageAnimation pose={visible ? "visible" : "hidden"}>
-        <Projects projects={allSanityProjects} />
-      </PageAnimation>
+      <Projects projects={allSanityProjects} />
     </PageLayout>
   )
 }

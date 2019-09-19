@@ -21,7 +21,7 @@ const DuckAnimation = ({ animations }) => {
     >
       <AnimationsNav
         animations={animations}
-        current={{ to: "/nikkoPage", title: "Duck" }}
+        current={{ to: "/duckPage", title: "Duck" }}
       />
       <canvas
         css={css`
