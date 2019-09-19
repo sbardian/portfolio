@@ -8,7 +8,7 @@ import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
-import AnimationNav from "./animation-nav"
+import AnimationsNav from "./animations-nav"
 
 const OberynAnimation = ({ animations }) => {
   React.useEffect(() => {
@@ -824,7 +824,7 @@ const OberynAnimation = ({ animations }) => {
         justify-content: center;
       `}
     >
-      <AnimationNav
+      <AnimationsNav
         animations={animations}
         current={{ to: "/oberynPage", title: "Oberyn" }}
       />

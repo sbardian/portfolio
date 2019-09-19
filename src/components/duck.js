@@ -2,7 +2,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
-import AnimationNav from "./animation-nav"
+import AnimationsNav from "./animations-nav"
 import createAnimation from "./animations/duck/index"
 
 const DuckAnimation = ({ animations }) => {
@@ -19,7 +19,7 @@ const DuckAnimation = ({ animations }) => {
         justify-content: center;
       `}
     >
-      <AnimationNav
+      <AnimationsNav
         animations={animations}
         current={{ to: "/nikkoPage", title: "Duck" }}
       />
