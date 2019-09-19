@@ -1,8 +1,8 @@
 import React from "react"
-import Contact from "../components2/contact"
-import PageLayout from "../components2/page-layout"
-import PageAnimation from "../components2/page-animation"
-import usePose from "../components2/hooks/usePose"
+import Contact from "../components/contact"
+import PageLayout from "../components/page-layout"
+import PageAnimation from "../components/page-animation"
+import usePose from "../components/hooks/usePose"
 import "normalize.css"
 import "../assets/main.css"
 

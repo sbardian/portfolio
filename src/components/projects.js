@@ -7,6 +7,7 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { FaGithub } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
+import HeaderArticle from "./article"
 import mq from "./media-queries"
 
 const ProjectsSection = styled.section`
@@ -24,7 +25,7 @@ const ProjectWrapper = styled.div`
 `
 
 const Article = styled.div`
-  background-color: white;
+  background-color: #474747;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 20px;
   margin-bottom: 40px;
@@ -41,6 +42,7 @@ const Article = styled.div`
 const ProjectTitle = styled.h1`
   display: inline;
   padding-right: 10px;
+  color: #e8175d;
 `
 
 const ProjectImageWrapper = styled.div`
@@ -83,13 +85,15 @@ const ProjectInfoWrapper = styled.div`
 `
 
 const ProjectInfo = styled.p`
-  color: #666;
+  color: #fff;
+  font-size: 1.5rem;
 `
 
 const Projects = ({ projects }) => (
   <ProjectsSection>
-    <h1>Recent Projects</h1>
-    <p>This is a list of my recent projects.</p>
+    <HeaderArticle type="dark">
+      <h1>Projects</h1>
+    </HeaderArticle>
     <ProjectWrapper>
       {projects.edges.map((project, index) => {
         return (

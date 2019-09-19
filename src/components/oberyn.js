@@ -8,7 +8,6 @@ import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
 import { jsx, css } from "@emotion/core"
-// import Header from "../components2/header"
 import AnimationNav from "./animation-nav"
 
 const OberynAnimation = ({ animations }) => {
@@ -43,8 +42,8 @@ const OberynAnimation = ({ animations }) => {
       scene = new THREE.Scene()
 
       camera = new THREE.PerspectiveCamera(50, WIDTH / HEIGHT, 1, 4000)
-      camera.position.z = 1000
-      camera.position.y = 300
+      camera.position.z = 700
+      camera.position.y = 200
       camera.lookAt(new THREE.Vector3(0, 0, 0))
 
       renderer = new THREE.WebGLRenderer({
@@ -89,12 +88,12 @@ const OberynAnimation = ({ animations }) => {
       shadowLight.position.set(200, 150, 200)
       shadowLight.castShadow = true
 
-      shadowLight.shadowCameraNear = 2
-      shadowLight.shadowCameraFar = -2000
-      shadowLight.shadowCameraLeft = -1000
-      shadowLight.shadowCameraRight = 1000
-      shadowLight.shadowCameraTop = 1000
-      shadowLight.shadowCameraBottom = -1000
+      shadowLight.shadow.camera.near = 2
+      shadowLight.shadow.camera.far = -2000
+      shadowLight.shadow.camera.left = -1000
+      shadowLight.shadow.camera.right = 1000
+      shadowLight.shadow.camera.top = 1000
+      shadowLight.shadow.camera.bottom = -1000
 
       // Set up shadow properties for the light
       shadowLight.shadow.mapSize.width = 4096 // default
@@ -127,48 +126,48 @@ const OberynAnimation = ({ animations }) => {
       // Fur
       const obFurMaterial = new THREE.MeshLambertMaterial({
         color: 0xc9871c,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Collar
       const obCallarMaterial = new THREE.MeshLambertMaterial({
         color: 0xa263bf,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Collar Hook
       const obCollarHookMaterial = new THREE.MeshLambertMaterial({
         color: 0x656466,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Collar Bell
       const obCollarBellMaterial = new THREE.MeshLambertMaterial({
         color: 0xf4d942,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Eyes
       const obWhiteMaterial = new THREE.MeshLambertMaterial({
         color: 0xffffff,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Eyebrow
       const obEyebrowMaterial = new THREE.MeshLambertMaterial({
         color: 0x704a0e,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // Eye Iris
       const obEyeIrisMaterial = new THREE.MeshLambertMaterial({
         color: 0x000000,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       const obNoseMaterial = new THREE.MeshLambertMaterial({
         color: 0xffa3bb,
-        shading: THREE.FlatShading,
+        flatShading: THREE.FlatShading,
       })
 
       // OB body

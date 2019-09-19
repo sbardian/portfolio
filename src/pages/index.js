@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import React from "react"
-import usePose from "../components2/hooks/usePose"
-import PageAnimation from "../components2/page-animation"
-import PageLayout from "../components2/page-layout"
-import Main from "../components2/main"
+import usePose from "../components/hooks/usePose"
+import PageAnimation from "../components/page-animation"
+import PageLayout from "../components/page-layout"
+import Main from "../components/main"
 import "normalize.css"
 import "../assets/main.css"
 

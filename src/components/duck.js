@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
 import AnimationNav from "./animation-nav"
 import createAnimation from "./animations/duck/index"
-// import Header from "../components2/header"
 
 const DuckAnimation = ({ animations }) => {
   React.useEffect(() => {

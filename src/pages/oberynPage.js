@@ -1,6 +1,6 @@
 import React from "react"
-import Oberyn from "../components2/oberyn"
-import PageLayout from "../components2/page-layout"
+import Oberyn from "../components/oberyn"
+import PageLayout from "../components/page-layout"
 import "normalize.css"
 import "../assets/main.css"
 
