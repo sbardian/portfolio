@@ -1,5 +1,5 @@
 import React from "react"
-import Duck from "../components/duck"
+import Duck from "../components2/duck"
 import PageLayout from "../components2/page-layout"
 import "normalize.css"
 import "../assets/main.css"

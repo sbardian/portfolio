@@ -6,7 +6,7 @@ import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 import AnimateDiv from "./animate-div"
 import Article from "./article"
-import Technologies from "../components/technologies"
+import Technologies from "./technologies"
 import useVisible from "./hooks/useVisible"
 
 const Main = () => {
