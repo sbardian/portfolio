@@ -16,7 +16,7 @@ export default () => (
     `}
   >
     <Article type="dark">
-      <h1>Contact me</h1>
+      <h1>Contact</h1>
       <p>
         Feel free to contact me for job opportunities, or any reason you want.
         If you would rather reach out via email, github or twitter see icons for
