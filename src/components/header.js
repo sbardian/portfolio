@@ -4,46 +4,79 @@
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
 import { jsx, css } from "@emotion/core"
-import styled from "@emotion/styled"
+import posed from "react-pose"
+import { window } from "browser-monads"
 import { Link } from "gatsby"
+import { GoThreeBars } from "react-icons/go"
 import Avatar from "./avatar"
 import Social from "./social"
+import useShowMenu from "./hooks/useShowMenu"
 
-const StyledUL = styled.ul`
-  margin: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 0;
-  margin-bottom: 20px;
-`
+const PosedThinUL = posed.ul({
+  open: {
+    x: "0%",
+    delayChildren: 100,
+    staggerChildren: 100,
+    height: "auto",
+  },
+  closed: {
+    x: "-100%",
+    delay: 700,
+    delayChildren: 0,
+    staggerChildren: 50,
+    height: 0,
+    staggerDirection: -1,
+  },
+})
 
-const StyledLI = styled.li`
-  background-color: transparent;
-  background-size: cover;
-  margin: 30px;
-  border: 2px solid #e8175d;
-  border-radius: 100%;
-  height: 60px;
-  width: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    border-radius: 20%;
-    background-color: #e8175d;
-  }
-`
+const PosedThinLI = posed.li({
+  open: { opacity: 1, delay: 100 },
+  closed: { opacity: 0, duration: 0 },
+})
+
+const PosedStyledThinLI = ({ children }) => (
+  <PosedThinLI
+    css={css`
+      background-color: transparent;
+      background-size: cover;
+      margin: 30px;
+      border: 2px solid #e8175d;
+      border-radius: 100%;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #e8175d;
+      transition: all 200ms ease-in-out;
+      &:hover {
+        border-radius: 20px;
+        background-color: #e8175d;
+        color: #e1e1e1;
+      }
+      @media (max-width: 520px) {
+        border-radius: 0;
+        margin: 0 20px 0 20px;
+        width: auto;
+      }
+    `}
+  >
+    {children}
+  </PosedThinLI>
+)
+
+PosedStyledThinLI.propTypes = {
+  children: PropTypes.node.isRequired,
+}
 
 const StyledLink = props => (
   <Link
     {...props}
     css={css`
       text-decoration: none;
-      color: #e8175d;
+      color: inherit;
       border-radius: 100%;
       font-size: 2rem;
       display: flex;
@@ -57,45 +90,94 @@ const StyledLink = props => (
       }
       &:hover {
         font-size: 2rem;
-        color: #e1e1e1;
+        color: inherit;
       }
       &:hover:after {
         content: attr(data-name-end);
         font-size: 2rem;
+      }
+      @media (max-width: 520px) {
+        ::after {
+          content: attr(data-name-end);
+        }
       }
     `}
   />
 )
 
 const Header = () => {
+  const { menuStatus, setMenuStatus } = useShowMenu(window.innerWidth)
+
   return (
     <div>
-      <StyledUL>
-        <StyledLI>
+      <button
+        type="button"
+        onClick={() => {
+          setMenuStatus(!menuStatus)
+        }}
+        css={css`
+          background: transparent;
+          border: none;
+          color: #e8175d;
+          cursor: pointer;
+          display: none;
+          @media (max-width: 520px) {
+            display: block;
+          }
+        `}
+      >
+        <GoThreeBars
+          size={30}
+          css={css`
+            margin: 20px;
+          `}
+        />
+      </button>
+      <PosedThinUL
+        pose={menuStatus ? "open" : "closed"}
+        css={css`
+          max-height: 320px;
+          margin: 0;
+          margin-top: 20px;
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          align-content: start;
+          padding: 0;
+          margin-bottom: 20px;
+          @media (max-width: 520px) {
+            display: grid;
+            grid-gap: 20px;
+            grid-template-columns: minmax(200px, 1fr);
+            grid-template-rows: repeat(auto-fit);
+          }
+        `}
+      >
+        <PosedStyledThinLI>
           <StyledLink to="/" data-name-start="H" data-name-end="ome" />
-        </StyledLI>
-        <StyledLI>
+        </PosedStyledThinLI>
+        <PosedStyledThinLI>
           <StyledLink
             to="/projects"
             data-name-start="P"
             data-name-end="rojects"
           />
-        </StyledLI>
-        <StyledLI>
+        </PosedStyledThinLI>
+        <PosedStyledThinLI>
           <StyledLink
             to="/animations"
             data-name-start="A"
             data-name-end="nimations"
           />
-        </StyledLI>
-        <StyledLI>
+        </PosedStyledThinLI>
+        <PosedStyledThinLI>
           <StyledLink
             to="/contact"
             data-name-start="C"
             data-name-end="ontact"
           />
-        </StyledLI>
-      </StyledUL>
+        </PosedStyledThinLI>
+      </PosedThinUL>
       <Avatar />
       <Social />
     </div>
