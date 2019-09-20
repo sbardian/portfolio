@@ -105,12 +105,24 @@ const StyledLink = props => (
   />
 )
 
+const PosedButton = posed.button({
+  open: {
+    rotate: "90deg",
+    duration: 200,
+  },
+  closed: {
+    rotate: "0deg",
+    duration: 200,
+  },
+})
+
 const Header = () => {
   const { menuStatus, setMenuStatus } = useShowMenu(window.innerWidth)
 
   return (
     <div>
-      <button
+      <PosedButton
+        pose={menuStatus ? "open" : "closed"}
         type="button"
         onClick={() => {
           setMenuStatus(!menuStatus)
@@ -132,7 +144,7 @@ const Header = () => {
             margin: 20px;
           `}
         />
-      </button>
+      </PosedButton>
       <PosedThinUL
         pose={menuStatus ? "open" : "closed"}
         css={css`
