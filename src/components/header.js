@@ -137,6 +137,7 @@ const Header = () => {
         pose={menuStatus ? "open" : "closed"}
         css={css`
           max-height: 320px;
+          min-height: 124px;
           margin: 0;
           margin-top: 20px;
           list-style: none;
@@ -148,6 +149,7 @@ const Header = () => {
           @media (max-width: 520px) {
             display: grid;
             grid-gap: 20px;
+            min-height: 0px;
             grid-template-columns: minmax(200px, 1fr);
             grid-template-rows: repeat(auto-fit);
           }

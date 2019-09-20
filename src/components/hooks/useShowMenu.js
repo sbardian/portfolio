@@ -2,7 +2,7 @@ import React from "react"
 import { window } from "browser-monads"
 
 export default current => {
-  const [menuStatus, setMenuStatus] = React.useState(false)
+  const [menuStatus, setMenuStatus] = React.useState(true)
 
   React.useEffect(() => {
     window.addEventListener("resize", () => {
