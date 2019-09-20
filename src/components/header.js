@@ -128,11 +128,15 @@ const Header = () => {
           setMenuStatus(!menuStatus)
         }}
         css={css`
+          outline: 0;
           background: transparent;
           border: none;
           color: #e8175d;
           cursor: pointer;
           display: none;
+          &focus {
+            outline: 0;
+          }
           @media (max-width: 520px) {
             display: block;
           }
