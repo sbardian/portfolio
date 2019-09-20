@@ -10,49 +10,34 @@ import Technologies from "./technologies"
 import useVisible from "./hooks/useVisible"
 
 const Main = () => {
-  const {
-    baThankYou,
-    baInterests,
-    baWork,
-    baWelcome,
-    baTechnologies,
-  } = useVisible([
+  const { baThankYou, baInterests, baWork } = useVisible([
     "baThankYou",
     "baInterests",
     "baWork",
-    "baWelcome",
-    "baTechnologies",
   ])
 
   return (
     <div>
-      <AnimateDiv pose={baWelcome ? "visible" : "hidden"} initialPose="hidden">
-        <Article name="baWelcome">
-          <h1
-            css={css`
-              display: flex;
-              justify-content: center;
-            `}
-          >
-            Brian Andrews
-          </h1>
-          <h2>Welcome to my portfolio site!</h2>
-          <p>
-            {`I hope to update this site
+      <Article name="baWelcome">
+        <h1
+          css={css`
+            display: flex;
+            justify-content: center;
+          `}
+        >
+          Brian Andrews
+        </h1>
+        <h2>Welcome to my portfolio site!</h2>
+        <p>
+          {`I hope to update this site
         frequently with new projects, and updates to old projects. So check in
         often to make sure you don't miss anything!`}
-          </p>
-        </Article>
-      </AnimateDiv>
-      <AnimateDiv
-        pose={baTechnologies ? "visible" : "hidden"}
-        initialPose="hidden"
-      >
-        <Article type="dark" name="baTechnologies">
-          <h2>Technologies</h2>
-          <Technologies />
-        </Article>
-      </AnimateDiv>
+        </p>
+      </Article>
+      <Article type="dark" name="baTechnologies">
+        <h2>Technologies</h2>
+        <Technologies />
+      </Article>
       <AnimateDiv
         pose={baInterests ? "visible" : "hidden"}
         initialPose="hidden"
