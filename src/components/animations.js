@@ -25,6 +25,12 @@ const Animations = () => {
           {`I have started playing with three.js.  Here are a couple of characters I have made so far.  These have been pretty fun to make, so probably some more to come here...`}
         </p>
       </Article>
+      <Article type="light">
+        <p>
+          WARNING! These animations do not play well with mobile, they will load
+          but view on a desktop for the best experience.
+        </p>
+      </Article>
       <div
         css={css`
           display: flex;
@@ -36,6 +42,7 @@ const Animations = () => {
           css={css`
             font-size: 24pt;
             color: white;
+            border: none;
           `}
           to="/oberynPage"
         >
@@ -62,6 +69,7 @@ const Animations = () => {
           css={css`
             font-size: 24pt;
             color: white;
+            border: none;
           `}
           to="/duckPage"
         >
