@@ -27,7 +27,7 @@ const Animations = () => {
       </Article>
       <Article type="light">
         <p>
-          WARNING! These animations do not play well with mobile, view them on a
+          WARNING! These animations do not play well with mobile. View them on a
           desktop for the best experience.
         </p>
       </Article>
