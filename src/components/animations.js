@@ -3,8 +3,8 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, css } from "@emotion/core"
-import { Link } from "gatsby"
 import Article from "./article"
+import AnimationImageLink from "./animation-image-link"
 import duckImage from "../images/duck-image.png"
 import oberynImage from "../images/oberyn-image.png"
 
@@ -27,65 +27,16 @@ const Animations = () => {
       </Article>
       <Article type="light">
         <p>
-          WARNING! These animations do not play well with mobile, they will load
-          but view on a desktop for the best experience.
+          WARNING! These animations do not play well with mobile, view them on a
+          desktop for the best experience.
         </p>
       </Article>
-      <div
-        css={css`
-          display: flex;
-          margin: 10px;
-          border: 1px solid white;
-        `}
-      >
-        <Link
-          css={css`
-            font-size: 24pt;
-            color: white;
-            border: none;
-          `}
-          to="/oberynPage"
-        >
-          <img
-            css={css`
-              margin: 0;
-              background-position: center;
-              background-size: cover;
-              width: 100%;
-              height: 450px;
-            `}
-            src={oberynImage}
-            alt="Oberyn"
-          />
-        </Link>
-      </div>
-      <div
-        css={css`
-          margin: 10px;
-          border: 1px solid white;
-        `}
-      >
-        <Link
-          css={css`
-            font-size: 24pt;
-            color: white;
-            border: none;
-          `}
-          to="/duckPage"
-        >
-          <img
-            css={css`
-              margin: 0;
-              background-position: center;
-              background-size: cover;
-              width: 100%;
-              height: 450px;
-            `}
-            src={duckImage}
-            alt="Duck"
-          />
-        </Link>
-      </div>
+      <AnimationImageLink
+        imageSrc={oberynImage}
+        to="/oberynPage"
+        alt="Oberyn"
+      />
+      <AnimationImageLink imageSrc={duckImage} to="/duckPage" alt="Duck" />
     </div>
   )
 }
