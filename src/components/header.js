@@ -135,7 +135,8 @@ const Header = () => {
           cursor: pointer;
           display: none;
           &focus {
-            outline: 0;
+            outline: thin dotted;
+            outline-color: #e8175d;
           }
           @media (max-width: 520px) {
             display: block;
