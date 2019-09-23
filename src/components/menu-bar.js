@@ -8,6 +8,7 @@ import { css } from "@emotion/core"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
+import useGetColorMode from "./hooks/useGetColorMode"
 
 const ButtonBar = styled.div`
   display: grid;
@@ -41,6 +42,8 @@ const PosedColorModeButton = posed.button({
 })
 
 const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
+  useGetColorMode({ setColorMode })
+
   return (
     <ButtonBar>
       <PosedMenuButton
