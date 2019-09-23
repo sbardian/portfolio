@@ -1,7 +1,8 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
@@ -25,7 +26,6 @@ const ProjectWrapper = styled.div`
 `
 
 const Article = styled.div`
-  background-color: #474747;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   padding: 20px;
   margin-bottom: 40px;
@@ -42,7 +42,6 @@ const Article = styled.div`
 const ProjectTitle = styled.h1`
   display: inline;
   padding-right: 10px;
-  color: #e8175d;
 `
 
 const ProjectImageWrapper = styled.div`
@@ -85,13 +84,12 @@ const ProjectInfoWrapper = styled.div`
 `
 
 const ProjectInfo = styled.p`
-  color: #fff;
   font-size: 1.5rem;
 `
 
 const Projects = ({ projects }) => (
   <ProjectsSection>
-    <HeaderArticle type="dark">
+    <HeaderArticle>
       <h1>Projects</h1>
     </HeaderArticle>
     <ProjectWrapper>
@@ -102,7 +100,11 @@ const Projects = ({ projects }) => (
               right={parseInt(index, 10) % 2 !== 0}
               left={parseInt(index, 10) % 2 === 0}
             >
-              <Article>
+              <Article
+                sx={{
+                  backgroundColor: "backgroundDark",
+                }}
+              >
                 <ProjectImageWrapper>
                   <a
                     href={project.node.demoUrl}
@@ -117,8 +119,12 @@ const Projects = ({ projects }) => (
                   </a>
                 </ProjectImageWrapper>
                 <ProjectInfoWrapper>
-                  <ProjectTitle>{project.node.name}</ProjectTitle>
-                  <ProjectInfo>{project.node.description}</ProjectInfo>
+                  <ProjectTitle sx={{ color: "primary" }}>
+                    {project.node.name}
+                  </ProjectTitle>
+                  <ProjectInfo sx={{ color: "text" }}>
+                    {project.node.description}
+                  </ProjectInfo>
                   <a href={project.node.repoUrl}>
                     <FaGithub size="2.5em" />
                   </a>

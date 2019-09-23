@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import Article from "./article"
 import mq from "./media-queries"
 
@@ -16,7 +17,13 @@ export default () => (
     `}
   >
     <Article type="dark">
-      <h1>Contact</h1>
+      <h1
+        sx={{
+          color: "text",
+        }}
+      >
+        Contact
+      </h1>
       <p>
         Feel free to contact me for job opportunities, or any reason you want.
         If you would rather reach out via email, github or twitter see icons for
@@ -64,13 +71,15 @@ export default () => (
           name="email"
           placeholder="Email"
           aria-label="Email"
-          css={css`
-            border: 2px solid #e1e1e1;
-            transition: all 0.2s ease-in-out;
-            &:focus {
-              border: 2px solid #e8175d;
-            }
-          `}
+          sx={{
+            borderWidth: "2px",
+            borderStyle: "solid",
+            borderColor: "background",
+            transition: "border-color 0.2s ease-in-out",
+            "&:focus": {
+              borderColor: "primary",
+            },
+          }}
         />
         <input
           required
@@ -78,13 +87,15 @@ export default () => (
           name="name"
           placeholder="Name"
           aria-label="Name"
-          css={css`
-            border: 2px solid #e1e1e1;
-            transition: all 0.2s ease-in-out;
-            &:focus {
-              border: 2px solid #e8175d;
-            }
-          `}
+          sx={{
+            borderWidth: "2px",
+            borderStyle: "solid",
+            borderColor: "background",
+            transition: "border-color 0.2s ease-in-out",
+            "&:focus": {
+              borderColor: "primary",
+            },
+          }}
         />
       </div>
       <div
@@ -99,40 +110,42 @@ export default () => (
           name="message"
           placeholder="Message"
           aria-label="Message"
-          css={css`
-            border: 2px solid #e1e1e1;
-            transition: all 0.2s ease-in-out;
-            padding: 1em;
-            height: auto;
-            &:focus {
-              border: 2px solid #e8175d;
-            }
-          `}
+          sx={{
+            borderWidth: "2px",
+            borderStyle: "solid",
+            borderColor: "background",
+            padding: "1em",
+            height: "auto",
+            transition: "border-color 0.2s ease-in-out",
+            "&:focus": {
+              borderColor: "primary",
+            },
+          }}
         />
       </div>
       <div>
         <button
           type="submit"
-          css={css`
-            appearance: none;
-            transition: all 0.2s ease-in-out;
-            background-color: transparent;
-            border-radius: 0.35em;
-            border: 3px solid #e1e1e1;
-            color: #e1e1e1;
-            cursor: pointer;
-            display: inline-block;
-            font-weight: 400;
-            line-height: 2.75em;
-            min-width: 10em;
-            padding: 0 1.5em;
-            margin-bottom: 3em;
-            &:hover {
-              background: #2f2d2d;
-              color: #e8175d;
-              border-color: #e8175d;
-            }
-          `}
+          sx={{
+            appearance: "none",
+            transition: "all 0.2s ease-in-out",
+            backgroundColor: "transparent",
+            borderRadius: "0.35em",
+            border: "3px solid #e1e1e1",
+            color: "#e1e1e1",
+            cursor: "pointer",
+            display: "inline-block",
+            fontWeight: "400",
+            lineHeight: "2.75em",
+            minWidth: "10em",
+            padding: "0 1.5em",
+            marginBottom: "3em",
+            "&:hover": {
+              backgroundColor: "primary",
+              color: "text",
+              borderColor: "primary",
+            },
+          }}
         >
           Submit
         </button>

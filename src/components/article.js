@@ -2,12 +2,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "@emotion/core"
+import { jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
 const ArticleWrapper = styled.article`
-  color: #a8a7a8;
+  /* color: #a8a7a8; */
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -21,30 +21,25 @@ const Generic = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #a8a7a8;
   border-radius: 10px;
   margin: 20px 20px;
 `
 
 const Light = styled.div`
-  background-color: #cc527a;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #e1e1e1;
   border-radius: 10px;
   margin: 20px 20px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
 const Dark = styled.div`
-  background-color: #474747;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #a8a7a8;
   border-radius: 10px;
   margin: 20px 20px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -52,10 +47,43 @@ const Dark = styled.div`
 
 const Article = ({ type, children, name }) => {
   return (
-    <ArticleWrapper>
-      {type === "light" && <Light id={name}>{children}</Light>}
-      {type === "dark" && <Dark id={name}>{children}</Dark>}
-      {type === undefined && <Generic id={name}>{children}</Generic>}
+    <ArticleWrapper
+      sx={{
+        color: "text",
+      }}
+    >
+      {type === "light" && (
+        <Light
+          sx={{
+            backgroundColor: "backgroundLight",
+            color: "textLight",
+          }}
+          id={name}
+        >
+          {children}
+        </Light>
+      )}
+      {type === "dark" && (
+        <Dark
+          sx={{
+            backgroundColor: "backgroundDark",
+            color: "text",
+          }}
+          id={name}
+        >
+          {children}
+        </Dark>
+      )}
+      {type === undefined && (
+        <Generic
+          sx={{
+            color: "text",
+          }}
+          id={name}
+        >
+          {children}
+        </Generic>
+      )}
     </ArticleWrapper>
   )
 }

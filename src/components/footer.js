@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "@emotion/core"
+import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 import gatsby from "../images/gatsby.png"
 
@@ -22,7 +22,11 @@ const GatsbyImage = styled.img`
 `
 
 export default () => (
-  <Footer>
+  <Footer
+    sx={{
+      backgroundColor: "background",
+    }}
+  >
     <BuiltWith>built with</BuiltWith>
     <a data-testid="footer-link-test" href="https://gatsbyjs.org">
       <GatsbyImage src={gatsby} alt="Gatsby" title="Built with Gatsby" />

@@ -2,7 +2,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import AnimateDiv from "./animate-div"
 import Article from "./article"
@@ -35,7 +36,13 @@ const Main = () => {
         </p>
       </Article>
       <Article type="dark" name="baTechnologies">
-        <h2>Technologies</h2>
+        <h2
+          sx={{
+            color: "text",
+          }}
+        >
+          Technologies
+        </h2>
         <Technologies />
       </Article>
       <AnimateDiv
@@ -45,7 +52,13 @@ const Main = () => {
         key={1}
       >
         <Article type="light" name="baInterests">
-          <h2>Interests</h2>
+          <h2
+            sx={{
+              color: "text",
+            }}
+          >
+            Interests
+          </h2>
           <p>
             {`As you might have assumed I enjoy development, but that is not 
             what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
@@ -80,7 +93,13 @@ const Main = () => {
       </AnimateDiv>
       <AnimateDiv pose={baWork ? "visible" : "hidden"} initialPose="hidden">
         <Article type="dark" name="baWork">
-          <h2>Work</h2>
+          <h2
+            sx={{
+              color: "text",
+            }}
+          >
+            Work
+          </h2>
           <p>
             I have worked in IT since 2000 at{" "}
             <a href="http://www.trinity-health.org/">Trinity Health</a> as a
