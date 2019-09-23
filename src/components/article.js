@@ -7,7 +7,6 @@ import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
 const ArticleWrapper = styled.article`
-  /* color: #a8a7a8; */
   margin-left: auto;
   margin-right: auto;
   display: flex;
