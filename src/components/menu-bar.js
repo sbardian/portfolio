@@ -4,7 +4,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
-import { css } from "@emotion/core"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
@@ -54,33 +53,31 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
         }}
         sx={{
           color: "primary",
+          outline: 0,
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          display: "none",
+          "&focus": {
+            outline: "thin dotted",
+            outlineColor: "#e8175d",
+          },
+          "@media (max-width: 520px)": {
+            display: "block",
+          },
         }}
-        css={css`
-          outline: 0;
-          background: transparent;
-          border: none;
-          cursor: pointer;
-          display: none;
-          &focus {
-            outline: thin dotted;
-            outline-color: #e8175d;
-          }
-          @media (max-width: 520px) {
-            display: block;
-          }
-        `}
       >
-        <GoThreeBars size={30} css={css``} />
+        <GoThreeBars size={30} />
       </PosedMenuButton>
       <PosedColorModeButton
         pose={colorMode}
-        css={css`
-          display: flex;
-          justify-content: center;
-          border: none;
-          background-color: transparent;
-          font-size: 1.5rem;
-        `}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          border: "none",
+          backgroundColor: "transparent",
+          fontSize: "1.5rem",
+        }}
         type="button"
         onClick={() => {
           setColorMode(colorMode === "default" ? "dark" : "default")

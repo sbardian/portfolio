@@ -4,7 +4,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
-import { css } from "@emotion/core"
 import posed from "react-pose"
 import { Link } from "gatsby"
 
@@ -75,34 +74,32 @@ PosedStyledThinLI.propTypes = {
 const StyledLink = props => (
   <Link
     {...props}
-    css={css`
-      text-decoration: none;
-      color: inherit;
-      border-radius: 100%;
-      font-size: 2rem;
-      display: flex;
-      height: 100%;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-      transition: font-size 400ms ease-in-out;
-      &:before {
-        content: attr(data-name-start);
-      }
-      &:hover {
-        font-size: 2rem;
-        color: inherit;
-      }
-      &:hover:after {
-        content: attr(data-name-end);
-        font-size: 2rem;
-      }
-      @media (max-width: 520px) {
-        ::after {
-          content: attr(data-name-end);
-        }
-      }
-    `}
+    sx={{
+      fontSize: 3,
+      textDecoration: "none",
+      color: "inherit",
+      borderRadius: "100%",
+      display: "flex",
+      height: "100%",
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+      transition: "font-size 400ms ease-in-out",
+      "&:before": {
+        content: "attr(data-name-start)",
+      },
+      "&:hover": {
+        color: "inherit",
+      },
+      "&:hover:after": {
+        content: "attr(data-name-end)",
+      },
+      "@media (max-width: 520px)": {
+        "::after": {
+          content: "attr(data-name-end)",
+        },
+      },
+    }}
   />
 )
 
@@ -110,24 +107,24 @@ const MenuButtons = ({ menuStatus }) => {
   return (
     <PosedThinUL
       pose={menuStatus ? "open" : "closed"}
-      css={css`
-        max-height: 320px;
-        margin: 0;
-        margin-top: 20px;
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        align-content: start;
-        padding: 0;
-        margin-bottom: 20px;
-        @media (max-width: 520px) {
-          display: grid;
-          grid-gap: 20px;
-          min-height: 0px;
-          grid-template-columns: minmax(200px, 1fr);
-          grid-template-rows: repeat(auto-fit);
-        }
-      `}
+      sx={{
+        margin: 0,
+        marginTop: 2,
+        marginBottom: 4,
+        padding: 0,
+        maxHeight: "320px",
+        listStyle: "none",
+        display: "flex",
+        justifyContent: "center",
+        alignContent: "start",
+        "@media (max-width: 520px)": {
+          display: "grid",
+          gridGap: "20px",
+          minHeight: "0px",
+          gridTemplateColumns: "minmax(200px, 1fr)",
+          gridTemplateRows: "repeat(auto-fit)",
+        },
+      }}
     >
       <PosedStyledThinLI>
         <StyledLink to="/" data-name-start="H" data-name-end="ome" />

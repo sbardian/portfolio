@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"
 import duckImage from "../images/duck-image.png"
@@ -11,14 +11,14 @@ import oberynImage from "../images/oberyn-image.png"
 const Animations = () => {
   return (
     <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        align-items: center;
-        margin-left: 20px;
-        margin-right: 20px;
-      `}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyItems: "center",
+        alignItems: "center",
+        marginLeft: 2,
+        marginRight: 2,
+      }}
     >
       <Article type="dark">
         <p>

@@ -1,5 +1,8 @@
+/** @jsx jsx */
+/* eslint-disable-next-line */
 import React from "react"
 import styled from "@emotion/styled"
+import { jsx } from "theme-ui"
 import cSharp from "../images/c-sharp.svg"
 import css3 from "../images/css3.svg"
 import gatsby from "../images/gatsby.png"
@@ -28,23 +31,23 @@ import sequelize from "../images/sequelize.png"
 import redux from "../images/redux.svg"
 import react from "../images/react.svg"
 
-const TechWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 48px);
-  grid-gap: 20px;
-  justify-content: center;
-  background: #e1e1e1;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-`
-
 const TechImage = styled.img`
   width: 48px;
 `
 
 export default () => (
-  <TechWrapper>
+  <div
+    sx={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, 48px)",
+      gridGap: 3,
+      justifyContent: "center",
+      background: "#e1e1e1",
+      padding: 3,
+      borderRadius: "10px",
+      boxShadow: "0px 3px 5px 0px rgba(0, 0, 0, 0.75)",
+    }}
+  >
     <TechImage src={react} alt="react" title="React" />
     <TechImage src={redux} alt="redux" title="Redux" />
     <TechImage src={gatsby} alt="gatsby" title="Gatsby" />
@@ -72,5 +75,5 @@ export default () => (
     <TechImage src={webpack} alt="webpack" title="Webpack" />
     <TechImage src={yarn} alt="yarn" title="Yarn" />
     <TechImage src={sequelize} alt="sequalize" title="Sequalize" />
-  </TechWrapper>
+  </div>
 )

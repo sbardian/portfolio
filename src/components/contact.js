@@ -9,8 +9,11 @@ import mq from "./media-queries"
 
 export default () => (
   <section
+    sx={{
+      margin: 2,
+      marginTop: 0,
+    }}
     css={css`
-      margin: 0 20px 20px 20px;
       ${mq.sm(css`
         grid-template-columns: 1fr;
       `)};
@@ -37,18 +40,21 @@ export default () => (
       data-netlify="true"
       netlify-honeypot="youSuckBot"
       action="/success"
-      css={css`
-        display: grid;
-        grid-gap: 20px;
-        grid-template-rows: auto 1fr auto;
-      `}
+      sx={{
+        display: "grid",
+        gridGap: 3,
+        gridTemplateRows: "auto 1fr auto",
+        margin: 3,
+      }}
     >
       <input type="hidden" name="form-name" value="contact" />
       <div
+        sx={{
+          display: "grid",
+          gridGap: 3,
+          gridTemplateColumns: "1fr 1fr",
+        }}
         css={css`
-          display: grid;
-          grid-gap: 20px;
-          grid-template-columns: 1fr 1fr;
           ${mq.sm(css`
             grid-template-columns: 1fr;
           `)};
@@ -99,11 +105,11 @@ export default () => (
         />
       </div>
       <div
-        css={css`
-          display: grid;
-          grid-gap: 20px;
-          height: 250px;
-        `}
+        sx={{
+          display: "grid",
+          gridGap: 3,
+          height: "250px",
+        }}
       >
         <textarea
           required

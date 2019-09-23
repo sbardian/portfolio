@@ -2,24 +2,22 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx } from "theme-ui"
-import styled from "@emotion/styled"
 import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa"
-
-const IconWrapper = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 35px 35px 35px;
-  padding-bottom: 20px;
-  align-items: center;
-  justify-items: center;
-  color: #666;
-  justify-content: center;
-  margin: 20px;
-`
 
 const SocialIcons = () => {
   return (
-    <IconWrapper>
+    <div
+      sx={{
+        margin: 3,
+        paddingBottom: 3,
+        display: "grid",
+        gridGap: "20px",
+        gridTemplateColumns: "35px 35px 35px",
+        alignItems: "center",
+        justifyItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <a href="https://github.com/sbardian" sx={{ color: "primary" }}>
         <FaGithub size="2.5em" />
       </a>
@@ -32,7 +30,7 @@ const SocialIcons = () => {
       >
         <FaEnvelope size="2.5em" />
       </a>
-    </IconWrapper>
+    </div>
   )
 }
 

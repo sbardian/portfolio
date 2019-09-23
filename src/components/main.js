@@ -48,7 +48,6 @@ const Main = () => {
       <AnimateDiv
         pose={baInterests ? "visible" : "hidden"}
         initialPose="hidden"
-        style={{ opacity: 0 }}
         key={1}
       >
         <Article type="light" name="baInterests">

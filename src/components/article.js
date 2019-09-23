@@ -12,7 +12,6 @@ const ArticleWrapper = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 1.5rem;
 `
 
 const Generic = styled.div`
@@ -49,6 +48,7 @@ const Article = ({ type, children, name }) => {
     <ArticleWrapper
       sx={{
         color: "text",
+        fontSize: 1,
       }}
     >
       {type === "light" && (

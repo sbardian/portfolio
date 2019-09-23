@@ -1,26 +1,34 @@
+/** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
+import { jsx } from "theme-ui"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
+import Article from "./article"
 import mq from "./media-queries"
 
-const SuccessWrapper = styled.div`
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  width: 100%;
-  padding: 40px 0 0 0;
-  margin: 0 20px 0 20px;
-  ${mq.sm(css`
-    grid-template-columns: 1fr;
-    justify-items: start;
-  `)}
-`
-
 export default () => (
-  <SuccessWrapper>
-    Thanks, your message has been sent successfully! I will get back to you as
-    soon as possible.
-  </SuccessWrapper>
+  <Article type="dark">
+    <p
+      sx={{
+        display: "grid",
+        gridGap: 3,
+        gridTemplateColumns: "1fr",
+        justifyItems: "center",
+        width: "100%",
+        paddingTop: 4,
+        marginLeft: 3,
+        marginRight: 3,
+        fontSize: 1,
+      }}
+      css={css`
+        ${mq.sm(css`
+          grid-template-columns: 1fr;
+          justify-items: start;
+        `)}
+      `}
+    >
+      Thanks, your message has been sent successfully! I will get back to you as
+      soon as possible.
+    </p>
+  </Article>
 )
