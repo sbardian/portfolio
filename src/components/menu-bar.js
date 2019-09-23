@@ -33,11 +33,11 @@ const PosedMenuButton = posed.button({
 const PosedColorModeButton = posed.button({
   dark: {
     color: "#666",
-    duration: 20000,
+    duration: 200,
   },
   default: {
     color: "#d1cb5e",
-    duration: 20000,
+    duration: 200,
   },
 })
 
