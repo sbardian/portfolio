@@ -15,6 +15,7 @@ export default {
     "2.8rem", // 6
     "3rem", // 7
     "4.4rem", // 8
+    "0.8rem", // 9
   ],
   fontWeights: {
     body: 500,
