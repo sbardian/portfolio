@@ -35,9 +35,9 @@ const Animations = () => {
       <AnimationImageLink
         imageSrc={oberynImage}
         to="/oberynPage"
-        alt="Oberyn"
+        name="Oberyn"
       />
-      <AnimationImageLink imageSrc={duckImage} to="/duckPage" alt="Duck" />
+      <AnimationImageLink imageSrc={duckImage} to="/duckPage" name="Duck" />
     </div>
   )
 }

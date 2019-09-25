@@ -48,6 +48,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
       <PosedMenuButton
         pose={menuStatus ? "open" : "closed"}
         type="button"
+        aria-label="Menu"
         onClick={() => {
           setMenuStatus(!menuStatus)
         }}
@@ -80,6 +81,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
           color: "#666",
         }}
         type="button"
+        aria-label="Color Mode"
         onClick={() => {
           setColorMode(colorMode === "light" ? "dark" : "light")
         }}

@@ -127,13 +127,19 @@ const MenuButtons = ({ menuStatus }) => {
       }}
     >
       <PosedStyledThinLI>
-        <StyledLink to="/" data-name-start="H" data-name-end="ome" />
+        <StyledLink
+          to="/"
+          data-name-start="H"
+          data-name-end="ome"
+          aria-label="Home"
+        />
       </PosedStyledThinLI>
       <PosedStyledThinLI>
         <StyledLink
           to="/projects"
           data-name-start="P"
           data-name-end="rojects"
+          aria-label="Projects"
         />
       </PosedStyledThinLI>
       <PosedStyledThinLI>
@@ -141,10 +147,16 @@ const MenuButtons = ({ menuStatus }) => {
           to="/animations"
           data-name-start="A"
           data-name-end="nimations"
+          aria-label="Animations"
         />
       </PosedStyledThinLI>
       <PosedStyledThinLI>
-        <StyledLink to="/contact" data-name-start="C" data-name-end="ontact" />
+        <StyledLink
+          to="/contact"
+          data-name-start="C"
+          data-name-end="ontact"
+          aria-label="Contact"
+        />
       </PosedStyledThinLI>
     </PosedThinUL>
   )

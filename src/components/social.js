@@ -18,15 +18,24 @@ const SocialIcons = () => {
         justifyContent: "center",
       }}
     >
-      <a href="https://github.com/sbardian" sx={{ color: "primary" }}>
+      <a
+        href="https://github.com/sbardian"
+        sx={{ color: "primary" }}
+        aria-label="Github"
+      >
         <FaGithub size="2.5em" />
       </a>
-      <a href="https://twitter.com/xsbardianx" sx={{ color: "primary" }}>
+      <a
+        href="https://twitter.com/xsbardianx"
+        sx={{ color: "primary" }}
+        aria-label="Twitter"
+      >
         <FaTwitter size="2.5em" />
       </a>
       <a
         href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
         sx={{ color: "primary" }}
+        aria-label="Email"
       >
         <FaEnvelope size="2.5em" />
       </a>
