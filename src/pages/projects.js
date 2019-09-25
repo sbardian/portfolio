@@ -37,6 +37,7 @@ ProjectsPage.propTypes = {
                 }),
               }),
             }),
+            rank: PropTypes.number,
           }),
         })
       ),
@@ -48,7 +49,7 @@ export default ProjectsPage
 
 export const projectImages = graphql`
   {
-    allSanityProjects {
+    allSanityProjects(sort: { fields: rank }) {
       edges {
         node {
           id
@@ -63,6 +64,7 @@ export const projectImages = graphql`
               }
             }
           }
+          rank
         }
       }
     }

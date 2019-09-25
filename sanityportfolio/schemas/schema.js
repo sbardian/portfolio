@@ -34,6 +34,11 @@ export default createSchema({
           name: "image",
           type: "image",
         },
+        {
+          title: "Rank",
+          name: "rank",
+          type: "number",
+        },
       ],
     },
   ]),

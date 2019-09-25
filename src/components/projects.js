@@ -172,6 +172,7 @@ Projects.propTypes = {
               }),
             }),
           }),
+          rank: PropTypes.number,
         }),
       })
     ),
