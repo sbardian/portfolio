@@ -42,4 +42,12 @@ export default {
     "8rem", // 6
     "16rem", // 7
   ],
+  styles: {
+    h1: {
+      color: "#fff",
+    },
+    h2: {
+      color: "#fff",
+    },
+  },
 }

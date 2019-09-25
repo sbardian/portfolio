@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Article from "./article"
@@ -12,15 +12,15 @@ const Main = () => {
   return (
     <div>
       <Article name="baWelcome">
-        <h1
+        <Styled.h1
           css={css`
             display: flex;
             justify-content: center;
           `}
         >
           Brian Andrews
-        </h1>
-        <h2>Welcome to my portfolio site!</h2>
+        </Styled.h1>
+        <Styled.h2>Welcome to my portfolio site!</Styled.h2>
         <p>
           {`I hope to update this site
         frequently with new projects, and updates to old projects. So check in
@@ -28,23 +28,11 @@ const Main = () => {
         </p>
       </Article>
       <Article type="dark" name="baTechnologies">
-        <h2
-          sx={{
-            color: "text",
-          }}
-        >
-          Technologies
-        </h2>
+        <Styled.h2>Technologies</Styled.h2>
         <Technologies />
       </Article>
       <Article type="light" name="baInterests">
-        <h2
-          sx={{
-            color: "text",
-          }}
-        >
-          Interests
-        </h2>
+        <Styled.h2>Interests</Styled.h2>
         <p>
           {`As you might have assumed I enjoy development, but that is not 
             what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
@@ -77,13 +65,7 @@ const Main = () => {
         </p>
       </Article>
       <Article type="dark" name="baWork">
-        <h2
-          sx={{
-            color: "text",
-          }}
-        >
-          Work
-        </h2>
+        <Styled.h2>Work</Styled.h2>
         <p>
           I have worked in IT since 2000 at{" "}
           <a href="http://www.trinity-health.org/">Trinity Health</a> as a
@@ -107,7 +89,7 @@ const Main = () => {
         </p>
       </Article>
       <Article name="baThankYou">
-        <h2>Thanks!</h2>
+        <Styled.h2>Thanks!</Styled.h2>
         <p>
           I hope you enjoy what you see and feel free to reach out to me via the{" "}
           <Link to="/contact">Contact</Link> page!

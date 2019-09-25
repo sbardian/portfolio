@@ -1,7 +1,7 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import PropTypes from "prop-types"
@@ -91,7 +91,7 @@ const ProjectInfo = styled.p`
 const Projects = ({ projects }) => (
   <ProjectsSection>
     <HeaderArticle>
-      <h1>Projects</h1>
+      <Styled.h1>Projects</Styled.h1>
     </HeaderArticle>
     <ProjectWrapper>
       {projects.edges.map((project, index) => {

@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import Article from "./article"
 import mq from "./media-queries"
@@ -19,14 +19,8 @@ export default () => (
       `)};
     `}
   >
-    <Article type="dark">
-      <h1
-        sx={{
-          color: "text",
-        }}
-      >
-        Contact
-      </h1>
+    <Article>
+      <Styled.h1>Contact</Styled.h1>
       <p>
         Feel free to contact me for job opportunities, or any reason you want.
         If you would rather reach out via email, github or twitter see icons for
