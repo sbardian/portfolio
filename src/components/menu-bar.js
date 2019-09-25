@@ -77,6 +77,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
           border: "none",
           backgroundColor: "transparent",
           fontSize: "1.5rem",
+          color: "#666",
         }}
         type="button"
         onClick={() => {
