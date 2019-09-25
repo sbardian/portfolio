@@ -27,8 +27,9 @@ const Animations = () => {
       </Article>
       <Article type="light">
         <p>
-          WARNING! These animations do not play well with mobile. View them on a
-          desktop for the best experience.
+          WARNING! These animations do not play well with mobile. They may or
+          may not load on your mobile device. View them on a desktop for the
+          best experience.
         </p>
       </Article>
       <AnimationImageLink
