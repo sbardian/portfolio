@@ -34,7 +34,7 @@ const PosedColorModeButton = posed.button({
     color: "#666",
     duration: 200,
   },
-  default: {
+  light: {
     color: "#d1cb5e",
     duration: 200,
   },
@@ -80,7 +80,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
         }}
         type="button"
         onClick={() => {
-          setColorMode(colorMode === "default" ? "dark" : "default")
+          setColorMode(colorMode === "light" ? "dark" : "light")
         }}
       >
         <FaLightbulb size={30} />
