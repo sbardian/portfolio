@@ -53,6 +53,7 @@ const ProjectImageWrapper = styled.div`
   height: 380px;
   overflow: hidden;
   border-radius: 5px;
+  background-color: #fff;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   ${mq.md(css`
     width: 100%;
@@ -106,17 +107,25 @@ const Projects = ({ projects }) => (
                 }}
               >
                 <ProjectImageWrapper>
-                  <a
-                    href={project.node.demoUrl}
-                    title="Demo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  {project.node.demoUrl && (
+                    <a
+                      href={project.node.demoUrl}
+                      title="Demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Img
+                        fluid={project.node.image.asset.fluid}
+                        alt={project.node.name}
+                      />
+                    </a>
+                  )}
+                  {!project.node.demoUrl && (
                     <Img
                       fluid={project.node.image.asset.fluid}
                       alt={project.node.name}
                     />
-                  </a>
+                  )}
                 </ProjectImageWrapper>
                 <ProjectInfoWrapper>
                   <ProjectTitle sx={{ color: "primary" }}>
@@ -125,9 +134,11 @@ const Projects = ({ projects }) => (
                   <ProjectInfo sx={{ color: "text" }}>
                     {project.node.description}
                   </ProjectInfo>
-                  <a href={project.node.repoUrl}>
-                    <FaGithub size="2.5em" />
-                  </a>
+                  {project.node.repoUrl && (
+                    <a href={project.node.repoUrl}>
+                      <FaGithub size="2.5em" />
+                    </a>
+                  )}
                 </ProjectInfoWrapper>
               </Article>
             </Fade>
