@@ -5,18 +5,10 @@ import React from "react"
 import { jsx } from "theme-ui"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
-import AnimateDiv from "./animate-div"
 import Article from "./article"
 import Technologies from "./technologies"
-import useVisible from "./hooks/useVisible"
 
 const Main = () => {
-  const { baThankYou, baInterests, baWork } = useVisible([
-    "baThankYou",
-    "baInterests",
-    "baWork",
-  ])
-
   return (
     <div>
       <Article name="baWelcome">
@@ -45,93 +37,82 @@ const Main = () => {
         </h2>
         <Technologies />
       </Article>
-      <AnimateDiv
-        pose={baInterests ? "visible" : "hidden"}
-        initialPose="hidden"
-        key={1}
-      >
-        <Article type="light" name="baInterests">
-          <h2
-            sx={{
-              color: "text",
-            }}
-          >
-            Interests
-          </h2>
-          <p>
-            {`As you might have assumed I enjoy development, but that is not 
+      <Article type="light" name="baInterests">
+        <h2
+          sx={{
+            color: "text",
+          }}
+        >
+          Interests
+        </h2>
+        <p>
+          {`As you might have assumed I enjoy development, but that is not 
             what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
             developing.`}
-          </p>
-          <p>
-            Most of my free time is spent hanging out with my three year old son
-            and my wife. Trucks, trains, building forts and dirt are a pretty
-            big deal around here.
-          </p>
-          <p>
-            {`Yard work and home improvement is another thing 
+        </p>
+        <p>
+          Most of my free time is spent hanging out with my three year old son
+          and my wife. Trucks, trains, building forts and dirt are a pretty big
+          deal around here.
+        </p>
+        <p>
+          {`Yard work and home improvement is another thing 
             I enjoy. You know, "Well, um, actually a pretty nice little Saturday, 
             we're going to go to Home Depot. Yeah, buy some wallpaper, maybe 
             get some flooring, stuff like that. Maybe Bed, Bath, & Beyond, I 
             don't know, I don't know if we'll have enough time".`}
-          </p>
-          <p>
-            I also spend a lot of time reading so I decided to make a site to
-            track and share some of the books I have read recently (
-            <a
-              href="https://sbardian-books.netlify.com"
-              alt="Books"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Books
-            </a>
-            ).
-          </p>
-        </Article>
-      </AnimateDiv>
-      <AnimateDiv pose={baWork ? "visible" : "hidden"} initialPose="hidden">
-        <Article type="dark" name="baWork">
-          <h2
-            sx={{
-              color: "text",
-            }}
+        </p>
+        <p>
+          I also spend a lot of time reading so I decided to make a site to
+          track and share some of the books I have read recently (
+          <a
+            href="https://sbardian-books.netlify.com"
+            alt="Books"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Work
-          </h2>
-          <p>
-            I have worked in IT since 2000 at{" "}
-            <a href="http://www.trinity-health.org/">Trinity Health</a> as a
-            System Administrator Senior. My web development work at Trinity
-            Health started when I became the SharePoint Administrator for the
-            Boise Region, though I have worked with web development for more
-            than 25 years. Using SharePoint as a framework, I have implemented
-            and deployed two intranet solutions. These were massively customized
-            intranet solutions. As a SharePoint Administrator I have also
-            deployed many different SharePoint solutions for different
-            department needs. Other web projects I have been involved in at
-            Trinity Health include a Javascript Graphql Master Provider Index
-            API, a React Native Find a Provider App, a Javascript Events and
-            Daily Announcemnts calendar, and a Javascript Service Account
-            Manager webapp.
-          </p>
-          <p>
-            I have also worked with <a href="https://seoidaho.com">SEO Idaho</a>{" "}
-            on many web development projects. Working with SEO Idaho has exposed
-            me to countless different web framworks and languagues. I enjoy the
-            challenge of not knowing what the next client could present.
-          </p>
-        </Article>
-      </AnimateDiv>
-      <AnimateDiv pose={baThankYou ? "visible" : "hidden"} initialPose="hidden">
-        <Article name="baThankYou">
-          <h2>Thanks!</h2>
-          <p>
-            I hope you enjoy what you see and feel free to reach out to me via
-            the <Link to="/contact">Contact</Link> page!
-          </p>
-        </Article>
-      </AnimateDiv>
+            Books
+          </a>
+          ).
+        </p>
+      </Article>
+      <Article type="dark" name="baWork">
+        <h2
+          sx={{
+            color: "text",
+          }}
+        >
+          Work
+        </h2>
+        <p>
+          I have worked in IT since 2000 at{" "}
+          <a href="http://www.trinity-health.org/">Trinity Health</a> as a
+          System Administrator Senior. My web development work at Trinity Health
+          started when I became the SharePoint Administrator for the Boise
+          Region, though I have worked with web development for more than 25
+          years. Using SharePoint as a framework, I have implemented and
+          deployed two intranet solutions. These were massively customized
+          intranet solutions. As a SharePoint Administrator I have also deployed
+          many different SharePoint solutions for different department needs.
+          Other web projects I have been involved in at Trinity Health include a
+          Javascript Graphql Master Provider Index API, a React Native Find a
+          Provider App, a Javascript Events and Daily Announcemnts calendar, and
+          a Javascript Service Account Manager webapp.
+        </p>
+        <p>
+          I have also worked with <a href="https://seoidaho.com">SEO Idaho</a>{" "}
+          on many web development projects. Working with SEO Idaho has exposed
+          me to countless different web framworks and languagues. I enjoy the
+          challenge of not knowing what the next client could present.
+        </p>
+      </Article>
+      <Article name="baThankYou">
+        <h2>Thanks!</h2>
+        <p>
+          I hope you enjoy what you see and feel free to reach out to me via the{" "}
+          <Link to="/contact">Contact</Link> page!
+        </p>
+      </Article>
     </div>
   )
 }
