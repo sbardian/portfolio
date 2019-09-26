@@ -16,8 +16,10 @@ const PageLayout = ({ children, showFooter = true }) => {
     {
       site {
         siteMetadata {
+          author
           title
           description
+          keywords
         }
       }
     }
@@ -39,6 +41,8 @@ const PageLayout = ({ children, showFooter = true }) => {
         defer={false}
         meta={[
           { name: "description", content: siteMetadata.description },
+          { name: "author", content: siteMetadata.author },
+          { name: "keywords", content: siteMetadata.keywords },
           { property: "og:type", content: "website" },
           { property: "og:title", content: siteMetadata.title },
           { property: "og:description", content: siteMetadata.description },

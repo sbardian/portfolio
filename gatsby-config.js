@@ -3,6 +3,7 @@ module.exports = {
     title: `Portfolio`,
     description: `Brian Andrews Portfolio`,
     author: `Brian Andrews`,
+    keywords: `gatsby, brian andrews, portfolio`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
