@@ -8,7 +8,8 @@ export default {
   backgroundDark: "#474747",
   // backgroundLight: "#cc527a",
   backgroundLight: "#9E294C",
-  primary: "#e8175d",
+  // primary: "#e8175d",
+  primary: "#9E294C",
   modes: {
     light: {
       link: "violet",
