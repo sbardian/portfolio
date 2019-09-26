@@ -108,7 +108,7 @@ const Projects = ({ projects }) => (
               >
                 <ProjectImageWrapper>
                   {project.node.demoUrl && (
-                    <a
+                    <Styled.a
                       href={project.node.demoUrl}
                       title="Demo"
                       target="_blank"
@@ -118,7 +118,7 @@ const Projects = ({ projects }) => (
                         fluid={project.node.image.asset.fluid}
                         alt={project.node.name}
                       />
-                    </a>
+                    </Styled.a>
                   )}
                   {!project.node.demoUrl && (
                     <Img
@@ -135,9 +135,9 @@ const Projects = ({ projects }) => (
                     {project.node.description}
                   </ProjectInfo>
                   {project.node.repoUrl && (
-                    <a href={project.node.repoUrl}>
+                    <Styled.a href={project.node.repoUrl}>
                       <FaGithub size="2.5em" />
-                    </a>
+                    </Styled.a>
                   )}
                 </ProjectInfoWrapper>
               </Article>

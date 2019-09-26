@@ -43,6 +43,9 @@ export default {
     "16rem", // 7
   ],
   styles: {
+    a: {
+      color: "link",
+    },
     h1: {
       color: "#fff",
     },

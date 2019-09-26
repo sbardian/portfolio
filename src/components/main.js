@@ -53,14 +53,14 @@ const Main = () => {
         <p>
           I also spend a lot of time reading so I decided to make a site to
           track and share some of the books I have read recently (
-          <a
+          <Styled.a
             href="https://sbardian-books.netlify.com"
             alt="Books"
             target="_blank"
             rel="noopener noreferrer"
           >
             Books
-          </a>
+          </Styled.a>
           ).
         </p>
       </Article>
@@ -68,11 +68,13 @@ const Main = () => {
         <Styled.h2>Work</Styled.h2>
         <p>
           I have worked in IT since 2000 at{" "}
-          <a href="http://www.trinity-health.org/">Trinity Health</a> as a
-          System Administrator Senior. My web development work at Trinity Health
-          started when I became the SharePoint Administrator for the Boise
-          Region, though I have worked with web development for more than 25
-          years. Using SharePoint as a framework, I have implemented and
+          <Styled.a href="http://www.trinity-health.org/">
+            Trinity Health
+          </Styled.a>{" "}
+          as a System Administrator Senior. My web development work at Trinity
+          Health started when I became the SharePoint Administrator for the
+          Boise Region, though I have worked with web development for more than
+          25 years. Using SharePoint as a framework, I have implemented and
           deployed two intranet solutions. These were massively customized
           intranet solutions. As a SharePoint Administrator I have also deployed
           many different SharePoint solutions for different department needs.
@@ -82,9 +84,10 @@ const Main = () => {
           a Javascript Service Account Manager webapp.
         </p>
         <p>
-          I have also worked with <a href="https://seoidaho.com">SEO Idaho</a>{" "}
-          on many web development projects. Working with SEO Idaho has exposed
-          me to countless different web framworks and languagues. I enjoy the
+          I have also worked with{" "}
+          <Styled.a href="https://seoidaho.com">SEO Idaho</Styled.a> on many web
+          development projects. Working with SEO Idaho has exposed me to
+          countless different web framworks and languagues. I enjoy the
           challenge of not knowing what the next client could present.
         </p>
       </Article>
@@ -92,7 +95,10 @@ const Main = () => {
         <Styled.h2>Thanks!</Styled.h2>
         <p>
           I hope you enjoy what you see and feel free to reach out to me via the{" "}
-          <Link to="/contact">Contact</Link> page!
+          <Link sx={{ color: "link" }} to="/contact">
+            Contact
+          </Link>{" "}
+          page!
         </p>
       </Article>
     </div>
