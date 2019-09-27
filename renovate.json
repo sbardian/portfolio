@@ -1,7 +1,6 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base", ":semanticCommits"],
   "commitMessageTopic": "{{depName}}",
-  "commitMessage": "Update {{depName}} to {{newVersion}}",
   "automergeType": "branch-push",
   "automerge": true,
   "major": {
