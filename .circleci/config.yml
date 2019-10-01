@@ -4,6 +4,12 @@ orbs:
   cypress: cypress-io/cypress@1.10.0
 
 jobs:
+  lint:
+    executor: cypress/base-10
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run: yarn lint
   Jest:
     docker:
       - image: circleci/node:10.16
@@ -43,4 +49,7 @@ workflows:
           yarn: true
           start: yarn develop
           wait-on: "--timeout 20000 http://localhost:8000"
+      - lint:
+          requires:
+            - Cypress Tests
 #      - Jest
