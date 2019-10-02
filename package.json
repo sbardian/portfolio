@@ -37,7 +37,7 @@
     }
   },
   "dependencies": {
-    "@emotion/core": "10.0.17",
+    "@emotion/core": "10.0.20",
     "@emotion/styled": "10.0.17",
     "@mdx-js/react": "1.5.0",
     "browser-monads": "1.0.0",
