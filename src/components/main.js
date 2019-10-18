@@ -28,7 +28,7 @@ const Main = () => {
         </p>
       </Article>
       <Article type="dark" name="baTechnologies">
-        <Styled.h2>Technologies</Styled.h2>
+        <Styled.h2 sx={{ color: "#adadad" }}>Technologies</Styled.h2>
         <Technologies />
       </Article>
       <Article type="light" name="baInterests">
@@ -65,10 +65,13 @@ const Main = () => {
         </p>
       </Article>
       <Article type="dark" name="baWork">
-        <Styled.h2>Work</Styled.h2>
+        <Styled.h2 sx={{ color: "#adadad" }}>Work</Styled.h2>
         <p>
           I have worked in IT since 2000 at{" "}
-          <Styled.a href="http://www.trinity-health.org/">
+          <Styled.a
+            sx={{ color: "linkDark" }}
+            href="http://www.trinity-health.org/"
+          >
             Trinity Health
           </Styled.a>{" "}
           as a System Administrator Senior. My web development work at Trinity
@@ -85,9 +88,11 @@ const Main = () => {
         </p>
         <p>
           I have also worked with{" "}
-          <Styled.a href="https://seoidaho.com">SEO Idaho</Styled.a> on many web
-          development projects. Working with SEO Idaho has exposed me to
-          countless different web framworks and languagues. I enjoy the
+          <Styled.a sx={{ color: "linkDark" }} href="https://seoidaho.com">
+            SEO Idaho
+          </Styled.a>{" "}
+          on many web development projects. Working with SEO Idaho has exposed
+          me to countless different web framworks and languagues. I enjoy the
           challenge of not knowing what the next client could present.
         </p>
       </Article>
