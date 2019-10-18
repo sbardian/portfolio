@@ -49,7 +49,7 @@ const PosedStyledThinLI = ({ children }) => (
       "&:hover": {
         borderRadius: "20px",
         backgroundColor: "primary",
-        color: "text",
+        color: "textLight",
       },
       "@media (max-width: 520px)": {
         borderRadius: "0",
