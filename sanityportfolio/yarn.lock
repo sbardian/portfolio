@@ -907,10 +907,10 @@
     make-error "^1.3.0"
     object-assign "^4.1.1"
 
-"@sanity/components@0.142.6":
-  version "0.142.6"
-  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-0.142.6.tgz#ba8e61a5e074e7e02b1faa84b31807e4c329dc46"
-  integrity sha512-1nM2kPIG2iNhfGrKGTHUMcadBh4I34+hx1f5RzGeagu3tgkvBJ5YoPpFSCPuhMYbG5yp5TJ2sXBPT5QQmQYzxA==
+"@sanity/components@0.142.10":
+  version "0.142.10"
+  resolved "https://registry.yarnpkg.com/@sanity/components/-/components-0.142.10.tgz#5847c6109238c04d1e8100e3d41c2a3b7887af18"
+  integrity sha512-Wv0CsiOkAwbJms2HPiFNTlbRntTEOE/wyK+LjHruVMNDdRUIWWCrFePs0Mb2Wy6IULOUvCQjsTYyaWxQkUT7FQ==
   dependencies:
     "@sanity/date-input" "0.142.6"
     "@sanity/imagetool" "0.142.6"
