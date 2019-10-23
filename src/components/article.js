@@ -76,7 +76,7 @@ const Article = ({ type, children, name }) => {
       {type === undefined && (
         <Generic
           sx={{
-            color: "text",
+            color: "textLight",
           }}
           id={name}
         >
