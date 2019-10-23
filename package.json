@@ -37,8 +37,8 @@
     }
   },
   "dependencies": {
-    "@emotion/core": "10.0.21",
-    "@emotion/styled": "10.0.17",
+    "@emotion/core": "10.0.22",
+    "@emotion/styled": "10.0.22",
     "@mdx-js/react": "1.5.1",
     "browser-monads": "1.0.0",
     "deepmerge": "4.2.1",
