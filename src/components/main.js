@@ -88,7 +88,7 @@ const Main = () => {
         </p>
         <p>
           I have also worked with{" "}
-          <Styled.a sx={{ color: "linkDark" }} href="https://seoidaho.com">
+          <Styled.a sx={{ color: "linkDark" }} href="https://www.seoidaho.com">
             SEO Idaho
           </Styled.a>{" "}
           on many web development projects. Working with SEO Idaho has exposed
