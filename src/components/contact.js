@@ -56,7 +56,7 @@ export default () => (
       >
         <div hidden>
           <label htmlFor="bot-catcher">
-            {`Don’t fill this out if you're human`}
+            Do not fill this out if you are human
             <input
               id="bot-catcher"
               name="youSuckBot"

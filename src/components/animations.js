@@ -26,7 +26,9 @@ const Animations = () => {
       >
         <Article type="dark">
           <p>
-            {`I have started playing with three.js.  Here are a couple of characters I have made so far.  These have been pretty fun to make, so probably some more to come here...`}
+            I have started playing with three.js. Here are a couple of
+            characters I have made so far. These have been pretty fun to make,
+            so probably some more to come here...
           </p>
         </Article>
         <Article type="light">
