@@ -1,6 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
+/* eslint-disable react/no-this-in-sfc */
 // eslint-disable-next-line
 import React from "react"
 import * as THREE from "three"
