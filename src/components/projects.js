@@ -27,10 +27,7 @@ const ProjectWrapper = styled.div`
 
 const Article = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  padding: 20px;
   margin-bottom: 40px;
-  width: 620px;
-  position: relative;
   ${mq.md(css`
     width: inherit;
   `)}
@@ -42,19 +39,12 @@ const Article = styled.div`
 const ProjectTitle = styled.h1`
   display: inline;
   padding-right: 10px;
+  padding-top: 20px;
 `
 
 const ProjectImageWrapper = styled.div`
-  width: 700px;
-  z-index: 2;
-  position: absolute;
-  left: -20px;
-  top: 0;
   height: 380px;
   overflow: hidden;
-  border-radius: 5px;
-  background-color: #fff;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   ${mq.md(css`
     width: 100%;
     left: 0px;
@@ -75,7 +65,7 @@ const ProjectInfoWrapper = styled.div`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
-  margin-top: 370px;
+  padding: 20px;
   ${mq.md(css`
     margin-top: 200px;
   `)}
