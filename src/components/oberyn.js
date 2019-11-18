@@ -7,7 +7,7 @@ import React from "react"
 import * as THREE from "three"
 import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
-import { TweenMax, Elastic, TimelineMax } from "gsap/TweenMax"
+import { TweenMax, Elastic, TimelineMax } from "gsap"
 import { jsx, css } from "@emotion/core"
 import AnimationsNav from "./animations-nav"
 
@@ -546,14 +546,8 @@ const OberynAnimation = ({ animations }) => {
         {
           z: 0,
           repeat: 1,
-          ease: RoughEase.ease.config({
-            template: Power0.easeNone,
-            strength: 1,
-            points: 20,
-            taper: "none",
-            randomize: true,
-            clamp: false,
-          }),
+          ease:
+            "rough({template: Power0.easeNone, strength: 1, points: 20, randomize: true, clamp: false })",
           yoyo: true,
           yoyoEase: Elastic.easeOut,
         }
@@ -616,14 +610,8 @@ const OberynAnimation = ({ animations }) => {
         {
           z: 0,
           repeat: 1,
-          ease: RoughEase.ease.config({
-            template: Power0.easeNone,
-            strength: 1,
-            points: 20,
-            taper: "none",
-            randomize: true,
-            clamp: false,
-          }),
+          ease:
+            "rough({template: Power0.easeNone, strength: 1, points: 20, randomize: true, clamp: false })",
           yoyo: true,
           yoyoEase: Elastic.easeOut,
         }
