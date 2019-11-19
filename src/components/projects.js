@@ -66,12 +66,6 @@ const ProjectInfoWrapper = styled.div`
   grid-gap: 20px;
   grid-template-columns: 1fr;
   padding: 20px;
-  ${mq.md(css`
-    margin-top: 200px;
-  `)}
-  ${mq.sm(css`
-    margin-top: 220px;
-  `)}
 `
 
 const ProjectInfo = styled.p`
