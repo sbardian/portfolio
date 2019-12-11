@@ -11,9 +11,12 @@ export default {
   primary: "#9E294C",
   modes: {
     light: {
-      link: "#5c2d22",
-      linkDark: "#24120d",
-      text: "#1f8ca2",
+      // link: "#5c2d22",
+      link: "#a1a",
+      // linkDark: "#24120d",
+      linkDark: "#a1a",
+      // text: "#1f8ca2",
+      text: "#4D4C4D",
       textLight: "#fff",
       background: "#a8a7a8",
       backgroundDark: "#daf1f9",
