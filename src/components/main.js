@@ -11,22 +11,28 @@ import Technologies from "./technologies"
 const Main = () => {
   return (
     <div>
-      <Article name="baWelcome">
+      <div
+        css={css`
+          margin: 0 20px 0 20px;
+        `}
+      >
         <Styled.h1
           css={css`
-            display: flex;
-            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 0.04rem;
           `}
         >
           Brian Andrews
         </Styled.h1>
-        <Styled.h2>Welcome to my portfolio site!</Styled.h2>
-        <p>
-          {`I hope to update this site
-        frequently with new projects, and updates to old projects. So check in
-        often to make sure you don't miss anything!`}
-        </p>
-      </Article>
+        <Styled.h5
+          css={css`
+            margin-top: 0.5rem;
+            color: white;
+          `}
+        >
+          portfolio
+        </Styled.h5>
+      </div>
       <Article type="dark" name="baTechnologies">
         <Styled.h2 sx={{ color: "#adadad" }}>Technologies</Styled.h2>
         <Technologies />
