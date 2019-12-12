@@ -19,7 +19,6 @@ const Generic = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 10px;
   margin: 20px 20px;
 `
 
@@ -28,7 +27,6 @@ const Light = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 10px;
   margin: 20px 20px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
@@ -38,7 +36,6 @@ const Dark = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 10px;
   margin: 20px 20px;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
