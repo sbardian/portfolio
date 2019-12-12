@@ -39,24 +39,24 @@ const Main = () => {
       </Article>
       <Article type="light" name="baInterests">
         <Styled.h2>Interests</Styled.h2>
-        <p>
+        <Styled.p>
           {`As you might have assumed I enjoy development, but that is not 
             what this section is about (see the rest of the site for that). This is more about what I do when I'm not 
             developing.`}
-        </p>
-        <p>
+        </Styled.p>
+        <Styled.p>
           Most of my free time is spent hanging out with my three year old son
           and my wife. Trucks, trains, building forts and dirt are a pretty big
           deal around here.
-        </p>
-        <p>
+        </Styled.p>
+        <Styled.p>
           {`Yard work and home improvement is another thing 
             I enjoy. You know, "Well, um, actually a pretty nice little Saturday, 
             we're going to go to Home Depot. Yeah, buy some wallpaper, maybe 
             get some flooring, stuff like that. Maybe Bed, Bath, & Beyond, I 
             don't know, I don't know if we'll have enough time".`}
-        </p>
-        <p>
+        </Styled.p>
+        <Styled.p>
           I also spend a lot of time reading so I decided to make a site to
           track and share some of the books I have read recently (
           <Styled.a
@@ -68,11 +68,11 @@ const Main = () => {
             Books
           </Styled.a>
           ).
-        </p>
+        </Styled.p>
       </Article>
       <Article type="dark" name="baWork">
         <Styled.h2 sx={{ color: "#adadad" }}>Work</Styled.h2>
-        <p>
+        <Styled.p>
           I have worked in IT since 2000 at{" "}
           <Styled.a
             sx={{ color: "linkDark" }}
@@ -91,8 +91,8 @@ const Main = () => {
           Javascript Graphql Master Provider Index API, a React Native Find a
           Provider App, a Javascript Events and Daily Announcemnts calendar, and
           a Javascript Service Account Manager webapp.
-        </p>
-        <p>
+        </Styled.p>
+        <Styled.p>
           I have also worked with{" "}
           <Styled.a sx={{ color: "linkDark" }} href="https://www.seoidaho.com">
             SEO Idaho
@@ -100,17 +100,17 @@ const Main = () => {
           on many web development projects. Working with SEO Idaho has exposed
           me to countless different web framworks and languagues. I enjoy the
           challenge of not knowing what the next client could present.
-        </p>
+        </Styled.p>
       </Article>
       <Article name="baThankYou">
         <Styled.h2>Thanks!</Styled.h2>
-        <p>
+        <Styled.p>
           I hope you enjoy what you see and feel free to reach out to me via the{" "}
           <Link sx={{ color: "link" }} to="/contact">
             Contact
           </Link>{" "}
           page!
-        </p>
+        </Styled.p>
       </Article>
     </div>
   )

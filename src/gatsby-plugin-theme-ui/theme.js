@@ -48,9 +48,14 @@ export default {
     },
     h1: {
       color: "#fff",
+      marginBottom: "0.5rem",
     },
     h2: {
       color: "#fff",
+      marginBottom: "0.5rem",
+    },
+    p: {
+      marginTop: 0,
     },
   },
 }
