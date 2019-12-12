@@ -3,7 +3,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
-import { jsx } from "theme-ui"
+import { jsx, css } from "theme-ui"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
@@ -12,8 +12,7 @@ import useGetColorMode from "./hooks/useGetColorMode"
 const ButtonBar = styled.div`
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 40px 40px;
-  justify-content: space-between;
+  grid-template-columns: auto 1fr auto;
   align-content: center;
   margin: 20px;
 `
@@ -45,6 +44,14 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
 
   return (
     <ButtonBar>
+      <div
+        css={css`
+          display: "block";
+          @media (max-width: 520px) {
+            display: none;
+          }
+        `}
+      />
       <PosedMenuButton
         pose={menuStatus ? "open" : "closed"}
         type="button"
@@ -74,7 +81,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
         pose={colorMode}
         sx={{
           display: "flex",
-          justifyContent: "center",
+          justifySelf: "end",
           border: "none",
           backgroundColor: "transparent",
           fontSize: "1.5rem",
