@@ -8,14 +8,11 @@ const SocialIcons = () => {
   return (
     <div
       sx={{
-        // margin: 3,
         paddingBottom: 3,
         display: "grid",
         gridGap: "20px",
         gridTemplateColumns: "35px 35px 35px",
-        // alignItems: "center",
         justifyItems: "start",
-        // justifyContent: "center",
       }}
     >
       <a

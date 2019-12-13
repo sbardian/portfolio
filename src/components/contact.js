@@ -3,16 +3,13 @@
 // eslint-disable-next-line
 import React from "react"
 import { jsx, Styled } from "theme-ui"
-import { css } from "@emotion/core"
 import Article from "./article"
 import Social from "./social"
-import mq from "./media-queries"
 
 export default () => (
-  <section
+  <div
     sx={{
-      margin: 2,
-      marginTop: 0,
+      display: "grid",
     }}
   >
     <Article>
@@ -29,69 +26,53 @@ export default () => (
       sx={{
         display: "grid",
         gridGap: "20px",
-        gridTemplateRows: "auto 1fr auto",
-        margin: 3,
         gridTemplateColumns: "1fr",
-        padding: "0 20px 0 20px",
       }}
     >
       <input type="hidden" name="form-name" value="contact" />
-      <div
-        sx={{
-          display: "grid",
-          gridGap: 3,
-          gridTemplateColumns: "1fr 1fr",
-        }}
-        css={css`
-          ${mq.sm(css`
-            grid-template-columns: 1fr;
-          `)};
-        `}
-      >
-        <div hidden>
-          <label htmlFor="bot-catcher">
-            Do not fill this out if you are human
-            <input
-              id="bot-catcher"
-              name="youSuckBot"
-              type="text"
-              aria-label="YouSuckBot"
-            />
-          </label>
-        </div>
-        <input
-          required
-          type="email"
-          name="email"
-          placeholder="Email"
-          aria-label="Email"
-          sx={{
-            borderWidth: "2px",
-            borderStyle: "solid",
-            borderColor: "background",
-            transition: "border-color 0.2s ease-in-out",
-            "&:focus": {
-              borderColor: "primary",
-            },
-          }}
-        />
-        <input
-          required
-          type="text"
-          name="name"
-          placeholder="Name"
-          aria-label="Name"
-          sx={{
-            borderWidth: "2px",
-            borderStyle: "solid",
-            borderColor: "background",
-            transition: "border-color 0.2s ease-in-out",
-            "&:focus": {
-              borderColor: "primary",
-            },
-          }}
-        />
+      <div hidden>
+        <label htmlFor="bot-catcher">
+          Do not fill this out if you are human
+          <input
+            id="bot-catcher"
+            name="youSuckBot"
+            type="text"
+            aria-label="YouSuckBot"
+          />
+        </label>
       </div>
+      <input
+        required
+        type="email"
+        name="email"
+        placeholder="Email"
+        aria-label="Email"
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "background",
+          transition: "border-color 0.2s ease-in-out",
+          "&:focus": {
+            borderColor: "primary",
+          },
+        }}
+      />
+      <input
+        required
+        type="text"
+        name="name"
+        placeholder="Name"
+        aria-label="Name"
+        sx={{
+          borderWidth: "2px",
+          borderStyle: "solid",
+          borderColor: "background",
+          transition: "border-color 0.2s ease-in-out",
+          "&:focus": {
+            borderColor: "primary",
+          },
+        }}
+      />
       <div
         sx={{
           display: "grid",
@@ -145,5 +126,5 @@ export default () => (
         </button>
       </div>
     </form>
-  </section>
+  </div>
 )

@@ -89,9 +89,6 @@ const StyledLink = props => (
       justifyContent: "center",
       alignItems: "center",
       transition: "font-size 400ms ease-in-out",
-      // "&:before": {
-      //   content: "attr(data-name-start)",
-      // },
       "&:hover": {
         color: "inherit",
       },
