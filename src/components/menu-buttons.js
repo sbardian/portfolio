@@ -6,6 +6,9 @@ import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import posed from "react-pose"
 import { Link } from "gatsby"
+import { FaHome } from "react-icons/fa"
+import { GoRepo } from "react-icons/go"
+import { MdMovieFilter, MdMessage } from "react-icons/md"
 
 const PosedThinUL = posed.ul({
   open: {
@@ -34,7 +37,7 @@ const PosedStyledThinLI = ({ children }) => (
     sx={{
       borderColor: "primary",
       color: "primary",
-      backgroundColor: "transparent",
+      backgroundColor: "primary",
       backgroundSize: "cover",
       margin: "30px",
       borderWidth: "2px",
@@ -54,6 +57,7 @@ const PosedStyledThinLI = ({ children }) => (
       "@media (max-width: 520px)": {
         borderRadius: "0",
         margin: "0 20px 0 20px",
+        backgroundColor: "transparent",
         width: "auto",
         "&:hover": {
           borderRadius: "20px",
@@ -77,7 +81,7 @@ const StyledLink = props => (
     sx={{
       fontSize: 3,
       textDecoration: "none",
-      color: "inherit",
+      color: "white",
       borderRadius: "100%",
       display: "flex",
       height: "100%",
@@ -85,18 +89,19 @@ const StyledLink = props => (
       justifyContent: "center",
       alignItems: "center",
       transition: "font-size 400ms ease-in-out",
-      "&:before": {
-        content: "attr(data-name-start)",
-      },
+      // "&:before": {
+      //   content: "attr(data-name-start)",
+      // },
       "&:hover": {
         color: "inherit",
       },
       "&:hover:after": {
-        content: "attr(data-name-end)",
+        content: "attr(data-name-start)attr(data-name-end)",
       },
       "@media (max-width: 520px)": {
+        color: "primary",
         "::after": {
-          content: "attr(data-name-end)",
+          content: "attr(data-name-start)attr(data-name-end)",
         },
       },
     }}
@@ -132,7 +137,17 @@ const MenuButtons = ({ menuStatus }) => {
           data-name-start="H"
           data-name-end="ome"
           aria-label="Home"
-        />
+        >
+          <FaHome
+            sx={{
+              "@media (max-width: 520px)": {
+                color: "black",
+                display: "none",
+              },
+            }}
+            size={34}
+          />
+        </StyledLink>
       </PosedStyledThinLI>
       <PosedStyledThinLI>
         <StyledLink
@@ -140,7 +155,16 @@ const MenuButtons = ({ menuStatus }) => {
           data-name-start="P"
           data-name-end="rojects"
           aria-label="Projects"
-        />
+        >
+          <GoRepo
+            sx={{
+              "@media (max-width: 520px)": {
+                display: "none",
+              },
+            }}
+            size="40"
+          />
+        </StyledLink>
       </PosedStyledThinLI>
       <PosedStyledThinLI>
         <StyledLink
@@ -148,7 +172,16 @@ const MenuButtons = ({ menuStatus }) => {
           data-name-start="A"
           data-name-end="nimations"
           aria-label="Animations"
-        />
+        >
+          <MdMovieFilter
+            sx={{
+              "@media (max-width: 520px)": {
+                display: "none",
+              },
+            }}
+            size="40"
+          />
+        </StyledLink>
       </PosedStyledThinLI>
       <PosedStyledThinLI>
         <StyledLink
@@ -156,7 +189,16 @@ const MenuButtons = ({ menuStatus }) => {
           data-name-start="C"
           data-name-end="ontact"
           aria-label="Contact"
-        />
+        >
+          <MdMessage
+            sx={{
+              "@media (max-width: 520px)": {
+                display: "none",
+              },
+            }}
+            size="40"
+          />
+        </StyledLink>
       </PosedStyledThinLI>
     </PosedThinUL>
   )
