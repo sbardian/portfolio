@@ -31,9 +31,6 @@ const PageLayout = ({ children, showFooter = true }) => {
         display: "grid",
         gridGap: 3,
         gridTemplateRows: "auto 1fr auto",
-        justifyContent: "center",
-        height: "100%",
-        width: "100%",
       }}
     >
       <Helmet
@@ -53,10 +50,13 @@ const PageLayout = ({ children, showFooter = true }) => {
       <Header />
       <div
         sx={{
-          maxWidth: "900px",
-          "@media (min-width: 1000px)": {
-            minWidth: "900px",
+          "@media (min-width: 660px)": {
+            width: "75%",
           },
+          justifySelf: "center",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gridGap: 3,
         }}
       >
         {children}

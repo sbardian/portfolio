@@ -7,11 +7,7 @@ import Article from "./article"
 import Social from "./social"
 
 export default () => (
-  <div
-    sx={{
-      display: "grid",
-    }}
-  >
+  <div>
     <Article>
       <Styled.h1>Contact</Styled.h1>
       <Social />
