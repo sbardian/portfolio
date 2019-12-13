@@ -5,6 +5,7 @@ import React from "react"
 import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import Article from "./article"
+import Social from "./social"
 import mq from "./media-queries"
 
 export default () => (
@@ -13,19 +14,10 @@ export default () => (
       margin: 2,
       marginTop: 0,
     }}
-    css={css`
-      ${mq.sm(css`
-        grid-template-columns: 1fr;
-      `)};
-    `}
   >
     <Article>
       <Styled.h1>Contact</Styled.h1>
-      <p>
-        Feel free to contact me for job opportunities, or any reason you want.
-        If you would rather reach out via email, github or twitter see icons for
-        each. I will get back with you as soon as possible.
-      </p>
+      <Social />
     </Article>
     <form
       data-testid="test-contact-form"
@@ -36,9 +28,11 @@ export default () => (
       action="/success"
       sx={{
         display: "grid",
-        gridGap: 3,
+        gridGap: "20px",
         gridTemplateRows: "auto 1fr auto",
         margin: 3,
+        gridTemplateColumns: "1fr",
+        padding: "0 20px 0 20px",
       }}
     >
       <input type="hidden" name="form-name" value="contact" />
