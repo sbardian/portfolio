@@ -50,13 +50,14 @@ const PageLayout = ({ children, showFooter = true }) => {
       <Header />
       <div
         sx={{
-          "@media (min-width: 660px)": {
-            width: "75%",
+          "@media (min-width: 1035px)": {
+            width: "1000px",
           },
           justifySelf: "center",
           display: "grid",
-          gridTemplateColumns: "1fr",
+          gridTemplateColumns: "repeat(1, 1fr)",
           gridGap: 3,
+          width: "95%",
         }}
       >
         {children}
