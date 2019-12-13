@@ -54,6 +54,9 @@ const PageLayout = ({ children, showFooter = true }) => {
       <div
         sx={{
           maxWidth: "900px",
+          "@media (min-width: 1000px)": {
+            minWidth: "900px",
+          },
         }}
       >
         {children}
