@@ -10,7 +10,7 @@ import oberynImage from "../images/oberyn-image.png"
 
 const Animations = () => {
   return (
-    <>
+    <div>
       <Article>
         <Styled.h1>Animations</Styled.h1>
       </Article>
@@ -45,7 +45,7 @@ const Animations = () => {
         />
         <AnimationImageLink imageSrc={duckImage} to="/duckPage" name="Duck" />
       </div>
-    </>
+    </div>
   )
 }
 
