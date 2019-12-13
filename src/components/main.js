@@ -50,15 +50,14 @@ const Main = () => {
           deal around here.
         </Styled.p>
         <Styled.p>
-          {`Yard work and home improvement is another thing 
-            I enjoy. You know, "Well, um, actually a pretty nice little Saturday, 
+          {`I also enjoy doing yard and home improvement projects. You know, "Well, um, actually a pretty nice little Saturday, 
             we're going to go to Home Depot. Yeah, buy some wallpaper, maybe 
             get some flooring, stuff like that. Maybe Bed, Bath, & Beyond, I 
             don't know, I don't know if we'll have enough time".`}
         </Styled.p>
         <Styled.p>
-          I also spend a lot of time reading so I decided to make a site to
-          track and share some of the books I have read recently (
+          I spend a lot of time reading, so I decided to make a site to track
+          and share some of the books I have read recently (
           <Styled.a
             href="https://sbardian-books.netlify.com"
             alt="Books"
