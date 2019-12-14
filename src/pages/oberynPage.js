@@ -10,7 +10,7 @@ const OberynPage = () => {
     { to: "/duckPage", title: "Duck" },
   ]
   return (
-    <PageLayout showFooter={false}>
+    <PageLayout showFooter={false} useFullScreen>
       <Oberyn animations={animations} />
     </PageLayout>
   )

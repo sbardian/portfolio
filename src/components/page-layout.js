@@ -9,7 +9,7 @@ import { jsx } from "theme-ui"
 import Header from "./header"
 import Footer from "./footer"
 
-const PageLayout = ({ children, showFooter = true }) => {
+const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -51,13 +51,13 @@ const PageLayout = ({ children, showFooter = true }) => {
       <div
         sx={{
           "@media (min-width: 1035px)": {
-            width: "1000px",
+            width: useFullScreen ? null : "1000px",
           },
           justifySelf: "center",
           display: "grid",
           gridTemplateColumns: "repeat(1, 1fr)",
           gridGap: 3,
-          width: "95%",
+          width: useFullScreen ? null : "95%",
         }}
       >
         {children}
@@ -72,9 +72,11 @@ export default PageLayout
 PageLayout.defaultProps = {
   children: () => {},
   showFooter: true,
+  useFullScreen: false,
 }
 
 PageLayout.propTypes = {
   showFooter: PropTypes.bool,
   children: PropTypes.node,
+  useFullScreen: PropTypes.bool,
 }

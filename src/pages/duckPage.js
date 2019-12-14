@@ -10,7 +10,7 @@ const DuckPage = () => {
     { to: "/duckPage", title: "Duck" },
   ]
   return (
-    <PageLayout showFooter={false}>
+    <PageLayout showFooter={false} useFullScreen>
       <Duck animations={animations} />
     </PageLayout>
   )
