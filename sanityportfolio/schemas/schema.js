@@ -39,6 +39,12 @@ export default createSchema({
           name: "rank",
           type: "number",
         },
+        {
+          title: "Technologies",
+          name: "technologies",
+          type: "array",
+          of: [{ type: "string" }],
+        },
       ],
     },
   ]),
