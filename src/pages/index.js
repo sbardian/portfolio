@@ -1,15 +1,74 @@
-// eslint-disable-next-line
 import React from "react"
+import PropTypes from "prop-types"
+import { graphql } from "gatsby"
 import PageLayout from "../components/page-layout"
-import Main from "../components/main"
+import Projects from "../components/projects"
 import "normalize.css"
 import "../assets/main.css"
 
-const IndexPage = () => {
+const ProjectsPage = ({ data: { allSanityProjects } }) => {
   return (
     <PageLayout>
-      <Main />
+      <Projects projects={allSanityProjects} />
     </PageLayout>
   )
 }
-export default IndexPage
+ProjectsPage.propTypes = {
+  data: PropTypes.shape({
+    allSanityProjects: PropTypes.shape({
+      edges: PropTypes.arrayOf(
+        PropTypes.shape({
+          node: PropTypes.shape({
+            id: PropTypes.string,
+            name: PropTypes.string,
+            description: PropTypes.string,
+            demoUrl: PropTypes.string,
+            repoUrl: PropTypes.string,
+            technologies: PropTypes.arrayOf(PropTypes.string),
+            image: PropTypes.shape({
+              asset: PropTypes.shape({
+                fluid: PropTypes.shape({
+                  base64: PropTypes.string,
+                  aspectRatio: PropTypes.number,
+                  src: PropTypes.string,
+                  srcSet: PropTypes.string,
+                  srcWebp: PropTypes.string,
+                  srcSetWebp: PropTypes.string,
+                  sizes: PropTypes.string,
+                }),
+              }),
+            }),
+            rank: PropTypes.number,
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+}
+
+export default ProjectsPage
+
+export const projectImages = graphql`
+  {
+    allSanityProjects(sort: { fields: rank }) {
+      edges {
+        node {
+          id
+          name
+          description
+          demoUrl
+          repoUrl
+          technologies
+          image {
+            asset {
+              fluid {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+          rank
+        }
+      }
+    }
+  }
+`

@@ -6,7 +6,6 @@ import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import posed from "react-pose"
 import { Link } from "gatsby"
-import { FaHome } from "react-icons/fa"
 import { GoRepo } from "react-icons/go"
 import { MdMovieFilter, MdMessage } from "react-icons/md"
 
@@ -128,24 +127,6 @@ const MenuButtons = ({ menuStatus }) => {
         },
       }}
     >
-      <PosedStyledThinLI>
-        <StyledLink
-          to="/"
-          data-name-start="H"
-          data-name-end="ome"
-          aria-label="Home"
-        >
-          <FaHome
-            sx={{
-              "@media (max-width: 520px)": {
-                color: "black",
-                display: "none",
-              },
-            }}
-            size={34}
-          />
-        </StyledLink>
-      </PosedStyledThinLI>
       <PosedStyledThinLI>
         <StyledLink
           to="/projects"
