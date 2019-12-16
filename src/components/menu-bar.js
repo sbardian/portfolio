@@ -66,9 +66,13 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
           border: "none",
           cursor: "pointer",
           display: "none",
-          "&focus": {
+          transition: "color ease 2ms",
+          "&:focus": {
             outline: "thin dotted",
             outlineColor: "#e8175d",
+          },
+          "&:hover": {
+            color: "#a1a1a1",
           },
           "@media (max-width: 520px)": {
             display: "block",
@@ -86,6 +90,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
           backgroundColor: "transparent",
           fontSize: "1.5rem",
           color: "#666",
+          cursor: "pointer",
         }}
         type="button"
         aria-label="Color Mode"
