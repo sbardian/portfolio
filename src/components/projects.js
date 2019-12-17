@@ -124,7 +124,12 @@ const Projects = ({ projects }) => {
                       <Technologies technologies={project.node.technologies} />
                     </div>
                     {project.node.repoUrl && (
-                      <Styled.a href={project.node.repoUrl}>
+                      <Styled.a
+                        sx={{
+                          justifySelf: "end",
+                        }}
+                        href={project.node.repoUrl}
+                      >
                         <FaGithub size="2.5em" />
                       </Styled.a>
                     )}
