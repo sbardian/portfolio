@@ -26,16 +26,15 @@ const Animations = () => {
       >
         <Article type="dark">
           <p>
-            I have started playing with three.js. Here are a couple of
-            characters I have made so far. These have been pretty fun to make,
-            so probably some more to come here...
+            Here are a couple of characters I have made using three.js. These
+            have been pretty fun to make, I hope to do more soon.
           </p>
         </Article>
         <Article type="light">
           <p>
-            WARNING! These animations do not play well with mobile. They may or
-            may not load on your mobile device. View them on a desktop for the
-            best experience.
+            WARNING! These animations do not play well with mobile!!! They may
+            or may not load on your mobile device. View them on a desktop for
+            the best experience.
           </p>
         </Article>
         <AnimationImageLink
