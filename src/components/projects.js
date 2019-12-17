@@ -139,12 +139,12 @@ const Projects = ({ projects }) => {
                     <ProjectTitle sx={{ color: "primary" }}>
                       {project.node.name}
                     </ProjectTitle>
-                    <div>
-                      <Technologies technologies={project.node.technologies} />
-                    </div>
                     <ProjectInfo sx={{ color: "text" }}>
                       {project.node.description}
                     </ProjectInfo>
+                    <div>
+                      <Technologies technologies={project.node.technologies} />
+                    </div>
                     {project.node.repoUrl && (
                       <Styled.a href={project.node.repoUrl}>
                         <FaGithub size="2.5em" />
