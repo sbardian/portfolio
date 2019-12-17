@@ -14,7 +14,7 @@ const ButtonBar = styled.div`
   grid-gap: 20px;
   grid-template-columns: auto 1fr auto;
   align-content: center;
-  margin: 20px;
+  margin: 20px 0;
   max-width: 1000px;
 `
 

@@ -13,7 +13,6 @@ import Technologies from "./technologies"
 import mq from "./media-queries"
 
 const ProjectsSection = styled.section`
-  margin: 0 20px 20px 20px;
   ${mq.sm(css`
     grid-template-columns: 1fr;
   `)};

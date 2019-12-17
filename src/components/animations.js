@@ -20,8 +20,6 @@ const Animations = () => {
           flexDirection: "column",
           justifyItems: "center",
           alignItems: "center",
-          marginLeft: 2,
-          marginRight: 2,
         }}
       >
         <Article type="dark">
