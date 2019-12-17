@@ -19,25 +19,6 @@ body {
   width: 100%;
 }
 
-/* h1,
-h2,
-h3,
-h4,
-h5 {
-  color: #e1e1e1;
-} */
-
-/* p {
-  text-indent: 2em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  line-height: 1.5em;
-} */
-
-/* article img {
-  width: 350px;
-} */
-
 input,
 textarea {
   appearance: none;
@@ -51,14 +32,3 @@ textarea {
   height: 2.75em;
   background-color: #e1e1e1;
 }
-
-/* .active-nav {
-  background: #2f2d2d !important;
-  color: #92e5f3 !important;
-  border-color: #92e5f3 !important;
-} */
-
-/* a {
-  color: #fff;
-  text-decoration: none;
-} */
