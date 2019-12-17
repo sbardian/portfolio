@@ -31,6 +31,7 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
         display: "grid",
         gridGap: 3,
         gridTemplateRows: "auto 1fr auto",
+        justifyContent: "center",
       }}
     >
       <Helmet

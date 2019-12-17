@@ -15,6 +15,7 @@ const ButtonBar = styled.div`
   grid-template-columns: auto 1fr auto;
   align-content: center;
   margin: 20px;
+  max-width: 1000px;
 `
 
 const PosedMenuButton = posed.button({
