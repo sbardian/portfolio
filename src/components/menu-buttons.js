@@ -129,7 +129,7 @@ const MenuButtons = ({ menuStatus }) => {
     >
       <PosedStyledThinLI>
         <StyledLink
-          to="/projects"
+          to="/"
           data-name-start="P"
           data-name-end="rojects"
           aria-label="Projects"
