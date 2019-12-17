@@ -76,28 +76,6 @@ const ProjectInfo = styled.p`
 const Projects = ({ projects }) => {
   return (
     <ProjectsSection>
-      <div
-        css={css`
-          margin: 0 20px 0 20px;
-        `}
-      >
-        <Styled.h1
-          css={css`
-            font-size: 3rem;
-            margin-bottom: 0.04rem;
-          `}
-        >
-          Brian Andrews
-        </Styled.h1>
-        <Styled.h5
-          css={css`
-            margin-top: 0.5rem;
-            color: white;
-          `}
-        >
-          portfolio
-        </Styled.h5>
-      </div>
       <HeaderArticle>
         <Styled.h1>Projects</Styled.h1>
       </HeaderArticle>

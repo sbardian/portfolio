@@ -1,19 +1,27 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import React from "react"
-import { jsx } from "theme-ui"
+import { jsx, css, Styled } from "theme-ui"
 import Gravatar from "react-gravatar"
 
 const Avatar = () => {
   return (
     <div
       sx={{
-        alignSelf: "center",
-        zIndex: 20,
-        display: "flex",
-        justifyContent: "center",
+        display: "grid",
+        gridTemplateColumns: "1fr",
+        justifyItems: "center",
+        alignItems: "center ",
       }}
     >
+      <Styled.h1
+        css={css`
+          font-size: 3rem;
+          margin-bottom: 0.04rem;
+        `}
+      >
+        Brian Andrews
+      </Styled.h1>
       <Gravatar
         email="sbardian@gmail.com"
         size={150}
@@ -22,9 +30,17 @@ const Avatar = () => {
           width: "150px",
           borderRadius: "90px",
           perspective: "100px",
-          transition: "all 1s ease-in-out",
+          marginTop: "0.67em",
         }}
       />
+      <Styled.h5
+        css={css`
+          margin-top: 0.5rem;
+          color: white;
+        `}
+      >
+        portfolio
+      </Styled.h5>
     </div>
   )
 }
