@@ -14,7 +14,7 @@ const ButtonBar = styled.div`
   grid-gap: 20px;
   grid-template-columns: auto 1fr auto;
   align-content: center;
-  margin: 20px 0;
+  margin: 20px auto;
   max-width: 1000px;
 `
 
@@ -80,7 +80,7 @@ const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
           },
         }}
       >
-        <GoThreeBars size={30} />
+        <GoThreeBars size={30} sx={{ marginLeft: "10px" }} />
       </PosedMenuButton>
       <PosedColorModeButton
         pose={colorMode}

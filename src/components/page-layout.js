@@ -31,6 +31,7 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
         display: "grid",
         gridGap: 3,
         gridTemplateRows: "auto 1fr auto",
+        gridTemplateColumns: "1fr",
         justifyContent: "center",
       }}
     >
@@ -54,11 +55,11 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
           "@media (min-width: 1035px)": {
             width: useFullScreen ? null : "1000px",
           },
+          width: useFullScreen ? null : "95%",
           justifySelf: "center",
           display: "grid",
-          gridTemplateColumns: "repeat(1, 1fr)",
+          gridTemplateColumns: "1fr",
           gridGap: 3,
-          width: useFullScreen ? null : "95%",
         }}
       >
         {children}
