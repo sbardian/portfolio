@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Portfolio`,
+    title: `Brian Andrews Portfolio`,
     description: `Brian Andrews Portfolio`,
     author: `Brian Andrews`,
     keywords: `gatsby, brian andrews, portfolio`,
