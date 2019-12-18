@@ -6,7 +6,7 @@ import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
-import { FaGithub } from "react-icons/fa"
+import { FaGithub, FaRegEye } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
 import HeaderArticle from "./article"
 import Technologies from "./technologies"
@@ -92,19 +92,10 @@ const Projects = ({ projects }) => {
                   }}
                 >
                   <ProjectImageWrapper>
-                    {project.node.demoUrl && (
-                      <Styled.a
-                        href={project.node.demoUrl}
-                        title="Demo"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Img
-                          fluid={project.node.image.asset.fluid}
-                          alt={project.node.name}
-                        />
-                      </Styled.a>
-                    )}
+                    <Img
+                      fluid={project.node.image.asset.fluid}
+                      alt={project.node.name}
+                    />
                     {!project.node.demoUrl && (
                       <Img
                         fluid={project.node.image.asset.fluid}
@@ -122,16 +113,40 @@ const Projects = ({ projects }) => {
                     <div>
                       <Technologies technologies={project.node.technologies} />
                     </div>
-                    {project.node.repoUrl && (
-                      <Styled.a
-                        sx={{
-                          justifySelf: "end",
-                        }}
-                        href={project.node.repoUrl}
-                      >
-                        <FaGithub size="2.5em" />
-                      </Styled.a>
-                    )}
+                    <div
+                      sx={{
+                        display: "grid",
+                        gridGap: "20px",
+                        gridTemplateColumns: "auto auto",
+                        justifyContent: "end",
+                      }}
+                    >
+                      {project.node.demoUrl && (
+                        <Styled.a
+                          href={project.node.demoUrl}
+                          title="Demo"
+                          target="_blank"
+                          alt="Demo"
+                          rel="noopener noreferrer"
+                        >
+                          <FaRegEye size="2.5em" />
+                        </Styled.a>
+                      )}
+                      {project.node.repoUrl && (
+                        <Styled.a
+                          sx={{
+                            justifySelf: "end",
+                          }}
+                          href={project.node.repoUrl}
+                          target="_blank"
+                          alt="Repo"
+                          title="Repo"
+                          rel="noopener noreferrer"
+                        >
+                          <FaGithub size="2.5em" />
+                        </Styled.a>
+                      )}
+                    </div>
                   </ProjectInfoWrapper>
                 </Article>
               </Fade>
