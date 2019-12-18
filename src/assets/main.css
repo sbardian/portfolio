@@ -22,7 +22,6 @@ body {
 input,
 textarea {
   appearance: none;
-  border-radius: 0.35em;
   border: 2px solid transparent;
   color: #666;
   display: block;
