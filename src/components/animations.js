@@ -22,12 +22,6 @@ const Animations = () => {
           alignItems: "center",
         }}
       >
-        <Article type="dark">
-          <p>
-            Here are a couple of characters I have made using three.js. These
-            have been pretty fun to make, I hope to do more soon.
-          </p>
-        </Article>
         <Article type="light">
           <p>
             WARNING! These animations do not play well with mobile!!! They may
