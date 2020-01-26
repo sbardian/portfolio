@@ -33,6 +33,7 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
         gridTemplateRows: "auto 1fr auto",
         gridTemplateColumns: "1fr",
         justifyContent: "center",
+        backgroundColor: "background",
       }}
     >
       <Helmet
