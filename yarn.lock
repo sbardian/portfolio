@@ -14803,10 +14803,10 @@ three.phenomenon@1.2.0:
   dependencies:
     three "^0.104.0"
 
-three@0.113.0:
-  version "0.113.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.113.0.tgz#b5f82500a34eaca43fe3305e163eefe38b4c3221"
-  integrity sha512-H1IuGiyyBciP+L8fM5WCgXSm/nYbLr+tGgY9WWu7PPBxDxki/XJovC/Hz5JI/V7d6kx+1R/8zXWEmsIotLH/aA==
+three@0.113.1:
+  version "0.113.1"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.113.1.tgz#285b76e2f7fdbb3c56766fe56b714521bcee448a"
+  integrity sha512-fwv1lroSbb+GP0hbX8zP9SMwibf/sjOFFB00KgFjN98HjJEirFfQn7/ZG+oLOxxi7RCAoFfszEGP2fdHFA26bg==
 
 three@^0.104.0:
   version "0.104.0"
