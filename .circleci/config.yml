@@ -50,6 +50,7 @@ workflows:
       - cypress/run:
           name: Cypress Tests
           executor: cypress-node12-chrome77
+          browser: chrome
           yarn: true
           start: yarn develop
           wait-on: "--timeout 20000 http://localhost:8000"
