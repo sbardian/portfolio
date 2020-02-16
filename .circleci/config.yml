@@ -3,14 +3,23 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.15.0
 
+executors:
+  cypress-node12-chrome77:
+    docker:
+      - image: "cypress/browsers:node12.6.0-chrome77"
+
 jobs:
   lint:
-    executor: cypress/base-10
+    docker:
+      - image: circleci/node:10.19
+    working_directory: ~/repo
     steps:
       - attach_workspace:
           at: ~/
+      - checkout
+      - run: yarn install
       - run: yarn lint
-  Jest:
+  jest:
     docker:
       - image: circleci/node:10.19
     working_directory: ~/repo
@@ -38,18 +47,15 @@ workflows:
   version: 2
   Test_Workflow:
     jobs:
-      - cypress/install:
-          name: Cypress Install
-          yarn: true
-          build: yarn build
       - cypress/run:
           name: Cypress Tests
-          requires:
-            - Cypress Install
+          executor: cypress-node12-chrome77
           yarn: true
           start: yarn develop
           wait-on: "--timeout 20000 http://localhost:8000"
       - lint:
           requires:
             - Cypress Tests
-#      - Jest
+      # - jest:
+      #     requires:
+      #       - Cypress Tests
