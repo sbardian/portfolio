@@ -42,7 +42,7 @@
     "@mdx-js/react": "1.5.7",
     "browser-monads": "1.0.0",
     "deepmerge": "4.2.2",
-    "gatsby": "2.19.20",
+    "gatsby": "2.19.21",
     "gatsby-image": "2.2.41",
     "gatsby-plugin-emotion": "4.1.22",
     "gatsby-plugin-manifest": "2.2.42",
