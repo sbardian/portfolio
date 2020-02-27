@@ -52,7 +52,7 @@
     "gatsby-plugin-theme-ui": "0.3.0",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.1.48",
-    "gatsby-source-sanity": "5.0.5",
+    "gatsby-source-sanity": "5.0.6",
     "gatsby-transformer-sharp": "2.3.16",
     "gsap": "3.2.1",
     "lodash": "4.17.15",
