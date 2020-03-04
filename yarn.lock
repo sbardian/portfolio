@@ -1910,7 +1910,7 @@
     "@testing-library/dom" "^6.12.2"
     "@types/testing-library__cypress" "^5.0.2"
 
-"@testing-library/dom@6.15.0":
+"@testing-library/dom@6.15.0", "@testing-library/dom@^6.15.0":
   version "6.15.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.15.0.tgz#042abea7b4685b70d9a919100da9024507dc20bb"
   integrity sha512-8N24c4XwOigPicwc8n4ECgEoJW2/mMzRJBxu4Uo0zhLERZTbNzqpL5fyCigu7JGUXX+ITuiK4z9/lnHbYRHLwQ==
@@ -1923,7 +1923,7 @@
     pretty-format "^25.1.0"
     wait-for-expect "^3.0.2"
 
-"@testing-library/dom@^6.11.0", "@testing-library/dom@^6.12.2":
+"@testing-library/dom@^6.12.2":
   version "6.12.2"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.12.2.tgz#5d549acf43f2e0c23b2abfd4e36d65594c3b2741"
   integrity sha512-KCnvHra5fV+wDxg3wJObGvZFxq7v1DJt829GNFLuRDjKxVNc/B5AdsylNF5PMHFbWMXDsHwM26d2NZcZO9KjbQ==
@@ -1951,13 +1951,13 @@
     pretty-format "^25.1.0"
     redent "^3.0.0"
 
-"@testing-library/react@9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-9.4.1.tgz#955771568aa3216107d307bfdf470bf2394308a0"
-  integrity sha512-sta3ui24HPgW92quHyQj6gpOkNgLNx8BX/QOU4k1bddo43ZdqlGwmzCYwL93bExfhergwiau+IzBGl7TCsSFeA==
+"@testing-library/react@9.5.0":
+  version "9.5.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/react/-/react-9.5.0.tgz#71531655a7890b61e77a1b39452fbedf0472ca5e"
+  integrity sha512-di1b+D0p+rfeboHO5W7gTVeZDIK5+maEgstrZbWZSSvxDyfDRkkyBE1AJR5Psd6doNldluXlCWqXriUfqu/9Qg==
   dependencies:
-    "@babel/runtime" "^7.8.3"
-    "@testing-library/dom" "^6.11.0"
+    "@babel/runtime" "^7.8.4"
+    "@testing-library/dom" "^6.15.0"
     "@types/testing-library__react" "^9.1.2"
 
 "@theme-ui/color-modes@^0.3.1":
