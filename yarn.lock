@@ -2022,18 +2022,16 @@
     "@testing-library/dom" "^6.15.0"
     "@types/testing-library__cypress" "^5.0.3"
 
-"@testing-library/dom@6.16.0":
-  version "6.16.0"
-  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-6.16.0.tgz#04ada27ed74ad4c0f0d984a1245bb29b1fd90ba9"
-  integrity sha512-lBD88ssxqEfz0wFL6MeUyyWZfV/2cjEZZV3YRpb2IoJRej/4f1jB0TzqIOznTpfR1r34CNesrubxwIlAQ8zgPA==
+"@testing-library/dom@7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.1.0.tgz#edf364ac2f2294107c28a2a4499f7409f326d895"
+  integrity sha512-/R++TMdxmhPdcGxamIQLovh2fwheYeO5UKOVi9IgeN+tfJw0/4SPokywevlNQXW9x2QDcaR1LqFO9FI+yHNmhw==
   dependencies:
     "@babel/runtime" "^7.8.4"
-    "@sheerun/mutationobserver-shim" "^0.3.2"
     "@types/testing-library__dom" "^6.12.1"
     aria-query "^4.0.2"
     dom-accessibility-api "^0.3.0"
     pretty-format "^25.1.0"
-    wait-for-expect "^3.0.2"
 
 "@testing-library/dom@^6.15.0":
   version "6.15.0"
