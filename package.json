@@ -54,7 +54,7 @@
     "gatsby-source-filesystem": "2.2.1",
     "gatsby-source-sanity": "5.0.6",
     "gatsby-transformer-sharp": "2.4.1",
-    "gsap": "3.2.5",
+    "gsap": "3.2.6",
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
     "prop-types": "15.7.2",
