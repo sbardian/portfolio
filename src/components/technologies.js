@@ -58,8 +58,18 @@ const Technologies = ({ technologies = [] }) => {
       }}
     >
       {technologies.sort().map(tech => {
-        if (tech === "react" || tech === "reactnative") {
+        if (tech === "react") {
           return <TechImage key={tech} src={react} alt="react" title="React" />
+        }
+        if (tech === "reactnative") {
+          return (
+            <TechImage
+              key={tech}
+              src={react}
+              alt="react-native"
+              title="React Native"
+            />
+          )
         }
         if (tech === "graphql") {
           return (
