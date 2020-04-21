@@ -1,53 +1,28 @@
-version: 2.1
-
-orbs:
-  cypress: cypress-io/cypress@1.19.2
-
-executors:
-  cypress-node12-chrome77:
-    docker:
-      - image: "cypress/browsers:node12.6.0-chrome77"
-
+version: 2
 jobs:
-  lint:
+  build:
     docker:
       - image: circleci/node:12.16
+
     working_directory: ~/repo
-    steps:
-      - attach_workspace:
-          at: ~/
-      - checkout
-      - run: yarn install
-      - run: yarn lint
-  jest:
-    docker:
-      - image: circleci/node:12.16
-    working_directory: ~/repo
+
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v2-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-{{ checksum "package.json" }}
             # fallback to using the latest cache if no exact match is found
-            - v2-dependencies-
+            - v1-dependencies-
 
       - run: yarn install
 
       - save_cache:
           paths:
             - node_modules
-          key: v2-dependencies-{{ checksum "package.json" }}
+          key: v1-dependencies-{{ checksum "package.json" }}
 
+      # run lint
+      - run: yarn lint
       # run tests!
       - run: yarn test
-
-workflows:
-  version: 2
-  Test_Workflow:
-    jobs:
-      - lint:
-      - jest:
-          requires:
-            - lint
