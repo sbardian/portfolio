@@ -41,7 +41,7 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       # run tests!
-      - run: yarn jest
+      - run: yarn test
 
 workflows:
   version: 2
