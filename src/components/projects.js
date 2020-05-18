@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable react/jsx-pascal-case */
 // eslint-disable-next-line
 import React from "react"
 import { jsx, Styled } from "theme-ui"
