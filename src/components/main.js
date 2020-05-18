@@ -1,5 +1,5 @@
 /** @jsx jsx */
-/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
 // eslint-disable-next-line
 import React from "react"
 import { jsx, Styled } from "theme-ui"
