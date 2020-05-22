@@ -3,6 +3,9 @@ jobs:
   build:
     docker:
       - image: circleci/node:12.17
+    branches:
+      ignore:
+        - typescript
 
     working_directory: ~/repo
 
