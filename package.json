@@ -11,7 +11,8 @@
     "serve": "gatsby serve --port 8000",
     "develop": "gatsby develop",
     "lint": "eslint .",
-    "test": "jest ."
+    "test": "jest .",
+    "ts": "tsc"
   },
   "keywords": [
     "gatsby"
@@ -75,6 +76,9 @@
     "@types/node": "14.0.4",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
+    "@types/theme-ui": "0.3.2",
+    "@typescript-eslint/eslint-plugin": "3.0.0",
+    "@typescript-eslint/parser": "3.0.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.0.1",
     "babel-preset-gatsby": "0.4.7",
@@ -94,6 +98,7 @@
     "jest-axe": "3.4.0",
     "lint-staged": "10.2.7",
     "prettier": "2.0.5",
-    "start-server-and-test": "1.11.0"
+    "start-server-and-test": "1.11.0",
+    "typescript": "3.9.3"
   }
 }

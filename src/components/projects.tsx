@@ -1,11 +1,10 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-pascal-case */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { FaGithub, FaRegEye } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
@@ -13,20 +12,20 @@ import HeaderArticle from "./article"
 import Technologies from "./technologies"
 import mq from "./media-queries"
 
-const ProjectsSection = styled.section`
+const ProjectsSection = styled("section")`
   ${mq.sm(css`
     grid-template-columns: 1fr;
   `)};
 `
 
-const ProjectWrapper = styled.div`
+const ProjectWrapper = styled("div")`
   margin: 0 20px 20px 20px;
   ${mq.sm(css`
     grid-template-columns: 1fr;
   `)};
 `
 
-const Article = styled.div`
+const Article = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 40px;
   ${mq.md(css`
@@ -37,13 +36,13 @@ const Article = styled.div`
   `)}
 `
 
-const ProjectTitle = styled.h1`
+const ProjectTitle = styled("h1")`
   display: inline;
   padding-right: 10px;
   padding-top: 20px;
 `
 
-const ProjectImageWrapper = styled.div`
+const ProjectImageWrapper = styled("div")`
   height: 380px;
   overflow: hidden;
   ${mq.md(css`
@@ -62,18 +61,49 @@ const ProjectImageWrapper = styled.div`
   `)}
 `
 
-const ProjectInfoWrapper = styled.div`
+const ProjectInfoWrapper = styled("div")`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr;
   padding: 20px;
 `
 
-const ProjectInfo = styled.p`
+const ProjectInfo = styled("p")`
   font-size: 1.5rem;
 `
 
-const Projects = ({ projects }) => {
+interface ProjectsProps {
+  projects: {
+    edges: [
+      {
+        node: {
+          id: string
+          name: string
+          description: string
+          demoUrl: string
+          repoUrl: string
+          technologies: [string]
+          image: {
+            asset: {
+              fluid: {
+                base64: string
+                aspectRatio: number
+                src: string
+                srcSet: string
+                srcWebp: string
+                srcSetWebp: string
+                sizes: string
+              }
+            }
+          }
+          rank: number
+        }
+      }
+    ]
+  }
+}
+
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsSection>
       <HeaderArticle>
@@ -115,7 +145,7 @@ const Projects = ({ projects }) => {
                       <Technologies technologies={project.node.technologies} />
                     </div>
                     <div
-                      sx={{
+                      css={{
                         display: "grid",
                         gridGap: "20px",
                         gridTemplateColumns: "auto auto",
@@ -127,7 +157,6 @@ const Projects = ({ projects }) => {
                           href={project.node.demoUrl}
                           title="Demo"
                           target="_blank"
-                          alt="Demo"
                           rel="noopener noreferrer"
                         >
                           <FaRegEye size="2.5em" />
@@ -140,7 +169,6 @@ const Projects = ({ projects }) => {
                           }}
                           href={project.node.repoUrl}
                           target="_blank"
-                          alt="Repo"
                           title="Repo"
                           rel="noopener noreferrer"
                         >
@@ -157,36 +185,6 @@ const Projects = ({ projects }) => {
       </ProjectWrapper>
     </ProjectsSection>
   )
-}
-
-Projects.propTypes = {
-  projects: PropTypes.shape({
-    edges: PropTypes.arrayOf(
-      PropTypes.shape({
-        node: PropTypes.shape({
-          id: PropTypes.string,
-          name: PropTypes.string,
-          description: PropTypes.string,
-          demoUrl: PropTypes.string,
-          repoUrl: PropTypes.string,
-          image: PropTypes.shape({
-            asset: PropTypes.shape({
-              fluid: PropTypes.shape({
-                base64: PropTypes.string,
-                aspectRatio: PropTypes.number,
-                src: PropTypes.string,
-                srcSet: PropTypes.string,
-                srcWebp: PropTypes.string,
-                srcSetWebp: PropTypes.string,
-                sizes: PropTypes.string,
-              }),
-            }),
-          }),
-          rank: PropTypes.number,
-        }),
-      })
-    ),
-  }).isRequired,
 }
 
 export default Projects

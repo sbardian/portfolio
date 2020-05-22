@@ -1,7 +1,7 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-props-no-spreading */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import posed from "react-pose"
@@ -74,7 +74,7 @@ PosedStyledThinLI.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-const StyledLink = props => (
+const StyledLink = (props) => (
   <Link
     {...props}
     sx={{

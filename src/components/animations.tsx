@@ -1,7 +1,5 @@
 /** @jsx jsx */
-/* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
-// eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"

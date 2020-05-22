@@ -1,11 +1,19 @@
 /** @jsx jsx */
-// eslint-disable-next-line
-import React from "react"
-import PropTypes from "prop-types"
+import * as React from "react"
 import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 
-const AnimationImageLink = ({ imageSrc, to, name }) => {
+interface AnimationImageLinkProps {
+  imageSrc: string
+  to: string
+  name: string
+}
+
+const AnimationImageLink: React.FunctionComponent<AnimationImageLinkProps> = ({
+  imageSrc,
+  to,
+  name,
+}) => {
   return (
     <div
       css={css`
@@ -34,12 +42,6 @@ const AnimationImageLink = ({ imageSrc, to, name }) => {
       </Link>
     </div>
   )
-}
-
-AnimationImageLink.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
-  to: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
 }
 
 export default AnimationImageLink

@@ -1,9 +1,10 @@
 /** @jsx jsx */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
-import { jsx, css } from "theme-ui"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
@@ -40,7 +41,27 @@ const PosedColorModeButton = posed.button({
   },
 })
 
-const MenuBar = ({ menuStatus, setMenuStatus, colorMode, setColorMode }) => {
+interface SetMenuStatusFn {
+  (status: boolean): void
+}
+
+interface SetColorModeFn {
+  (): void
+}
+
+interface MenuBarProps {
+  menuStatus: boolean
+  setMenuStatus: SetMenuStatusFn
+  colorMode: string
+  setColorMode: SetColorModeFn
+}
+
+const MenuBar: React.FunctionComponent<MenuBarProps> = ({
+  menuStatus,
+  setMenuStatus,
+  colorMode,
+  setColorMode,
+}) => {
   useGetColorMode({ setColorMode })
 
   return (

@@ -3,7 +3,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable react/no-this-in-sfc */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import * as THREE from "three"
 import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"

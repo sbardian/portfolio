@@ -50,6 +50,14 @@ module.exports = {
         dataset: "portfolio",
       },
     },
+    {
+      resolve: `gatsby-plugin-typescript`,
+      options: {
+        // isTSX: true,
+        jsxPragma: `jsx`,
+        // allExtensions: true,
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-theme-ui`,

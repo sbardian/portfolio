@@ -1,16 +1,30 @@
 /** @jsx jsx */
-// eslint-disable-next-line
-import React from "react"
-import PropTypes from "prop-types"
+import * as React from "react"
 import { findIndex } from "lodash"
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 
-const AnimationNav = ({ animations, current }) => {
+interface AnimationNavProps {
+  animations: [
+    {
+      title: string
+      to: string
+    }
+  ]
+  current: {
+    title: string
+    to: string
+  }
+}
+
+const AnimationNav: React.FunctionComponent<AnimationNavProps> = ({
+  animations,
+  current,
+}) => {
   const currentIndex = findIndex(
     animations,
-    animation => animation.title === current.title
+    (animation: { title: string }) => animation.title === current.title
   )
 
   let next = currentIndex + 1
@@ -60,19 +74,6 @@ const AnimationNav = ({ animations, current }) => {
       </div>
     </div>
   )
-}
-
-AnimationNav.propTypes = {
-  animations: PropTypes.arrayOf(
-    PropTypes.shape({
-      to: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-  current: PropTypes.shape({
-    to: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
 }
 
 export default AnimationNav

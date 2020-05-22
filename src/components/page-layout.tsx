@@ -1,15 +1,25 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
-import React from "react"
-import PropTypes from "prop-types"
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import Header from "./header"
 import Footer from "./footer"
 
-const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
+interface PageLayoutProps {
+  children: React.ReactNode
+  showFooter?: boolean
+  useFullScreen?: boolean
+}
+
+const PageLayout: React.FunctionComponent<PageLayoutProps> = ({
+  children,
+  showFooter = true,
+  useFullScreen = false,
+}) => {
   const {
     site: { siteMetadata },
   } = useStaticQuery(graphql`
@@ -52,16 +62,16 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
       </Helmet>
       <Header />
       <div
-        sx={{
-          "@media (min-width: 1035px)": {
-            width: useFullScreen ? null : "1000px",
-          },
-          width: useFullScreen ? null : "95%",
-          justifySelf: "center",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gridGap: 3,
-        }}
+        css={css`
+          @media (min-width: 1035px) {
+            width: ${useFullScreen ? null : "1000px"};
+          }
+          width: ${useFullScreen ? null : "95%"};
+          justify-self: center;
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-gap: 3;
+        `}
       >
         {children}
       </div>
@@ -71,15 +81,3 @@ const PageLayout = ({ children, showFooter = true, useFullScreen = false }) => {
 }
 
 export default PageLayout
-
-PageLayout.defaultProps = {
-  children: () => {},
-  showFooter: true,
-  useFullScreen: false,
-}
-
-PageLayout.propTypes = {
-  showFooter: PropTypes.bool,
-  children: PropTypes.node,
-  useFullScreen: PropTypes.bool,
-}

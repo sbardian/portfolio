@@ -1,9 +1,8 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import { jsx } from "theme-ui"
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 
 const ArticleWrapper = styled.article`
@@ -40,7 +39,17 @@ const Dark = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
-const Article = ({ type, children, name }) => {
+interface ArticleProps {
+  children: React.ReactNode
+  type?: string
+  name?: string
+}
+
+const Article: React.FunctionComponent<ArticleProps> = ({
+  type,
+  children,
+  name,
+}) => {
   return (
     <ArticleWrapper
       sx={{
@@ -85,15 +94,3 @@ const Article = ({ type, children, name }) => {
 }
 
 export default Article
-
-Article.defaultProps = {
-  type: undefined,
-  children: () => {},
-  name: "",
-}
-
-Article.propTypes = {
-  type: PropTypes.string,
-  children: PropTypes.node,
-  name: PropTypes.string,
-}

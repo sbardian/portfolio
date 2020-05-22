@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable-next-line */
-import React from "react"
+import * as React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
@@ -40,11 +40,17 @@ import reactrouter from "../images/reactrouter.png"
 import graphql from "../images/graphql.png"
 import cypress from "../images/cypress.png"
 
-const TechImage = styled.img`
+const TechImage = styled("img")`
   width: 48px;
 `
 
-const Technologies = ({ technologies = [] }) => {
+interface TechnologiesProps {
+  technologies?: Array<string>
+}
+
+const Technologies: React.FunctionComponent<TechnologiesProps> = ({
+  technologies = [],
+}) => {
   return (
     <div
       sx={{
@@ -57,7 +63,7 @@ const Technologies = ({ technologies = [] }) => {
         boxShadow: "0px 3px 5px 0px rgba(0, 0, 0, 0.75)",
       }}
     >
-      {technologies.sort().map(tech => {
+      {technologies.sort().map((tech: string) => {
         if (tech === "react") {
           return <TechImage key={tech} src={react} alt="react" title="React" />
         }

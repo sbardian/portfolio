@@ -1,8 +1,7 @@
 /** @jsx jsx */
-/* eslint-disable react/jsx-pascal-case */
-// eslint-disable-next-line
-import React from "react"
-import { jsx, css, Styled } from "theme-ui"
+import * as React from "react"
+import { jsx, Styled } from "theme-ui"
+import { css } from "@emotion/core"
 import Gravatar from "react-gravatar"
 
 const Avatar = () => {
@@ -25,7 +24,6 @@ const Avatar = () => {
       </Styled.h1>
       <a
         href="https://github.com/sbardian"
-        alt="Github"
         title="Github"
         target="_blank"
         rel="noopener noreferrer"

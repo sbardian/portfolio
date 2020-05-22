@@ -1,7 +1,7 @@
-import React from "react"
+import * as React from "react"
 import { window } from "browser-monads"
 
-export default current => {
+export default (current: number) => {
   const [menuStatus, setMenuStatus] = React.useState(true)
 
   React.useEffect(() => {

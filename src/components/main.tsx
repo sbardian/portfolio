@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
-// eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"
@@ -60,7 +59,6 @@ const Main = () => {
           and share some of the books I have read recently (
           <Styled.a
             href="https://sbardian-books.netlify.com"
-            alt="Books"
             target="_blank"
             rel="noopener noreferrer"
           >

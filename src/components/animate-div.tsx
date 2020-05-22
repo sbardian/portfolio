@@ -1,5 +1,5 @@
 /* eslint-disable-next-line */
-import React from "react"
+import * as React from "react"
 import posed from "react-pose"
 
 export default posed.div({

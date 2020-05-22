@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
-import React from "react"
+import * as React from "react"
 import { document } from "browser-monads"
 
-export default ids => {
+export default (ids: []) => {
   const [top, setTop] = React.useState(0)
   const [elVisible, setElVisible] = React.useState({})
 
@@ -13,8 +13,8 @@ export default ids => {
   })
 
   React.useEffect(() => {
-    let newObj
-    ids.forEach(id => {
+    let newObj: {}
+    ids.forEach((id) => {
       if (elVisible[id] === undefined) {
         newObj = { ...newObj, [id]: true }
         return

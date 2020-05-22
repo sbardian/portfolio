@@ -1,6 +1,6 @@
 /** @jsx jsx */
 // eslint-disable-next-line
-import React from "react"
+import * as React from "react"
 import { jsx, useColorMode } from "theme-ui"
 import { window } from "browser-monads"
 import MenuBar from "./menu-bar"
@@ -12,7 +12,7 @@ const Menu = () => {
   const [colorMode, setColorMode] = useColorMode()
 
   return (
-    <>
+    <React.Fragment>
       <MenuBar
         menuStatus={menuStatus}
         setMenuStatus={setMenuStatus}
@@ -20,7 +20,7 @@ const Menu = () => {
         setColorMode={setColorMode}
       />
       <MenuButtons menuStatus={menuStatus} />
-    </>
+    </React.Fragment>
   )
 }
 
