@@ -10,7 +10,7 @@ import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
 import useGetColorMode from "./hooks/useGetColorMode"
 
-const ButtonBar = styled.div`
+const ButtonBar = styled("div")`
   display: grid;
   grid-gap: 20px;
   grid-template-columns: auto 1fr auto;

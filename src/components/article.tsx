@@ -5,7 +5,7 @@ import * as React from "react"
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 
-const ArticleWrapper = styled.article`
+const ArticleWrapper = styled("article")`
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -13,7 +13,7 @@ const ArticleWrapper = styled.article`
   justify-content: center;
 `
 
-const Generic = styled.div`
+const Generic = styled("div")`
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -21,7 +21,7 @@ const Generic = styled.div`
   margin: 20px 20px;
 `
 
-const Light = styled.div`
+const Light = styled("div")`
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -30,7 +30,7 @@ const Light = styled.div`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
-const Dark = styled.div`
+const Dark = styled("div")`
   padding: 20px;
   display: flex;
   flex-direction: column;
