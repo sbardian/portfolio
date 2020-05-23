@@ -120,7 +120,7 @@ const MenuButtons = ({ menuStatus }) => {
         alignContent: "start",
         "@media (max-width: 520px)": {
           display: "grid",
-          gridGap: "20px",
+          gap: "20px",
           minHeight: "0px",
           gridTemplateColumns: "minmax(200px, 1fr)",
           gridTemplateRows: "repeat(auto-fit)",

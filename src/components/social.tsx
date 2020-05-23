@@ -1,15 +1,14 @@
 /** @jsx jsx */
-import * as React from "react"
 import { jsx } from "theme-ui"
 import { FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa"
 
-const SocialIcons = () => {
+const SocialIcons: React.FC = () => {
   return (
     <div
       sx={{
         paddingBottom: 3,
         display: "grid",
-        gridGap: "20px",
+        gap: "20px",
         gridTemplateColumns: "35px 35px 35px",
         justifyItems: "start",
       }}

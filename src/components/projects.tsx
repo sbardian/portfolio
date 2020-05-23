@@ -147,7 +147,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <div
                       css={{
                         display: "grid",
-                        gridGap: "20px",
+                        grid: "20px",
                         gridTemplateColumns: "auto auto",
                         justifyContent: "end",
                       }}

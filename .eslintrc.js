@@ -1,9 +1,9 @@
 module.exports = {
   extends: [
     "airbnb",
-    "prettier/@typescript-eslint",
-    "prettier/react",
     "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint",
   ],
   plugins: ["emotion", "react", "prettier", "@typescript-eslint"],
   env: {

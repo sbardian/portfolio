@@ -11,8 +11,7 @@
     "serve": "gatsby serve --port 8000",
     "develop": "gatsby develop",
     "lint": "eslint .",
-    "test": "jest .",
-    "ts": "tsc"
+    "test": "jest ."
   },
   "keywords": [
     "gatsby"

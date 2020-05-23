@@ -56,7 +56,7 @@ const Technologies: React.FunctionComponent<TechnologiesProps> = ({
       sx={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit, 48px)",
-        gridGap: 3,
+        gap: 3,
         justifyContent: "center",
         background: "#e1e1e1",
         padding: 3,

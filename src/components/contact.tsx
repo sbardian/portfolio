@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import * as React from 'react'
+import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import Social from "./social"
@@ -19,7 +19,7 @@ export default () => (
       action="/success"
       sx={{
         display: "grid",
-        gridGap: "20px",
+        grid: "20px",
         gridTemplateColumns: "1fr",
       }}
     >
@@ -70,7 +70,7 @@ export default () => (
       <div
         sx={{
           display: "grid",
-          gridGap: 3,
+          grid: 3,
           height: "250px",
         }}
       >
