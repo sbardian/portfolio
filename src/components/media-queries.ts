@@ -1,44 +1,6 @@
-// Adapted from https://emotion.sh/docs/media-queries
-/** @jsx jsx */
-import { css, SerializedStyles } from "@emotion/core"
-import * as CSS from "csstype"
+// Source: https://github.com/wKovacs64/pwl/blob/bd79791b2fa54c14de186b64203f9350a9bea986/src/utils/mq.ts
 
-// const breakpoints = {
-//   // mobile-first, so there is no 'xs' for portrait phones
-//   sm: 576, // landscape phones
-//   md: 768, // tablets
-//   lg: 992, // landscape tablets and desktops
-//   xl: 1200, // extra large desktops
-// }
-
-// const mq = Object.keys(breakpoints).reduce((accumulator, label) => {
-//   const prefix = typeof breakpoints[label] === "string" ? "" : "max-width:"
-//   const suffix = typeof breakpoints[label] === "string" ? "" : "px"
-//   accumulator[label] = (cls) =>
-//     css`
-//       @media (${prefix + breakpoints[label] + suffix}) {
-//         ${cls};
-//       }
-//     `
-//   return accumulator
-// }, {})
-
-// export default mq
-
-interface BreackPoints {
-  [k: string]: number
-}
-
-interface BreackPointsFn {
-  (cls: any): SerializedStyles
-}
-
-interface MQ {
-  [k: string]: any
-}
-
-// const breakpoints: BreackPoints = {
-const breakpoints: BreackPoints = {
+const breakpointMap = {
   // mobile-first, so there is no 'xs' for portrait phones
   sm: 576, // landscape phones
   md: 768, // tablets
@@ -46,19 +8,15 @@ const breakpoints: BreackPoints = {
   xl: 1200, // extra large desktops
 }
 
-const mq: MQ = Object.keys(breakpoints).reduce(
-  (accumulator: { [k: string]: BreackPointsFn }, label) => {
-    const prefix = typeof breakpoints[label] === "string" ? "" : "max-width:"
-    const suffix = typeof breakpoints[label] === "string" ? "" : "px"
-    accumulator[label] = (cls: CSS.Properties) =>
-      css`
-        @media (${prefix + breakpoints[label] + suffix}) {
-          ${cls};
-        }
-      `
-    return accumulator
-  },
-  {}
-)
+type Breakpoints = typeof breakpointMap
+type BreakpointLabel = keyof Breakpoints
+type MediaQueries = { [BL in BreakpointLabel]: string }
+
+const mq: MediaQueries = (Object.entries(breakpointMap) as Array<
+  [BreakpointLabel, Breakpoints[BreakpointLabel]]
+>).reduce<Partial<MediaQueries>>((accumulator, [label, bp]) => {
+  accumulator[label] = `@media (min-width: ${bp}px)`
+  return accumulator
+}, {}) as MediaQueries
 
 export default mq

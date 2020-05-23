@@ -3,7 +3,6 @@
 // eslint-disable-next-line
 import * as React from "react"
 import { jsx, Styled } from "theme-ui"
-import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { FaGithub, FaRegEye } from "react-icons/fa"
@@ -12,28 +11,15 @@ import HeaderArticle from "./article"
 import Technologies from "./technologies"
 import mq from "./media-queries"
 
-const ProjectsSection = styled("section")`
-  ${mq.sm(css`
-    grid-template-columns: 1fr;
-  `)};
-`
+const ProjectsSection = styled("section")``
 
 const ProjectWrapper = styled("div")`
   margin: 0 20px 20px 20px;
-  ${mq.sm(css`
-    grid-template-columns: 1fr;
-  `)};
 `
 
 const Article = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 40px;
-  ${mq.md(css`
-    width: inherit;
-  `)}
-  ${mq.sm(css`
-    width: inherit;
-  `)}
 `
 
 const ProjectTitle = styled("h1")`
@@ -43,27 +29,16 @@ const ProjectTitle = styled("h1")`
 `
 
 const ProjectImageWrapper = styled("div")`
-  height: 380px;
   overflow: hidden;
-  ${mq.md(css`
-    width: 100%;
-    left: 0px;
-    height: 220px;
-    border-radius: 0px;
-    box-shadow: none;
-  `)}
-  ${mq.sm(css`
-    width: 100%;
-    left: 0px;
-    height: 220px;
-    border-radius: 0px;
-    box-shadow: none;
-  `)}
+  height: 220px;
+  ${mq.md} {
+    height: 380px;
+  }
 `
 
 const ProjectInfoWrapper = styled("div")`
   display: grid;
-  grid-gap: 20px;
+  gap: 20px;
   grid-template-columns: 1fr;
   padding: 20px;
 `
