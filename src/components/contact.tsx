@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import Social from "./social"

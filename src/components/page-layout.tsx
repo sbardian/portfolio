@@ -15,7 +15,7 @@ interface PageLayoutProps {
   useFullScreen?: boolean
 }
 
-const PageLayout: React.FunctionComponent<PageLayoutProps> = ({
+const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   showFooter = true,
   useFullScreen = false,

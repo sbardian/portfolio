@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from "react"
 import { jsx, css } from "@emotion/core"
 import { Link } from "gatsby"
 
@@ -9,7 +8,7 @@ interface AnimationImageLinkProps {
   name: string
 }
 
-const AnimationImageLink: React.FunctionComponent<AnimationImageLinkProps> = ({
+const AnimationImageLink: React.FC<AnimationImageLinkProps> = ({
   imageSrc,
   to,
   name,

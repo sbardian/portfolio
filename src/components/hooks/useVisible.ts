@@ -13,7 +13,7 @@ export default (ids: []) => {
   })
 
   React.useEffect(() => {
-    let newObj: {}
+    let newObj: {} = {}
     ids.forEach((id) => {
       if (elVisible[id] === undefined) {
         newObj = { ...newObj, [id]: true }

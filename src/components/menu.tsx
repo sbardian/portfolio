@@ -7,7 +7,7 @@ import MenuBar from "./menu-bar"
 import MenuButtons from "./menu-buttons"
 import useShowMenu from "./hooks/useShowMenu"
 
-const Menu = () => {
+const Menu: React.FC = () => {
   const { menuStatus, setMenuStatus } = useShowMenu(window.innerWidth)
   const [colorMode, setColorMode] = useColorMode()
 

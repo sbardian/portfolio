@@ -1,6 +1,5 @@
 /** @jsx jsx */
 // eslint-disable-next-line
-import * as React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
@@ -45,18 +44,14 @@ interface SetMenuStatusFn {
   (status: boolean): void
 }
 
-interface SetColorModeFn {
-  (): void
-}
-
 interface MenuBarProps {
   menuStatus: boolean
   setMenuStatus: SetMenuStatusFn
   colorMode: string
-  setColorMode: SetColorModeFn
+  setColorMode: React.Dispatch<React.SetStateAction<string>>
 }
 
-const MenuBar: React.FunctionComponent<MenuBarProps> = ({
+const MenuBar: React.FC<MenuBarProps> = ({
   menuStatus,
   setMenuStatus,
   colorMode,

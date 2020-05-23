@@ -1,7 +1,7 @@
 import * as React from "react"
 import Article from "./article"
 
-export default () => (
+const Success: React.FC = () => (
   <Article type="dark">
     <p>
       Thanks, your message has been sent successfully! I will get back to you as
@@ -9,3 +9,5 @@ export default () => (
     </p>
   </Article>
 )
+
+export default Success

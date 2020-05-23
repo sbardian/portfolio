@@ -1,11 +1,8 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-props-no-spreading */
-// eslint-disable-next-line
-import * as React from "react"
-import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import posed from "react-pose"
-import { Link } from "gatsby"
+import { Link, GatsbyLinkProps } from "gatsby"
 import { GoRepo } from "react-icons/go"
 import { MdMovieFilter, MdMessage } from "react-icons/md"
 
@@ -31,7 +28,7 @@ const PosedThinLI = posed.li({
   closed: { opacity: 0, duration: 0 },
 })
 
-const PosedStyledThinLI = ({ children }) => (
+const PosedStyledThinLI: React.FC = ({ children }) => (
   <PosedThinLI
     sx={{
       borderColor: "primary",
@@ -70,11 +67,7 @@ const PosedStyledThinLI = ({ children }) => (
   </PosedThinLI>
 )
 
-PosedStyledThinLI.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-const StyledLink = (props) => (
+const StyledLink: React.FC<GatsbyLinkProps<null>> = ({ ref, ...props }) => (
   <Link
     {...props}
     sx={{
@@ -104,7 +97,7 @@ const StyledLink = (props) => (
   />
 )
 
-const MenuButtons = ({ menuStatus }) => {
+const MenuButtons: React.FC<{ menuStatus: boolean }> = ({ menuStatus }) => {
   return (
     <PosedThinUL
       pose={menuStatus ? "open" : "closed"}
@@ -180,10 +173,6 @@ const MenuButtons = ({ menuStatus }) => {
       </PosedStyledThinLI>
     </PosedThinUL>
   )
-}
-
-MenuButtons.propTypes = {
-  menuStatus: PropTypes.bool.isRequired,
 }
 
 export default MenuButtons

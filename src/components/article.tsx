@@ -1,7 +1,4 @@
 /** @jsx jsx */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-// eslint-disable-next-line
-import * as React from "react"
 import { jsx } from "theme-ui"
 import styled from "@emotion/styled"
 
@@ -45,11 +42,7 @@ interface ArticleProps {
   name?: string
 }
 
-const Article: React.FunctionComponent<ArticleProps> = ({
-  type,
-  children,
-  name,
-}) => {
+const Article: React.FC<ArticleProps> = ({ type, children, name }) => {
   return (
     <ArticleWrapper
       sx={{

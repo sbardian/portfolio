@@ -1,7 +1,4 @@
 /** @jsx jsx */
-/* eslint-disable-next-line */
-import * as React from "react"
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
 import cSharp from "../images/c-sharp.svg"
@@ -48,9 +45,7 @@ interface TechnologiesProps {
   technologies?: Array<string>
 }
 
-const Technologies: React.FunctionComponent<TechnologiesProps> = ({
-  technologies = [],
-}) => {
+const Technologies: React.FC<TechnologiesProps> = ({ technologies = [] }) => {
   return (
     <div
       sx={{
@@ -267,14 +262,6 @@ const Technologies: React.FunctionComponent<TechnologiesProps> = ({
       })}
     </div>
   )
-}
-
-Technologies.defaultProps = {
-  technologies: [],
-}
-
-Technologies.propTypes = {
-  technologies: PropTypes.arrayOf(PropTypes.string),
 }
 
 export default Technologies

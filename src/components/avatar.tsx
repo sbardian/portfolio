@@ -1,10 +1,9 @@
 /** @jsx jsx */
-import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import Gravatar from "react-gravatar"
 
-const Avatar = () => {
+const Avatar: React.FC = () => {
   return (
     <div
       sx={{

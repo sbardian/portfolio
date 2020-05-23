@@ -1,6 +1,5 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
-import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import { css } from "@emotion/core"
 import { Link } from "gatsby"

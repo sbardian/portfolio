@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"
 import duckImage from "../images/duck-image.png"
 import oberynImage from "../images/oberyn-image.png"
 
-const Animations = () => {
+const Animations: React.FC = () => {
   return (
     <div>
       <Article>

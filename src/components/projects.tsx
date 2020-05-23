@@ -113,10 +113,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
         {projects.edges.map((project, index) => {
           return (
             <div key={project.node.id}>
-              <Fade
-                right={parseInt(index, 10) % 2 !== 0}
-                left={parseInt(index, 10) % 2 === 0}
-              >
+              <Fade right={index % 2 !== 0} left={index % 2 === 0}>
                 <Article
                   sx={{
                     backgroundColor: "backgroundDark",

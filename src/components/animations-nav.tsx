@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import * as React from "react"
 import { findIndex } from "lodash"
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 import { jsx, css } from "@emotion/core"
@@ -18,10 +17,7 @@ interface AnimationNavProps {
   }
 }
 
-const AnimationNav: React.FunctionComponent<AnimationNavProps> = ({
-  animations,
-  current,
-}) => {
+const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
   const currentIndex = findIndex(
     animations,
     (animation: { title: string }) => animation.title === current.title

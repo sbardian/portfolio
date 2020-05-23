@@ -1,6 +1,4 @@
 /** @jsx jsx */
-// eslint-disable-next-line
-import * as React from "react"
 import { jsx } from "theme-ui"
 import gatsby from "../images/gatsby.png"
 
