@@ -1,7 +1,3 @@
-/** @jsx jsx */
-// eslint-disable-next-line
-import React from "react"
-import { jsx } from "@emotion/core"
 import PageLayout from "../components/page-layout"
 import Animations from "../components/animations"
 import "../assets/main.css"
