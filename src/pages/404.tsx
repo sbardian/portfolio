@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-pascal-case */
-import React from "react"
+import * as React from "react"
 import { Styled } from "theme-ui"
 import PageLayout from "../components/page-layout"
 

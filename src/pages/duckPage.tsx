@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import Duck from "../components/duck"
 import PageLayout from "../components/page-layout"
 import "normalize.css"

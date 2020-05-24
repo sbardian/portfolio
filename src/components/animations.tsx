@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/* eslint-disable react/jsx-pascal-case */
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"

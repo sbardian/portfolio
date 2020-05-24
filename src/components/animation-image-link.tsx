@@ -1,5 +1,6 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
 interface AnimationImageLinkProps {

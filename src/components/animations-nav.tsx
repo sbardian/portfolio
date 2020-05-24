@@ -1,14 +1,15 @@
 /** @jsx jsx */
 import { findIndex } from "lodash"
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
-import { jsx, css } from "@emotion/core"
+import { css } from "@emotion/core"
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 interface AnimationNavProps {
   animations: [
     {
-      title: string
       to: string
+      title: string
     }
   ]
   current: {

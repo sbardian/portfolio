@@ -1,3 +1,4 @@
+// @ts-nocheck
 /** @jsx jsx */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
@@ -8,7 +9,8 @@ import * as THREE from "three"
 import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap"
-import { jsx, css } from "@emotion/core"
+import { css } from "@emotion/core"
+import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
 
 const OberynAnimation = ({ animations }) => {

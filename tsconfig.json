@@ -8,5 +8,5 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "exclude": [".cache", "public", "src/components/oberyn.js"]
+  "exclude": [".cache", "public"]
 }

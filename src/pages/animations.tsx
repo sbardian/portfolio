@@ -1,3 +1,4 @@
+import * as React from "react"
 import PageLayout from "../components/page-layout"
 import Animations from "../components/animations"
 import "../assets/main.css"

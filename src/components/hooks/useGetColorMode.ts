@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 import * as React from "react"
 import { window } from "browser-monads"
 

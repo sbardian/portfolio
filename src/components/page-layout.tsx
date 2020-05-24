@@ -1,7 +1,4 @@
 /** @jsx jsx */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-// eslint-disable-next-line
-import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { jsx } from "theme-ui"

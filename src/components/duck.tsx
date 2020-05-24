@@ -1,11 +1,15 @@
 /** @jsx jsx */
 import React from "react"
-import PropTypes from "prop-types"
-import { jsx, css } from "@emotion/core"
+import { jsx } from "theme-ui"
+import { css } from "@emotion/core"
 import AnimationsNav from "./animations-nav"
 import createAnimation from "./animations/duck/index"
 
-const DuckAnimation = ({ animations }) => {
+interface DuckAnimationProps {
+  animations: Array<{ title: string; to: string }>
+}
+
+const DuckAnimation: React.FC<DuckAnimationProps> = ({ animations }) => {
   React.useEffect(() => {
     createAnimation()
   })
@@ -31,15 +35,6 @@ const DuckAnimation = ({ animations }) => {
       />
     </div>
   )
-}
-
-DuckAnimation.propTypes = {
-  animations: PropTypes.arrayOf(
-    PropTypes.shape({
-      to: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 }
 
 export default DuckAnimation
