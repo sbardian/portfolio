@@ -119,7 +119,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <div
                       css={{
                         display: "grid",
-                        grid: "20px",
+                        gap: "20px",
                         gridTemplateColumns: "auto auto",
                         justifyContent: "end",
                       }}

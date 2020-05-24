@@ -18,7 +18,7 @@ export default () => (
       action="/success"
       sx={{
         display: "grid",
-        grid: "20px",
+        gap: "20px",
         gridTemplateColumns: "1fr",
       }}
     >
@@ -69,7 +69,7 @@ export default () => (
       <div
         sx={{
           display: "grid",
-          grid: 3,
+          gap: 3,
           height: "250px",
         }}
       >

@@ -36,7 +36,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     <div
       sx={{
         display: "grid",
-        grid: 3,
+        gap: 3,
         gridTemplateRows: "auto 1fr auto",
         gridTemplateColumns: "1fr",
         justifyContent: "center",
