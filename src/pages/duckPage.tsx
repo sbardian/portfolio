@@ -4,8 +4,10 @@ import PageLayout from "../components/page-layout"
 import "normalize.css"
 import "../assets/main.css"
 
+type Animations = Array<{ to: string; title: string }>
+
 const DuckPage = () => {
-  const animations = [
+  const animations: Animations = [
     { to: "/oberynPage", title: "Oberyn" },
     { to: "/duckPage", title: "Duck" },
   ]

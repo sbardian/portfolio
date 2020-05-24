@@ -6,12 +6,11 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 interface AnimationNavProps {
-  animations: [
-    {
-      to: string
-      title: string
-    }
-  ]
+  animations: Array<{
+    to: string
+    title: string
+  }>
+
   current: {
     title: string
     to: string
@@ -21,7 +20,7 @@ interface AnimationNavProps {
 const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
   const currentIndex = findIndex(
     animations,
-    (animation: { title: string }) => animation.title === current.title
+    (animation) => animation.title === current.title
   )
 
   let next = currentIndex + 1
