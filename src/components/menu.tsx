@@ -1,5 +1,4 @@
 /** @jsx jsx */
-// eslint-disable-next-line
 import * as React from "react"
 import { jsx, useColorMode } from "theme-ui"
 import { window } from "browser-monads"
