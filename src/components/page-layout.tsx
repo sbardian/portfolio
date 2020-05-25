@@ -2,7 +2,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
 import { jsx } from "theme-ui"
-import { css } from "@emotion/core"
 import Header from "./header"
 import Footer from "./footer"
 
@@ -59,16 +58,16 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       </Helmet>
       <Header />
       <div
-        css={css`
-          @media (min-width: 1035px) {
-            width: ${useFullScreen ? null : "1000px"};
-          }
-          width: ${useFullScreen ? null : "95%"};
-          justify-self: center;
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-gap: 3;
-        `}
+        css={{
+          width: `${useFullScreen ? null : "95%"}`,
+          justifySelf: "center",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: "3",
+          "@media (min-width: 1035px)": {
+            width: `${useFullScreen ? null : "1000px"}`,
+          },
+        }}
       >
         {children}
       </div>

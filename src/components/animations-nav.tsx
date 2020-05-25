@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { findIndex } from "lodash"
 import { GoChevronRight, GoChevronLeft } from "react-icons/go"
-import { css } from "@emotion/core"
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
@@ -34,35 +33,35 @@ const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
 
   return (
     <div
-      css={css`
-        display: grid;
-        grid-auto-rows: 50px 150px;
-        justify-items: center;
-        font-size: 28pt;
-        top: 450px;
-      `}
+      css={{
+        display: "grid",
+        gridAutoRows: "50px 50px",
+        justifyItems: "center",
+        fontSize: "28pt",
+        top: "450px",
+      }}
     >
       <Link to={`${current.to}`}>{current.title}</Link>
       <div
-        css={css`
-          display: grid;
-          grid-template-columns: auto 800px auto;
-          justify-content: space-between;
-        `}
+        css={{
+          display: "grid",
+          gridTemplateColumns: "auto 800px auto",
+          justifyContent: "space-between",
+        }}
       >
         <Link
-          css={css`
-            color: white;
-          `}
+          css={{
+            color: "white",
+          }}
           to={animations[previous].to}
         >
           <GoChevronLeft size={100} />
         </Link>
         <div />
         <Link
-          css={css`
-            color: white;
-          `}
+          css={{
+            color: "white",
+          }}
           to={animations[next].to}
         >
           <GoChevronRight size={100} />

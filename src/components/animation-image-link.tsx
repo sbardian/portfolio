@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
 
 interface AnimationImageLinkProps {
@@ -16,26 +15,26 @@ const AnimationImageLink: React.FC<AnimationImageLinkProps> = ({
 }) => {
   return (
     <div
-      css={css`
-        display: flex;
-        margin: 10px;
-      `}
+      css={{
+        display: "flex",
+        margin: "10px",
+      }}
     >
       <Link
-        css={css`
-          font-size: 24pt;
-          color: white;
-        `}
+        css={{
+          fontSize: "24pt",
+          color: "white",
+        }}
         to={to}
       >
         <img
-          css={css`
-            margin: 0;
-            background-position: center;
-            background-size: cover;
-            width: 100%;
-            height: 450px;
-          `}
+          css={{
+            margin: "0px",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            width: "100%",
+            height: "450px",
+          }}
           src={imageSrc}
           alt={name}
         />

@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
 import { jsx, Styled } from "theme-ui"
-import { css } from "@emotion/core"
 import { Link } from "gatsby"
 import Article from "./article"
 import Technologies from "./technologies"
@@ -10,23 +9,23 @@ const Main = () => {
   return (
     <div>
       <div
-        css={css`
-          margin: 0 20px 0 20px;
-        `}
+        css={{
+          margin: "0 20px 0 20px",
+        }}
       >
         <Styled.h1
-          css={css`
-            font-size: 3rem;
-            margin-bottom: 0.04rem;
-          `}
+          css={{
+            fontSize: "3rem",
+            marginBottom: "0.04rem",
+          }}
         >
           Brian Andrews
         </Styled.h1>
         <Styled.h5
-          css={css`
-            margin-top: 0.5rem;
-            color: white;
-          `}
+          css={{
+            marginTop: "0.5rem",
+            color: "white",
+          }}
         >
           portfolio
         </Styled.h5>

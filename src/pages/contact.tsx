@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import Contact from "../components/contact"
 import PageLayout from "../components/page-layout"
 import "normalize.css"

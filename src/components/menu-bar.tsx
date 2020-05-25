@@ -3,7 +3,6 @@
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
-import { css } from "@emotion/core"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
@@ -62,12 +61,12 @@ const MenuBar: React.FC<MenuBarProps> = ({
   return (
     <ButtonBar>
       <div
-        css={css`
-          display: "block";
-          @media (max-width: 520px) {
-            display: none;
-          }
-        `}
+        css={{
+          display: "block",
+          "@media (max-width: 520px)": {
+            display: "none",
+          },
+        }}
       />
       <PosedMenuButton
         pose={menuStatus ? "open" : "closed"}

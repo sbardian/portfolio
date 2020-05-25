@@ -9,7 +9,6 @@ import * as THREE from "three"
 import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap"
-import { css } from "@emotion/core"
 import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
 
@@ -808,21 +807,21 @@ const OberynAnimation = ({ animations }) => {
 
   return (
     <div
-      css={css`
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      `}
+      css={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <AnimationsNav
         animations={animations}
         current={{ to: "/oberynPage", title: "Oberyn" }}
       />
       <canvas
-        css={css`
-          background: transparent;
-        `}
+        css={{
+          background: "transparent",
+        }}
         id="ob-scene"
       />
     </div>

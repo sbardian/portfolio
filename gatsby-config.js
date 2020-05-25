@@ -53,13 +53,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typescript`,
       options: {
-        // isTSX: true,
+        isTSX: true,
         jsxPragma: `jsx`,
-        // allExtensions: true,
+        allExtensions: true,
       },
     },
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
-    `gatsby-plugin-theme-ui`,
   ],
 }

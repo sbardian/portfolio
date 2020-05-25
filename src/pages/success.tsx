@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 import PageLayout from "../components/page-layout"
 import Success from "../components/success"
 import "normalize.css"

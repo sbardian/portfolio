@@ -1,7 +1,5 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-pascal-case */
-// eslint-disable-next-line
-import * as React from "react"
 import { jsx, Styled } from "theme-ui"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
