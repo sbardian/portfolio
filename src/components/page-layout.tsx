@@ -58,7 +58,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
       </Helmet>
       <Header />
       <div
-        css={{
+        sx={{
           width: `${useFullScreen ? null : "95%"}`,
           justifySelf: "center",
           display: "grid",

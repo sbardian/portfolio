@@ -15,7 +15,7 @@ const DuckAnimation: React.FC<DuckAnimationProps> = ({ animations }) => {
 
   return (
     <div
-      css={{
+      sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -27,7 +27,7 @@ const DuckAnimation: React.FC<DuckAnimationProps> = ({ animations }) => {
         current={{ to: "/duckPage", title: "Duck" }}
       />
       <canvas
-        css={{
+        sx={{
           background: "transparent",
         }}
         id="ob-scene"

@@ -15,20 +15,20 @@ const AnimationImageLink: React.FC<AnimationImageLinkProps> = ({
 }) => {
   return (
     <div
-      css={{
+      sx={{
         display: "flex",
         margin: "10px",
       }}
     >
       <Link
-        css={{
+        sx={{
           fontSize: "24pt",
           color: "white",
         }}
         to={to}
       >
         <img
-          css={{
+          sx={{
             margin: "0px",
             backgroundPosition: "center",
             backgroundSize: "cover",

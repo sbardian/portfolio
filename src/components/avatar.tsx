@@ -14,7 +14,7 @@ const Avatar: React.FC = () => {
       }}
     >
       <Styled.h1
-        css={{
+        sx={{
           fontSize: "3rem",
           marginBottom: "0.04rem",
         }}
@@ -40,7 +40,7 @@ const Avatar: React.FC = () => {
         />
       </a>
       <Styled.h5
-        css={{
+        sx={{
           marginTop: "0.5rem",
           color: "white",
         }}

@@ -9,12 +9,12 @@ const Main = () => {
   return (
     <div>
       <div
-        css={{
+        sx={{
           margin: "0 20px 0 20px",
         }}
       >
         <Styled.h1
-          css={{
+          sx={{
             fontSize: "3rem",
             marginBottom: "0.04rem",
           }}
@@ -22,7 +22,7 @@ const Main = () => {
           Brian Andrews
         </Styled.h1>
         <Styled.h5
-          css={{
+          sx={{
             marginTop: "0.5rem",
             color: "white",
           }}

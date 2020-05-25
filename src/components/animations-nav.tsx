@@ -33,7 +33,7 @@ const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
 
   return (
     <div
-      css={{
+      sx={{
         display: "grid",
         gridAutoRows: "50px 50px",
         justifyItems: "center",
@@ -43,14 +43,14 @@ const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
     >
       <Link to={`${current.to}`}>{current.title}</Link>
       <div
-        css={{
+        sx={{
           display: "grid",
           gridTemplateColumns: "auto 800px auto",
           justifyContent: "space-between",
         }}
       >
         <Link
-          css={{
+          sx={{
             color: "white",
           }}
           to={animations[previous].to}
@@ -59,7 +59,7 @@ const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
         </Link>
         <div />
         <Link
-          css={{
+          sx={{
             color: "white",
           }}
           to={animations[next].to}

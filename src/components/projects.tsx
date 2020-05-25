@@ -115,7 +115,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       <Technologies technologies={project.node.technologies} />
                     </div>
                     <div
-                      css={{
+                      sx={{
                         display: "grid",
                         gap: "20px",
                         gridTemplateColumns: "auto auto",

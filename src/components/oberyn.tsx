@@ -807,7 +807,7 @@ const OberynAnimation = ({ animations }) => {
 
   return (
     <div
-      css={{
+      sx={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -819,7 +819,7 @@ const OberynAnimation = ({ animations }) => {
         current={{ to: "/oberynPage", title: "Oberyn" }}
       />
       <canvas
-        css={{
+        sx={{
           background: "transparent",
         }}
         id="ob-scene"

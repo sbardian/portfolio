@@ -61,7 +61,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
   return (
     <ButtonBar>
       <div
-        css={{
+        sx={{
           display: "block",
           "@media (max-width: 520px)": {
             display: "none",
