@@ -7,7 +7,7 @@
     "noEmit": true,
     "strict": true,
     "skipLibCheck": true,
-    "noImplicitAny": false
+    "allowJs": true
   },
   "exclude": [".cache", "public", "**/*test.tsx"],
   "include": ["**/*.ts", "**/*.tsx"]
