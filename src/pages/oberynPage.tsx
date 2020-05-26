@@ -5,7 +5,7 @@ import "normalize.css"
 import "../assets/main.css"
 
 const OberynPage = () => {
-  const animations = [
+  const animations: Portfolio.Animations = [
     { to: "/oberynPage", title: "Oberyn" },
     { to: "/duckPage", title: "Duck" },
   ]

@@ -11,7 +11,11 @@ import { TweenMax, Elastic, TimelineMax } from "gsap"
 import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
 
-const OberynAnimation = ({ animations }) => {
+interface OberynAnimationProps {
+  animations: Portfolio.Animations
+}
+
+const OberynAnimation: React.FC<OberynAnimationProps> = ({ animations }) => {
   React.useEffect(() => {
     // setup
     const canvas = document.querySelector("#ob-scene")
