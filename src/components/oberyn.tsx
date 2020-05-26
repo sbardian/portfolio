@@ -6,7 +6,6 @@
 // eslint-disable-next-line
 import * as React from "react"
 import * as THREE from "three"
-import PropTypes from "prop-types"
 // import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap"
 import { jsx } from "theme-ui"
@@ -826,15 +825,6 @@ const OberynAnimation = ({ animations }) => {
       />
     </div>
   )
-}
-
-OberynAnimation.propTypes = {
-  animations: PropTypes.arrayOf(
-    PropTypes.shape({
-      to: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 }
 
 export default OberynAnimation

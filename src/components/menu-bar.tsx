@@ -1,6 +1,5 @@
 /** @jsx jsx */
 // eslint-disable-next-line
-import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import { jsx } from "theme-ui"
 import posed from "react-pose"
@@ -118,13 +117,6 @@ const MenuBar: React.FC<MenuBarProps> = ({
       </PosedColorModeButton>
     </ButtonBar>
   )
-}
-
-MenuBar.propTypes = {
-  menuStatus: PropTypes.bool.isRequired,
-  colorMode: PropTypes.string.isRequired,
-  setColorMode: PropTypes.func.isRequired,
-  setMenuStatus: PropTypes.func.isRequired,
 }
 
 export default MenuBar
