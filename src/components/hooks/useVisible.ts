@@ -7,9 +7,11 @@ export default (ids: []) => {
 
   const body = document.querySelector("body")
 
-  body.addEventListener("scroll", () => {
-    setTop(body.scrollTop)
-  })
+  if (body) {
+    body.addEventListener("scroll", () => {
+      setTop(body.scrollTop)
+    })
+  }
 
   React.useEffect(() => {
     let newObj: {} = {}
@@ -20,6 +22,7 @@ export default (ids: []) => {
       }
       newObj = { ...newObj, [id]: false }
       if (
+        // @ts-ignore: Object is possibly 'null'.
         document.getElementById(id).getBoundingClientRect().top - 80 <=
         window.innerHeight
       ) {
