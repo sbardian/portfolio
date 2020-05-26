@@ -1,8 +1,8 @@
 import * as React from "react"
 import { window } from "browser-monads"
 
-type SetColorMode = {
-  setColorMode: React.Dispatch<React.SetStateAction<string>>
+interface SetColorMode {
+  setColorMode: React.Dispatch<React.SetStateAction<string | null>>
 }
 
 const useGetColorMode = ({ setColorMode }: SetColorMode) => {
