@@ -4,7 +4,7 @@ import Success from "../components/success"
 import "normalize.css"
 import "../assets/main.css"
 
-const ContactPage = () => (
+const ContactPage: React.FC = () => (
   <PageLayout>
     <Success />
   </PageLayout>
