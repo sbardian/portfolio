@@ -12,6 +12,7 @@
   "include": ["**/*.ts", "**/*.tsx"]
   // "include": [
   //   "**/*.d.ts",
+  //   "**/*.tsx"
   //   "src/components/social.tsx",
   //   "src/components/success.tsx",
   //   "src/components/projects.tsx",
@@ -22,7 +23,7 @@
   //   "src/components/menu.tsx",
   //   "src/components/media-queries.tsx",
   //   "src/components/main.tsx",
-  //   "src/components/header.tsx",
+  //   "src/components/header.tsx"
   //   "src/components/footer.tsx",
   //   "src/components/duck.tsx",
   //   "src/components/contact.tsx",
@@ -36,7 +37,7 @@
   //   "src/components/technologies.tsx",
   //   "src/pages/404.tsx",
   //   "src/pages/animations.tsx",
-  //   "src/pages/contact.tsx",
+  //   "src/pages/contact.tsx"
   //   "src/pages/duckPage.tsx",
   //   "src/pages/index.tsx",
   //   "src/pages/oberynPage.tsx",
