@@ -9,7 +9,7 @@
     "skipLibCheck": true,
     "allowJs": true
   },
-  "exclude": [".cache", "public", "**/*test.tsx"],
+  "exclude": [".cache", "public", "**/*test.tsx", "sanityportfolio"],
   "include": ["**/*.ts", "**/*.tsx"]
   // "include": [
   //   "**/*.d.ts",
