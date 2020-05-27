@@ -4,7 +4,7 @@ import PageLayout from "../components/page-layout"
 import "normalize.css"
 import "../assets/main.css"
 
-const ContactPage = () => {
+const ContactPage: React.FC = () => {
   return (
     <PageLayout>
       <Contact />

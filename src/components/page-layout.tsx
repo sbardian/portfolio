@@ -5,20 +5,14 @@ import { jsx } from "theme-ui"
 import Header from "./header"
 import Footer from "./footer"
 
-interface PageLayoutProps {
-  children: React.ReactNode
-  showFooter?: boolean
-  useFullScreen?: boolean
-}
-
-const PageLayout: React.FC<PageLayoutProps> = ({
+const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
   children,
   showFooter = true,
   useFullScreen = false,
 }) => {
   const {
     site: { siteMetadata },
-  } = useStaticQuery(graphql`
+  }: Portfolio.SiteMetadata = useStaticQuery(graphql`
     {
       site {
         siteMetadata {

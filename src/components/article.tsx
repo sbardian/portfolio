@@ -36,13 +36,11 @@ const Dark = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
-interface ArticleProps {
-  children: React.ReactNode
-  type?: string
-  name?: string
-}
-
-const Article: React.FC<ArticleProps> = ({ type, children, name }) => {
+const Article: React.FC<Portfolio.ArticleProps> = ({
+  type,
+  children,
+  name,
+}) => {
   return (
     <ArticleWrapper
       sx={{

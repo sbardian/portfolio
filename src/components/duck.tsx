@@ -4,11 +4,7 @@ import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
 import createAnimation from "./animations/duck/index"
 
-interface DuckAnimationProps {
-  animations: Array<{ title: string; to: string }>
-}
-
-const DuckAnimation: React.FC<DuckAnimationProps> = ({ animations }) => {
+const DuckAnimation: React.FC<Portfolio.AnimationProps> = ({ animations }) => {
   React.useEffect(() => {
     createAnimation()
   })

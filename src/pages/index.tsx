@@ -5,40 +5,7 @@ import Projects from "../components/projects"
 import "normalize.css"
 import "../assets/main.css"
 
-interface ProjectPageProps {
-  data: {
-    allSanityProjects: {
-      edges: [
-        {
-          node: {
-            id: string
-            name: string
-            description: string
-            demoUrl: string
-            repoUrl: string
-            technologies: [string]
-            image: {
-              asset: {
-                fluid: {
-                  base64: string
-                  aspectRatio: number
-                  src: string
-                  srcSet: string
-                  srcWebp: string
-                  srcSetWebp: string
-                  sizes: string
-                }
-              }
-            }
-            rank: number
-          }
-        }
-      ]
-    }
-  }
-}
-
-const ProjectsPage: React.FunctionComponent<ProjectPageProps> = ({
+const ProjectsPage: React.FunctionComponent<Portfolio.ProjectsData> = ({
   data: { allSanityProjects },
 }): React.ReactElement => {
   return (

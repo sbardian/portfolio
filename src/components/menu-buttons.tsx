@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { jsx } from "theme-ui"
 import posed from "react-pose"
+// eslint-disable-next-line
 import { Link, GatsbyLinkProps } from "gatsby"
 import { GoRepo } from "react-icons/go"
 import { MdMovieFilter, MdMessage } from "react-icons/md"
@@ -67,7 +68,7 @@ const PosedStyledThinLI: React.FC = ({ children }) => (
   </PosedThinLI>
 )
 
-const StyledLink: React.FC<GatsbyLinkProps<null>> = ({ ref, ...props }) => (
+const StyledLink: React.FC<Omit<GatsbyLinkProps<null>, "ref">> = (props) => (
   <Link
     {...props}
     sx={{

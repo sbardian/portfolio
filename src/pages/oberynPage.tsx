@@ -4,7 +4,7 @@ import PageLayout from "../components/page-layout"
 import "normalize.css"
 import "../assets/main.css"
 
-const OberynPage = () => {
+const OberynPage: React.FC = () => {
   const animations: Portfolio.Animations = [
     { to: "/oberynPage", title: "Oberyn" },
     { to: "/duckPage", title: "Duck" },

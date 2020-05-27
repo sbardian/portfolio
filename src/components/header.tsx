@@ -3,7 +3,7 @@ import { jsx } from "theme-ui"
 import Menu from "./menu"
 import Avatar from "./avatar"
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <div>
       <Menu />

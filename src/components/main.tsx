@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import Article from "./article"
 import Technologies from "./technologies"
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <div>
       <div

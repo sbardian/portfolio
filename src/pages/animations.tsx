@@ -4,7 +4,7 @@ import Animations from "../components/animations"
 import "../assets/main.css"
 import "normalize.css"
 
-const AnimationsPage = () => {
+const AnimationsPage: React.FC = () => {
   return (
     <PageLayout>
       <Animations />

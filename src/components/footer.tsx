@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import gatsby from "../images/gatsby.png"
 
-export default () => (
+const Footer: React.FC = () => (
   <div
     sx={{
       display: "grid",
@@ -24,3 +24,5 @@ export default () => (
     </a>
   </div>
 )
+
+export default Footer

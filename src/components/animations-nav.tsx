@@ -4,26 +4,17 @@ import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-interface AnimationNavProps {
-  animations: Array<{
-    to: string
-    title: string
-  }>
-
-  current: {
-    title: string
-    to: string
-  }
-}
-
-const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
-  const currentIndex = findIndex(
+const AnimationNav: React.FC<Portfolio.AnimationNavProps> = ({
+  animations,
+  current,
+}) => {
+  const currentIndex: number = findIndex(
     animations,
     (animation) => animation.title === current.title
   )
 
-  let next = currentIndex + 1
-  let previous = currentIndex - 1
+  let next: number = currentIndex + 1
+  let previous: number = currentIndex - 1
   if (previous < 0) {
     previous = animations.length - 1
   }

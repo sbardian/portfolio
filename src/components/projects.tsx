@@ -45,38 +45,7 @@ const ProjectInfo = styled("p")`
   font-size: 1.5rem;
 `
 
-interface ProjectsProps {
-  projects: {
-    edges: [
-      {
-        node: {
-          id: string
-          name: string
-          description: string
-          demoUrl: string
-          repoUrl: string
-          technologies: [string]
-          image: {
-            asset: {
-              fluid: {
-                base64: string
-                aspectRatio: number
-                src: string
-                srcSet: string
-                srcWebp: string
-                srcSetWebp: string
-                sizes: string
-              }
-            }
-          }
-          rank: number
-        }
-      }
-    ]
-  }
-}
-
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
+const Projects: React.FC<Portfolio.ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsSection>
       <HeaderArticle>

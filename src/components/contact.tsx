@@ -1,9 +1,10 @@
 /** @jsx jsx */
+/* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
 import { jsx, Styled } from "theme-ui"
 import Article from "./article"
 import Social from "./social"
 
-export default () => (
+const Contact: React.FC = () => (
   <div>
     <Article>
       <Styled.h1>Contact</Styled.h1>
@@ -121,3 +122,5 @@ export default () => (
     </form>
   </div>
 )
+
+export default Contact
