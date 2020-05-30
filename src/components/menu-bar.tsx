@@ -29,7 +29,7 @@ const PosedMenuButton = posed.button({
 
 const PosedColorModeButton = posed.button({
   dark: {
-    color: "#666",
+    color: "#e1e1e1",
     duration: 200,
   },
   light: {
@@ -93,7 +93,6 @@ const MenuBar: React.FC<Portfolio.MenuBarProps> = ({
           border: "none",
           backgroundColor: "transparent",
           fontSize: "1.5rem",
-          color: "#666",
           cursor: "pointer",
         }}
         type="button"
