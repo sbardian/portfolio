@@ -16,7 +16,7 @@ const Avatar: React.FC = () => {
       <Styled.h1
         sx={{
           fontSize: "3rem",
-          marginBottom: "0.04rem",
+          margin: "0.67rem",
         }}
       >
         Brian Andrews

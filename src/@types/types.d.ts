@@ -84,7 +84,6 @@ declare namespace Portfolio {
 
   interface ArticleProps {
     children: React.ReactNode
-    type?: string
     name?: string
   }
 

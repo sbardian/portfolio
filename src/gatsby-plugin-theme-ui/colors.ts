@@ -1,23 +1,17 @@
 export default {
   initialColorMode: "dark",
-  link: "#66d2b1",
-  linkDark: "#66d2b1",
+  link: "#9E294C",
   text: "#FFFAFA",
-  textLight: "#FCFCFC",
   background: "#363636",
-  backgroundDark: "#474747",
-  backgroundLight: "#9E294C",
   primary: "#9E294C",
+  techBackground: "#e1e1e1",
   modes: {
     light: {
-      link: "#a1a",
-      linkDark: "#a1a",
+      link: "#a4d7e1",
       text: "#4D4C4D",
-      textLight: "#FCFCFC",
-      background: "#a8a7a8",
-      backgroundDark: "#daf1f9",
-      backgroundLight: "#a4d7e1",
+      background: "#e1e1e1",
       primary: "#a4d7e1",
+      techBackground: "#fff",
     },
   },
 }

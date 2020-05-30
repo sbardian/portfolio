@@ -5,15 +5,12 @@ import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { FaGithub, FaRegEye } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
-import HeaderArticle from "./article"
 import Technologies from "./technologies"
 import mq from "./media-queries"
 
 const ProjectsSection = styled("section")``
 
-const ProjectWrapper = styled("div")`
-  margin: 0 20px 20px 20px;
-`
+const ProjectWrapper = styled("div")``
 
 const Article = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
@@ -48,9 +45,7 @@ const ProjectInfo = styled("p")`
 const Projects: React.FC<Portfolio.ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsSection>
-      <HeaderArticle>
-        <Styled.h1>Projects</Styled.h1>
-      </HeaderArticle>
+      <Styled.h1>Projects</Styled.h1>
       <ProjectWrapper>
         {projects.edges.map((project, index) => {
           return (
@@ -58,7 +53,7 @@ const Projects: React.FC<Portfolio.ProjectsProps> = ({ projects }) => {
               <Fade right={index % 2 !== 0} left={index % 2 === 0}>
                 <Article
                   sx={{
-                    backgroundColor: "backgroundDark",
+                    backgroundColor: "background",
                   }}
                 >
                   <ProjectImageWrapper>

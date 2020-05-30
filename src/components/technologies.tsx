@@ -53,7 +53,7 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies = [] }) => {
         gridTemplateColumns: "repeat(auto-fit, 48px)",
         gap: 3,
         justifyContent: "center",
-        background: "#e1e1e1",
+        backgroundColor: "techBackground",
         padding: 3,
         boxShadow: "0px 3px 5px 0px rgba(0, 0, 0, 0.75)",
       }}

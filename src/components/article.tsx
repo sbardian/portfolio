@@ -36,41 +36,16 @@ const Dark = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
 `
 
-const Article: React.FC<Portfolio.ArticleProps> = ({
-  type,
-  children,
-  name,
-}) => {
+const Article: React.FC<Portfolio.ArticleProps> = ({ children, name }) => {
   return (
     <ArticleWrapper
       sx={{
         color: "text",
+        backgroundColor: "background",
         fontSize: 1,
       }}
     >
-      {type === "light" && (
-        <Light
-          sx={{
-            backgroundColor: "backgroundLight",
-            color: "textLight",
-          }}
-          id={name}
-        >
-          {children}
-        </Light>
-      )}
-      {type === "dark" && (
-        <Dark
-          sx={{
-            backgroundColor: "backgroundDark",
-            color: "text",
-          }}
-          id={name}
-        >
-          {children}
-        </Dark>
-      )}
-      {type === undefined && <Generic id={name}>{children}</Generic>}
+      <Generic id={name}>{children}</Generic>
     </ArticleWrapper>
   )
 }

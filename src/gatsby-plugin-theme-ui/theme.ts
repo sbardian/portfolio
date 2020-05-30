@@ -49,10 +49,11 @@ const theme: Theme = {
       color: "link",
     },
     h1: {
-      marginBottom: "0.5rem",
+      // margin: "0.67rem 0 0.67rem 0.67rem",
+      fontSize: "3em",
     },
     h2: {
-      marginBottom: "0.5rem",
+      // marginBottom: "0.67rem 0 0.67rem 0.67rem",
     },
     p: {
       marginTop: 0,

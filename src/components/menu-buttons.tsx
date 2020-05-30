@@ -49,7 +49,7 @@ const PosedStyledThinLI: React.FC = ({ children }) => (
       "&:hover": {
         borderRadius: "20px",
         backgroundColor: "primary",
-        color: "textLight",
+        color: "text",
       },
       "@media (max-width: 520px)": {
         borderRadius: "0",

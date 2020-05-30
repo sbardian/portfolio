@@ -8,8 +8,8 @@ const SocialIcons: React.FC = () => {
       sx={{
         paddingBottom: 3,
         display: "grid",
-        gap: "20px",
-        gridTemplateColumns: "35px 35px 35px",
+        gap: "0.67rem",
+        gridTemplateColumns: "45px 45px 45px",
         justifyItems: "start",
       }}
     >
@@ -18,21 +18,21 @@ const SocialIcons: React.FC = () => {
         sx={{ color: "primary" }}
         aria-label="Github"
       >
-        <FaGithub size="1.5em" />
+        <FaGithub size="2.4rem" />
       </a>
       <a
         href="https://twitter.com/xsbardianx"
         sx={{ color: "primary" }}
         aria-label="Twitter"
       >
-        <FaTwitter size="1.5em" />
+        <FaTwitter size="2.4rem" />
       </a>
       <a
         href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
         sx={{ color: "primary" }}
         aria-label="Email"
       >
-        <FaEnvelope size="1.5em" />
+        <FaEnvelope size="2.4rem" />
       </a>
     </div>
   )

@@ -30,11 +30,11 @@ const Main: React.FC = () => {
           portfolio
         </Styled.h5>
       </div>
-      <Article type="dark" name="baTechnologies">
+      <Article name="baTechnologies">
         <Styled.h2 sx={{ color: "#adadad" }}>Technologies</Styled.h2>
         <Technologies />
       </Article>
-      <Article type="light" name="baInterests">
+      <Article name="baInterests">
         <Styled.h2>Interests</Styled.h2>
         <Styled.p>
           {`As you might have assumed I enjoy development, but that is not 
@@ -65,7 +65,7 @@ const Main: React.FC = () => {
           ).
         </Styled.p>
       </Article>
-      <Article type="dark" name="baWork">
+      <Article name="baWork">
         <Styled.h2 sx={{ color: "#adadad" }}>Work</Styled.h2>
         <Styled.p>
           I have worked in IT since 2000 at{" "}

@@ -9,9 +9,7 @@ import oberynImage from "../images/oberyn-image.png"
 const Animations: React.FC = () => {
   return (
     <div>
-      <Article>
-        <Styled.h1>Animations</Styled.h1>
-      </Article>
+      <Styled.h1>Animations</Styled.h1>
       <div
         sx={{
           display: "flex",
@@ -20,7 +18,7 @@ const Animations: React.FC = () => {
           alignItems: "center",
         }}
       >
-        <Article type="light">
+        <Article>
           <p>
             WARNING! These animations do not play well with mobile!!! They may
             or may not load on your mobile device. View them on a desktop for

@@ -6,10 +6,8 @@ import Social from "./social"
 
 const Contact: React.FC = () => (
   <div>
-    <Article>
-      <Styled.h1>Contact</Styled.h1>
-      <Social />
-    </Article>
+    <Styled.h1>Contact</Styled.h1>
+    <Social />
     <form
       data-testid="test-contact-form"
       name="contact"
@@ -100,8 +98,9 @@ const Contact: React.FC = () => (
             transition: "all 0.2s ease-in-out",
             backgroundColor: "transparent",
             borderRadius: "0.35em",
-            border: "3px solid #e1e1e1",
-            color: "#e1e1e1",
+            border: "3px solid",
+            borderColor: "primary",
+            color: "primary",
             cursor: "pointer",
             display: "inline-block",
             fontWeight: "400",
