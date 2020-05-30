@@ -70,16 +70,7 @@ const Article: React.FC<Portfolio.ArticleProps> = ({
           {children}
         </Dark>
       )}
-      {type === undefined && (
-        <Generic
-          sx={{
-            color: "textLight",
-          }}
-          id={name}
-        >
-          {children}
-        </Generic>
-      )}
+      {type === undefined && <Generic id={name}>{children}</Generic>}
     </ArticleWrapper>
   )
 }

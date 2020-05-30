@@ -1,9 +1,12 @@
 /** @jsx jsx */
+import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Helmet } from "react-helmet"
-import { jsx } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import Header from "./header"
 import Footer from "./footer"
+import backgroundLight from "../images/bglight.jpg"
+import backgroundDark from "../images/bgdark.jpg"
 
 const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
   children,
@@ -25,6 +28,8 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
     }
   `)
 
+  const [colorMode] = useColorMode()
+
   return (
     <div
       sx={{
@@ -34,6 +39,17 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
         gridTemplateColumns: "1fr",
         justifyContent: "center",
         backgroundColor: "background",
+        background: `url(${
+          colorMode === "dark" ? backgroundDark : backgroundLight
+        }) no-repeat center center fixed`,
+        // WebkitBackgroundSize: `cover`
+        // MozBackgroundSize: `cover`,
+        // OBackgroundSize: `cover`,
+        backgroundSize: `cover`,
+        // backgroundRepeat: "no-repeat",
+        // background: `url(${squares}) center center fixed`,
+        // backgroundSize: "cover",
+        // packgroundPosition: "center",
       }}
     >
       <Helmet

@@ -59,7 +59,7 @@ const PosedStyledThinLI: React.FC = ({ children }) => (
         "&:hover": {
           borderRadius: "20px",
           backgroundColor: "primary",
-          color: "textLight",
+          color: "text",
         },
       },
     }}
@@ -74,7 +74,7 @@ const StyledLink: React.FC<Omit<GatsbyLinkProps<null>, "ref">> = (props) => (
     sx={{
       fontSize: 3,
       textDecoration: "none",
-      color: "white",
+      color: "text",
       borderRadius: "100%",
       display: "flex",
       height: "100%",
@@ -83,13 +83,13 @@ const StyledLink: React.FC<Omit<GatsbyLinkProps<null>, "ref">> = (props) => (
       alignItems: "center",
       transition: "font-size 400ms ease-in-out",
       "&:hover": {
-        color: "inherit",
+        color: "text",
       },
       "&:hover:after": {
         content: "attr(data-name-start)attr(data-name-end)",
       },
       "@media (max-width: 520px)": {
-        color: "primary",
+        color: "text",
         "::after": {
           content: "attr(data-name-start)attr(data-name-end)",
         },
