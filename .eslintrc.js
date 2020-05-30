@@ -5,7 +5,7 @@ module.exports = {
     "prettier/react",
     "prettier/@typescript-eslint",
   ],
-  plugins: ["@typescript-eslint", "emotion", "react", "prettier"],
+  plugins: ["emotion", "react", "prettier", "@typescript-eslint"],
   env: {
     jest: true,
     browser: true,
@@ -33,6 +33,7 @@ module.exports = {
       },
     ],
     "react/jsx-filename-extension": "off",
+    "no-unused-vars": "off",
     "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
     "@typescript-eslint/explicit-function-return-type": "off",
   },

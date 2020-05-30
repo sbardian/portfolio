@@ -1,4 +1,6 @@
-export default {
+import { Theme } from "theme-ui"
+
+const theme: Theme = {
   fonts: {
     body: "Open Sans, sans-serif",
     heading: "Montserrat, sans-serif", // h1 and h2 only
@@ -59,3 +61,5 @@ export default {
     },
   },
 }
+
+export default theme
