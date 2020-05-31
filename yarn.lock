@@ -2585,7 +2585,17 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@testing-library/dom@7.7.0", "@testing-library/dom@^7.2.2":
+"@testing-library/dom@7.7.1":
+  version "7.7.1"
+  resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.7.1.tgz#b43db5c0c96440fcb51229de34e8111d0ce03c98"
+  integrity sha512-lJTopFmsapwonQ0jrw5xnRWRDdyFQpJrzQzyRem3sXOa/qvXBJHy7QCKa1wZS2fvkBdYWfxCNrQh4t6EZU8s5Q==
+  dependencies:
+    "@babel/runtime" "^7.9.6"
+    aria-query "^4.0.2"
+    dom-accessibility-api "^0.4.4"
+    pretty-format "^25.5.0"
+
+"@testing-library/dom@^7.2.2":
   version "7.7.0"
   resolved "https://registry.yarnpkg.com/@testing-library/dom/-/dom-7.7.0.tgz#3567f4669f64b10c546c2fc42adec5a0cc84b956"
   integrity sha512-Mlq+5hLGyitcoKrvKCnUNm8euM0+QEy2q1AaZzJTxEAaSaujBIut7+exodTSnhKoe+XLUZmlA45O9M4T+kHu9g==
@@ -16920,7 +16930,7 @@ ts-invariant@^0.4.0:
   dependencies:
     tslib "^1.9.3"
 
-ts-jest@^26.1.0:
+ts-jest@26.1.0:
   version "26.1.0"
   resolved "https://registry.yarnpkg.com/ts-jest/-/ts-jest-26.1.0.tgz#e9070fc97b3ea5557a48b67c631c74eb35e15417"
   integrity sha512-JbhQdyDMYN5nfKXaAwCIyaWLGwevcT2/dbqRPsQeh6NZPUuXjZQZEfeLb75tz0ubCIgEELNm6xAzTe5NXs5Y4Q==
