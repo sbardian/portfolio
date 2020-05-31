@@ -10,8 +10,9 @@
     "build": "gatsby build",
     "serve": "gatsby serve --port 8000",
     "develop": "gatsby develop",
-    "lint": "eslint .",
-    "test": "jest ."
+    "lint": "eslint",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "gatsby"
@@ -67,18 +68,19 @@
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
+    "@emotion/types": "0.7.0",
     "@testing-library/dom": "7.7.0",
     "@testing-library/jest-dom": "5.9.0",
-    "@emotion/types": "0.7.0",
     "@testing-library/react": "10.0.4",
+    "@types/jest": "25.2.3",
     "@types/node": "14.0.4",
     "@types/react": "16.9.35",
     "@types/react-dom": "16.9.8",
+    "@types/react-gravatar": "2.6.8",
+    "@types/react-helmet": "6.0.0",
     "@types/theme-ui": "0.3.2",
     "@typescript-eslint/eslint-plugin": "3.0.0",
     "@typescript-eslint/parser": "3.0.0",
-    "@types/react-gravatar": "2.6.8",
-    "@types/react-helmet": "6.0.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.0.1",
     "babel-preset-gatsby": "0.4.7",
@@ -100,6 +102,7 @@
     "lint-staged": "10.2.7",
     "prettier": "2.0.5",
     "start-server-and-test": "1.11.0",
+    "ts-jest": "26.1.0",
     "typescript": "3.9.3"
   },
   "resolutions": {

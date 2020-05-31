@@ -1,4 +1,5 @@
-import * as React from "react"
+import React from "react"
+// eslint-disable-next-line
 import { render } from "@testing-library/react"
 import Avatar from "./avatar"
 
