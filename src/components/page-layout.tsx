@@ -39,17 +39,12 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
         gridTemplateColumns: "1fr",
         justifyContent: "center",
         backgroundColor: "background",
-        background: `url(${
-          colorMode === "dark" ? backgroundDark : backgroundLight
-        }) no-repeat center center fixed`,
-        // WebkitBackgroundSize: `cover`
-        // MozBackgroundSize: `cover`,
-        // OBackgroundSize: `cover`,
-        backgroundSize: `cover`,
-        // backgroundRepeat: "no-repeat",
-        // background: `url(${squares}) center center fixed`,
-        // backgroundSize: "cover",
-        // packgroundPosition: "center",
+        "@media (min-width: 768px)": {
+          background: `url(${
+            colorMode === "dark" ? backgroundDark : backgroundLight
+          }) no-repeat center center fixed`,
+          backgroundSize: `cover`,
+        },
       }}
     >
       <Helmet
