@@ -43,12 +43,6 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
           colorMode === "dark" ? backgroundDark : backgroundLight
         }) no-repeat center center fixed`,
         backgroundSize: `cover`,
-        // "@media (min-width: 768px)": {
-        //   background: `url(${
-        //     colorMode === "dark" ? backgroundDark : backgroundLight
-        //   }) no-repeat center center fixed`,
-        //   backgroundSize: `cover`,
-        // },
       }}
     >
       <Helmet
