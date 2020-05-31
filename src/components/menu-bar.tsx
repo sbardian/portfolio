@@ -1,0 +1,110 @@
+/** @jsx jsx */
+// eslint-disable-next-line
+import styled from "@emotion/styled"
+import { jsx } from "theme-ui"
+import posed from "react-pose"
+import { GoThreeBars } from "react-icons/go"
+import { FaLightbulb } from "react-icons/fa"
+import useGetColorMode from "./hooks/useGetColorMode"
+
+const ButtonBar = styled("div")`
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: auto 1fr auto;
+  align-content: center;
+  margin: 20px auto;
+  max-width: 1000px;
+`
+
+const PosedMenuButton = posed.button({
+  open: {
+    rotate: "90deg",
+    duration: 200,
+  },
+  closed: {
+    rotate: "0deg",
+    duration: 200,
+  },
+})
+
+const PosedColorModeButton = posed.button({
+  dark: {
+    color: "#e1e1e1",
+    duration: 200,
+  },
+  light: {
+    color: "#d1cb5e",
+    duration: 200,
+  },
+})
+
+const MenuBar: React.FC<Portfolio.MenuBarProps> = ({
+  menuStatus,
+  setMenuStatus,
+  colorMode,
+  setColorMode,
+}) => {
+  useGetColorMode({ setColorMode })
+
+  return (
+    <ButtonBar>
+      <div
+        sx={{
+          display: "block",
+          "@media (max-width: 520px)": {
+            display: "none",
+          },
+        }}
+      />
+      <PosedMenuButton
+        pose={menuStatus ? "open" : "closed"}
+        type="button"
+        aria-label="Menu"
+        onClick={() => {
+          setMenuStatus(!menuStatus)
+        }}
+        sx={{
+          color: "primary",
+          outline: 0,
+          background: "transparent",
+          border: "none",
+          cursor: "pointer",
+          display: "none",
+          transition: "color ease 2ms",
+          "&:focus": {
+            outline: "thin dotted",
+            outlineColor: "#e8175d",
+          },
+          "&:hover": {
+            color: "#a1a1a1",
+          },
+          "@media (max-width: 520px)": {
+            display: "block",
+          },
+        }}
+      >
+        <GoThreeBars size={30} sx={{ marginLeft: "10px" }} />
+      </PosedMenuButton>
+      <PosedColorModeButton
+        pose={colorMode}
+        sx={{
+          display: "flex",
+          justifySelf: "end",
+          border: "none",
+          backgroundColor: "transparent",
+          fontSize: "1.5rem",
+          cursor: "pointer",
+        }}
+        type="button"
+        aria-label="Color Mode"
+        onClick={() => {
+          setColorMode(colorMode === "light" ? "dark" : "light")
+        }}
+      >
+        <FaLightbulb size={30} />
+      </PosedColorModeButton>
+    </ButtonBar>
+  )
+}
+
+export default MenuBar

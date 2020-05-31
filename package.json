@@ -52,7 +52,6 @@
     "gsap": "3.2.6",
     "lodash": "4.17.15",
     "normalize.css": "8.0.1",
-    "prop-types": "15.7.2",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-gravatar": "2.6.3",
@@ -63,19 +62,28 @@
     "theme-ui": "0.3.1",
     "three": "0.117.1",
     "three-orbitcontrols": "2.110.2",
-    "three.phenomenon": "1.2.0",
-    "uon": "1.2.1"
+    "three.phenomenon": "1.2.0"
   },
   "devDependencies": {
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@testing-library/dom": "7.7.0",
     "@testing-library/jest-dom": "5.9.0",
+    "@emotion/types": "0.7.0",
     "@testing-library/react": "10.0.4",
+    "@types/node": "14.0.4",
+    "@types/react": "16.9.35",
+    "@types/react-dom": "16.9.8",
+    "@types/theme-ui": "0.3.2",
+    "@typescript-eslint/eslint-plugin": "3.0.0",
+    "@typescript-eslint/parser": "3.0.0",
+    "@types/react-gravatar": "2.6.8",
+    "@types/react-helmet": "6.0.0",
     "babel-eslint": "10.1.0",
     "babel-jest": "26.0.1",
     "babel-preset-gatsby": "0.4.7",
     "commitizen": "4.1.2",
+    "csstype": "2.6.10",
     "cz-conventional-changelog": "3.2.0",
     "eslint": "7.1.0",
     "eslint-config-airbnb": "18.1.0",
@@ -91,6 +99,11 @@
     "jest-axe": "3.4.0",
     "lint-staged": "10.2.7",
     "prettier": "2.0.5",
-    "start-server-and-test": "1.11.0"
+    "start-server-and-test": "1.11.0",
+    "typescript": "3.9.3"
+  },
+  "resolutions": {
+    "**/@types/react": "16.9.35",
+    "**/@types/react-dom": "16.9.8"
   }
 }
