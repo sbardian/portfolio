@@ -39,9 +39,12 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
         gridTemplateColumns: "1fr",
         justifyContent: "center",
         backgroundColor: "background",
-        background: `url(${
+        backgroundImage: `url(${
           colorMode === "dark" ? backgroundDark : backgroundLight
-        }) no-repeat center center fixed`,
+        })`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
         backgroundSize: `cover`,
       }}
     >
