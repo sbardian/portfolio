@@ -42,7 +42,7 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
         backgroundImage: `url(${
           colorMode === "dark" ? backgroundDark : backgroundLight
         })`,
-        backgroundRepeat: "no-repeat",
+        // backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         backgroundAttachment: "fixed",
         backgroundSize: `cover`,
