@@ -69,7 +69,7 @@
     "@commitlint/cli": "8.3.5",
     "@commitlint/config-conventional": "8.3.4",
     "@emotion/types": "0.7.0",
-    "@testing-library/dom": "7.7.1",
+    "@testing-library/dom": "7.7.3",
     "@testing-library/jest-dom": "5.9.0",
     "@testing-library/react": "10.0.4",
     "@types/jest": "25.2.3",
