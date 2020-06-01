@@ -33,51 +33,56 @@ const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
   return (
     <div
       sx={{
-        display: "grid",
-        gap: 3,
-        gridTemplateRows: "auto 1fr auto",
-        gridTemplateColumns: "1fr",
-        justifyContent: "center",
-        backgroundColor: "background",
-        backgroundImage: `url(${
-          colorMode === "dark" ? backgroundDark : backgroundLight
-        })`,
-        // backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-        backgroundSize: `cover`,
+        height: "100vh",
       }}
     >
-      <Helmet
-        title={siteMetadata.title}
-        defer={false}
-        meta={[
-          { name: "description", content: siteMetadata.description },
-          { name: "author", content: siteMetadata.author },
-          { name: "keywords", content: siteMetadata.keywords },
-          { property: "og:type", content: "website" },
-          { property: "og:title", content: siteMetadata.title },
-          { property: "og:description", content: siteMetadata.description },
-        ]}
-      >
-        <html lang="en" />
-      </Helmet>
-      <Header />
       <div
         sx={{
-          width: `${useFullScreen ? null : "95%"}`,
-          justifySelf: "center",
           display: "grid",
+          gap: 3,
+          gridTemplateRows: "auto 1fr auto",
           gridTemplateColumns: "1fr",
-          gap: "3",
-          "@media (min-width: 1035px)": {
-            width: `${useFullScreen ? null : "1000px"}`,
-          },
+          justifyContent: "center",
+          backgroundColor: "background",
+          backgroundImage: `url(${
+            colorMode === "dark" ? backgroundDark : backgroundLight
+          })`,
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          backgroundSize: `cover`,
         }}
       >
-        {children}
+        <Helmet
+          title={siteMetadata.title}
+          defer={false}
+          meta={[
+            { name: "description", content: siteMetadata.description },
+            { name: "author", content: siteMetadata.author },
+            { name: "keywords", content: siteMetadata.keywords },
+            { property: "og:type", content: "website" },
+            { property: "og:title", content: siteMetadata.title },
+            { property: "og:description", content: siteMetadata.description },
+          ]}
+        >
+          <html lang="en" />
+        </Helmet>
+        <Header />
+        <div
+          sx={{
+            width: `${useFullScreen ? null : "95%"}`,
+            justifySelf: "center",
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: "3",
+            "@media (min-width: 1035px)": {
+              width: `${useFullScreen ? null : "1000px"}`,
+            },
+          }}
+        >
+          {children}
+        </div>
+        {showFooter && <Footer />}
       </div>
-      {showFooter && <Footer />}
     </div>
   )
 }
