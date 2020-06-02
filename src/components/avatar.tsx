@@ -41,7 +41,7 @@ const Avatar: React.FC = () => {
       </a>
       <Styled.h5
         sx={{
-          marginTop: "0.5rem",
+          marginTop: "0.67rem",
         }}
       >
         portfolio
