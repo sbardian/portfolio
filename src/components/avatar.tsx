@@ -29,6 +29,7 @@ const Avatar: React.FC = () => {
       >
         <Gravatar
           email="sbardian@gmail.com"
+          data-testid="gravatar-image"
           size={150}
           sx={{
             height: "150px",

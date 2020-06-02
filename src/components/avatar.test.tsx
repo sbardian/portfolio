@@ -3,7 +3,9 @@ import React from "react"
 import { render } from "@testing-library/react"
 import Avatar from "./avatar"
 
-test("Displays the correct title", () => {
-  const { findByText } = render(<Avatar />)
-  expect(findByText("Brian Andrews")).toBeTruthy()
+test("Displays an title, subtitle, and avatar", () => {
+  const { queryByText, queryByTestId } = render(<Avatar />)
+  expect(queryByText("Brian Andrews")).toBeTruthy()
+  expect(queryByText("portfolio")).toBeTruthy()
+  expect(queryByTestId("gravatar-image")).toBeTruthy()
 })

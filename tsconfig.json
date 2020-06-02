@@ -12,12 +12,6 @@
     "strictNullChecks": true,
     "typeRoots": ["src/@types", "node_modules/@types", "src/@types/**/*.d.ts"]
   },
-  "exclude": [
-    ".cache",
-    "public",
-    "**/*test.tsx",
-    "sanityportfolio",
-    "src/types"
-  ],
+  "exclude": [".cache", "public", "sanityportfolio", "src/types"],
   "include": ["**/*.ts", "**/*.tsx"]
 }

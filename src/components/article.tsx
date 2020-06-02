@@ -18,34 +18,19 @@ const Generic = styled("div")`
   margin: 20px 20px;
 `
 
-const Light = styled("div")`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px 20px;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-`
-
-const Dark = styled("div")`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20px 20px;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-`
-
 const Article: React.FC<Portfolio.ArticleProps> = ({ children, name }) => {
   return (
     <ArticleWrapper
+      data-testid="article-wrapper"
       sx={{
         color: "text",
         backgroundColor: "background",
         fontSize: 1,
       }}
     >
-      <Generic id={name}>{children}</Generic>
+      <Generic data-testid="generic-article" id={name}>
+        {children}
+      </Generic>
     </ArticleWrapper>
   )
 }

@@ -15,6 +15,7 @@ const AnimationImageLink: React.FC<Portfolio.AnimationImageLinkProps> = ({
       }}
     >
       <Link
+        data-testid="image-link"
         sx={{
           fontSize: "24pt",
           color: "white",
@@ -22,6 +23,7 @@ const AnimationImageLink: React.FC<Portfolio.AnimationImageLinkProps> = ({
         to={to}
       >
         <img
+          data-testid="image"
           sx={{
             margin: "0px",
             backgroundPosition: "center",

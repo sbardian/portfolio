@@ -9,7 +9,7 @@ const Contact: React.FC = () => (
     <Styled.h1>Contact</Styled.h1>
     <Social />
     <form
-      data-testid="test-contact-form"
+      data-testid="contact-form"
       name="contact"
       method="post"
       data-netlify="true"
@@ -34,6 +34,7 @@ const Contact: React.FC = () => (
         </label>
       </div>
       <input
+        data-testid="email"
         required
         type="email"
         name="email"
@@ -50,6 +51,7 @@ const Contact: React.FC = () => (
         }}
       />
       <input
+        data-testid="name"
         required
         type="text"
         name="name"
@@ -73,6 +75,7 @@ const Contact: React.FC = () => (
         }}
       >
         <textarea
+          data-testid="message"
           required
           name="message"
           placeholder="Message"
@@ -92,6 +95,7 @@ const Contact: React.FC = () => (
       </div>
       <div>
         <button
+          data-testid="submit-button"
           type="submit"
           sx={{
             appearance: "none",
