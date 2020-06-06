@@ -40,9 +40,12 @@ declare namespace Portfolio {
     projects: AllSanityProjectsEdges
   }
 
-  /** Props for the PageLayout component */
-  interface PageLayoutProps {
+  interface ArticleProps {
     children: React.ReactNode
+    name?: string
+  }
+
+  interface PageLayoutProps extends Omit<ArticleProps, "name"> {
     showFooter?: boolean
     useFullScreen?: boolean
   }
@@ -66,6 +69,17 @@ declare namespace Portfolio {
 
   type Animations = Array<AnimationsObject>
 
+  interface AnimationNavProps {
+    animations: Animations
+    current: AnimationsObject
+  }
+
+  interface AnimationImageLinkProps {
+    imageSrc: string
+    to: string
+    name: string
+  }
+
   /** Array of animation objects including their titles and to fields  */
   interface AnimationProps {
     animations: Animations
@@ -80,22 +94,6 @@ declare namespace Portfolio {
     setMenuStatus: SetMenuStatusFn
     colorMode: string
     setColorMode: React.Dispatch<React.SetStateAction<string>>
-  }
-
-  interface ArticleProps {
-    children: React.ReactNode
-    name?: string
-  }
-
-  interface AnimationNavProps {
-    animations: Animations
-    current: AnimationsObject
-  }
-
-  interface AnimationImageLinkProps {
-    imageSrc: string
-    to: string
-    name: string
   }
 }
 
