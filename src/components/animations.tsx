@@ -4,8 +4,8 @@ import { jsx, Styled } from "theme-ui"
 import { FullpageAccordion, Panel } from "react-fullpage-accordion"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"
-import duckImage from "../images/duck-image.png"
-import oberynImage from "../images/oberyn-image.png"
+import duckImage from "../images/duck-image-new.png"
+import oberynImage from "../images/oberyn-image-new.png"
 
 interface AnimationData {
   title: string
@@ -74,12 +74,6 @@ const Animations: React.FC = () => {
             <p>a try!</p>
           </Panel>
         </FullpageAccordion>
-        {/* <AnimationImageLink
-          imageSrc={oberynImage}
-          to="/oberynPage"
-          name="Oberyn"
-        />
-        <AnimationImageLink imageSrc={duckImage} to="/duckPage" name="Duck" /> */}
       </div>
     </div>
   )
