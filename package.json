@@ -55,6 +55,7 @@
     "normalize.css": "8.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-fullpage-accordion": "4.3.0",
     "react-gravatar": "2.6.3",
     "react-helmet": "6.1.0",
     "react-icons": "3.10.0",

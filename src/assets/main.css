@@ -31,3 +31,17 @@ textarea {
   height: 2.75em;
   background-color: #e1e1e1;
 }
+
+.panel p {
+  font-size: 32pt;
+  color: white;
+}
+
+.panel p a {
+  font-size: 48pt;
+  color: white;
+}
+
+.panel p a:hover {
+  color: tomato !important;
+}
