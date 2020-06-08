@@ -1,5 +1,5 @@
 import * as React from "react"
-import Oberyn from "../components/oberyn"
+import Turtle from "../components/turtle"
 import PageLayout from "../components/page-layout"
 import "normalize.css"
 import "../assets/main.css"
@@ -12,7 +12,7 @@ const OberynPage: React.FC = () => {
   ]
   return (
     <PageLayout showFooter={false} useFullScreen>
-      <Oberyn animations={animations} />
+      <Turtle animations={animations} />
     </PageLayout>
   )
 }

@@ -8,6 +8,7 @@ const DuckPage: React.FC = () => {
   const animations: Portfolio.Animations = [
     { to: "/oberynPage", title: "Oberyn" },
     { to: "/duckPage", title: "Duck" },
+    { to: "/turtle-page", title: "Turtle" },
   ]
   return (
     <PageLayout showFooter={false} useFullScreen>

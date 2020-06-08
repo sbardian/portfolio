@@ -29,15 +29,15 @@ function onWindowResize() {
 }
 
 export default () => {
-  canvas = document.querySelector("#ob-scene")
+  canvas = document.querySelector("#turtle-scene")
   const scene = new Scene()
   WIDTH = window.innerWidth
   HEIGHT = window.innerHeight - 580
 
   camera = new PerspectiveCamera(50, WIDTH / HEIGHT, 1, 2000)
   camera.position.x = 0
-  camera.position.z = 100
-  camera.position.y = 25
+  camera.position.z = 75
+  camera.position.y = 20
   camera.lookAt(new Vector3(0, 0, 0))
 
   renderer = new WebGLRenderer({
@@ -55,14 +55,9 @@ export default () => {
   windowHalfY = HEIGHT / 2
 
   // eslint-disable-next-line
-  const controls = new OrbitControls(camera, renderer.domElement)
+  // const controls = new OrbitControls(camera, renderer.domElement)
 
   window.addEventListener("resize", onWindowResize, false)
-
-  // SAVE:  Follow mouse logic
-  // document.addEventListener("touchstart", handleTouchStart, false)
-  // document.addEventListener("touchend", handleTouchEnd, false)
-  // document.addEventListener("touchmove", handleTouchMove, false)
 
   return {
     canvas,
@@ -73,6 +68,5 @@ export default () => {
     renderer,
     windowHalfX,
     windowHalfY,
-    // mousePos,
   }
 }

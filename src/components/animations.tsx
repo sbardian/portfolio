@@ -6,6 +6,7 @@ import Article from "./article"
 import AnimationImageLink from "./animation-image-link"
 import duckImage from "../images/duck-image-new.png"
 import oberynImage from "../images/oberyn-image-new.png"
+import turtleImage from "../images/turtle-image.png"
 
 interface AnimationData {
   title: string
@@ -35,6 +36,15 @@ export const data: Array<AnimationData> = [
     bottom: "a try!",
     imageUrl: oberynImage,
     link: "/oberynPage",
+  },
+  {
+    title: "Turtle Animation",
+    itemId: 3,
+    top: "Give",
+    middle: "Turtle",
+    bottom: "a try!",
+    imageUrl: turtleImage,
+    link: "/turtle-page",
   },
 ]
 
@@ -70,6 +80,13 @@ const Animations: React.FC = () => {
             <p>Give</p>
             <p>
               <a href="/oberynPage">Oberyn!</a>
+            </p>
+            <p>a try!</p>
+          </Panel>
+          <Panel itemId="2" background={turtleImage}>
+            <p>Give</p>
+            <p>
+              <a href="/turtle-page">Turtle!</a>
             </p>
             <p>a try!</p>
           </Panel>
