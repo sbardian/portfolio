@@ -6,7 +6,7 @@
 // eslint-disable-next-line
 import * as React from "react"
 import * as THREE from "three"
-import OrbitControls from "three-orbitcontrols"
+// import OrbitControls from "three-orbitcontrols"
 import { TweenMax, Elastic, TimelineMax } from "gsap"
 import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
@@ -63,7 +63,7 @@ const OberynAnimation: React.FC<Portfolio.AnimationProps> = ({
       windowHalfX = WIDTH / 2
       windowHalfY = HEIGHT / 2
 
-      const controls = new OrbitControls(camera, renderer.domElement)
+      // const controls = new OrbitControls(camera, renderer.domElement)
 
       window.addEventListener("resize", onWindowResize, false)
       window.addEventListener("mousemove", handleMouseMove, false)

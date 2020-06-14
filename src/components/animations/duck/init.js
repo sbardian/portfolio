@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import * as THREE from "three"
-import OrbitControls from "three-orbitcontrols"
+// import OrbitControls from "three-orbitcontrols"
 
 const {
   Scene,
@@ -55,7 +55,7 @@ export default () => {
   windowHalfY = HEIGHT / 2
 
   // eslint-disable-next-line
-  const controls = new OrbitControls(camera, renderer.domElement)
+  // const controls = new OrbitControls(camera, renderer.domElement)
 
   window.addEventListener("resize", onWindowResize, false)
 
