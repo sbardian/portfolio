@@ -36,6 +36,7 @@ import jest from "../images/jest.png"
 import reactrouter from "../images/reactrouter.png"
 import graphql from "../images/graphql.png"
 import cypress from "../images/cypress.png"
+import docker from "../images/docker.svg"
 
 const TechImage = styled("img")`
   width: 48px;
@@ -100,6 +101,11 @@ const Technologies: React.FC<TechnologiesProps> = ({ technologies = [] }) => {
         if (tech === "hasura") {
           return (
             <TechImage key={tech} src={hasura} alt="Hasura" title="Hasura" />
+          )
+        }
+        if (tech === "docker") {
+          return (
+            <TechImage key={tech} src={docker} alt="Docker" title="Docker" />
           )
         }
         // if (tech === "redux") {
