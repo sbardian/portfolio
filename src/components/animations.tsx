@@ -8,46 +8,6 @@ import duckImage from "../images/duck-image-new.png"
 import oberynImage from "../images/oberyn-image-new.png"
 import turtleImage from "../images/turtle-image.png"
 
-interface AnimationData {
-  title: string
-  itemId: number
-  top: string
-  middle: string
-  bottom: string
-  imageUrl: string
-  link: string
-}
-
-export const data: Array<AnimationData> = [
-  {
-    title: "Duck Animation",
-    itemId: 1,
-    top: "Give",
-    middle: "Duck",
-    bottom: "a try!",
-    imageUrl: duckImage,
-    link: "/duckPage",
-  },
-  {
-    title: "Oberyn Animation",
-    itemId: 2,
-    top: "Give",
-    middle: "Oberyn",
-    bottom: "a try!",
-    imageUrl: oberynImage,
-    link: "/oberynPage",
-  },
-  {
-    title: "Turtle Animation",
-    itemId: 3,
-    top: "Give",
-    middle: "Turtle",
-    bottom: "a try!",
-    imageUrl: turtleImage,
-    link: "/turtle-page",
-  },
-]
-
 const Animations: React.FC = () => {
   return (
     <div>
