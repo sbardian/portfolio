@@ -66,10 +66,8 @@ interface AnimationsObject {
   title: string
 }
 
-type Animations = Array<AnimationsObject>
-
 interface AnimationNavProps {
-  animations: Animations
+  animations: AnimationsObject[]
   current: AnimationsObject
 }
 
@@ -81,7 +79,7 @@ interface AnimationImageLinkProps {
 
 /** Array of animation objects including their titles and to fields  */
 interface AnimationProps {
-  animations: Animations
+  animations: AnimationsObject[]
 }
 
 interface SetMenuStatusFn {
