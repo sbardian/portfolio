@@ -18,7 +18,7 @@ const Generic = styled("div")`
   margin: 20px 20px;
 `
 
-const Article: React.FC<Portfolio.ArticleProps> = ({ children, name }) => {
+const Article: React.FC<ArticleProps> = ({ children, name }) => {
   return (
     <ArticleWrapper
       data-testid="article-wrapper"

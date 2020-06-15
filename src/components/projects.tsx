@@ -42,7 +42,7 @@ const ProjectInfo = styled("p")`
   font-size: 1.5rem;
 `
 
-const Projects: React.FC<Portfolio.ProjectsProps> = ({ projects }) => {
+const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsSection>
       <Styled.h1>Projects</Styled.h1>

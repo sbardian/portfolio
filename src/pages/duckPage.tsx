@@ -5,7 +5,7 @@ import "normalize.css"
 import "../assets/main.css"
 
 const DuckPage: React.FC = () => {
-  const animations: Portfolio.Animations = [
+  const animations: Animations = [
     { to: "/oberynPage", title: "Oberyn" },
     { to: "/duckPage", title: "Duck" },
     { to: "/turtle-page", title: "Turtle" },

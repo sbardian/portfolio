@@ -8,14 +8,14 @@ import Footer from "./footer"
 import backgroundLight from "../images/bglight.jpg"
 import backgroundDark from "../images/bgdark.jpg"
 
-const PageLayout: React.FC<Portfolio.PageLayoutProps> = ({
+const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   showFooter = true,
   useFullScreen = false,
 }) => {
   const {
     site: { siteMetadata },
-  }: Portfolio.SiteMetadata = useStaticQuery(graphql`
+  }: SiteMetadata = useStaticQuery(graphql`
     {
       site {
         siteMetadata {

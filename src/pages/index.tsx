@@ -5,7 +5,7 @@ import Projects from "../components/projects"
 import "normalize.css"
 import "../assets/main.css"
 
-const ProjectsPage: React.FunctionComponent<Portfolio.ProjectsData> = ({
+const ProjectsPage: React.FunctionComponent<ProjectsData> = ({
   data: { allSanityProjects },
 }): React.ReactElement => {
   return (

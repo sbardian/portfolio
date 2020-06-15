@@ -4,9 +4,7 @@ import { jsx } from "theme-ui"
 import AnimationsNav from "./animations-nav"
 import createAnimation from "./animations/turtle/index"
 
-const TurtleAnimation: React.FC<Portfolio.AnimationProps> = ({
-  animations,
-}) => {
+const TurtleAnimation: React.FC<AnimationProps> = ({ animations }) => {
   React.useEffect(() => {
     createAnimation()
   })

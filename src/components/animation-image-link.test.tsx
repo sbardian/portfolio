@@ -4,7 +4,7 @@ import { render } from "@testing-library/react"
 import AnimationImageLink from "./animation-image-link"
 import oberynImage from "../images/oberyn-image.png"
 
-const MockAnimationImageLink: Portfolio.AnimationImageLinkProps = {
+const MockAnimationImageLink: AnimationImageLinkProps = {
   imageSrc: oberynImage,
   name: "Oberyn",
   to: "/oberyn",

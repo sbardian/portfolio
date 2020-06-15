@@ -2,7 +2,7 @@
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-const AnimationImageLink: React.FC<Portfolio.AnimationImageLinkProps> = ({
+const AnimationImageLink: React.FC<AnimationImageLinkProps> = ({
   imageSrc,
   to,
   name,

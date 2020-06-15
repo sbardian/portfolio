@@ -4,10 +4,7 @@ import { GoChevronRight, GoChevronLeft } from "react-icons/go"
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
-const AnimationNav: React.FC<Portfolio.AnimationNavProps> = ({
-  animations,
-  current,
-}) => {
+const AnimationNav: React.FC<AnimationNavProps> = ({ animations, current }) => {
   const currentIndex: number = findIndex(
     animations,
     (animation) => animation.title === current.title

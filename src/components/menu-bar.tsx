@@ -38,7 +38,7 @@ const PosedColorModeButton = posed.button({
   },
 })
 
-const MenuBar: React.FC<Portfolio.MenuBarProps> = ({
+const MenuBar: React.FC<MenuBarProps> = ({
   menuStatus,
   setMenuStatus,
   colorMode,
