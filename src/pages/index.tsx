@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import PageLayout from "../components/page-layout"
+import RestrictPageWidth from "../components/restrict-page-width"
 import Projects from "../components/projects"
 import "normalize.css"
 import "../assets/main.css"
@@ -10,7 +11,9 @@ const ProjectsPage: React.FunctionComponent<ProjectsData> = ({
 }): React.ReactElement => {
   return (
     <PageLayout>
-      <Projects projects={allSanityProjects} />
+      <RestrictPageWidth>
+        <Projects projects={allSanityProjects} />
+      </RestrictPageWidth>
     </PageLayout>
   )
 }

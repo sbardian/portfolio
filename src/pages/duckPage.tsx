@@ -11,7 +11,7 @@ const DuckPage: React.FC = () => {
     { to: "/turtle-page", title: "Turtle" },
   ]
   return (
-    <PageLayout showFooter={false} useFullScreen>
+    <PageLayout showFooter={false}>
       <Duck animations={animations} />
     </PageLayout>
   )

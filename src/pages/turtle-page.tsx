@@ -11,7 +11,7 @@ const OberynPage: React.FC = () => {
     { to: "/turtle-page", title: "Turtle" },
   ]
   return (
-    <PageLayout showFooter={false} useFullScreen>
+    <PageLayout showFooter={false}>
       <Turtle animations={animations} />
     </PageLayout>
   )

@@ -11,7 +11,6 @@ import backgroundDark from "../images/bgdark.jpg"
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   showFooter = true,
-  useFullScreen = false,
 }) => {
   const {
     site: { siteMetadata },
@@ -69,14 +68,10 @@ const PageLayout: React.FC<PageLayoutProps> = ({
         <Header />
         <div
           sx={{
-            width: `${useFullScreen ? null : "95%"}`,
             justifySelf: "center",
             display: "grid",
             gridTemplateColumns: "1fr",
             gap: "3",
-            "@media (min-width: 1035px)": {
-              width: `${useFullScreen ? null : "1000px"}`,
-            },
           }}
         >
           {children}

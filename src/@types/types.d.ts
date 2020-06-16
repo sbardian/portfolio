@@ -43,9 +43,8 @@ interface ArticleProps {
   name?: string
 }
 
-interface PageLayoutProps extends Omit<ArticleProps, "name"> {
+interface PageLayoutProps {
   showFooter?: boolean
-  useFullScreen?: boolean
 }
 
 /** Gatsby Site meta data */

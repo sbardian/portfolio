@@ -16,8 +16,9 @@ const Contact: React.FC = () => (
       action="/success"
       sx={{
         display: "grid",
-        gap: "20px",
-        gridTemplateColumns: "1fr",
+        gap: "0.67rem",
+        margin: "0 0.67rem 0 0.67rem",
+        gridTemplateColumns: "minmax(auto, 992px)",
       }}
     >
       <input type="hidden" name="form-name" value="contact" />
