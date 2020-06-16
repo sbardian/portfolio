@@ -27,5 +27,7 @@ jobs:
 
       # run lint
       - run: yarn lint
+      # check types
+      - run: yarn tsc
       # run tests!
       - run: yarn test
