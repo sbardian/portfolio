@@ -4,6 +4,7 @@ import gatsby from "../images/gatsby.png"
 
 const Footer: React.FC = () => (
   <div
+    data-testid="footer-container"
     sx={{
       display: "grid",
       gridTemplateRows: "1fr 1fr",
@@ -14,8 +15,9 @@ const Footer: React.FC = () => (
     }}
   >
     <pre sx={{ fontSize: 9 }}>built with</pre>
-    <a data-testid="footer-link-test" href="https://gatsbyjs.org">
+    <a data-testid="footer-link" href="https://gatsbyjs.org">
       <img
+        data-testid="footer-image"
         sx={{ height: "3em" }}
         src={gatsby}
         alt="Gatsby"
