@@ -40,7 +40,6 @@ interface ProjectsProps {
 }
 
 interface ArticleProps {
-  children: React.ReactNode
   name?: string
 }
 
