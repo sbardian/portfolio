@@ -96,10 +96,14 @@ interface MenuBarProps extends SetColorMode {
   colorMode: PortfolioColorMode
 }
 
-interface UseGetColorMode {
-  ({ setColorMode }: SetColorMode): void
+interface TechnologiesProps {
+  technologies?: Array<string>
 }
 
 interface UseShowMenu {
   (current: number): Omit<MenuBarProps, "colorMode" | "setColorMode">
+}
+
+interface UseGetColorMode {
+  ({ setColorMode }: SetColorMode): void
 }

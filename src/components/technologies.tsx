@@ -24,10 +24,6 @@ const TechImage = styled("img")`
   width: 48px;
 `
 
-interface TechnologiesProps {
-  technologies?: Array<string>
-}
-
 const Technologies: React.FC<TechnologiesProps> = ({ technologies = [] }) => {
   return (
     <div
