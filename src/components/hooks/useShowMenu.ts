@@ -1,7 +1,7 @@
 import * as React from "react"
 import { window } from "browser-monads"
 
-export default (current: number) => {
+const useShowMenu: UseShowMenu = (current) => {
   const [menuStatus, setMenuStatus] = React.useState(true)
 
   React.useEffect(() => {
@@ -23,3 +23,5 @@ export default (current: number) => {
   }, [])
   return { menuStatus, setMenuStatus }
 }
+
+export default useShowMenu

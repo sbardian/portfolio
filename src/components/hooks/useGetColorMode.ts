@@ -1,7 +1,7 @@
 import * as React from "react"
 import { window } from "browser-monads"
 
-const useGetColorMode = ({ setColorMode }: SetColorMode) => {
+const useGetColorMode: UseGetColorMode = ({ setColorMode }) => {
   const storage = window.localStorage
 
   React.useEffect(() => {
