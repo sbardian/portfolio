@@ -86,9 +86,14 @@ interface SetMenuStatusFn {
   (status: boolean): void
 }
 
-interface MenuBarProps {
+type PortfolioColorMode = "dark" | "light"
+
+interface SetColorMode {
+  setColorMode: React.Dispatch<React.SetStateAction<PortfolioColorMode>>
+}
+
+interface MenuBarProps extends SetColorMode {
   menuStatus: boolean
   setMenuStatus: SetMenuStatusFn
-  colorMode: string
-  setColorMode: React.Dispatch<React.SetStateAction<string>>
+  colorMode: PortfolioColorMode
 }
