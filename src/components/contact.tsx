@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
 import { jsx, Styled } from "theme-ui"
-import Article from "./article"
 import Social from "./social"
 
 const Contact: React.FC = () => (
