@@ -64,7 +64,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
           setMenuStatus(!menuStatus)
         }}
         sx={{
-          color: "primary",
+          color: "#a1a1a1",
           outline: 0,
           background: "transparent",
           border: "none",
@@ -76,7 +76,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
             outlineColor: "#e8175d",
           },
           "&:hover": {
-            color: "#a1a1a1",
+            color: "primary",
           },
           "@media (max-width: 520px)": {
             display: "block",
