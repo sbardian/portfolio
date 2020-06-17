@@ -88,10 +88,9 @@ interface SetColorMode {
   setColorMode: React.Dispatch<React.SetStateAction<PortfolioColorMode>>
 }
 
-interface MenuBarProps extends SetColorMode {
+interface MenuBarProps {
   menuStatus: boolean
   setMenuStatus: SetMenuStatusFn
-  colorMode: PortfolioColorMode
 }
 
 interface TechnologiesProps {
@@ -99,9 +98,5 @@ interface TechnologiesProps {
 }
 
 interface UseShowMenu {
-  (current: number): Omit<MenuBarProps, "colorMode" | "setColorMode">
-}
-
-interface UseGetColorMode {
-  ({ setColorMode }: SetColorMode): void
+  (current: number): MenuBarProps
 }

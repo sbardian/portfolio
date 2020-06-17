@@ -1,11 +1,10 @@
 /** @jsx jsx */
 // eslint-disable-next-line
 import styled from "@emotion/styled"
-import { jsx } from "theme-ui"
+import { jsx, useColorMode } from "theme-ui"
 import posed from "react-pose"
 import { GoThreeBars } from "react-icons/go"
 import { FaLightbulb } from "react-icons/fa"
-import useGetColorMode from "./hooks/useGetColorMode"
 
 const ButtonBar = styled("div")`
   display: grid;
@@ -38,13 +37,11 @@ const PosedColorModeButton = posed.button({
   },
 })
 
-const MenuBar: React.FC<MenuBarProps> = ({
-  menuStatus,
-  setMenuStatus,
-  colorMode,
-  setColorMode,
-}) => {
-  useGetColorMode({ setColorMode })
+const MenuBar: React.FC<MenuBarProps> = ({ menuStatus, setMenuStatus }) => {
+  const [colorMode, setColorMode]: [
+    PortfolioColorMode,
+    React.Dispatch<React.SetStateAction<PortfolioColorMode>>
+  ] = useColorMode()
 
   return (
     <ButtonBar>

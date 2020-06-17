@@ -8,19 +8,10 @@ import useShowMenu from "./hooks/useShowMenu"
 
 const Menu: React.FC = () => {
   const { menuStatus, setMenuStatus } = useShowMenu(window.innerWidth)
-  const [colorMode, setColorMode]: [
-    PortfolioColorMode,
-    React.Dispatch<React.SetStateAction<PortfolioColorMode>>
-  ] = useColorMode()
 
   return (
     <React.Fragment>
-      <MenuBar
-        menuStatus={menuStatus}
-        setMenuStatus={setMenuStatus}
-        colorMode={colorMode}
-        setColorMode={setColorMode}
-      />
+      <MenuBar menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
       <MenuButtons menuStatus={menuStatus} />
     </React.Fragment>
   )
