@@ -54,14 +54,10 @@ const MenuBar: React.FC<MenuBarProps> = ({
           "@media (min-width: 576px)": {
             display: "block",
           },
-
-          // display: "block",
-          // "@media (max-width: 520px)": {
-          //   display: "none",
-          // },
         }}
       />
       <PosedMenuButton
+        data-testid="three-bars-button"
         pose={menuStatus ? "open" : "closed"}
         type="button"
         aria-label="Menu"
@@ -91,6 +87,7 @@ const MenuBar: React.FC<MenuBarProps> = ({
         <GoThreeBars size={30} sx={{ marginLeft: "10px" }} />
       </PosedMenuButton>
       <PosedColorModeButton
+        data-testid="color-mode-button"
         pose={colorMode}
         sx={{
           display: "flex",
