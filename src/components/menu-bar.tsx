@@ -50,10 +50,15 @@ const MenuBar: React.FC<MenuBarProps> = ({
     <ButtonBar>
       <div
         sx={{
-          display: "block",
-          "@media (max-width: 520px)": {
-            display: "none",
+          display: "none",
+          "@media (min-width: 576px)": {
+            display: "block",
           },
+
+          // display: "block",
+          // "@media (max-width: 520px)": {
+          //   display: "none",
+          // },
         }}
       />
       <PosedMenuButton
@@ -64,12 +69,12 @@ const MenuBar: React.FC<MenuBarProps> = ({
           setMenuStatus(!menuStatus)
         }}
         sx={{
+          display: "block",
           color: "#a1a1a1",
           outline: 0,
-          background: "transparent",
+          backgroundColor: "transparent",
           border: "none",
           cursor: "pointer",
-          display: "none",
           transition: "color ease 2ms",
           "&:focus": {
             outline: "thin dotted",
@@ -78,8 +83,8 @@ const MenuBar: React.FC<MenuBarProps> = ({
           "&:hover": {
             color: "primary",
           },
-          "@media (max-width: 520px)": {
-            display: "block",
+          "@media (min-width: 576px)": {
+            display: "none",
           },
         }}
       >
