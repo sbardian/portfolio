@@ -82,12 +82,6 @@ interface SetMenuStatusFn {
   (status: boolean): void
 }
 
-type PortfolioColorMode = "dark" | "light"
-
-interface SetColorMode {
-  setColorMode: React.Dispatch<React.SetStateAction<PortfolioColorMode>>
-}
-
 interface MenuBarProps {
   menuStatus: boolean
   setMenuStatus: SetMenuStatusFn
@@ -96,6 +90,8 @@ interface MenuBarProps {
 interface TechnologiesProps {
   technologies?: Array<string>
 }
+
+type PortfolioColorMode = "dark" | "light"
 
 interface UseShowMenu {
   (current: number): MenuBarProps
