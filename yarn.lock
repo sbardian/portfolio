@@ -17069,7 +17069,7 @@ type-coverage-core@^2.7.2:
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@^2.7.2:
+type-coverage@2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.7.2.tgz#e2ea2b033668b5076d5f3a23a703907689748353"
   integrity sha512-duKK/Zcpel52a3hkbw5Qz+QOzWRAnKzkop368TvAcxwbiIV2dBgdlimeA5oN90JrkCKvDBk/cFWMgOkO+szsJA==
