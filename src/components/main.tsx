@@ -10,7 +10,7 @@ const Main: React.FC = () => {
     <div>
       <div
         sx={{
-          margin: "0 20px 0 20px",
+          margin: "0 0.67rem 0 0.67rem",
         }}
       >
         <Styled.h1

@@ -10,17 +10,20 @@ import mq from "./media-queries"
 
 const ProjectsSection = styled("section")``
 
-const ProjectWrapper = styled("div")``
+const ProjectsWrapper = styled("div")``
+
+const Project = styled("div")`
+  margin: 1.34rem 0 1.34rem 0;
+`
 
 const Article = styled("div")`
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.75);
-  margin-bottom: 40px;
 `
 
 const ProjectTitle = styled("h1")`
   display: inline;
   padding-right: 10px;
-  padding-top: 20px;
+  padding-top: 0.67rem;
 `
 
 const ProjectImageWrapper = styled("div")`
@@ -33,9 +36,9 @@ const ProjectImageWrapper = styled("div")`
 
 const ProjectInfoWrapper = styled("div")`
   display: grid;
-  gap: 20px;
+  gap: 0.67rem;
   grid-template-columns: 1fr;
-  padding: 20px;
+  padding: 0.67rem;
 `
 
 const ProjectInfo = styled("p")`
@@ -46,10 +49,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   return (
     <ProjectsSection>
       <Styled.h1>Projects</Styled.h1>
-      <ProjectWrapper>
+      <ProjectsWrapper>
         {projects.edges.map((project, index) => {
           return (
-            <div key={project.node.id}>
+            <Project key={project.node.id}>
               <Fade right={index % 2 !== 0} left={index % 2 === 0}>
                 <Article
                   sx={{
@@ -81,7 +84,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                     <div
                       sx={{
                         display: "grid",
-                        gap: "20px",
+                        gap: "0.67rem",
                         gridTemplateColumns: "auto auto",
                         justifyContent: "end",
                       }}
@@ -113,10 +116,10 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                   </ProjectInfoWrapper>
                 </Article>
               </Fade>
-            </div>
+            </Project>
           )
         })}
-      </ProjectWrapper>
+      </ProjectsWrapper>
     </ProjectsSection>
   )
 }
