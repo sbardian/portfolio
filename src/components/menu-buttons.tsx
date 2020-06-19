@@ -53,7 +53,7 @@ const PosedStyledThinLI: React.FC = ({ children }) => (
       },
       "@media (max-width: 520px)": {
         borderRadius: "0",
-        margin: "0 20px 0 20px",
+        margin: "0 0.67rem 0 0.67rem",
         backgroundColor: "transparent",
         width: "auto",
         "&:hover": {
@@ -114,7 +114,7 @@ const MenuButtons: React.FC<{ menuStatus: boolean }> = ({ menuStatus }) => {
         alignContent: "start",
         "@media (max-width: 520px)": {
           display: "grid",
-          gap: "20px",
+          gap: "0.67rem",
           minHeight: "0px",
           gridTemplateColumns: "minmax(200px, 1fr)",
           gridTemplateRows: "repeat(auto-fit)",

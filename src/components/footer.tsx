@@ -10,7 +10,7 @@ const Footer: React.FC = () => (
       gridTemplateRows: "1fr 1fr",
       justifyItems: "center",
       alignItems: "center",
-      padding: "20px",
+      padding: "0.67rem",
       backgroundColor: "background",
     }}
   >

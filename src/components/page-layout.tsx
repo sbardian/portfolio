@@ -72,6 +72,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({
             display: "grid",
             gridTemplateColumns: "1fr",
             gap: "3",
+            margin: "0.67rem",
           }}
         >
           {children}

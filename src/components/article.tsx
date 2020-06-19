@@ -11,11 +11,11 @@ const ArticleWrapper = styled("article")`
 `
 
 const Generic = styled("div")`
-  padding: 20px;
+  padding: 0.67rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 20px 20px;
+  margin: 0.67rem 0.67rem;
 `
 
 const Article: React.FC<ArticleProps> = ({ children, name }) => {

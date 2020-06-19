@@ -17,7 +17,6 @@ const Contact: React.FC = () => (
       sx={{
         display: "grid",
         gap: "0.67rem",
-        margin: "0 0.67rem 0 0.67rem",
         gridTemplateColumns: "minmax(auto, 992px)",
       }}
     >

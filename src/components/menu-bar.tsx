@@ -8,10 +8,10 @@ import { FaLightbulb } from "react-icons/fa"
 
 const ButtonBar = styled("div")`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 0.67rem;
   grid-template-columns: auto 1fr auto;
   align-content: center;
-  margin: 20px auto;
+  margin: 0.67rem auto;
   max-width: 1000px;
 `
 
