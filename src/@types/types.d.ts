@@ -96,3 +96,5 @@ type PortfolioColorMode = "dark" | "light"
 interface UseShowMenu {
   (current: number): MenuBarProps
 }
+
+declare const speechCommands: any

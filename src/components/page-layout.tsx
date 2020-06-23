@@ -8,6 +8,45 @@ import Footer from "./footer"
 import backgroundLight from "../images/bglight.jpg"
 import backgroundDark from "../images/bgdark.jpg"
 
+const loadSpeechCommands = async (
+  setColorMode: (k: PortfolioColorMode) => void
+) => {
+  /* eslint-disable-next-line */
+  const recognizer = speechCommands.create("BROWSER_FFT")
+  await recognizer.ensureModelLoaded()
+  const classLabels = recognizer.wordLabels()
+
+  recognizer.listen(
+    (result: any) => {
+      const { scores } = result
+      const max = Math.max(...scores)
+      /* eslint-disable-next-line */
+      for (let i = 0; i < classLabels.length; i++) {
+        if (max.toFixed(2) === result.scores[i].toFixed(2)) {
+          if (classLabels[i] === "up") {
+            document.body.scrollBy(0, -800)
+          }
+          if (classLabels[i] === "down") {
+            document.body.scrollBy(0, 800)
+          }
+          if (classLabels[i] === "one") {
+            setColorMode("light")
+          }
+          if (classLabels[i] === "zero") {
+            setColorMode("dark")
+          }
+        }
+      }
+    },
+    {
+      includeSpectrogram: true,
+      probabilityThreshold: 0.75,
+      invokeCallbackOnNoiseAndUnknown: true,
+      overlapFactor: 0.5,
+    }
+  )
+}
+
 const PageLayout: React.FC<PageLayoutProps> = ({
   children,
   showFooter = true,
@@ -27,7 +66,11 @@ const PageLayout: React.FC<PageLayoutProps> = ({
     }
   `)
 
-  const [colorMode] = useColorMode()
+  const [colorMode, setColorMode] = useColorMode()
+
+  React.useEffect(() => {
+    loadSpeechCommands(setColorMode)
+  }, [])
 
   return (
     <div

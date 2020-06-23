@@ -9,6 +9,8 @@ import "../assets/main.css"
 const ProjectsPage: React.FunctionComponent<ProjectsData> = ({
   data: { allSanityProjects },
 }): React.ReactElement => {
+  const recognizer = speechCommands.create("BROWSER_FFT")
+
   return (
     <PageLayout>
       <RestrictPageWidth>
