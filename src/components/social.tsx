@@ -18,21 +18,21 @@ const SocialIcons: React.FC = () => {
         sx={{ color: "primary" }}
         aria-label="Github"
       >
-        <FaGithub size="2.4rem" />
+        <FaGithub size="2.4em" />
       </a>
       <a
         href="https://twitter.com/xsbardianx"
         sx={{ color: "primary" }}
         aria-label="Twitter"
       >
-        <FaTwitter size="2.4rem" />
+        <FaTwitter size="2.4em" />
       </a>
       <a
         href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
         sx={{ color: "primary" }}
         aria-label="Email"
       >
-        <FaEnvelope size="2.4rem" />
+        <FaEnvelope size="2.4em" />
       </a>
     </div>
   )
