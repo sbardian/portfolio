@@ -28,7 +28,7 @@ const SocialIcons: React.FC = () => {
         <FaTwitter size="2.4em" />
       </a>
       <a
-        href="mailto:sbardian@gmail.com?Subject=Dear Developer..."
+        href="mailto:brian.andrews.dev@gmail.com?Subject=Dear Developer..."
         sx={{ color: "primary" }}
         aria-label="Email"
       >
