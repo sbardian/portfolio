@@ -35,7 +35,7 @@
   "dependencies": {
     "@emotion/core": "10.0.28",
     "@emotion/styled": "10.0.27",
-    "@mdx-js/react": "1.6.11",
+    "@mdx-js/react": "1.6.13",
     "browser-monads": "1.0.0",
     "deepmerge": "4.2.2",
     "gatsby": "2.24.5",
