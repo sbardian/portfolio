@@ -103,7 +103,7 @@
     "lint-staged": "10.2.11",
     "prettier": "2.0.5",
     "start-server-and-test": "1.11.3",
-    "ts-jest": "26.1.4",
+    "ts-jest": "26.2.0",
     "type-coverage": "2.9.0",
     "typescript": "3.9.7"
   },
