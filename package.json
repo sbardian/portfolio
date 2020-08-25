@@ -100,7 +100,7 @@
     "identity-obj-proxy": "3.0.0",
     "jest": "26.4.2",
     "jest-axe": "3.5.0",
-    "lint-staged": "10.2.11",
+    "lint-staged": "10.2.12",
     "prettier": "2.1.0",
     "start-server-and-test": "1.11.3",
     "ts-jest": "26.2.0",
