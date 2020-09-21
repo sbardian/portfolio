@@ -34,6 +34,7 @@ module.exports = {
     ],
     "react/jsx-filename-extension": "off",
     "no-unused-vars": "off",
+    "no-undef": "off",
     "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
     "@typescript-eslint/explicit-function-return-type": "off",
   },
