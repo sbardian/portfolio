@@ -83,7 +83,7 @@
     "@typescript-eslint/eslint-plugin": "4.4.0",
     "@typescript-eslint/parser": "4.4.0",
     "babel-eslint": "10.1.0",
-    "babel-jest": "26.5.0",
+    "babel-jest": "26.5.2",
     "babel-preset-gatsby": "0.5.13",
     "commitizen": "4.2.1",
     "csstype": "3.0.3",
