@@ -44,7 +44,7 @@
     "gatsby-plugin-manifest": "2.4.34",
     "gatsby-plugin-offline": "3.2.31",
     "gatsby-plugin-react-helmet": "3.3.14",
-    "gatsby-plugin-sharp": "2.6.41",
+    "gatsby-plugin-sharp": "2.6.42",
     "gatsby-plugin-theme-ui": "0.3.0",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.3.34",
