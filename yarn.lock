@@ -8292,10 +8292,10 @@ gatsby-plugin-sharp@2.14.3:
     svgo "1.3.2"
     uuid "3.4.0"
 
-gatsby-plugin-theme-ui@0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.7.0.tgz#bd96efe99776f7ceb3dfe75148ca3c35b71d7d72"
-  integrity sha512-G92tnNZyViyP/wMd6ps1KhXuG48qlInZ3aUqCrgMNpsX9Hb6rSet0mWmpgj8T8dSRw7Ll7byI0DfKXL5gScgjA==
+gatsby-plugin-theme-ui@0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-theme-ui/-/gatsby-plugin-theme-ui-0.7.2.tgz#3b44683058ecf1a88af1bdf83cd858322cbcfb40"
+  integrity sha512-j3zo5NjANOam+boNJi7MBGE8vNWv2NNQGDlM0NburPZktg+GmB6hSdRUg/Gs+sKNTkRjwOTnL3LA/NBf6yoW9Q==
 
 gatsby-plugin-typescript@^2.12.1:
   version "2.12.1"
