@@ -89,7 +89,7 @@
     "commitizen": "4.2.4",
     "csstype": "3.0.8",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "7.25.0",
+    "eslint": "7.26.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "7.2.0",
     "eslint-plugin-emotion": "11.0.0",
