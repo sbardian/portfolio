@@ -68,8 +68,8 @@
     "three.phenomenon": "1.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "12.1.3",
-    "@commitlint/config-conventional": "12.1.3",
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
     "@emotion/types": "0.7.0",
     "@testing-library/dom": "7.31.0",
     "@testing-library/jest-dom": "5.12.0",
