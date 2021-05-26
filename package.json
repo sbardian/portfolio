@@ -46,7 +46,7 @@
     "gatsby-plugin-offline": "3.10.2",
     "gatsby-plugin-react-helmet": "3.10.0",
     "gatsby-plugin-sharp": "2.14.4",
-    "gatsby-plugin-theme-ui": "0.9.0",
+    "gatsby-plugin-theme-ui": "0.9.1",
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "2.11.1",
     "gatsby-source-sanity": "5.0.6",
