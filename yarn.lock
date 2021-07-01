@@ -3021,10 +3021,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-gravatar@2.6.8":
-  version "2.6.8"
-  resolved "https://registry.yarnpkg.com/@types/react-gravatar/-/react-gravatar-2.6.8.tgz#968eb0e59591a31e5a2906dca19bb4e7f2f9c515"
-  integrity sha512-VMk0bF0w72l+opBm+EqLs0JqUG+hPowMBWCVGrbTwUWm/oDncvwNrf7P/ImwYwkTCKiLnU8Rc+/lyhehaIE/Rw==
+"@types/react-gravatar@2.6.9":
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/@types/react-gravatar/-/react-gravatar-2.6.9.tgz#9e3849e7dc2592baafaf80a1623f0f590d7a123c"
+  integrity sha512-4jaijAMeee2EIAcenbP6xy7D1oiTZF/R9eG3awEXm2wErDKU9z/qtR3NSiShDPNC/s3jejNu5bFPt6chgGnKrQ==
   dependencies:
     "@types/react" "*"
 
