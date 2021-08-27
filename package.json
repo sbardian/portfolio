@@ -63,7 +63,7 @@
     "react-pose": "4.0.10",
     "react-reveal": "1.2.2",
     "theme-ui": "0.11.1",
-    "three": "0.132.0",
+    "three": "0.132.1",
     "three-orbitcontrols": "2.110.2",
     "three.phenomenon": "1.2.0"
   },
