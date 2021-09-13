@@ -87,7 +87,7 @@
     "babel-jest": "26.6.3",
     "babel-preset-gatsby": "0.12.3",
     "commitizen": "4.2.4",
-    "csstype": "3.0.8",
+    "csstype": "3.0.9",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb": "18.2.1",
