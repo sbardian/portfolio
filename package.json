@@ -79,7 +79,7 @@
     "@types/react": "17.0.30",
     "@types/react-dom": "17.0.10",
     "@types/react-gravatar": "2.6.10",
-    "@types/react-helmet": "6.1.2",
+    "@types/react-helmet": "6.1.4",
     "@types/theme-ui": "0.3.7",
     "@typescript-eslint/eslint-plugin": "4.31.1",
     "@typescript-eslint/parser": "4.31.1",
