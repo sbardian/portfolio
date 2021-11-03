@@ -51,6 +51,7 @@ const theme: Theme = {
     h1: {
       // margin: "0.67rem 0 0.67rem 0.67rem",
       fontSize: "3em",
+      color: "text",
     },
     h2: {
       // marginBottom: "0.67rem 0 0.67rem 0.67rem",

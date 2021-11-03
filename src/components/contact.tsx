@@ -1,11 +1,11 @@
 /** @jsx jsx */
 /* eslint-disable jsx-a11y/label-has-associated-control, react/jsx-pascal-case */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import Social from "./social"
 
 const Contact: React.FC = () => (
   <div>
-    <Styled.h1>Contact</Styled.h1>
+    <Themed.h1>Contact</Themed.h1>
     <Social />
     <form
       data-testid="contact-form"

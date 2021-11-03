@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-pascal-case */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 import { FaGithub, FaRegEye } from "react-icons/fa"
@@ -45,13 +45,11 @@ const ProjectInfo = styled("p")`
   font-size: 1.5rem;
 `
 
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  return (
+const Projects: React.FC<ProjectsProps> = ({ projects }) => (
     <ProjectsSection>
-      <Styled.h1>Projects</Styled.h1>
+      <Themed.h1>Projects</Themed.h1>
       <ProjectsWrapper>
-        {projects.edges.map((project, index) => {
-          return (
+        {projects.edges.map((project, index) => (
             <Project key={project.node.id}>
               <Fade right={index % 2 !== 0} left={index % 2 === 0}>
                 <Article
@@ -90,17 +88,17 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                       }}
                     >
                       {project.node.demoUrl && (
-                        <Styled.a
+                        <Themed.a
                           href={project.node.demoUrl}
                           title="Demo"
                           target="_blank"
                           rel="noopener noreferrer"
                         >
                           <FaRegEye size="2.5em" />
-                        </Styled.a>
+                        </Themed.a>
                       )}
                       {project.node.repoUrl && (
-                        <Styled.a
+                        <Themed.a
                           sx={{
                             justifySelf: "end",
                           }}
@@ -110,18 +108,16 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                           rel="noopener noreferrer"
                         >
                           <FaGithub size="2.5em" />
-                        </Styled.a>
+                        </Themed.a>
                       )}
                     </div>
                   </ProjectInfoWrapper>
                 </Article>
               </Fade>
             </Project>
-          )
-        })}
+          ))}
       </ProjectsWrapper>
     </ProjectsSection>
   )
-}
 
 export default Projects

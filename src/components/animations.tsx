@@ -1,6 +1,6 @@
 /** @jsx jsx */
 /* eslint-disable react/jsx-pascal-case */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 import { FullpageAccordion, Panel } from "react-fullpage-accordion"
 import Article from "./article"
 import AnimationImageLink from "./animation-image-link"
@@ -8,10 +8,9 @@ import duckImage from "../images/duck-image-new.png"
 import oberynImage from "../images/oberyn-image-new.png"
 import turtleImage from "../images/turtle-image.png"
 
-const Animations: React.FC = () => {
-  return (
+const Animations: React.FC = () => (
     <div>
-      <Styled.h1>Animations</Styled.h1>
+      <Themed.h1>Animations</Themed.h1>
       <div
         sx={{
           display: "grid",
@@ -54,6 +53,5 @@ const Animations: React.FC = () => {
       </div>
     </div>
   )
-}
 
 export default Animations
