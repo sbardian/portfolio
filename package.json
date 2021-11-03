@@ -9,7 +9,7 @@
     "cm": "git-cz",
     "build": "gatsby build",
     "serve": "gatsby serve --port 8000",
-    "develop": "gatsby develop",
+    "develop": "gatsby clean && gatsby develop",
     "lint": "eslint",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
@@ -56,7 +56,7 @@
     "normalize.css": "8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-fullpage-accordion": "4.3.3",
+    "react-fullpage-accordion": "5.0.0",
     "react-gravatar": "2.6.3",
     "react-helmet": "6.1.0",
     "react-icons": "4.3.1",
