@@ -5,7 +5,7 @@ module.exports = {
     "prettier/react",
     "prettier/@typescript-eslint",
   ],
-  plugins: ["emotion", "react", "prettier", "@typescript-eslint"],
+  plugins: ["@emotion", "react", "prettier", "@typescript-eslint"],
   env: {
     jest: true,
     browser: true,
