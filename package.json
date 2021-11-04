@@ -12,7 +12,8 @@
     "develop": "gatsby clean && gatsby develop",
     "lint": "eslint",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "tsc": "tsc --noEmit"
   },
   "keywords": [
     "gatsby"
