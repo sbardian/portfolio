@@ -8,15 +8,13 @@ import "../assets/main.css"
 
 const ProjectsPage: React.FunctionComponent<ProjectsData> = ({
   data: { allSanityProjects },
-}): React.ReactElement => {
-  return (
+}): React.ReactElement => (
     <PageLayout>
       <RestrictPageWidth>
         <Projects projects={allSanityProjects} />
       </RestrictPageWidth>
     </PageLayout>
   )
-}
 
 export default ProjectsPage
 
@@ -33,9 +31,7 @@ export const projectImages = graphql`
           technologies
           image {
             asset {
-              fluid {
-                ...GatsbySanityImageFluid
-              }
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
             }
           }
           rank

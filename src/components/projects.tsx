@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-pascal-case */
 import { jsx, Themed } from "theme-ui"
 import styled from "@emotion/styled"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { FaGithub, FaRegEye } from "react-icons/fa"
 import Fade from "react-reveal/Fade"
 import Technologies from "./technologies"
@@ -46,78 +46,72 @@ const ProjectInfo = styled("p")`
 `
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => (
-    <ProjectsSection>
-      <Themed.h1>Projects</Themed.h1>
-      <ProjectsWrapper>
-        {projects.edges.map((project, index) => (
-            <Project key={project.node.id}>
-              <Fade right={index % 2 !== 0} left={index % 2 === 0}>
-                <Article
+  <ProjectsSection>
+    <Themed.h1>Projects</Themed.h1>
+    <ProjectsWrapper>
+      {projects.edges.map((project, index) => (
+        <Project key={project.node.id}>
+          <Fade right={index % 2 !== 0} left={index % 2 === 0}>
+            <Article
+              sx={{
+                backgroundColor: "background",
+              }}
+            >
+              <ProjectImageWrapper>
+                <GatsbyImage
+                  image={project.node.image.asset.gatsbyImageData}
+                  alt={project.node.name}
+                />
+              </ProjectImageWrapper>
+              <ProjectInfoWrapper>
+                <ProjectTitle sx={{ color: "primary" }}>
+                  {project.node.name}
+                </ProjectTitle>
+                <ProjectInfo sx={{ color: "text" }}>
+                  {project.node.description}
+                </ProjectInfo>
+                <div>
+                  <Technologies technologies={project.node.technologies} />
+                </div>
+                <div
                   sx={{
-                    backgroundColor: "background",
+                    display: "grid",
+                    gap: "0.67rem",
+                    gridTemplateColumns: "auto auto",
+                    justifyContent: "end",
                   }}
                 >
-                  <ProjectImageWrapper>
-                    <Img
-                      fluid={project.node.image.asset.fluid}
-                      alt={project.node.name}
-                    />
-                    {!project.node.demoUrl && (
-                      <Img
-                        fluid={project.node.image.asset.fluid}
-                        alt={project.node.name}
-                      />
-                    )}
-                  </ProjectImageWrapper>
-                  <ProjectInfoWrapper>
-                    <ProjectTitle sx={{ color: "primary" }}>
-                      {project.node.name}
-                    </ProjectTitle>
-                    <ProjectInfo sx={{ color: "text" }}>
-                      {project.node.description}
-                    </ProjectInfo>
-                    <div>
-                      <Technologies technologies={project.node.technologies} />
-                    </div>
-                    <div
-                      sx={{
-                        display: "grid",
-                        gap: "0.67rem",
-                        gridTemplateColumns: "auto auto",
-                        justifyContent: "end",
-                      }}
+                  {project.node.demoUrl && (
+                    <Themed.a
+                      href={project.node.demoUrl}
+                      title="Demo"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
-                      {project.node.demoUrl && (
-                        <Themed.a
-                          href={project.node.demoUrl}
-                          title="Demo"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <FaRegEye size="2.5em" />
-                        </Themed.a>
-                      )}
-                      {project.node.repoUrl && (
-                        <Themed.a
-                          sx={{
-                            justifySelf: "end",
-                          }}
-                          href={project.node.repoUrl}
-                          target="_blank"
-                          title="Repo"
-                          rel="noopener noreferrer"
-                        >
-                          <FaGithub size="2.5em" />
-                        </Themed.a>
-                      )}
-                    </div>
-                  </ProjectInfoWrapper>
-                </Article>
-              </Fade>
-            </Project>
-          ))}
-      </ProjectsWrapper>
-    </ProjectsSection>
-  )
+                      <FaRegEye size="2.5em" />
+                    </Themed.a>
+                  )}
+                  {project.node.repoUrl && (
+                    <Themed.a
+                      sx={{
+                        justifySelf: "end",
+                      }}
+                      href={project.node.repoUrl}
+                      target="_blank"
+                      title="Repo"
+                      rel="noopener noreferrer"
+                    >
+                      <FaGithub size="2.5em" />
+                    </Themed.a>
+                  )}
+                </div>
+              </ProjectInfoWrapper>
+            </Article>
+          </Fade>
+        </Project>
+      ))}
+    </ProjectsWrapper>
+  </ProjectsSection>
+)
 
 export default Projects
