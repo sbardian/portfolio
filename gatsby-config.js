@@ -62,7 +62,5 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
   ],
 }
