@@ -76,7 +76,7 @@
     "@emotion/eslint-plugin": "11.10.0",
     "@emotion/types": "0.7.0",
     "@testing-library/dom": "8.16.1",
-    "@testing-library/jest-dom": "5.16.4",
+    "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "12.1.5",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.47",
