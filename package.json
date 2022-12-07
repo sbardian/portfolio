@@ -105,7 +105,7 @@
     "jest": "27.5.1",
     "jest-axe": "5.0.1",
     "lint-staged": "11.2.6",
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "start-server-and-test": "1.15.1",
     "ts-jest": "27.1.5",
     "type-coverage": "2.24.1",
