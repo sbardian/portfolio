@@ -81,7 +81,7 @@
     "@types/jest": "27.5.2",
     "@types/node": "16.18.25",
     "@types/react": "17.0.58",
-    "@types/react-dom": "17.0.19",
+    "@types/react-dom": "17.0.20",
     "@types/react-gravatar": "2.6.10",
     "@types/react-helmet": "6.1.6",
     "@types/theme-ui": "0.3.7",
@@ -113,6 +113,6 @@
   },
   "resolutions": {
     "**/@types/react": "17.0.58",
-    "**/@types/react-dom": "17.0.19"
+    "**/@types/react-dom": "17.0.20"
   }
 }
