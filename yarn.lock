@@ -11975,10 +11975,10 @@ mini-svg-data-uri@^1.4.4:
   resolved "https://registry.yarnpkg.com/mini-svg-data-uri/-/mini-svg-data-uri-1.4.4.tgz#8ab0aabcdf8c29ad5693ca595af19dd2ead09939"
   integrity sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==
 
-"minimatch@3 || 4 || 5 || 6 || 7":
-  version "7.4.2"
-  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-7.4.2.tgz#157e847d79ca671054253b840656720cb733f10f"
-  integrity sha512-xy4q7wou3vUoC9k1xGTXc+awNdGaGVHtFUaey8tiX4H1QRc04DZ/rmDFwNm2EBsuYEhAZ6SgMmYf3InGY6OauA==
+"minimatch@3 || 4 || 5 || 6 || 7 || 8":
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-8.0.4.tgz#847c1b25c014d4e9a7f68aaf63dedd668a626229"
+  integrity sha512-W0Wvr9HyFXZRGIDgCicunpQ299OKXs9RgZfaukz4qAW/pJhcpUfupc9c+OObPOFueNy8VSrZgEmDtk6Kh4WzDA==
   dependencies:
     brace-expansion "^2.0.1"
 
@@ -15853,24 +15853,24 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-coverage-core@^2.25.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.25.0.tgz#87c1697fdcbc6f3e35b808da7d1f3b252fa6b13d"
-  integrity sha512-+ROv68mmveRCpYKq4kLEPDerCqj2YGzR8tSPXH2LLMxY5xk3zJM23Ztv/cAGoHEge4CI3S4xrcTJoWlwlhEKYA==
+type-coverage-core@^2.25.1:
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.25.1.tgz#e8c0eef77aa73e43c6d2c3096678a73bde2914e5"
+  integrity sha512-EBxLCF7s51mKgc9Kl5CohCtLO3nfPKj2Los4nLbKODG8HNN0h39R9IOJ3AKPMw/4QfrvlJsgNn4aS6zGse9UGg==
   dependencies:
     fast-glob "3"
-    minimatch "3 || 4 || 5 || 6 || 7"
+    minimatch "3 || 4 || 5 || 6 || 7 || 8"
     normalize-path "3"
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@2.25.0:
-  version "2.25.0"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.25.0.tgz#f2afc16809a6ec72a7df929c70ccd6915ae8f815"
-  integrity sha512-Zp4x/yQlv5Le8nNR3vXlaZRtPUvtbqSXFpGhcEvocbMxVD359GsQctCUlHgHmT42CURnvRJL0PHIaFlewL64aw==
+type-coverage@2.25.1:
+  version "2.25.1"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.25.1.tgz#c4b502707635c235d529e267b732c3d5203edd3e"
+  integrity sha512-i7HbLSOFvxQDZxYhGMJDTeL70GBSpibFSfuDNFXzes0so2gl/Y9shkZzkA6v0wCxBWCTOr/nGaJGXGLXeymzlg==
   dependencies:
     minimist "1"
-    type-coverage-core "^2.25.0"
+    type-coverage-core "^2.25.1"
 
 type-detect@4.0.8:
   version "4.0.8"
