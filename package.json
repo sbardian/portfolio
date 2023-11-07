@@ -82,7 +82,7 @@
     "@types/node": "16.18.60",
     "@types/react": "17.0.69",
     "@types/react-dom": "17.0.22",
-    "@types/react-gravatar": "2.6.12",
+    "@types/react-gravatar": "2.6.13",
     "@types/react-helmet": "6.1.8",
     "@types/theme-ui": "0.3.7",
     "@typescript-eslint/eslint-plugin": "5.62.0",
