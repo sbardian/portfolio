@@ -3336,10 +3336,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.9.tgz#04afc9a25c6ff93da14deabd65dc44485b53c8d6"
   integrity sha512-JsoLXFppG62tWTklIoO4knA+oDTYsmqWxHRvd4lpmfQRNhX6osheUOWETP2jMoV/2bEHuMra8Pp3Dmo/stBFcw==
 
-"@types/node@16.18.81":
-  version "16.18.81"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.81.tgz#51370a710912c62c6d6f89f69926ddaf15d8ece9"
-  integrity sha512-8irEHoBee020dTRYD1lPhK9vhjBbazF1wVii0vdVFfdQ0UQUTYObOL02aZgffWd7EXh2LT7WkcY41OfO006ARQ==
+"@types/node@16.18.82":
+  version "16.18.82"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.18.82.tgz#58d734b4acaa5be339864bbec9cd8024dd0b43d5"
+  integrity sha512-pcDZtkx9z8XYV+ius2P3Ot2VVrcYOfXffBQUBuiszrlUzKSmoDYqo+mV+IoL8iIiIjjtOMvNSmH1hwJ+Q+f96Q==
 
 "@types/node@>=10.0.0":
   version "16.11.6"
